@@ -14,20 +14,17 @@
 		fieldset.part1 {
 			border:1px solid;
 			text-align: center;
-      width: auto;
 			background-color: #d8d7d7;
 			white-space:nowrap;
 			}
 		fieldset.part2 {
 			border:1px solid;
 			text-align: left;
-            width: auto;
 			background-color: #d8d7d7;
 			}
 		fieldset.part3 {
 			border:1px solid;
 			text-align: center;
-            width: auto;
 			background-color: #d8d7d7;
 			}
 			fieldset.part4 {
@@ -44,7 +41,6 @@
 		}
 	label.fieldset1 {
 		display: inline-block;
-		width: 4em;
 		margin-right:0.2em;
 		text-align:right;
 	}
@@ -79,7 +75,7 @@
     select {
       border-radius: 0.25em;
     }
-  form.contentfiller {
+  form.content {
     max-width: 800px;
     margin: auto;
   }
