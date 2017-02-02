@@ -1,0 +1,583 @@
+<!DOCTYPE HTML>
+<!--CREATED BY NICK JACOBSEN-->
+<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Home | CLAAS | Value Calculator</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="jquerycodearea.js"></script>
+		<link rel="stylesheet" type="text/css" href="mystyle.css">
+
+
+		<!--warning if browser does not work-->
+		<noscript>
+		<p>Sorry, your browser does not support JavaScript.  Value Calculator will not function properly.</p>
+		</noscript>
+		<!--end to warning-->
+
+		<!--insert CLAAS logo, and heading text-->
+		<img src="logo-2x.png" height="64" width="368" float="left">
+		<b><h1>Value Calculator | Jaguar</b></h1>
+		<p id="demo"></p>
+
+		<script>
+		document.getElementById("demo").innerHTML = new Date();
+		</script>
+
+		<b><a href="HomePage.html">Back</a></b>
+
+</head>
+
+<body topmargin="50" leftmargin="50" rightmargin="50" marginheight="50" marginwidth="50">
+	<hr size="3" noshade>
+
+<form class="content">
+	<!--farm info-->
+	<br><fieldset class="part1">
+		<legend><b>1. Farm Information</b></legend>
+			<label for="farmname" class="fieldset1">Name:</label><input type="text" id="farmname" onchange="calculate()" placeholder="First, Last" autofocus required></input>
+			<label for="farmlocation" class="fieldset1">Location:</label><input type="text" id="farmlocation"  onchange="calculate()" placeholder="City, State/Province" required></input>
+			<label for="farmname" class="fieldset1">Dealer:</label><select name="dealername" id="dealername" size="1"  onchange="calculate()" required>
+							<option value="" disabled selected>Select</option>
+							<option value="agauthority">Ag Authority</option>
+							<option value="altorfer">Altorfer Inc</option>
+							<option value="butler">Butler CAT</option>
+							<option value="canadawest">Canada West Harvest Centre</option>
+							<option value="empire">Empire Southwest Ag</option>
+							<option value="poole">Gregory Poole Equipment</option>
+							<option value="hjv">HJV</option>
+							<option value="holtca">Holt CA</option>
+							<option value="macallister">MacAllister Machinery Co</option>
+							<option value="Nebraska Harvest Center">Nebraska Harvest Center</option>
+							<option value="ohiocat">Ohio CAT</option>
+							<option value="peterson">Peterson Machinery</option>
+							<option value="taylor">Taylor Implement</option>
+							<option value="whayne">Whayne Supply</option>
+							<option value="ziegler">Ziegler Inc</option>
+						</select>
+				<label for="serialno" class="fieldset1">Serial:</label><input type="text" id="serial" required></input>
+	</fieldset>
+
+	<br>
+
+	<fieldset class="part2">
+				<legend float="left"><b>2. Basic Information</b></legend>
+				<table>
+					<tr>
+						<td colspan="2"><label for="yieldest">Yield Calc Method:</label><select id="yieldest" size="1" style="width:180px">
+							<option value="" disabled selected>Select</option>
+							<option value="fsa">FSA Yield Calculation</option>
+							<option value="uwm">University of Wisconsin - Madison</option>
+							<option value="isu">Iowa State Universtiy</option>
+							<option value="knownbpa">Known Bushels/Acre</option>
+							<input type="number" id="newcropname" style="width:80px; display:none;" placeholder="bu/ac" value = "185">
+					</tr>
+
+
+					<script>
+					document.getElementById("yieldest").onchange = function updatecropvalue(sel){
+
+							if (document.getElementById("yieldest").value == "knownbpa") {
+								document.getElementById("newcropname").style.display = "inline-block";
+							} else {
+								document.getElementById("newcropname").style.display = "none";
+							}
+				}
+				</script>
+
+
+					<tr>
+							<td><label for="starchlevel">Starch:</label><input type="number" id="starchval" style="width:50px;" value="38">%
+							<td><label for="cropmoisture">Crop Moisture:</label><input type="number" id="cropmoisture" style="width:50px;" value="68">%
+					</tr>
+					<tr>
+						<td><label for="totalacres">Area Harvested:</label><input type="number" id="totalacres" min="1" max="50000" style="width:80px; text-float:right;" value="1800" required>ac
+						<td><label for="laborprice">Labor Rate:</label><input type="number" span="any" id="laborprice" min="1" max="50" style="width:80px; text-float:right;" value="15" required>$/hr
+					</tr>
+					<tr>
+						<td><label for="bpaaverage">Yield:</label><input type="number" id="bpaaverage" min="0" max="500" style="width:80px; text-float:right;" value="25" required>t/ac
+						<td><label for="fuelprice">Fuel Cost:</label><input type="number" id="fuelprice" min="0" max="10" span="any" style="width:80px; text-float:right;" value="3" required>$/gal
+					</tr>
+					<tr>
+						<td><label for="croprice">Crop Price:</label><input type="number" step="any" id="cropprice" min="0" max="20" style="width:80px; text-float:right;" value="4" required>$/bu
+						<td><label for="defprice">DEF Fluid Cost:</label><input type="number" step="any" id="defprice" min="0" max="10" style="width:80px; text-float:right;" value="3" required>$/gal
+					</tr>
+					<tr>
+						<td><label for="efficiency">Efficiency:</label><input type="number" id="efficiency" min="0" max="100" style="width:80px; text-float:right;" value="82.5"required >%
+						<td><label for="maintcost">Operating Cost:</label><input type="number" id="maintcost" min="0" max="1000" style="width:80px; text-float:right;" value="200" required >$/hr
+					</tr>
+				</table>
+		</fieldset><br>
+
+		<fieldset class="part3">
+			<legend float="left"><b>3. Performance Comparison</b></legend>
+				<table cellpadding="5" width="800" id="myTable">
+					<colgroup>
+						<col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%">
+						<col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%">
+					</colgroup>
+						<tr>
+							<td colspan=2></td>
+								<td float="center" colspan=2>
+									<select size="1" id="tractorpick1" style="width:150px; text-float:center;" onChange="tractorpicker1(this);" required>
+										<option value="" disabled selected>Select</option>
+										<option value="357">JAGUAR 830 (492)</option>
+										<option value="428">JAGUAR 850 (492)</option>
+										<option value="476">JAGUAR 870 (492)</option>
+										<option value="530">JAGUAR 890 (492)</option>
+										<option value="653">JAGUAR 900 (492)</option>
+										<option value="428">JAGUAR 930 T3</option>
+										<option value="476">JAGUAR 940 T3</option>
+										<option value="530">JAGUAR 950 T3</option>
+										<option value="653">JAGUAR 960 T3</option>
+										<option value="760">JAGUAR 970 T3</option>
+										<option value="860">JAGUAR 980 T3</option>
+										<option value="456">JAGUAR 930 T4i</option>
+										<option value="510">JAGUAR 940 T4i</option>
+										<option value="598">JAGUAR 950 T4i</option>
+										<option value="653">JAGUAR 960 T4i</option>
+										<option value="775">JAGUAR 970 MAN</option>
+										<option value="884">JAGUAR 980 MAN</option>
+										<option value="462">JAGUAR 930 (497)</option>
+										<option value="516">JAGUAR 940 (497)</option>
+										<option value="585">JAGUAR 950 (497)</option>
+										<option value="625">JAGUAR 960 (497)</option>
+										<option value="408">JAGUAR 940 (496)</option>
+										<option value="462">JAGUAR 970 MAN</option>
+										<option value="516">JAGUAR 970 MAN</option>
+										<option value="625">JAGUAR 970 MAN</option>
+									</select>
+										</td>
+
+										<script>
+											function tractorpicker1(sel)
+												{
+												document.getElementById("td0").innerHTML = sel.options[sel.selectedIndex].text;
+												document.getElementById("pick1").innerHTML = document.getElementById("tractorpick1").value;
+												}
+											function tractorpicker2(sel) {
+												document.getElementById("td1").innerHTML = sel.options[sel.selectedIndex].text;
+												document.getElementById("pick2").innerHTML = document.getElementById("tractorpick2").value;
+											}
+										</script>
+
+						<td float="center" colspan=2> VS </td>
+						<td float="center" colspan=2> <select name="meal" id="tractorpick2" style="width:150px;" onChange="tractorpicker2(this);" required>
+										<option value="" disabled selected>Select</option>
+										<option value="380">John Deere 8100</option>
+										<option value="431">John Deere 8200</option>
+										<option value="483">John Deere 8300</option>
+										<option value="540">John Deere 8400</option>
+										<option value="585">John Deere 8500</option>
+										<option value="625">John Deere 8600</option>
+										<option value="766">John Deere 8700</option>
+										<option value="843">John Deere 8800</option>
+										<option value="375">John Deere 7180</option>
+										<option value="440">John Deere 7280</option>
+										<option value="495">John Deere 7380</option>
+										<option value="555">John Deere 7480</option>
+										<option value="625">John Deere 7580</option>
+										<option value="625">John Deere 7780</option>
+										<option value="800">John Deere 7980 T2</option>
+										<option value="510">Krone BiG X 500</option>
+										<option value="650">Krone BiG X 650</option>
+										<option value="810">Krone BiG X 810</option>
+										<option value="1020">Krone BiG X 1000</option>
+										<option value="489">Krone BiG X 480</option>
+										<option value="530">Krone BiG X 530</option>
+										<option value="585">Krone BiG X 580</option>
+										<option value="626">Krone BiG X 630</option>
+										<option value="775">Krone BiG X 700</option>
+										<option value="825">Krone BiG X 850</option>
+										<option value="1031">Krone BiG X 1100</option>
+										<option value="450">New Holland FR 450 T4</option>
+										<option value="520">New Holland FR 500 T4</option>
+										<option value="591">New Holland FR 9060 T3</option>
+										<option value="591">New Holland FR 600</option>
+										<option value="685">New Holland FR 9080 T3</option>
+										<option value="685">New Holland FR 700</option>
+										<option value="824">New Holland FR 9090 T2</option>
+										<option value="824">New Holland FR 850</option>
+										<option value="476">New Holland FR 480 T4f</option>
+										<option value="544">New Holland FR 550 T4f</option>
+										<option value="653">New Holland FR 650 T4f</option>
+										<option value="775">New Holland FR 780 T4f</option>
+										<option value="824">New Holland FR 850 T2</option>
+									</select>
+								</tr>
+								<tr>
+									<td colspan=2><label for="cutlength1">Cut Length</label><td colspan=2><input type="number" id="cutlength1" style="width:50px;" value="22">mm<td colspan=2><td colspan=2><input type="number" id="cutlength2" style="width:50px;" value="25">mm
+								</tr>
+								<tr>
+									<td colspan=2><label for="crackergap1">Cracker Gap</label><td colspan=2><input type="number" id="crackergap1" style="width:50px;" value="2.6">mm<td colspan=2><td colspan=2><input type="number" id="crackergap2" style="width:50px;" value="2.1">mm
+								</tr>
+								<tr>
+									<td colspan=3><td colspan=2><input type="radio" name="measurements" id="noscale" onclick="showhide()" checked><i>Use Average Throughput</i>
+									<td colspan=2><input type="radio" name="measurements" id="scalehere" onclick="showhide()"><i>Use Scale Weights</i>
+									<td>
+								</tr>
+							</table>
+
+
+
+
+			<div id="div1">
+			<table border="0" cellpadding="5" width="800">
+				<colgroup>
+					<col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%">
+					<col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%">
+				</colgroup>
+				<tr>
+					<td colspan=2 float="center">Harvest Width
+					<td colspan=2><input type="number"  id="headerwidth1" min="20" max="45" style="width:70px; text-float:right;" placeholder="20 - 45ft" value="20" onchange="dothemath()" required></input>ft &nbsp &nbsp &nbsp
+					<td colspan=2> -
+					<td colspan=2><input type="number" min="20" max="45" id="headerwidth2" style="width:70px; text-float:right;" placeholder="20 - 45ft" value="20" required>ft &nbsp &nbsp &nbsp
+				</tr>
+				<tr></tr>
+				<tr>
+					<td colspan=2 float="center">Ground speed
+					<td colspan=2><input type="number" span="0.1" id="groundspeed1" min="0" max="10" style="width:70px; text-float:right;" placeholder="0.0" value="4.8" required>mph &nbsp
+					<td colspan=2>-
+					<td colspan=2><input type="number" span="0.1" id="groundspeed2" min="0" max="10" style="width:70px; text-float:right;" placeholder="0.0" value="3.7" required>mph &nbsp
+				</tr>
+				<tr>
+					<td colspan=2 float="center">Sample weight
+					<td colspan=2><input type="number" span="0.1" id="fixedsample1" min="0" max="999" style="width:70px; text-float:right;" placeholder="0.0" value="300" required>g &nbsp &nbsp &nbsp&nbsp
+					<td colspan=2>-
+					<td colspan=2><input type="number" span="0.1" id="fixedsample2" min="0" max="999" style="width:70px; text-float:right;" placeholder="0.0" value="300" required>g &nbsp &nbsp &nbsp&nbsp
+				</tr>
+				<tr>
+					<td colspan=2 float="center">Whole kernels
+					<td colspan=2><input type="number" span="0.1" id="fixedwholec1" min="0" max="999" style="width:70px; text-float:right;" placeholder="0.0" value="0" required>g &nbsp &nbsp &nbsp&nbsp
+					<td colspan=2>-
+					<td colspan=2><input type="number" span="0.1" id="fixedwholec2" min="0" max="999" style="width:70px; text-float:right;" placeholder="0.0" value="0.5" required>g &nbsp &nbsp &nbsp&nbsp
+				</tr>
+				<tr>
+					<td colspan=2 float="center">"Nicked" kernels
+					<td colspan=2><input type="number" span="0.1" id="fixedhalfc1" min="0" max="999" style="width:70px; text-float:right;" placeholder="0.0" value="3" required>g &nbsp &nbsp &nbsp&nbsp
+					<td colspan=2>-
+					<td colspan=2><input type="number" span="0.1" id="fixedhalfc2" min="0" max="999" style="width:70px; text-float:right;" placeholder="0.0" value="22" required>g &nbsp &nbsp &nbsp&nbsp
+				</tr>
+			</table>
+		</div>
+
+		<div id="div2" style="display:none;"><br>
+		<table cellpadding="8" width="800">
+			<colgroup>
+				<col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%">
+				<col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%">
+			</colgroup>
+				<thead>
+					<td colspan=2><b>Load<td>Time(s)<td>Total Weight<td>Empty Weight<td>Sample<td>Not-cracked<td>Half-cracked
+				</thead>
+				<tr style="background-color:#b3c618;">
+					<td colspan=2>1<td><input type="number" id="load1time1" min="0" max="1000" style="width:50px; text-float:right;" value="240" required>
+						<td><input type="number" id="load1full1" min="0" max="100000" style="width:50px; text-float:right;" value="45000" required> lbs
+						<td><input type="number" id="load1empty1" min="0" max="100000" style="width:50px; text-float:right;" value="2800" required> lbs
+						<td><input type="number" id="load1sample1" min="0" max="999" style="width:50px; text-float:right;" value="300" required> g
+						<td><input type="number" id="load1wholec1" min="0" max="999" style="width:50px; text-float:right;" value="0" required> g
+						<td><input type="number" id="load1halfc1" min="0" max="999" style="width:50px; text-float:right;" value="5" required> g
+				</tr>
+				<tr  style="background-color:#b3c618;">
+					<td colspan=2>2<td><input type="number" id="load2time1" min="0" max="1000" style="width:50px; text-float:right;" value="280" required>
+							<td><input type="number" id="load2full1" min="0" max="100000" style="width:50px; text-float:right;" value="45000" required> lbs
+							<td><input type="number" id="load2empty1" min="0" max="100000" style="width:50px; text-float:right;" value="2800" required> lbs
+							<td><input type="number" id="load2sample1" min="0" max="999" style="width:50px; text-float:right;" value="280" required> g
+							<td><input type="number" id="load2wholec1" min="0" max="999" style="width:50px; text-float:right;" value="0" required> g
+							<td><input type="number" id="load2halfc1" min="0" max="999" style="width:50px; text-float:right;" value="3" required> g
+				</tr>
+				<tr  style="background-color:#b3c618;">
+					<td colspan=2>3<td><input type="number" id="load3time1" min="0" max="1000" style="width:50px; text-float:right;" value="300" required>
+							<td><input type="number" id="load3full1" min="0" max="100000" style="width:50px; text-float:right;" value="43000" required> lbs
+							<td><input type="number" id="load3empty1" min="0" max="100000" style="width:50px; text-float:right;" value="2800" required> lbs
+							<td><input type="number" id="load3sample1" min="0" max="999" style="width:50px; text-float:right;" value="320" required> g
+							<td><input type="number" id="load3wholec1" min="0" max="999" style="width:50px; text-float:right;" value="0" required> g
+							<td><input type="number" id="load3halfc1" min="0" max="999" style="width:50px; text-float:right;" value="5" required> g
+				</tr>
+				<tr  style="background-color:#b3c618;">
+					<td colspan=2>4<td><input type="number" id="load4time1" min="0" max="1000" style="width:50px; text-float:right;" value="248" required>
+							<td><input type="number" id="load4full1" min="0" max="100000" style="width:50px; text-float:right;" value="45000" required> lbs
+							<td><input type="number" id="load4empty1" min="0" max="100000" style="width:50px; text-float:right;" value="2800" required> lbs
+							<td><input type="number" id="load4sample1" min="0" max="999" style="width:50px; text-float:right;" value="305" required> g
+							<td><input type="number" id="load4wholec1" min="0" max="999" style="width:50px; text-float:right;" value="0" required> g
+							<td><input type="number" id="load4halfc1" min="0" max="999" style="width:50px; text-float:right;" value="2" required> g
+				</tr>
+				<tr>
+					<td colspan=2>1<td><input type="number" id="load1time2" min="0" max="1000" style="width:50px; text-float:right;" value="350" required>
+						<td><input type="number" id="load1full2" min="0" max="100000" style="width:50px; text-float:right;" value="45000" required> lbs
+						<td><input type="number" id="load1empty2" min="0" max="100000" style="width:50px; text-float:right;" value="2800" required> lbs
+						<td><input type="number" id="load1sample2" min="0" max="999" style="width:50px; text-float:right;" value="280" required> g
+						<td><input type="number" id="load1wholec2" min="0" max="999" style="width:50px; text-float:right;" value="1" required> g
+						<td><input type="number" id="load1halfc2" min="0" max="999" style="width:50px; text-float:right;" value="18" required> g
+				</tr>
+				<tr>
+					<td colspan=2>2<td><input type="number" id="load2time2" min="0" max="1000" style="width:50px; text-float:right;" value="320" required>
+							<td><input type="number" id="load2full2" min="0" max="100000" style="width:50px; text-float:right;" value="44000" required> lbs
+							<td><input type="number" id="load2empty2" min="0" max="100000" style="width:50px; text-float:right;" value="2800" required> lbs
+							<td><input type="number" id="load2sample2" min="0" max="999" style="width:50px; text-float:right;" value="300" required> g
+							<td><input type="number" id="load2wholec2" min="0" max="999" style="width:50px; text-float:right;" value="0" required> g
+							<td><input type="number" id="load2halfc2" min="0" max="999" style="width:50px; text-float:right;" value="22" required> g
+				</tr>
+				<tr>
+					<td colspan=2>3<td><input type="number" id="load3time2" min="0" max="1000" style="width:50px; text-float:right;" value="315" required>
+							<td><input type="number" id="load3full2" min="0" max="100000" style="width:50px; text-float:right;" value="43000" required> lbs
+							<td><input type="number" id="load3empty2" min="0" max="100000" style="width:50px; text-float:right;" value="2800" required> lbs
+							<td><input type="number" id="load3sample2" min="0" max="999" style="width:50px; text-float:right;" value="320" required> g
+							<td><input type="number" id="load3wholec2" min="0" max="999" style="width:50px; text-float:right;" value="1" required> g
+							<td><input type="number" id="load3halfc2" min="0" max="999" style="width:50px; text-float:right;" value="23" required> g
+				</tr>
+				<tr>
+					<td colspan=2>4<td><input type="number" id="load4time2" min="0" max="1000" style="width:50px; text-float:right;" value="349" required>
+							<td><input type="number" id="load4full2" min="0" max="100000" style="width:50px; text-float:right;" value="45000" required> lbs
+							<td><input type="number" id="load4empty2" min="0" max="100000" style="width:50px; text-float:right;" value="2800" required> lbs
+							<td><input type="number" id="load4sample2" min="0" max="999" style="width:50px; text-float:right;" value="305" required> g
+							<td><input type="number" id="load4wholec2" min="0" max="999" style="width:50px; text-float:right;" value="0" required> g
+							<td><input type="number" id="load4halfc2" min="0" max="999" style="width:50px; text-float:right;" value="21" required> g
+				</tr>
+			</table>
+		</div>
+
+		<table border="0" cellpadding="5" width="800">
+			<colgroup>
+				<col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%">
+				<col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%">
+			</colgroup>
+				<tr>
+					<td float="center" colspan=2>Fuel Economy
+					<td colspan=2><input type="number" span="any" id="fuelburn1" min="0" max="10" style="width:70px; text-float:right;" value="22.2" required>gal/hr
+					<td colspan=2>-
+					<td colspan=2><input type="number" span="any" id="fuelburn2" min="0" max="10" style="width:70px; text-float:right;" value="24.6" required>gal/hr
+				</tr>
+				<tr>
+					<td float="center" colspan=2>DEF Economy
+					<td colspan=2><input type="number" span="0.01" id="defburn1" min="0" max="10" style="width:70px; text-float:right;" value="1.2" required>gal/hr
+					<td colspan=2>-
+					<td colspan=2><input type="number" span="0.01" id="defburn2" min="0" max="10" style="width:70px; text-float:right;" value="1.2" required>gal/hr
+				</tr>
+			</table>
+		</fieldset><br>
+
+
+
+<script>
+	function showhide() {
+		if (document.getElementById("noscale").checked) {
+			document.getElementById("div1").style.display = "inline";
+		} else {
+			document.getElementById("div1").style.display = "none";
+		}
+		if (document.getElementById("scalehere").checked) {
+			document.getElementById("div2").style.display = "inline";
+		} else {
+			document.getElementById("div2").style.display = "none";
+}
+	}
+
+function dothemath() {
+	var speed1 = document.getElementById("groundspeed1").value;
+	var speed2 = document.getElementById("groundspeed2").value;
+	var head1 = document.getElementById("headerwidth1").value;
+	var head2 = document.getElementById("headerwidth2").value;
+	var fuel1 = document.getElementById("fuelburn1").value;
+	var fuel2 = document.getElementById("fuelburn2").value;
+	var def1 = document.getElementById("defburn1").value;
+	var def2 = document.getElementById("defburn2").value;
+	var efficiency1 = document.getElementById("efficiency").value / 100;
+
+	<!--Chop Quality-->
+	var yieldmethod = document.getElementById("yieldest").value;
+	if (yieldmethod == "fsa") {
+		var totbushels = (document.getElementById("totalacres").value * document.getElementById("bpaaverage").value) * ((1 - (document.getElementById("cropmoisture").value / 100)) / 0.35) * 7.94;
+	} else if (yieldmethod == "uwm") {
+		var totbushels = (document.getElementById("totalacres").value * document.getElementById("bpaaverage").value) * 2000 * (1 - (document.getElementById("cropmoisture").value)/100) * ((document.getElementById("starchval").value)/100) / .72 / .845 / 56;
+	} else if (yieldmethod == "isu") {
+		var totbushels = (document.getElementById("totalacres").value * document.getElementById("bpaaverage").value) * 2000 * (1 - (document.getElementById("cropmoisture").value)/100) * 0.5 / 0.845 / 56;
+	} else if (yieldmethod == "knownbpa") {
+		var totbushels = document.getElementById("newcropname").value * document.getElementById("totalacres").value;
+	}
+
+
+	<!--productivity w/o load measurements-->
+	if (document.getElementById("noscale").checked) {
+	var prod1 = speed1 * 5280 / 43560 * head1 * document.getElementById("bpaaverage").value * efficiency1;
+	var prod2 = speed2 * 5280 / 43560 * head2 * document.getElementById("bpaaverage").value * efficiency1;
+	document.getElementById("td2").innerHTML = prod1.toFixed(2) + " t/hr";
+	document.getElementById("td3").innerHTML = prod2.toFixed(2) + " t/hr";
+	document.getElementById("td4").innerHTML = (prod1-prod2).toFixed(2) + " t/hr";
+
+
+	var badstarch1 = 100 * (((+document.getElementById("fixedwholec1").value + +document.getElementById("fixedhalfc1").value) * 0.76) / (+document.getElementById("fixedsample1").value * (+document.getElementById("starchval").value / 100)));
+	var badstarch2 = 100 * (((+document.getElementById("fixedwholec2").value + +document.getElementById("fixedhalfc2").value) * 0.76) / (+document.getElementById("fixedsample2").value * (+document.getElementById("starchval").value / 100)));
+	document.getElementById("td14").innerHTML = badstarch1.toFixed(1) + "%";
+	document.getElementById("td15").innerHTML = badstarch2.toFixed(1) + "%";
+	document.getElementById("td16").innerHTML = (badstarch2 - badstarch1).toFixed(1) + "%";
+
+	var unproc1	=	(+totbushels * +document.getElementById("fixedwholec1").value / (+document.getElementById("fixedsample1").value * (+document.getElementById("starchval").value / 100)) *.9) + (+totbushels * +document.getElementById("fixedhalfc1").value / (+document.getElementById("fixedsample1").value * (+document.getElementById("starchval").value / 100)) *.08);
+	var unproc2	=	(+totbushels * +document.getElementById("fixedwholec2").value / (+document.getElementById("fixedsample2").value * (+document.getElementById("starchval").value / 100)) *.9) + (+totbushels * +document.getElementById("fixedhalfc2").value / (+document.getElementById("fixedsample2").value * (+document.getElementById("starchval").value / 100)) *.08);
+	document.getElementById("td17").innerHTML = unproc1.toFixed(1) + " bushels";
+	document.getElementById("td18").innerHTML = unproc2.toFixed(1) + " bushels";
+	document.getElementById("td19").innerHTML = (unproc2 - unproc1).toFixed(1) + " bushels";
+
+	} else if (document.getElementById("scalehere").checked) {
+			var load1 = ((+document.getElementById("load1full1").value - +document.getElementById("load1empty1").value)/2000) / (+document.getElementById("load1time1").value / 3600);
+			var load2 = ((+document.getElementById("load2full1").value - +document.getElementById("load2empty1").value)/2000) / (+document.getElementById("load2time1").value / 3600);
+			var load3 = ((+document.getElementById("load3full1").value - +document.getElementById("load3empty1").value)/2000) / (+document.getElementById("load3time1").value / 3600);
+			var load4 = ((+document.getElementById("load4full1").value - +document.getElementById("load4empty1").value)/2000) / (+document.getElementById("load4time1").value / 3600);
+
+			var load5 = ((+document.getElementById("load1full2").value - +document.getElementById("load1empty2").value)/2000) / (+document.getElementById("load1time2").value / 3600);
+			var load6 = ((+document.getElementById("load2full2").value - +document.getElementById("load2empty2").value)/2000) / (+document.getElementById("load2time2").value / 3600);
+			var load7 = ((+document.getElementById("load3full2").value - +document.getElementById("load3empty2").value)/2000) / (+document.getElementById("load3time2").value / 3600);
+			var load8 = ((+document.getElementById("load4full2").value - +document.getElementById("load4empty2").value)/2000) / (+document.getElementById("load4time2").value / 3600);
+
+			var prod1 = (load1 + load2 + load3 + load4) / 4;
+			var prod2 = (load5 + load6 + load7 + load8) / 4;
+			document.getElementById("td2").innerHTML = prod1.toFixed(2) + " t/hr";
+			document.getElementById("td3").innerHTML = prod2.toFixed(2) + " t/hr";
+			document.getElementById("td4").innerHTML = (prod1-prod2).toFixed(2) + " t/hr";
+
+			var halfc1 = (+document.getElementById("load1halfc1").value + +document.getElementById("load2halfc1").value + +document.getElementById("load3halfc1").value + +document.getElementById("load4halfc1").value)/4;
+			var halfc2 = (+document.getElementById("load1halfc2").value + +document.getElementById("load2halfc2").value + +document.getElementById("load3halfc2").value + +document.getElementById("load4halfc2").value)/4;
+			var wholec1 = (+document.getElementById("load1wholec1").value + +document.getElementById("load2wholec1").value + +document.getElementById("load3wholec1").value + +document.getElementById("load4wholec1").value)/4;
+			var wholec2 = (+document.getElementById("load1wholec2").value + +document.getElementById("load2wholec2").value + +document.getElementById("load3wholec2").value + +document.getElementById("load4wholec2").value)/4;
+			var samp1 = (+document.getElementById("load1sample1").value + +document.getElementById("load2sample1").value + +document.getElementById("load3sample1").value + +document.getElementById("load4sample1").value)/4;
+			var samp2 = (+document.getElementById("load1sample2").value + +document.getElementById("load2sample2").value + +document.getElementById("load3sample2").value + +document.getElementById("load4sample2").value)/4;
+
+			var badstarch1 = 100 * (((+wholec1 + +halfc1) * 0.76) / (+samp1 * (+document.getElementById("starchval").value / 100)));
+			var badstarch2 = 100 * (((+wholec2 + +halfc2) * 0.76) / (+samp2 * (+document.getElementById("starchval").value / 100)));
+			document.getElementById("td14").innerHTML = badstarch1.toFixed(1) + "%";
+			document.getElementById("td15").innerHTML = badstarch2.toFixed(1) + "%";
+			document.getElementById("td16").innerHTML = (badstarch2 - badstarch1).toFixed(1) + "%";
+
+			var unproc1	=	(+totbushels * +wholec1 / (+samp1 * (+document.getElementById("starchval").value / 100)) *.9) + (+totbushels * +halfc1 / (+samp1 * (+document.getElementById("starchval").value / 100)) *.08);
+			var unproc2	=	(+totbushels * +wholec2 / (+samp2 * (+document.getElementById("starchval").value / 100)) *.9) + (+totbushels * +halfc2 / (+samp2 * (+document.getElementById("starchval").value / 100)) *.08);
+			document.getElementById("td17").innerHTML = unproc1.toFixed(1) + " bushels";
+			document.getElementById("td18").innerHTML = unproc2.toFixed(1) + " bushels";
+			document.getElementById("td19").innerHTML = (unproc2 - unproc1).toFixed(1) + " bushels";
+
+
+			//<td><input type="number" id="load4sample1" min="0" max="999" style="width:50px; text-float:right;" value="305" required> g
+			//<td><input type="number" id="load4wholec1" min="0" max="999" style="width:50px; text-float:right;" value="0" required> g
+			//<td><input type="number" id="load4halfc1" min="0" max="999" style="width:50px; text-float:right;" value="2" required> g
+		}
+
+		var loss1 = (unproc1 * document.getElementById("cropprice").value);
+		var loss2 = (unproc2 * document.getElementById("cropprice").value);
+		document.getElementById("td22").innerHTML = "$" + loss1.toFixed(2);
+		document.getElementById("td23").innerHTML = "$" + loss2.toFixed(2);
+		document.getElementById("td24").innerHTML = "$" + (loss2-loss1).toFixed(2);
+
+	<!--hours needed-->
+	var tothrs1 = document.getElementById("totalacres").value * document.getElementById("bpaaverage").value / (prod1 * +efficiency1);
+	var tothrs2 = document.getElementById("totalacres").value * document.getElementById("bpaaverage").value / (prod2 * +efficiency1);
+	document.getElementById("td5").innerHTML = tothrs1.toFixed(2) + " hrs";
+	document.getElementById("td6").innerHTML = tothrs2.toFixed(2) + " hrs";
+	document.getElementById("td7").innerHTML = (tothrs2-tothrs1).toFixed(2) + " hrs";
+
+	<!--operating cost-->
+	var opcost1 = ( +document.getElementById("maintcost").value) * tothrs1;
+	var opcost2 = (+document.getElementById("maintcost").value) * tothrs2;
+	document.getElementById("td8").innerHTML = "$" + opcost1.toFixed(2);
+	document.getElementById("td9").innerHTML = "$" + opcost2.toFixed(2);
+	document.getElementById("td10").innerHTML = "$" + (opcost2-opcost1).toFixed(2);
+
+	<!--Fuel + def-->
+	var fuelcost1 = ((document.getElementById("fuelprice").value * fuel1) + (document.getElementById("defprice").value * def1)) * tothrs1;
+	var fuelcost2 = ((document.getElementById("fuelprice").value * fuel2) + (document.getElementById("defprice").value * def2)) * tothrs2;
+	document.getElementById("td11").innerHTML = "$" + fuelcost1.toFixed(2);
+	document.getElementById("td12").innerHTML = "$" + fuelcost2.toFixed(2);
+	document.getElementById("td13").innerHTML = "$" + (fuelcost2-fuelcost1).toFixed(2);
+
+	<!--Total Savings-->
+	document.getElementById("td20").innerHTML = "$" + (fuelcost2-fuelcost1 + opcost2-opcost1 + loss2-loss1).toFixed(2);
+	document.getElementById("td21").innerHTML = "$" + ((fuelcost2-fuelcost1 + opcost2-opcost1 + loss2-loss1)/document.getElementById("totalacres").value).toFixed(2) + " /ac";
+}
+
+</script>
+
+
+
+		<!--results-->
+		<div align="center"><input type="button" style="width:500px; font-size:24px; background-color:#999999; border-color: #b3c618;" value="View Results" onclick="dothemath();"></div><br>
+		<p float="center"></p>
+				<fieldset class="part4">
+					<legend><b>4. Results</b></legend>
+						<table border="0" cellpadding="5" width="800">
+							<colgroup>
+								<col width="25%"><col width="25%"><col width="25%"><col width="25%">
+							</colgroup>
+							<thead>
+							<tr>
+								<td>
+								<td id="td0">CLAAS</td>
+								<td id="td1">Competitor</td>
+								<td> CLAAS Advantage
+							</tr>
+						</thead>
+							<tr>
+									<td>Rated Engine HP
+									<td id="pick1" float="center">
+									<td id="pick2" float="center">
+							</tr>
+							<tr>
+								<td>Productivity
+								<td id="td2"></td>
+								<td id="td3"></td>
+								<td id="td4"></td>
+							</tr>
+							<tr>
+									<td>Total Hours Needed
+									<td id="td5"></td>
+									<td id="td6"></td>
+									<td id="td7"></td>
+							</tr>
+							<tr>
+								<td>Operating Cost
+								<td id="td8"></td>
+								<td id="td9"></td>
+								<td id="td10"></td>
+							</tr>
+							<tr>
+								<td>Fuel + DEF Cost
+								<td id="td11"></td>
+								<td id="td12"></td>
+								<td id="td13"></td>
+							</tr>
+							<tr>
+								<td>Bad starch
+								<td id="td14"></td>
+								<td id="td15"></td>
+								<td id="td16"></td>
+							</tr>
+							<tr>
+								<td>Unprocessed Kernels
+								<td id="td17"></td>
+								<td id="td18"></td>
+								<td id="td19"></td>
+							</tr>
+							<tr>
+								<td>Chop Quality
+								<td id="td22"></td>
+								<td id="td23"></td>
+								<td id="td24"></td>
+							</tr>
+							<tfoot>
+							<tr>
+								<td><b>Total Savings
+								<td colspan="3" id="td20" float="center"></td>
+							</tr>
+							<tr>
+								<td><b>Savings per Acre
+								<td colspan="3" id="td21" float="center"></td>
+							</tr>
+						</tfoot>
+						</table><br>
+				</fieldset><br>
+
+				<textarea rows="4" cols="70" placeholder="Insert comments here"></textarea> <label style="width:50px;" style="vertical-align: text-top;">Email:</label><input type="email">
+				&nbsp &nbsp <input type="button" value="Generate PDF & Send" style="width:170px; height:70px; font-weight:bold; vertical-align: top;" onclick="generatePDF()">
+</form>
+
+
+
+</body>
+</html>

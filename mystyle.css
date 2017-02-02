@@ -1,0 +1,85 @@
+  body {
+		font-family: "Helvetica Neue";
+		font-size: 1em;
+	}
+  thead, tfoot {
+    font-weight: bold;
+    font-size: 1.25em;
+  }
+	table {
+		border-collapse: collapse;
+		border-width: 0.1em;
+    empty-cells: show;
+		}
+		fieldset.part1 {
+			border:1px solid;
+			text-align: center;
+      width: auto;
+			background-color: #d8d7d7;
+			white-space:nowrap;
+			}
+		fieldset.part2 {
+			border:1px solid;
+			text-align: left;
+            width: auto;
+			background-color: #d8d7d7;
+			}
+		fieldset.part3 {
+			border:1px solid;
+			text-align: center;
+            width: auto;
+			background-color: #d8d7d7;
+			}
+			fieldset.part4 {
+				border:1px solid;
+				text-align: center;
+				background-color: #d8d7d7;
+				}
+	legend {
+		position: relative;
+		top: -0.3em;
+		border:1px #b3c618;
+		color:black;
+		text-align: left;
+		}
+	label.fieldset1 {
+		display: inline-block;
+		width: 4em;
+		margin-right:0.2em;
+		text-align:right;
+	}
+  label {
+    display: inline-block;
+    width: 8em;
+    margin-right:0.2em;
+    text-align:right;
+
+  }
+	div {
+		line-height: 0;
+		margin: auto;
+		white-space: nowrap;
+	}
+		input[type=text]. {
+      border-radius: 0.25em;
+      border-style: solid;
+      border-color: #999999;
+      border-width: 1px;
+			text-align: center;
+			margin: auto;
+		}
+    input[type=number] {
+      border-radius: 0.25em;
+      border-style: solid;
+      border-color: #999999;
+      border-width: 1px;
+      text-align: right;
+      margin: auto;
+    }
+    select {
+      border-radius: 0.25em;
+    }
+  form.contentfiller {
+    max-width: 800px;
+    margin: auto;
+  }

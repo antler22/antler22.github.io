@@ -1,0 +1,300 @@
+<!DOCTYPE HTML>
+<!--CREATED BY NICK JACOBSEN-->
+
+<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Home | CLAAS | Value Calculator</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="jquerycodearea.js"></script>
+		<link rel="stylesheet" type="text/css" href="mystyle.css">
+
+
+		<!--warning if browser does not work-->
+		<noscript>
+		<p>Sorry, your browser does not support JavaScript.  Value Calculator will not function properly.</p>
+		</noscript>
+		<!--end to warning-->
+
+		<!--insert CLAAS logo, and heading text-->
+		<img src="logo-2x.png" height="64" width="368" float="left">
+		<b><h1>Value Calculator | Quadrant</b></h1>
+		<p id="demo"></p>
+
+		<script>
+		document.getElementById("demo").innerHTML = new Date();
+		</script>
+
+		<b><a href="HomePage.html">Back</a></b>
+
+</head>
+
+<body topmargin="50" leftmargin="50" rightmargin="50" marginheight="50" marginwidth="50">
+	<hr size="3" noshade>
+
+	<!--farm info-->
+	<br><fieldset class="part1">
+		<legend><b>1. Farm Information</b></legend>
+			<label for="farmname" class="fieldset1">Name:</label><input type="text" id="farmname" onchange="calculate()" placeholder="First, Last" autofocus required></input>
+			<label for="farmlocation" class="fieldset1">Location:</label><input type="text" id="farmlocation"  onchange="calculate()" placeholder="City, State/Province" required></input>
+			<label for="farmname" class="fieldset1">Dealer:</label><select name="dealername" id="dealername" size="1"  onchange="calculate()" required>
+							<option value="" disabled selected>Select</option>
+							<option value="agauthority">Ag Authority</option>
+							<option value="altorfer">Altorfer Inc</option>
+							<option value="butler">Butler CAT</option>
+							<option value="canadawest">Canada West Harvest Centre</option>
+							<option value="empire">Empire Southwest Ag</option>
+							<option value="poole">Gregory Poole Equipment</option>
+							<option value="hjv">HJV</option>
+							<option value="holtca">Holt CA</option>
+							<option value="macallister">MacAllister Machinery Co</option>
+							<option value="Nebraska Harvest Center">Nebraska Harvest Center</option>
+							<option value="ohiocat">Ohio CAT</option>
+							<option value="peterson">Peterson Machinery</option>
+							<option value="taylor">Taylor Implement</option>
+							<option value="whayne">Whayne Supply</option>
+							<option value="ziegler">Ziegler Inc</option>
+						</select>
+				<label for="serialno" class="fieldset1">Serial:</label><input type="text" id="serial" required></input>
+	</fieldset><br>
+
+
+	<fieldset class="part2">
+			<legend><b>2. Basic Information</b></legend>
+					<table>
+						<tr>
+							<td colspan="2"><label for="croptype">Choose Crop:</label><select id="croptype" size="1" style="width:180px">
+								<option value="" disabled selected>Select</option>
+								<option value="grass">Grass Hay</option>
+								<option value="alfalfa">Alfalfa Hay</option>
+								<option value="straw">Straw</option>
+								<option value="other">Other</option>
+								<input type="text" id="newcropname" style="width:150px; text-align:center; display:none;" placeholder="CROP NAME">
+						</tr>
+
+						<script>
+						document.getElementById("croptype").onchange = function updatecropvalue(sel){
+
+								if (document.getElementById("croptype").value == "other") {
+									document.getElementById("newcropname").style.display = "inline-block";
+								} else {
+									document.getElementById("newcropname").style.display = "none";
+								}
+					}
+					</script>
+
+						<tr>
+							<td><label for="balelength">Bale length:</label><input type="number" id="balelength" min="0" max="20" style="width:50px; text-float:right;" value="8" required > ft
+							<td><label for="laborprice">Labor Rate:</label><input type="number" span="any" id="laborprice" min="1" max="50" style="width:50px; text-float:right;" value="15" required>$/hr
+						</tr>
+						<tr>
+							<td><label for="tonsyr">Annual Tonnage:</label><input type="number" id="totaltons" min="0" max="20" style="width:50px; text-float:right;" value="7500" required > tons
+							<td><label for="twineprice">Twine Price:</label><input type="number" id="twineprice" min="0" max="10" span="any" style="width:50px; text-float:right;" value="32" required>$/ball
+						</tr>
+						<tr>
+							<td><label for="efficiency">Efficiency:</label><input type="number" id="efficiency" min="0" max="100"  style="width:50px; text-float:right;" value="85" required > %
+							<td><label for="twinperball">Twine/Ball:</label><input type="number" step="any" id="twineperball" min="0" max="10" style="width:50px; text-float:right;" value="3700" required>ft/ball
+						</tr>
+						<tr>
+							<td><label for="tractorcost">Tractor costs:</label><input type="number" id="tractorcost" style="width:50px; text-float:right;" value="50">$/hr
+							<td><label for="operatingcost">Operating Cost:</label><input type="number" id="operatingcost" min="0" max="20" style="width:50px; text-float:right;" value="1" required >$/bale
+						</tr>
+						</table>
+		</fieldset><br>
+
+		<fieldset class="part3">
+				<legend><b>3. Performance Comparison</b></legend>
+				<table padding="5" width="800" id="myTable">
+					<colgroup>
+						<col width="20%"><col width="20%"><col width="20%"><col width="20%"><col width="20%">
+					</colgroup>
+
+					<tr>
+						<td>
+						<td>
+						<td><select name="tractorpick" size="1" id="tractorpick1" style="width:200px; text-float:center;" onChange="tractorpicker1(this);" required>
+									<option value="" disabled selected>Select</option>
+									<option value="34">QUADRANT 3300</option>
+									<option value="34">QUADRANT 3300 RC</option>
+									<option value="34">QUADRANT 3300 FC</option>
+									</select>
+						<td float="center"> VS </td>
+
+						<script>
+							function tractorpicker1(sel) {
+								document.getElementById("td0").innerHTML = sel.options[sel.selectedIndex].text;
+								var balelength = document.getElementById("balelength").value;
+								var baleheight1 = document.getElementById("tractorpick1").value[0];
+								var balewidth1 = document.getElementById("tractorpick1").value[1];
+								var twine1 = ((2 * baleheight1) + (2 * balelength)) * ((balewidth1 * 2) - 2);
+								document.getElementById("td2").innerHTML = twine1 + " ft/bale";
+								}
+
+							function tractorpicker2(sel) {
+								document.getElementById("td1").innerHTML = sel.options[sel.selectedIndex].text;
+								var balelength = document.getElementById("balelength").value;
+								var baleheight2 = document.getElementById("tractorpick2").value[0];
+								var balewidth2 = document.getElementById("tractorpick2").value[1];
+								var twine2 = ((2 * baleheight2) + (2 * balelength)) * ((balewidth2 * 2) - 2);
+								document.getElementById("td3").innerHTML = twine2 + " ft/bale";
+							}
+						</script>
+
+						<td><select name="meal" style="width:200px;" id="tractorpick2" onchange="tractorpicker2(this);" required>
+										<option value="" disabled selected>Select</option>
+										<option value="34">Case LB434</option>
+										<option value="34">Case LB434 RC</option>
+										<option value="34">Challenger LB 34B</option>
+										<option value="44">Challenger LB 44B</option>
+										<option value="34">Freeman 1592</option>
+										<option value="34">Hesston MF 2170</option>
+										<option value="34">Hesston MF 2170 XD</option>
+										<option value="44">Hesston 2290</option>
+										<option value="34">John Deere L340</option>
+										<option value="34">John Deere L340 Pre-Cutter</option>
+										<option value="34">Krone Big Pack 1290</option>
+										<option value="34">Krone Big Pack 1290 XC</option>
+										<option value="44">Krone Big Pack 4x4</option>
+										<option value="44">Krone Big Pack 4x4 XC</option>
+										<option value="34">Kuhn 1290D</option>
+										<option value="34">Kuhn 1290D RC </option>
+										<option value="34">New Holland BigBaler 340</option>
+										<option value="34">New Holland BigBaler 340 RC</option>
+									</select>
+
+
+
+									<tr>
+										<td><td><label for="groundspeed1">Bale time</label>
+										<td colspan=2><input type="number" id="sperbale1" style="width:50px;" value="45">s/bale &nbsp &nbsp
+										<td><input type="number" id="sperbale2" style="width:50px;" value="90">s/bale &nbsp &nbsp
+									</tr>
+									<tr>
+										<td><td><label for="baledensity">Bale Density:</label>
+										<td colspan=2><input type="number" id="baledensity1" style="width:50px;" value="1440">lbs/bale
+										<td><input type="number" id="baledensity2" style="width:50px;" value="1300">lbs/bale
+									</tr>
+								</table>
+							</fieldset><br>
+
+							<script>
+														 function dothemath() {
+
+															<!--show twine needed per bale-->
+															var balelength = document.getElementById("balelength").value;
+															var baleheight1 = document.getElementById("tractorpick1").value[0];
+															var balewidth1 = document.getElementById("tractorpick1").value[1];
+															var twine1 = ((2 * baleheight1) + (2 * balelength)) * ((balewidth1 * 2) - 2);
+															var balelength = document.getElementById("balelength").value;
+															var baleheight2 = document.getElementById("tractorpick2").value[0];
+															var balewidth2 = document.getElementById("tractorpick2").value[1];
+															var twine2 = ((2 * baleheight2) + (2 * balelength)) * ((balewidth2 * 2) - 2);
+
+															<!--productivity-->
+															var prod1 = (3600/document.getElementById("sperbale1").value) * document.getElementById("efficiency").value / 100;
+															var prod2 = (3600/document.getElementById("sperbale2").value) * document.getElementById("efficiency").value / 100;
+															document.getElementById("td5").innerHTML = prod1.toFixed(0) + " bales/hr";
+															document.getElementById("td6").innerHTML = prod2.toFixed(0) + " bales/hr";
+															document.getElementById("td7").innerHTML = (prod1 - prod2).toFixed(0) + " bales/hr";
+
+															<!--Hours per year-->
+															var tothrs1 = 1 / (+prod1 * +document.getElementById("baledensity1").value / 2000 / +document.getElementById("totaltons").value);
+															var tothrs2 = 1 / (+prod2 * +document.getElementById("baledensity2").value / 2000 / +document.getElementById("totaltons").value);
+															document.getElementById("td8").innerHTML = tothrs1.toFixed(0) +  " hrs";
+															document.getElementById("td9").innerHTML = tothrs2.toFixed(0) +  " hrs";
+															document.getElementById("td10").innerHTML = (tothrs2-tothrs1).toFixed(0) +  " hrs";
+
+															<!--bales per year-->
+															var totbales1 = document.getElementById("totaltons").value * 2000 / document.getElementById("baledensity1").value;
+															var totbales2 = document.getElementById("totaltons").value * 2000 / document.getElementById("baledensity2").value;
+															document.getElementById("td11").innerHTML = totbales1.toFixed(0) + " bales";
+															document.getElementById("td12").innerHTML = totbales2.toFixed(0) + " bales";
+															document.getElementById("td13").innerHTML = (totbales2-totbales1).toFixed(0) + " bales";
+
+															<!--operating cost-->
+															var opcost1 = (document.getElementById("laborprice").value * tothrs1) + (document.getElementById("operatingcost").value * totbales1) + (+totbales1 * twine1 * +document.getElementById('twineprice').value / document.getElementById("twineperball").value);
+															var opcost2 = (document.getElementById("laborprice").value * tothrs2) + (document.getElementById("operatingcost").value * totbales2) + (+totbales2 * twine2 * +document.getElementById('twineprice').value / document.getElementById("twineperball").value);
+															document.getElementById("td14").innerHTML = "$" + opcost1.toFixed(0);
+															document.getElementById("td15").innerHTML = "$" + opcost2.toFixed(0);
+															document.getElementById("td16").innerHTML = "$" + (opcost2-opcost1).toFixed(0);
+
+															<!--totals-->
+															var grandtot1 = opcost2 - opcost1;
+															var grandtot2 = totbales2 - totbales1;
+															document.getElementById('td17').innerHTML = "$" + grandtot1.toFixed(0) + " per year";
+															document.getElementById('td18').innerHTML = grandtot2.toFixed(0) + " fewer bales";
+															document.getElementById('td19').innerHTML = "$" + (grandtot1 / document.getElementById("totaltons").value).toFixed(2) + " /ton";
+															}
+
+
+							</script>
+
+<div align="center"><input type="button" style="width:500px; font-size:24px; background-color:#999999; border-color: #b3c618;" value="View Results" onclick="dothemath();"></div><br>
+
+
+							<fieldset class="part4">
+								<legend><b>4. Results</b></legend>
+									<table border="0" cellpadding="5" width="700">
+										<colgroup>
+											<col width="25%"><col width="25%"><col width="25%"><col width="25%">
+										</colgroup>
+										<thead>
+										<tr>
+											<td>
+											<td id="td0">CLAAS</td>
+											<td id="td1">Competitor</td>
+											<td> CLAAS Advantage
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Twine needed
+											<td id="td2"></td>
+											<td id="td3"></td>
+											<td id="td4"></td>
+										</tr>
+										<tr>
+											<td>Productivity
+											<td id="td5"></td>
+											<td id="td6"></td>
+											<td id="td7"></td>
+										</tr>
+										<tr>
+											<td>Hours per year
+											<td id="td8"></td>
+											<td id="td9"></td>
+											<td id="td10"></td>
+										</tr>
+										<tr>
+											<td>Bales per year
+											<td id="td11"></td>
+											<td id="td12"></td>
+											<td id="td13"></td>
+										</tr>
+										<tr>
+											<td>Operating cost
+											<td id="td14"></td>
+											<td id="td15"></td>
+											<td id="td16"></td>
+										</tr>
+										</tbody>
+										<tfoot>
+										<tr>
+											<td>Total Savings
+											<td id="td17" float="center"></td>
+											<td id='td18' float="center"></td>
+										</tr>
+										<tr>
+											<td>Savings per Ton
+											<td colspan="3" id="td19" float="center"></td>
+										</tr>
+									</tfoot>
+									</table><br>
+							</fieldset><br>
+
+
+							<textarea rows="4" cols="70" placeholder="Insert comments here"></textarea> <label style="width:50px;" style="vertical-align: text-top;">Email:</label><input type="email">
+							&nbsp &nbsp <input type="button" value="Generate PDF & Send" style="width:170px; height:70px; font-weight:bold; vertical-align: top;" onclick="generatePDF()">
+
+</body>
+</html>

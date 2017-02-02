@@ -1,0 +1,717 @@
+<!DOCTYPE HTML>
+<!--CREATED BY NICK JACOBSEN-->
+
+<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Home | CLAAS | Value Calculator</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="jquerycodearea.js"></script>
+		<link rel="stylesheet" type="text/css" href="mystyle.css">
+
+
+		<!--warning if browser does not work-->
+		<noscript>
+		<p>Sorry, your browser does not support JavaScript.  Value Calculator will not function properly.</p>
+		</noscript>
+		<!--end to warning-->
+
+		<!--insert CLAAS logo, and heading text-->
+		<img src="logo-2x.png" height="64" width="368" float="left">
+		<b><h1>Value Calculator | XERION</b></h1>
+		<p id="demo"></p>
+
+		<script>
+		document.getElementById("demo").innerHTML = new Date();
+		</script>
+
+		<b><a href="HomePage.html">Back</a></b>
+
+</head>
+
+<body topmargin="50" leftmargin="50" rightmargin="50" marginheight="50" marginwidth="50">
+
+	<hr size="3" noshade>
+	<form name="inputs" method="post" id="form1" style="border:5px">
+
+
+		<!--farm info-->
+		<br><fieldset class="part1">
+			<legend><b>1. Farm Information</b></legend>
+				<label for="farmname" class="fieldset1">Name:</label><input type="text" id="farmname" onchange="calculate()" placeholder="First, Last" autofocus required></input>
+				<label for="farmlocation" class="fieldset1">Location:</label><input type="text" id="farmlocation"  onchange="calculate()" placeholder="City, State/Province" required></input>
+				<label for="farmname" class="fieldset1">Dealer:</label><select name="dealername" id="dealername" size="1"  onchange="calculate()" required>
+								<option value="" disabled selected>Select</option>
+								<option value="agauthority">Ag Authority</option>
+								<option value="altorfer">Altorfer Inc</option>
+								<option value="butler">Butler CAT</option>
+								<option value="canadawest">Canada West Harvest Centre</option>
+								<option value="empire">Empire Southwest Ag</option>
+								<option value="poole">Gregory Poole Equipment</option>
+								<option value="hjv">HJV</option>
+								<option value="holtca">Holt CA</option>
+								<option value="macallister">MacAllister Machinery Co</option>
+								<option value="Nebraska Harvest Center">Nebraska Harvest Center</option>
+								<option value="ohiocat">Ohio CAT</option>
+								<option value="peterson">Peterson Machinery</option>
+								<option value="taylor">Taylor Implement</option>
+								<option value="whayne">Whayne Supply</option>
+								<option value="ziegler">Ziegler Inc</option>
+							</select>
+					<label for="serialno" class="fieldset1">Serial:</label><input type="text" id="serial" required></input>
+		</fieldset>
+
+<br>
+
+<fieldset class="part2">
+		<legend><b>2. Basic Information</b></legend>
+						<label for="laborprice">Labor Rate:</label><input type="number" span="any" id="laborprice" min="1" max="50" style="width:50px; text-float:right;" value="18" required>$/hr
+						<label for="fuelprice">Fuel Price:</label><input type="number" id="fuelprice" min="0" max="10" span="any" style="width:50px; text-float:right;" value="2.00" required>$/gal
+						<label for="DEF Price">DEF Price:</label><input type="number" step="any" id="defprice" min="0" max="10" style="width:50px; text-float:right;" value="5.76" required>$/gal
+						<label for="efficiency">Efficiency:</label><input type="number" id="efficiency" min="0" max="100" style="width:50px; text-float:right;" value="85" required > %
+
+	</fieldset><br>
+
+
+	<fieldset class="part3">
+			<legend><b>3. Performance Comparison</b></legend>
+			<table padding="5" width="800" id="myTable">
+				<colgroup>
+					<col width="20%"><col width="20%"><col width="20%"><col width="20%"><col width="20%">
+				</colgroup>
+
+				<tr>
+					<td>
+					<td><select name="tractorpick" size="1" id="tractorpick1" style="width:200px; text-float:center;" onChange="tractorpicker1(this);" required>
+								<option value="" disabled selected>Select</option>
+								<option value="422">XERION 4000 VC Trac</option>
+								<option value="476">XERION 4500 VC Trac</option>
+								<option value="517">XERION 5000 VC Trac</option>
+								<option value="476">XERION 4500 Trac</option>
+								<option value="517">XERION 5000 Trac</option>
+								</select>
+					<td float="center"> VS </td>
+
+					<script>
+						function tractorpicker1(sel)
+							{
+							document.getElementById("td0").innerHTML = sel.options[sel.selectedIndex].text;
+							document.getElementById("pick1").innerHTML = document.getElementById("tractorpick1").value;
+							}
+						function tractorpicker2(sel) {
+							document.getElementById("td1").innerHTML = sel.options[sel.selectedIndex].text;
+							document.getElementById("pick2").innerHTML = document.getElementById("tractorpick2").value;
+						}
+					</script>
+
+					<td><select name="meal" style="width:200px;" id="tractorpick2" onChange="tractorpicker2(this);" required>
+									<option value="" disabled selected>Select</option>
+									<option value="400">Case IH Steiger 400 T4i</option>
+									<option value="450">Case IH Steiger 450 T4i</option>
+									<option value="500">Case IH Steiger 500 T4i</option>
+									<option value="550">Case IH Steiger 550 T4i</option>
+									<option value="600">Case IH Steiger 600 T4i</option>
+									<option value="370">Case Steiger 370</option>
+									<option value="420">Case Steiger 420</option>
+									<option value="470">Case Steiger 470</option>
+									<option value="500">Case Steiger 500</option>
+									<option value="540">Case Steiger 540</option>
+									<option value="580">Case Steiger 580</option>
+									<option value="620">Case Steiger 620</option>
+									<option value="380">Challenger MT765E</option>
+									<option value="405">Challenger MT775E</option>
+									<option value="410">Challenger MT835C</option>
+									<option value="440">Challenger MT845C</option>
+									<option value="460">Challenger MT845E</option>
+									<option value="475">Challenger MT855C</option>
+									<option value="500">Challenger MT855E</option>
+									<option value="525">Challenger MT865C</option>
+									<option value="550">Challenger MT865E</option>
+									<option value="585">Challenger MT875C</option>
+									<option value="600">Challenger MT875E</option>
+									<option value="380">Challenger MT765E</option>
+									<option value="410">John Deere 9370R</option>
+									<option value="420">John Deere 9410R T4i</option>
+									<option value="420">John Deere 9420R</option>
+									<option value="460">John Deere 9460R T4i</option>
+									<option value="470">John Deere 9470RT</option>
+									<option value="470">John Deere 9470RX</option>
+									<option value="510">John Deere 9510R T4i</option>
+									<option value="520">John Deere 9520R</option>
+									<option value="520">John Deere 9520RT</option>
+									<option value="520">John Deere 9520RX</option>
+									<option value="560">John Deere 9560R T4i</option>
+									<option value="570">John Deere 9570R</option>
+									<option value="570">John Deere 9570RT</option>
+									<option value="570">John Deere 9570RX</option>
+									<option value="620">John Deere 9620R</option>
+									<option value="620">John Deere 9620RX</option>
+									<option value="570">John Deere 9570R</option>
+									<option value="400">Versatile 400</option>
+									<option value="450">Versatile 450</option>
+									<option value="450">Versatile 450DT</option>
+									<option value="500">Versatile 500</option>
+									<option value="500">Versatile 500DT</option>
+									<option value="550">Versatile 550</option>
+									<option value="550">Versatile 550DT</option>
+									<option value="0">Other Manufacturer</option>
+								</select>
+
+
+
+
+
+				</tr>
+				<tr>
+						<td>Ownership Cost<td float="center"><input type="number" id="ownercost1" style="width:70px; text-float:right;" value="88"> $/hr
+						<td><td float="center"><input type="number"id="ownercost2" style="width:70px; text-float:right;" value="70"> $/hr
+				</tr>
+				<tr>
+						<td>Maintenance Cost<td float="center"><input type="number" step="any" id="maincost1" style="width:70px; text-float:right;" value="0.25"> $/hr
+						<td><td float="center"><input type="number" step="any" id="maincost2" style="width:70px; text-float:right;" value="0.30"> $/hr
+				</tr>
+			</table>
+
+					<input type="checkbox" id="stcheck" onclick="showhide()" >Spring Tillage<br>
+
+
+				<div id="tr1" style="display:none;">
+					<table width="800" border="0" style="text-align:left;">
+						<colgroup>
+							<col width="25%"><col width="25%"><col width="25%"><col width="25%">
+						</colgroup>
+						<tr>
+								<td><td><td><input type="number" id="stacres" style="width:70px; text-float:right;" value="2000" required> acres
+								<td>Implement Width <input type="number" id="stwidth" style="width:50px; text-float:right;" value="30" required> ft
+						</tr>
+						<tr>
+								<td><td><td><input type="number" id="stspeed1" style="width:70px; text-float:right;" value="3" required> mph
+								<td><input type="number" id="stspeed2" style="width:70px; text-float:right;" value="2.8" required> mph
+					</tr>
+					<tr>
+					<td><td><td><input type="number" id="stfuel1" style="width:70px; text-float:right;" value="1" required> gal/hr
+					<td><input type="number" id="stfuel2" style="width:70px; text-float:right;" value="2" required> gal/hr
+					</tr>
+					<tr>
+					<td><td><td><input type="number" id="stdef1" style="width:70px; text-float:right;" value="0.5"required> gal/hr
+					<td><input type="number" id="stdef2" style="width:70px; text-float:right;" value="0.7" required> gal/hr
+				</tr>
+			</table>
+				</div>
+
+				<br><input type="checkbox" id="ftcheck" onclick="showhide()">Fall Tillage<br>
+				<div id="tr2" style="display:none;">
+				<table width="800" border="0" style="text-align:left;">
+					<colgroup>
+						<col width="25%"><col width="25%"><col width="25%"><col width="25%">
+					</colgroup>
+					<tr>
+							<td><td><td><input type="number" id="ftacres" style="width:70px; text-float:right;" value="1000" required> acres
+							<td>Implement Width <input type="number" id="ftwidth" style="width:50px; text-float:right;" value="32" required> ft
+					</tr>
+					<tr>
+						<td><td><td><input type="number" id="ftspeed1" style="width:70px; text-float:right;" value="1.3" required> mph
+							<td><input type="number" id="ftspeed2" style="width:70px; text-float:right;" value="1.0" required> mph
+					</tr>
+				<tr>
+					<td><td><td><input type="number" id="ftfuel1" style="width:70px; text-float:right;" value="1" required> gal/hr
+						<td><input type="number" id="ftfuel2" style="width:70px; text-float:right;" value="1.1" required> gal/hr
+				</tr>
+				<tr>
+					<td><td><td><input type="number" id="ftdef1" style="width:70px; text-float:right;" value="0.5" required> gal/hr
+						<td><input type="number" id="ftdef2" style="width:70px; text-float:right;" value="0.7" required> gal/hr
+				</tr>
+			</table>
+			</div>
+
+				<br><input type="checkbox" id="ppcheck" onclick="showhide()">Pit Packing<br>
+					<div id="tr3" style="display:none;" float="left">
+						<table width="800" border="0" style="text-align:left;">
+							<colgroup>
+								<col width="25%"><col width="25%"><col width="25%"><col width="25%">
+							</colgroup>
+							<tr>
+								<td><td><td>Operational Hours <input type="number" id="pphrs1" style="width:70px; text-float:right;" value="200" required>
+								<td>Operational Hours <input type="number" id="pphrs2" style="width:70px; text-float:right;" value="200" required>
+						</tr>
+						<tr>
+								<td><td><td><input type="number" id="ppfuel1" style="width:70px; text-float:right;" value="1.0" required> gal/hr
+									<td><input type="number" id="ppfuel2" style="width:70px; text-float:right;" value="1.1" required> gal/hr
+						</tr>
+						<tr>
+							<td><td><td><input type="number" id="ppdef1" style="width:70px; text-float:right;" value="1.00" required> gal/hr
+								<td><input type="number" id="ppdef2" style="width:70px; text-float:right;" value="1.1" required> gal/hr
+						</tr>
+					</table>
+			</div>
+
+				<br><input type="checkbox" id="mhcheck" onclick="showhide()">Manure Hauling<br>
+				<div id="tr4" style="display:none;">
+					<table width="800" border="0" style="text-align:left;">
+						<colgroup>
+							<col width="25%"><col width="25%"><col width="25%"><col width="25%">
+						</colgroup>
+						<tr>
+								<td><td><td>Operational Hours <input type="number" id="mhhrs1" style="width:70px; text-float:right;" value="50" required>
+									<td>Operational Hours <input type="number" id="mhhrs2" style="width:70px; text-float:right;" value="50" required>
+						</tr>
+						<tr>
+							<td><td><td><input type="number" id="mhfuel1" style="width:70px; text-float:right;" value="1.0" required> gal/hr
+								<td><input type="number" id="mhfuel2" style="width:70px; text-float:right;" value="1.1" required> gal/hr
+						</tr>
+						<tr>
+							<td><td><td><input type="number" id="mhdef1" style="width:70px; text-float:right;" value="1" required> gal/hr
+								<td><input type="number" id="mhdef2" style="width:70px; text-float:right;" value="1.1" required> gal/hr
+					</tr>
+				</table>
+				</div>
+
+				<br><input type="checkbox" id="spcheck" onclick="showhide()">Seeding / Planting<br>
+					<div id="tr5" style="display:none;">
+						<table width="800" border="0" style="text-align:left;">
+							<colgroup>
+								<col width="25%"><col width="25%"><col width="25%"><col width="25%">
+							</colgroup>
+							<tr>
+								<td><td><td><input type="number" id="spacres" style="width:70px; text-float:right;" value="2000" required> acres
+									<td>Implement Width <input type="number" id="spwidth" style="width:50px; text-float:right;" value="40" required> ft
+							</tr>
+							<tr>
+								<td><td><td><input type="number" id="spspeed1" style="width:70px; text-float:right;" value="5" required> mph
+									<td><input type="number" id="spspeed2" style="width:70px; text-float:right;" value="4.5" required> mph
+						</tr>
+						<tr>
+								<td><td><td><input type="number" id="spfuel1" style="width:70px; text-float:right;" value="1" required> gal/hr
+									<td><input type="number" id="spfuel2" style="width:70px; text-float:right;" value="1.1" required> gal/hr
+						</tr>
+						<tr>
+							<td><td><td><input type="number" id="spdef1" style="width:70px; text-float:right;" value="1" required> gal/hr
+								<td><input type="number" id="spdef2" style="width:70px; text-float:right;" value="1.1" required> gal/hr
+					</tr>
+				</table>
+				</div>
+
+		</fieldset><br>
+
+		<script>
+
+
+//written by Nick Jacobsen
+	function dothemath() {
+		var laborprice = document.getElementById("laborprice").value;
+		var fuelprice = document.getElementById("fuelprice").value;
+		var defprice = document.getElementById("defprice").value;
+		var efficiency = document.getElementById("efficiency").value;
+		var ownercost1 = document.getElementById("ownercost1").value;
+		var ownercost2 = document.getElementById("ownercost2").value;
+		var maincost1 = document.getElementById("maincost1").value;
+		var maincost2 = document.getElementById("maincost2").value;
+
+			<!--Spring Tillage-->
+			var stfuel1 = document.getElementById("stfuel1").value * fuelprice;
+			var stfuel2 = document.getElementById("stfuel2").value * fuelprice;
+			var stdef1 = document.getElementById("stdef1").value * defprice;
+			var stdef2 = document.getElementById("stdef2").value * defprice;
+			var stpro1 = (document.getElementById("stwidth").value * document.getElementById("stspeed1").value * 0.1212 * efficiency / 100);
+			var stpro2 = (document.getElementById("stwidth").value * document.getElementById("stspeed2").value * 0.1212 * efficiency / 100);
+			document.getElementById("td2").innerHTML = stpro1.toFixed(2) + "ac/hr";
+			document.getElementById("td3").innerHTML = stpro2.toFixed(2) + "ac/hr";
+			document.getElementById("td4").innerHTML = (stpro1-stpro2).toFixed(2) + "ac/hr";
+
+			var sttothrs1 = (document.getElementById("stacres").value / stpro1);
+			var sttothrs2 = (document.getElementById("stacres").value / stpro2);
+			document.getElementById("td5").innerHTML = sttothrs1.toFixed(2);
+			document.getElementById("td6").innerHTML = sttothrs2.toFixed(2);
+			document.getElementById("td7").innerHTML = (sttothrs2-sttothrs1).toFixed(2);
+
+			var stopcost1 = (stfuel1 + stdef1 + +ownercost1 + +maincost1 + +laborprice);
+			var stopcost2 = (stfuel2 + stdef2 + +ownercost2 + +maincost2 + +laborprice);
+			document.getElementById("td8").innerHTML = stopcost1.toFixed(2) + " $/hr";
+			document.getElementById("td9").innerHTML = stopcost2.toFixed(2) + " $/hr";
+			document.getElementById("td10").innerHTML = (stopcost1 - stopcost2).toFixed(2) +"$/hr";
+
+			var stopcost3 = stopcost1 * sttothrs1;
+			var stopcost4 = stopcost2 * sttothrs2;
+			document.getElementById("td11").innerHTML = "$" + stopcost3.toFixed(2);
+			document.getElementById("td12").innerHTML = "$" + stopcost4.toFixed(2);
+			document.getElementById("td13").innerHTML = "$" + (stopcost4 - stopcost3).toFixed(2);
+
+
+			<!--Fall Tillage-->
+			var ftfuel1 = document.getElementById("ftfuel1").value * fuelprice;
+			var ftfuel2 = document.getElementById("ftfuel2").value * fuelprice;
+			var ftdef1 = document.getElementById("ftdef1").value * defprice;
+			var ftdef2 = document.getElementById("ftdef2").value * defprice;
+			var ftpro1 = (document.getElementById("ftwidth").value * document.getElementById("ftspeed1").value * 0.1212 * efficiency / 100);
+			var ftpro2 = (document.getElementById("ftwidth").value * document.getElementById("ftspeed2").value * 0.1212 * efficiency / 100);
+			document.getElementById("td14").innerHTML = ftpro1.toFixed(2) + "ac/hr";
+			document.getElementById("td15").innerHTML = ftpro2.toFixed(2) + "ac/hr";
+			document.getElementById("td16").innerHTML = (ftpro1-ftpro2).toFixed(2) + "ac/hr";
+
+			var fttothrs1 = (document.getElementById("ftacres").value / ftpro1);
+			var fttothrs2 = (document.getElementById("ftacres").value / ftpro2);
+			document.getElementById("td17").innerHTML = fttothrs1.toFixed(2);
+			document.getElementById("td18").innerHTML = fttothrs2.toFixed(2);
+			document.getElementById("td19").innerHTML = (fttothrs2-fttothrs1).toFixed(2);
+
+			var ftopcost1 = ftfuel1 + ftdef1 + +ownercost1 + +maincost1 + +laborprice;
+			var ftopcost2 = ftfuel1 + ftdef1 + +ownercost1 + +maincost1 + +laborprice;
+			document.getElementById("td20").innerHTML = ftopcost1.toFixed(2) + " $/hr";
+			document.getElementById("td21").innerHTML = ftopcost2.toFixed(2) + " $/hr";
+			document.getElementById("td22").innerHTML = (ftopcost1 - ftopcost2).toFixed(2) +"$/hr";
+
+			var ftopcost3 = ftopcost1 * fttothrs1;
+			var ftopcost4 = ftopcost2 * fttothrs2;
+			document.getElementById("td23").innerHTML = "$" + ftopcost3.toFixed(2);
+			document.getElementById("td24").innerHTML = "$" + ftopcost4.toFixed(2);
+			document.getElementById("td25").innerHTML = "$" + (ftopcost4 - ftopcost3).toFixed(2);
+
+
+			<!--Pit Packing-->
+			var ppfuel1 = document.getElementById("ppfuel1").value * fuelprice;
+			var ppfuel2 = document.getElementById("ppfuel2").value * fuelprice;
+			var ppdef1 = document.getElementById("ppdef1").value * defprice;
+			var ppdef2 = document.getElementById("ppdef2").value * defprice;
+
+			var pptothrs1 = (document.getElementById("pphrs1").value);
+			var pptothrs2 = (document.getElementById("pphrs2").value);
+			document.getElementById("td26").innerHTML = pptothrs1;
+			document.getElementById("td27").innerHTML = pptothrs2;
+			document.getElementById("td28").innerHTML = (pptothrs2-pptothrs1).toFixed(2);
+
+			var ppopcost1 = ppfuel1 + ppdef1 + +ownercost1 + +maincost1 + +laborprice;
+			var ppopcost2 = ppfuel2 + ppdef2 + +ownercost2 + +maincost2 + +laborprice;
+			document.getElementById("td29").innerHTML = ppopcost1.toFixed(2) + " $/hr";
+			document.getElementById("td30").innerHTML = ppopcost2.toFixed(2) + " $/hr";
+			document.getElementById("td31").innerHTML = (ppopcost1 - ppopcost2).toFixed(2) +"$/hr";
+
+			var ppopcost3 = ppopcost1 * pptothrs1;
+			var ppopcost4 = ppopcost2 * pptothrs2;
+			document.getElementById("td32").innerHTML = "$" + ppopcost3.toFixed(2);
+			document.getElementById("td33").innerHTML = "$" + ppopcost4.toFixed(2);
+			document.getElementById("td34").innerHTML = "$" + (ppopcost4 - ppopcost3).toFixed(2);
+
+
+
+			<!--Manure Hauling-->
+			var mhfuel1 = document.getElementById("mhfuel1").value * fuelprice;
+			var mhfuel2 = document.getElementById("mhfuel2").value * fuelprice;
+			var mhdef1 = document.getElementById("mhdef1").value * defprice;
+			var mhdef2 = document.getElementById("mhdef2").value * defprice;
+
+			var mhtothrs1 = (document.getElementById("mhhrs1").value);
+			var mhtothrs2 = (document.getElementById("mhhrs2").value);
+			document.getElementById("td35").innerHTML = mhtothrs1;
+			document.getElementById("td36").innerHTML = mhtothrs2;
+			document.getElementById("td37").innerHTML = (mhtothrs2-mhtothrs1).toFixed(2);
+
+			var mhopcost1 = mhfuel1 + mhdef1 + +ownercost1 + +maincost1 + +laborprice;
+			var mhopcost2 = mhfuel2 + mhdef2 + +ownercost2 + +maincost2 + +laborprice;
+			document.getElementById("td38").innerHTML = mhopcost1.toFixed(2) + " $/hr";
+			document.getElementById("td39").innerHTML = mhopcost2.toFixed(2) + " $/hr";
+			document.getElementById("td40").innerHTML = (mhopcost1 - mhopcost2).toFixed(2) +"$/hr";
+
+			var mhopcost3 = mhopcost1 * mhtothrs1;
+			var mhopcost4 = mhopcost2 * mhtothrs2;
+			document.getElementById("td41").innerHTML = "$" + mhopcost3.toFixed(2);
+			document.getElementById("td42").innerHTML = "$" + mhopcost4.toFixed(2);
+			document.getElementById("td43").innerHTML = "$" + (mhopcost4 - mhopcost3).toFixed(2);
+
+
+
+			<!--Planting / Seeding-->
+			var spfuel1 = document.getElementById("spfuel1").value * fuelprice;
+			var spfuel2 = document.getElementById("spfuel2").value * fuelprice;
+			var spdef1 = document.getElementById("spdef1").value * defprice;
+			var spdef2 = document.getElementById("spdef2").value * defprice;
+			var sppro1 = (document.getElementById("spwidth").value * document.getElementById("spspeed1").value * 0.1212 * efficiency / 100);
+			var sppro2 = (document.getElementById("spwidth").value * document.getElementById("spspeed2").value * 0.1212 * efficiency / 100);
+			document.getElementById("td44").innerHTML = sppro1.toFixed(2) + "ac/hr";
+			document.getElementById("td45").innerHTML = sppro2.toFixed(2) + "ac/hr";
+			document.getElementById("td46").innerHTML = (sppro1-sppro2).toFixed(2) + "ac/hr";
+
+			var sptothrs1 = (document.getElementById("spacres").value / sppro1);
+			var sptothrs2 = (document.getElementById("spacres").value / sppro2);
+			document.getElementById("td47").innerHTML = sptothrs1.toFixed(2);
+			document.getElementById("td48").innerHTML = sptothrs2.toFixed(2);
+			document.getElementById("td49").innerHTML = (sptothrs2-sptothrs1).toFixed(2);
+
+			var spopcost1 = spfuel1 + spdef1 + +ownercost1 + +maincost1 + +laborprice;
+			var spopcost2 = spfuel2 + spdef2 + +ownercost2 + +maincost2 + +laborprice;
+			document.getElementById("td50").innerHTML = spopcost1.toFixed(2) + " $/hr";
+			document.getElementById("td51").innerHTML = spopcost2.toFixed(2) + " $/hr";
+			document.getElementById("td52").innerHTML = (spopcost1 - spopcost2).toFixed(2) +"$/hr";
+
+			var spopcost3 = spopcost1 * sptothrs1;
+			var spopcost4 = spopcost2 * sptothrs2;
+			document.getElementById("td53").innerHTML = "$" + spopcost3.toFixed(2);
+			document.getElementById("td54").innerHTML = "$" + spopcost4.toFixed(2);
+			document.getElementById("td55").innerHTML = "$" + (spopcost4 - spopcost3).toFixed(2);
+
+
+
+			<!--Totals-->
+			var grandtotal1 = (stopcost4 - stopcost3 + ftopcost4 - ftopcost3 + ppopcost4 - ppopcost3 + mhopcost4 - mhopcost3 + spopcost4 - spopcost3).toFixed(2);
+			var grandtotal2 = (+sttothrs2 - +sttothrs1 + +fttothrs2 - +fttothrs1 + +pptothrs2 - +pptothrs1 + +mhtothrs2 - +mhtothrs1 + +sptothrs2 - +sptothrs1).toFixed(2);
+			document.getElementById("td56").innerHTML = "$" + grandtotal1 + " per year " + " &nbsp &nbsp &nbsp " + grandtotal2 + " hours per year";
+
+	}
+
+
+	function showhide () {
+	//	var oTable = document.getElementById("myTable");
+		//var oRows = oTable.getElementsByTagName("tr");
+		//var oTableb = document.getElementById("myTableb");
+		//var oRowsb = oTableb.getElementsByTagName("tr");
+
+			if (document.getElementById("stcheck").checked) {
+				document.getElementById("tr1").style.display = "inline";
+				document.getElementById("tr6").style.display = "inline";
+
+			} else {
+				document.getElementById("tr1").style.display = "none";
+				document.getElementById("tr6").style.display = "none";
+			}
+			if (document.getElementById("ftcheck").checked) {
+				document.getElementById("tr2").style.display = "inline";
+				document.getElementById("tr7").style.display = "inline";
+
+			} else {
+				document.getElementById("tr2").style.display = "none";
+				document.getElementById("tr7").style.display = "none";
+	}
+		if (document.getElementById("ppcheck").checked) {
+			document.getElementById("tr3").style.display = "inline";
+			document.getElementById("tr8").style.display = "inline";
+		} else {
+			document.getElementById("tr3").style.display = "none";
+			document.getElementById("tr8").style.display = "none";
+	}
+		if (document.getElementById("mhcheck").checked) {
+			document.getElementById("tr4").style.display = "inline";
+			document.getElementById("tr9").style.display = "inline";
+		} else {
+			document.getElementById("tr4").style.display = "none";
+			document.getElementById("tr9").style.display = "none";
+	}
+		if (document.getElementById("spcheck").checked) {
+			document.getElementById("tr5").style.display = "inline";
+			document.getElementById("tr10").style.display = "inline";
+		} else {
+			document.getElementById("tr5").style.display = "none";
+			document.getElementById("tr10").style.display = "none";
+	}
+	}
+</script>
+
+
+
+
+<div align="center"><input type="button" style="width:500px; font-size:24px; background-color:#999999; border-color: #b3c618;" value="View Results" onclick="dothemath();"></div><br>
+<fieldset class="part4">
+	<legend><b>4. Results</b></legend>
+		<table name="myTableb" width="800">
+			<colgroup>
+				<col width="25%"><col width="25%"><col width="25%"><col width="25%">
+			</colgroup>
+			<thead>
+			<tr>
+				<td>
+				<td id="td0">CLAAS</td>
+				<td id="td1">Competitor</td>
+				<td> CLAAS Advantage
+			</tr>
+		</thead>
+			<tr>
+				<td>Rated Engine HP
+				<td id="pick1" float="center">
+				<td id="pick2" float="center">
+				<td>
+			</tr>
+		</table><br>
+
+		<div id="tr6" style="display:none;">
+		<table cellpadding="8" width="800">
+			<colgroup>
+				<col width="25%"><col width="25%"><col width="25%"><col width="25%">
+			</colgroup>
+
+			<tr>
+				<td><b>Spring Tillage<td><td><td>
+			</tr>
+			<tr>
+					<td float="right">Productivity
+					<td id="td2"></td>
+					<td id="td3"></td>
+					<td id="td4"></td>
+			</tr>
+			<tr>
+					<td float="right">Total Hours Needed
+					<td id="td5"></td>
+					<td id="td6"></td>
+					<td id="td7"></td>
+			</tr>
+			<tr>
+					<td float="right">Hourly Operating Cost
+					<td id="td8"></td>
+					<td id="td9"></td>
+					<td id="td10"></td>
+			</tr>
+			<tr>
+				<td float="right">Total Operating Cost
+				<td id="td11"></td>
+				<td id="td12"></td>
+				<td id="td13"></td>
+			</tr>
+		</table><br>
+	</div>
+
+		<div id="tr7" style="display:none;">
+		<table cellpadding="8" width="800">
+			<colgroup>
+				<col width="25%"><col width="25%"><col width="25%"><col width="25%">
+			</colgroup>
+			<tr>
+				<td><b>Fall Tillage<td colspan="3">
+			</tr>
+			<tr>
+					<td float="right">Productivity
+					<td id="td14"></td>
+					<td id="td15"></td>
+					<td id="td16"></td>
+			</tr>
+			<tr>
+				<td float="right">Total Hours Needed
+				<td id="td17"></td>
+				<td id="td18"></td>
+				<td id="td19"></td>
+			</tr>
+			<tr>
+				<td float="right">Hourly Operating Cost
+				<td id="td20"></td>
+				<td id="td21"></td>
+				<td id="td22"></td>
+			</tr>
+			<tr>
+				<td float="right">Total Operating Cost
+				<td id="td23"></td>
+				<td id="td24"></td>
+				<td id="td25"></td>
+			</tr>
+		</table><br>
+	</div>
+
+	<div id="tr8" style="display:none;">
+	<table cellpadding="8" width="800">
+		<colgroup>
+			<col width="25%"><col width="25%"><col width="25%"><col width="25%">
+		</colgroup>
+			<tr>
+				<td><b>Pit Packing<td colspan="3">
+			</tr>
+			<tr>
+				<td float="right">Total Hours Needed
+				<td id="td26"></td>
+				<td id="td27"></td>
+				<td id="td28"></td>
+			</tr>
+			<tr>
+				<td float="right">Hourly Operating Cost
+				<td id="td29"></td>
+				<td id="td30"></td>
+				<td id="td31"></td>
+			</tr>
+			<tr>
+				<td float="right">Total Operating Cost
+				<td id="td32"></td>
+				<td id="td33"></td>
+				<td id="td34"></td>
+			</tr>
+		</table><br>
+	</div>
+
+	<div id="tr9" style="display:none;">
+	<table cellpadding="8" width="800">
+		<colgroup>
+			<col width="25%"><col width="25%"><col width="25%"><col width="25%">
+		</colgroup>
+			<tr>
+				<td><b>Manure Hauling<td colspan="3">
+			</tr>
+			<tr>
+				<td float="right">Total Hours Needed
+				<td id="td35"></td>
+				<td id="td36"></td>
+				<td id="td37"></td>
+			</tr>
+			<tr>
+				<td float="right">Hourly Operating Cost
+				<td id="td38"></td>
+				<td id="td39"></td>
+				<td id="td40"></td>
+			</tr>
+			<tr>
+				<td float="right">Total Operating Cost
+				<td id="td41"></td>
+				<td id="td42"></td>
+				<td id="td43"></td>
+			</tr>
+		</table><br>
+	</div>
+
+	<div id="tr10" style="display:none;">
+	<table cellpadding="8" width="800">
+		<colgroup>
+			<col width="25%"><col width="25%"><col width="25%"><col width="25%">
+		</colgroup>
+			<tr id="tr41" >
+				<td><b>Planting / Seeding<td colspan="3">
+			</tr>
+			<tr id="tr33" >
+				<td float="right">Productivity
+				<td id="td44"></td>
+				<td id="td45"></td>
+				<td id="td46"></td>
+			</tr>
+			<tr id="tr34" >
+				<td float="right">Total Hours Needed
+				<td id="td47"></td>
+				<td id="td48"></td>
+				<td id="td49"></td>
+			</tr>
+			<tr id="tr35" >
+				<td float="right">Hourly Operating Cost
+				<td id="td50"></td>
+				<td id="td51"></td>
+				<td id="td52"></td>
+			</tr>
+			<tr id="tr36" >
+				<td float="right">Total Operating Cost
+				<td id="td53"></td>
+				<td id="td54"></td>
+				<td id="td55"></td>
+			</tr>
+		</table>
+	</div>
+
+	<table width="800">
+		<colgroup>
+			<col width="25%"><col width="25%"><col width="25%"><col width="25%">
+		</colgroup>
+			<tr>
+				<td><b>Total Savings
+				<td id="td56" float="center" colspan="3"></td>
+			</tr>
+		</table>
+		<br>
+</fieldset><br>
+
+
+<textarea rows="4" cols="70" placeholder="Insert comments here"></textarea> <label style="width:50px;" style="vertical-align: text-top;">Email:</label><input type="email">
+&nbsp &nbsp <input type="button" value="Generate PDF & Send" style="width:170px; height:70px; font-weight:bold; vertical-align: top;" onclick="generatePDF()">
+
+</form><br><br>
+
+
+</body>
+</html>
