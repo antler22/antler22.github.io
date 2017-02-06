@@ -1,3 +1,28 @@
+  img.homepage {
+      opacity: 0.8;
+  }
+  img:hover {
+  opacity: 1.0;
+  }
+  a:link.homepage {
+  color: #B3C618;
+  background-color: transparent;
+  text-decoration: none;
+  }
+  a:visited.homepage {
+  color: #B3C618;
+  background-color: transparent;
+  text-decoration: none;
+  }
+  a:hover.homepage {
+  opacity: 1.0;
+  color: #FE0001;
+  background-color: transparent;
+  }
+  a:active.homepage {
+  color: blue;
+  background-color: transparent;
+  }
   body {
 		font-family: "Helvetica Neue";
 		font-size: 1em;
