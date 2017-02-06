@@ -514,9 +514,10 @@
 
 						<!--totals-->
 						document.getElementById("td20").innerHTML = "$" + (document.getElementById("td10").value + +totfluid2 - +totfluid1 + +totalsavin).toFixed(2);
-						var savsperbush = ((document.getElementById("td10").value + +totfluid2 - +totfluid1 + +totalsavin)/(document.getElementById("totalacres").value * document.getElementById("bpaaverage").value)).toFixed(2);
 
-						document.getElementById("td21").innerHTML = "$" + savsperbush + "/bu";
+						var savsperacre = (document.getElementById("td10").value + +totfluid2 - +totfluid1 + +totalsavin) / document.getElementById('totalacres').value;
+						var savsperbush = ((document.getElementById("td10").value + +totfluid2 - +totfluid1 + +totalsavin)/(document.getElementById("totalacres").value * document.getElementById("bpaaverage").value)).toFixed(2);
+						document.getElementById("td21").innerHTML = "$" + savsperbush + "/bu &nbsp " + '$' + savsperacre.toFixed(2) + '/acre';
 					}
 	</script>
 
