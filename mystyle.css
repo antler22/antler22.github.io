@@ -23,13 +23,13 @@
   color: blue;
   background-color: transparent;
   }
-  body.homepage {
-    font-family: "Helvetica Neue";
-    font-size: 20px;
+  table.homepage {
+    font-size: 2em;
   }
   body {
 		font-family: "Helvetica Neue";
 		font-size: 1em;
+    margin: auto;
 	}
   thead, tfoot {
     font-weight: bold;
@@ -42,7 +42,7 @@
 		}
 		fieldset.part1 {
 			border:1px solid;
-			text-align: center;
+			text-align: left;
 			background-color: #d8d7d7;
 			white-space:nowrap;
 			}
@@ -68,14 +68,9 @@
 		color:black;
 		text-align: left;
 		}
-	label.fieldset1 {
-		display: inline-block;
-		margin-right:0.2em;
-		text-align:right;
-	}
   label {
     display: inline-block;
-    width: 8em;
+    width: 10em;
     margin-right:0.2em;
     text-align:right;
 

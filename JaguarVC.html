@@ -24,26 +24,20 @@
 		document.getElementById("demo").innerHTML = new Date();
 		</script>
 
-		<button onclick="goBack()">Go Back</button>
-
-		<script>
-		function goBack() {
-		    window.history.back();
-		}
-		</script>
+<a href="index.html"><button>Go Back</button></a>
 
 </head>
 
-<body topmargin="50" leftmargin="50" rightmargin="50" marginheight="50" marginwidth="50">
+<body>
 	<hr size="3" noshade>
 
 <form class="content">
 	<!--farm info-->
 	<br><fieldset class="part1">
 		<legend><b>1. Farm Information</b></legend>
-			<label for="farmname" class="fieldset1">Name:</label><input type="text" id="farmname" onchange="calculate()" placeholder="First, Last" autofocus required></input>
+			<label for="farmname" class="fieldset1">Name:</label><input type="text" id="farmname" placeholder="First, Last" autofocus required></input>
 			<label for="farmlocation" class="fieldset1">Location:</label><input type="text" id="farmlocation"  onchange="calculate()" placeholder="City, State/Province" required></input>
-			<label for="farmname" class="fieldset1">Dealer:</label><select name="dealername" id="dealername" size="1"  onchange="calculate()" required>
+			<br><label for="farmname" class="fieldset1">Dealer:</label><select name="dealername" id="dealername" size="1" required>
 							<option value="" disabled selected>Select</option>
 							<option value="agauthority">Ag Authority</option>
 							<option value="altorfer">Altorfer Inc</option>
