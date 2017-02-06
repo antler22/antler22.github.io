@@ -23,6 +23,10 @@
   color: blue;
   background-color: transparent;
   }
+  body.homepage {
+    font-family: "Helvetica Neue";
+    font-size: 20px;
+  }
   body {
 		font-family: "Helvetica Neue";
 		font-size: 1em;
