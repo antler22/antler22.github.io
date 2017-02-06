@@ -19,11 +19,6 @@
 		<!--insert CLAAS logo, and heading text-->
 		<img src="logo-2x.png" height="64" width="368" float="left">
 		<b><h1>Value Calculator | Quadrant</b></h1>
-		<p id="demo"></p>
-
-		<script>
-		document.getElementById("demo").innerHTML = new Date();
-		</script>
 
 <a href="index.html"><button>Go Back</button></a>
 
@@ -36,9 +31,11 @@
 	<!--farm info-->
 	<br><fieldset class="part1">
 		<legend><b>1. Farm Information</b></legend>
-			<label for="farmname" class="fieldset1">Name:</label><input type="text" id="farmname" onchange="calculate()" placeholder="First, Last" autofocus required></input>
+			<label for="farmname" class="fieldset1">Name:</label><input type="text" id="farmname" placeholder="First, Last" autofocus required></input>
 			<label for="farmlocation" class="fieldset1">Location:</label><input type="text" id="farmlocation"  onchange="calculate()" placeholder="City, State/Province" required></input>
-			<label for="farmname" class="fieldset1">Dealer:</label><select name="dealername" id="dealername" size="1"  onchange="calculate()" required>
+			<label for="serialno" class="fieldset1">Serial:</label><input type="text" id="serial" required></input>
+			<br><br>
+			<label for="farmname" class="fieldset1">Dealer:</label><select name="dealername" id="dealername" required>
 							<option value="" disabled selected>Select</option>
 							<option value="agauthority">Ag Authority</option>
 							<option value="altorfer">Altorfer Inc</option>
@@ -56,7 +53,6 @@
 							<option value="whayne">Whayne Supply</option>
 							<option value="ziegler">Ziegler Inc</option>
 						</select>
-				<label for="serialno" class="fieldset1">Serial:</label><input type="text" id="serial" required></input>
 	</fieldset><br>
 
 
@@ -294,8 +290,14 @@
 							</fieldset><br>
 
 
-							<textarea rows="4" cols="70" placeholder="Insert comments here"></textarea> <label style="width:50px;" style="vertical-align: text-top;">Email:</label><input type="email">
+							<textarea rows="4" cols="50" placeholder="Insert comments here"></textarea> <label style="width:50px;" style="vertical-align: text-top;">Email:</label><input type="email">
 							&nbsp &nbsp <input type="button" value="Generate PDF & Send" style="width:170px; height:70px; font-weight:bold; vertical-align: top;" onclick="generatePDF()">
 
+
+							<p id="demo"></p>
+
+							<script>
+							document.getElementById("demo").innerHTML = new Date();
+							</script>
 </body>
 </html>

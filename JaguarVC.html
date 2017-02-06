@@ -18,11 +18,6 @@
 		<!--insert CLAAS logo, and heading text-->
 		<img src="logo-2x.png" height="64" width="368" float="left">
 		<b><h1>Value Calculator | Jaguar</b></h1>
-		<p id="demo"></p>
-
-		<script>
-		document.getElementById("demo").innerHTML = new Date();
-		</script>
 
 <a href="index.html"><button>Go Back</button></a>
 
@@ -37,7 +32,9 @@
 		<legend><b>1. Farm Information</b></legend>
 			<label for="farmname" class="fieldset1">Name:</label><input type="text" id="farmname" placeholder="First, Last" autofocus required></input>
 			<label for="farmlocation" class="fieldset1">Location:</label><input type="text" id="farmlocation"  onchange="calculate()" placeholder="City, State/Province" required></input>
-			<br><label for="farmname" class="fieldset1">Dealer:</label><select name="dealername" id="dealername" size="1" required>
+			<label for="serialno" class="fieldset1">Serial:</label><input type="text" id="serial" required></input>
+			<br><br>
+			<label for="farmname" class="fieldset1">Dealer:</label><select name="dealername" id="dealername" required>
 							<option value="" disabled selected>Select</option>
 							<option value="agauthority">Ag Authority</option>
 							<option value="altorfer">Altorfer Inc</option>
@@ -55,7 +52,6 @@
 							<option value="whayne">Whayne Supply</option>
 							<option value="ziegler">Ziegler Inc</option>
 						</select>
-				<label for="serialno" class="fieldset1">Serial:</label><input type="text" id="serial" required></input>
 	</fieldset>
 
 	<br>
@@ -64,7 +60,7 @@
 				<legend float="left"><b>2. Basic Information</b></legend>
 				<table>
 					<tr>
-						<td colspan="2"><label for="yieldest">Yield Calc Method:</label><select id="yieldest" size="1" style="width:180px">
+						<td colspan="2"><label for="yieldest" class="fieldset2">Yield Calc Method:</label><select id="yieldest" size="1" style="width:180px">
 							<option value="" disabled selected>Select</option>
 							<option value="fsa">FSA Yield Calculation</option>
 							<option value="uwm">University of Wisconsin - Madison</option>
@@ -87,24 +83,24 @@
 
 
 					<tr>
-							<td><label for="starchlevel">Starch:</label><input type="number" id="starchval" style="width:50px;" value="38">%
-							<td><label for="cropmoisture">Crop Moisture:</label><input type="number" id="cropmoisture" style="width:50px;" value="68">%
+							<td><label class="fieldset2" for="starchlevel">Starch:</label><input type="number" id="starchval" style="width:50px;" value="38">%
+							<td><label class="fieldset2" for="cropmoisture">Crop Moisture:</label><input type="number" id="cropmoisture" style="width:50px;" value="68">%
 					</tr>
 					<tr>
-						<td><label for="totalacres">Area Harvested:</label><input type="number" id="totalacres" min="1" max="50000" style="width:80px; text-float:right;" value="1800" required>ac
-						<td><label for="laborprice">Labor Rate:</label><input type="number" span="any" id="laborprice" min="1" max="50" style="width:80px; text-float:right;" value="15" required>$/hr
+						<td><label class="fieldset2" for="totalacres">Area Harvested:</label><input type="number" id="totalacres" min="1" max="50000" style="width:80px; text-float:right;" value="1800" required>ac
+						<td><label class="fieldset2" for="laborprice">Labor Rate:</label><input type="number" span="any" id="laborprice" min="1" max="50" style="width:80px; text-float:right;" value="15" required>$/hr
 					</tr>
 					<tr>
-						<td><label for="bpaaverage">Yield:</label><input type="number" id="bpaaverage" min="0" max="500" style="width:80px; text-float:right;" value="25" required>t/ac
-						<td><label for="fuelprice">Fuel Cost:</label><input type="number" id="fuelprice" min="0" max="10" span="any" style="width:80px; text-float:right;" value="3" required>$/gal
+						<td><label class="fieldset2" for="bpaaverage">Yield:</label><input type="number" id="bpaaverage" min="0" max="500" style="width:80px; text-float:right;" value="25" required>t/ac
+						<td><label class="fieldset2" for="fuelprice">Fuel Cost:</label><input type="number" id="fuelprice" min="0" max="10" span="any" style="width:80px; text-float:right;" value="3" required>$/gal
 					</tr>
 					<tr>
-						<td><label for="croprice">Crop Price:</label><input type="number" step="any" id="cropprice" min="0" max="20" style="width:80px; text-float:right;" value="4" required>$/bu
-						<td><label for="defprice">DEF Fluid Cost:</label><input type="number" step="any" id="defprice" min="0" max="10" style="width:80px; text-float:right;" value="3" required>$/gal
+						<td><label class="fieldset2" for="croprice">Crop Price:</label><input type="number" step="any" id="cropprice" min="0" max="20" style="width:80px; text-float:right;" value="4" required>$/bu
+						<td><label class="fieldset2" for="defprice">DEF Fluid Cost:</label><input type="number" step="any" id="defprice" min="0" max="10" style="width:80px; text-float:right;" value="3" required>$/gal
 					</tr>
 					<tr>
-						<td><label for="efficiency">Efficiency:</label><input type="number" id="efficiency" min="0" max="100" style="width:80px; text-float:right;" value="82.5"required >%
-						<td><label for="maintcost">Operating Cost:</label><input type="number" id="maintcost" min="0" max="1000" style="width:80px; text-float:right;" value="200" required >$/hr
+						<td><label class="fieldset2" for="efficiency">Efficiency:</label><input type="number" id="efficiency" min="0" max="100" style="width:80px; text-float:right;" value="82.5"required >%
+						<td><label class="fieldset2" for="maintcost">Operating Cost:</label><input type="number" id="maintcost" min="0" max="1000" style="width:80px; text-float:right;" value="200" required >$/hr
 					</tr>
 				</table>
 		</fieldset><br>
@@ -573,10 +569,16 @@ function dothemath() {
 						</table><br>
 				</fieldset><br>
 
-				<textarea rows="4" cols="70" placeholder="Insert comments here"></textarea> <label style="width:50px;" style="vertical-align: text-top;">Email:</label><input type="email">
+
+				<textarea rows="4" cols="50" placeholder="Insert comments here"></textarea> <label style="width:50px;" style="vertical-align: text-top;">Email:</label><input type="email">
 				&nbsp &nbsp <input type="button" value="Generate PDF & Send" style="width:170px; height:70px; font-weight:bold; vertical-align: top;" onclick="generatePDF()">
 </form>
 
+				<p id="demo"></p>
+
+				<script>
+				document.getElementById("demo").innerHTML = new Date();
+				</script>
 
 
 </body>
