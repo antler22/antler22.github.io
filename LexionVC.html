@@ -65,10 +65,14 @@
 
 <br>
 <fieldset class="part2">
+	<legend><b>2. Basic Information</b></legend>
 	<table>
-		<tr>
-		<legend><b>2. Basic Information</b></legend>
-						<td colspan="2"><label class="fieldset2" for="croptype">Select Crop:</label><select name="croptype" id="croptype" size="1" style="width:120px;" onchange="changecrop(this)" required>
+			<colgroup>
+				<col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%">
+				<col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%">
+			</colgroup>
+					<tr>
+						<td align='right'><label class="fieldset2" for="croptype">Select Crop:</label><td colspan='2'><select name="croptype" id="croptype" size="1" style="width:180px;" onchange="changecrop(this)" required>
 							<option value="noSelection" disabled selected></option>
 							<option value="alfalfa">Alfalfa</option>
 							<option value="alsike">Alsike clover</option>
@@ -112,29 +116,28 @@
 							<option value="whiteclover">White Clover</option>
 							<option value="other">Other</option>
 						</select>
-								<input type="text" id="newcropname" style="width:80px; display:none" placeholder="Crop name">
-								<label class="fieldset2" for="testweight111">Test Weight:</label><input type="number" id="testweight111" style="width:50px;" readonly>
-								<label class="fieldset2" for="seedsperbu111">Seeds/lb:</label><input type="number" id="seedsperbu111" style="width:50px;" readonly>
+								<td align='left'><input type="text" id="newcropname" style="width:80px; display:none" placeholder="Crop name">
+								<td align='right'><label class="fieldset2" for="testweight111">Test Weight:</label><td align='left'><input type="number" id="testweight111" style="width:50px;" readonly>
+								<td align='right'><label class="fieldset2" for="seedsperbu111">Seeds/lb:</label><td align='left'><input type="number" id="seedsperbu111" style="width:50px;" readonly>
 								</td>
 							</tr>
 		<tr>
-			<td><label class="fieldset2" for="totalacres">Area Harvested:</label><input type="number" id="totalacres" min="1" max="50000" style="width:80px; text-float:right;" value="1000" required>ac
-			<td><label class="fieldset2" for="laborprice">Labor Rate:</label><input type="number" span="any" id="laborprice" min="1" max="50" style="width:80px; text-float:right;" value="15" required>$/hr
+			<td colspan='2' align='right'><label class="fieldset2" for="totalacres">Area Harvested:</label><td align='left'><input type="number" id="totalacres" min="1" max="50000" style="width:80px; text-float:right;" value="1000" required><td align='left'>ac
+			<td colspan='2' align='right'><label class="fieldset2" for="laborprice">Labor Rate:</label><td align='left'><input type="number" span="any" id="laborprice" min="1" max="50" style="width:80px; text-float:right;" value="15" required><td align='left'>$/hr
 		</tr>
 		<tr>
-			<td><label class="fieldset2" for="bpaaverage">Yield:</label><input type="number" id="bpaaverage" min="0" max="500" style="width:80px; text-float:right;" value="250" required>bu/ac
-			<td><label class="fieldset2" for="fuelprice">Fuel Cost:</label><input type="number" id="fuelprice" min="0" max="10" span="any" style="width:80px; text-float:right;" value="3" required>$/gal
+			<td colspan='2' align='right'><label class="fieldset2" for="bpaaverage">Yield:</label><td align='left'><input type="number" id="bpaaverage" min="0" max="500" style="width:80px; text-float:right;" value="250" required><td align='left'>bu/ac
+			<td colspan='2' align='right'><label class="fieldset2" for="fuelprice">Fuel Cost:</label><td align='left'><input type="number" id="fuelprice" min="0" max="10" span="any" style="width:80px; text-float:right;" value="3" required><td align='left'>$/gal
 		</tr>
 		<tr>
-			<td><label class="fieldset2" for="croprice">Crop Price:</label><input type="number" step="any" id="cropprice" min="0" max="20" style="width:80px; text-float:right;" value="4" required>$/bu
-			<td><label class="fieldset2" for="defprice">DEF Fluid Cost:</label><input type="number" step="any" id="defprice" min="0" max="10" style="width:80px; text-float:right;" value="3" required>$/gal
+			<td colspan='2' align='right'><label class="fieldset2" for="croprice">Crop Price:</label><td align='left'><input type="number" step="any" id="cropprice" min="0" max="20" style="width:80px; text-float:right;" value="4" required><td align='left'>$/bu
+			<td colspan='2' align='right'><label class="fieldset2" for="defprice">DEF Fluid Cost:</label><td align='left'><input type="number" step="any" id="defprice" min="0" max="10" style="width:80px; text-float:right;" value="3" required><td align='left'>$/gal
 		</tr>
 		<tr>
-			<td><label class="fieldset2" for="efficiency">Efficiency:</label><input type="number" id="efficiency" min="0" max="100" style="width:80px; text-float:right;" value="82.5"required >%
-			<td><label class="fieldset2" for="maintcost">Maintenance Costs:</label><input type="number" id="maintcost" min="0" max="1000" style="width:80px; text-float:right;" value="200" required >$/hr
+			<td colspan='2' align='right'><label class="fieldset2" for="efficiency">Efficiency:</label><td align='left'><input type="number" id="efficiency" min="0" max="100" style="width:80px; text-float:right;" value="82.5"required ><td align='left'>%
+			<td colspan='2' align='right'><label class="fieldset2" for="maintcost">Maintenance Costs:</label><td align='left'><input type="number" id="maintcost" min="0" max="1000" style="width:80px; text-float:right;" value="200" required ><td align='left'>$/hr
 		</tr>
 	</table>
-
 	</fieldset><br>
 
 
@@ -511,7 +514,9 @@
 
 						<!--totals-->
 						document.getElementById("td20").innerHTML = "$" + (document.getElementById("td10").value + +totfluid2 - +totfluid1 + +totalsavin).toFixed(2);
-						document.getElementById("td21").innerHTML = "$" + ((document.getElementById("td10").value + +totfluid2 - +totfluid1 + +totalsavin)/(document.getElementById("totalacres").value * document.getElementById("bpaaverage").value)).toFixed(2) + "/bu";
+						var savsperbush = ((document.getElementById("td10").value + +totfluid2 - +totfluid1 + +totalsavin)/(document.getElementById("totalacres").value * document.getElementById("bpaaverage").value)).toFixed(2);
+
+						document.getElementById("td21").innerHTML = "$" + savsperbush + "/bu";
 					}
 	</script>
 
@@ -581,7 +586,7 @@
 						<td colspan="3" id="td20" float="center"></td>
 					</tr>
 					<tr>
-						<td>Savings per bushel
+						<td>
 						<td colspan="3" id="td21" float="center"></td>
 					</tr>
 				</tfoot>

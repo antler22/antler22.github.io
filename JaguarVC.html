@@ -59,8 +59,12 @@
 	<fieldset class="part2">
 				<legend float="left"><b>2. Basic Information</b></legend>
 				<table>
+					<colgroup>
+						<col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%">
+						<col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%">
+					</colgroup>
 					<tr>
-						<td colspan="2"><label for="yieldest" class="fieldset2">Yield Calc Method:</label><select id="yieldest" size="1" style="width:180px">
+						<td colspan="4" align='right'><label for="yieldest" class="fieldset2">Yield Calc Method:</label><td colspan='4' align='left'><select id="yieldest" size="1" style="width:180px">
 							<option value="" disabled selected>Select</option>
 							<option value="fsa">FSA Yield Calculation</option>
 							<option value="uwm">University of Wisconsin - Madison</option>
@@ -83,24 +87,24 @@
 
 
 					<tr>
-							<td><label class="fieldset2" for="starchlevel">Starch:</label><input type="number" id="starchval" style="width:50px;" value="38">%
-							<td><label class="fieldset2" for="cropmoisture">Crop Moisture:</label><input type="number" id="cropmoisture" style="width:50px;" value="68">%
+							<td colspan='2' align='right'><label class="fieldset2" for="starchlevel">Starch:</label><td align='left'><input type="number" id="starchval" style="width:50px;" value="38">%<td align='left'>
+							<td colspan='2' align='right'><label class="fieldset2" for="cropmoisture">Crop Moisture:</label><td align='left'><input type="number" id="cropmoisture" style="width:50px;" value="68">%<td align='left'>
 					</tr>
 					<tr>
-						<td><label class="fieldset2" for="totalacres">Area Harvested:</label><input type="number" id="totalacres" min="1" max="50000" style="width:80px; text-float:right;" value="1800" required>ac
-						<td><label class="fieldset2" for="laborprice">Labor Rate:</label><input type="number" span="any" id="laborprice" min="1" max="50" style="width:80px; text-float:right;" value="15" required>$/hr
+						<td colspan='2' align='right'><label class="fieldset2" for="totalacres">Area Harvested:</label><td align='left'><input type="number" id="totalacres" min="1" max="50000" style="width:80px; text-float:right;" value="1800" required><td align='left'>ac
+						<td colspan='2' align='right'><label class="fieldset2" for="laborprice">Labor Rate:</label><td align='left'><input type="number" span="any" id="laborprice" min="1" max="50" style="width:80px; text-float:right;" value="15" required><td align='left'>$/hr
 					</tr>
 					<tr>
-						<td><label class="fieldset2" for="bpaaverage">Yield:</label><input type="number" id="bpaaverage" min="0" max="500" style="width:80px; text-float:right;" value="25" required>t/ac
-						<td><label class="fieldset2" for="fuelprice">Fuel Cost:</label><input type="number" id="fuelprice" min="0" max="10" span="any" style="width:80px; text-float:right;" value="3" required>$/gal
+						<td colspan='2' align='right'><label class="fieldset2" for="bpaaverage">Yield:</label><td align='left'><input type="number" id="bpaaverage" min="0" max="500" style="width:80px; text-float:right;" value="25" required><td align='left'>t/ac
+						<td colspan='2' align='right'><label class="fieldset2" for="fuelprice">Fuel Cost:</label><td align='left'><input type="number" id="fuelprice" min="0" max="10" span="any" style="width:80px; text-float:right;" value="3" required><td align='left'>$/gal
 					</tr>
 					<tr>
-						<td><label class="fieldset2" for="croprice">Crop Price:</label><input type="number" step="any" id="cropprice" min="0" max="20" style="width:80px; text-float:right;" value="4" required>$/bu
-						<td><label class="fieldset2" for="defprice">DEF Fluid Cost:</label><input type="number" step="any" id="defprice" min="0" max="10" style="width:80px; text-float:right;" value="3" required>$/gal
+						<td colspan='2' align='right'><label class="fieldset2" for="croprice">Crop Price:</label><td align='left'><input type="number" step="any" id="cropprice" min="0" max="20" style="width:80px; text-float:right;" value="4" required><td align='left'>$/bu
+						<td colspan='2' align='right'><label class="fieldset2" for="defprice">DEF Fluid Cost:</label><td align='left'><input type="number" step="any" id="defprice" min="0" max="10" style="width:80px; text-float:right;" value="3" required><td align='left'>$/gal
 					</tr>
 					<tr>
-						<td><label class="fieldset2" for="efficiency">Efficiency:</label><input type="number" id="efficiency" min="0" max="100" style="width:80px; text-float:right;" value="82.5"required >%
-						<td><label class="fieldset2" for="maintcost">Operating Cost:</label><input type="number" id="maintcost" min="0" max="1000" style="width:80px; text-float:right;" value="200" required >$/hr
+						<td colspan='2' align='right'><label class="fieldset2" for="efficiency">Efficiency:</label><td align='left'><input type="number" id="efficiency" min="0" max="100" style="width:80px; text-float:right;" value="82.5"required ><td align='left'>%
+						<td colspan='2' align='right'><label class="fieldset2" for="maintcost">Operating Cost:</label><td align='left'><input type="number" id="maintcost" min="0" max="1000" style="width:80px; text-float:right;" value="200" required ><td align='left'>$/hr
 					</tr>
 				</table>
 		</fieldset><br>

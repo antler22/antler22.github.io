@@ -59,14 +59,17 @@
 	<fieldset class="part2">
 			<legend><b>2. Basic Information</b></legend>
 					<table>
+						<colgroup>
+							<col width="25%"><col width="25%"><col width="25%"><col width="25%">
+						</colgroup>
 						<tr>
-							<td colspan="2"><label for="croptype">Choose Crop:</label><select id="croptype" size="1" style="width:180px">
+							<td  align='right'><label for="croptype">Choose Crop:</label><td align='left'><select id="croptype" size="1" style="width:180px">
 								<option value="" disabled selected>Select</option>
 								<option value="grass">Grass Hay</option>
 								<option value="alfalfa">Alfalfa Hay</option>
 								<option value="straw">Straw</option>
 								<option value="other">Other</option>
-								<input type="text" id="newcropname" style="width:150px; text-align:center; display:none;" placeholder="CROP NAME">
+								<td align='left' colspan="2"><input type="text" id="newcropname" style="width:150px; text-align:center; display:none;" placeholder="CROP NAME">
 						</tr>
 
 						<script>
@@ -81,20 +84,20 @@
 					</script>
 
 						<tr>
-							<td><label for="balelength">Bale length:</label><input type="number" id="balelength" min="0" max="20" style="width:50px; text-float:right;" value="8" required > ft
-							<td><label for="laborprice">Labor Rate:</label><input type="number" span="any" id="laborprice" min="1" max="50" style="width:50px; text-float:right;" value="15" required>$/hr
+							<td align='right'><label for="balelength">Bale length:</label><td align='left'><input type="number" id="balelength" min="0" max="20" style="width:50px; text-float:right;" value="8" required > ft
+							<td align='right'><label for="laborprice">Labor Rate:</label><td align='left'><input type="number" span="any" id="laborprice" min="1" max="50" style="width:50px; text-float:right;" value="15" required>$/hr
 						</tr>
 						<tr>
-							<td><label for="tonsyr">Annual Tonnage:</label><input type="number" id="totaltons" min="0" max="20" style="width:50px; text-float:right;" value="7500" required > tons
-							<td><label for="twineprice">Twine Price:</label><input type="number" id="twineprice" min="0" max="10" span="any" style="width:50px; text-float:right;" value="32" required>$/ball
+							<td align='right'><label for="tonsyr">Annual Tonnage:</label><td align='left'><input type="number" id="totaltons" min="0" max="20" style="width:50px; text-float:right;" value="7500" required > tons
+							<td align='right'><label for="twineprice">Twine Price:</label><td align='left'><input type="number" id="twineprice" min="0" max="10" span="any" style="width:50px; text-float:right;" value="32" required>$/ball
 						</tr>
 						<tr>
-							<td><label for="efficiency">Efficiency:</label><input type="number" id="efficiency" min="0" max="100"  style="width:50px; text-float:right;" value="85" required > %
-							<td><label for="twinperball">Twine/Ball:</label><input type="number" step="any" id="twineperball" min="0" max="10" style="width:50px; text-float:right;" value="3700" required>ft/ball
+							<td align='right'><label for="efficiency">Efficiency:</label><td align='left'><input type="number" id="efficiency" min="0" max="100"  style="width:50px; text-float:right;" value="85" required > %
+							<td align='right'><label for="twinperball">Twine/Ball:</label><td align='left'><input type="number" step="any" id="twineperball" min="0" max="10" style="width:50px; text-float:right;" value="3700" required>ft/ball
 						</tr>
 						<tr>
-							<td><label for="tractorcost">Tractor costs:</label><input type="number" id="tractorcost" style="width:50px; text-float:right;" value="50">$/hr
-							<td><label for="operatingcost">Operating Cost:</label><input type="number" id="operatingcost" min="0" max="20" style="width:50px; text-float:right;" value="1" required >$/bale
+							<td align='right'><label for="tractorcost">Tractor costs:</label><td align='left'><input type="number" id="tractorcost" style="width:50px; text-float:right;" value="50">$/hr
+							<td align='right'><label for="operatingcost">Operating Cost:</label><td align='left'><input type="number" id="operatingcost" min="0" max="20" style="width:50px; text-float:right;" value="1" required >$/bale
 						</tr>
 						</table>
 		</fieldset><br>

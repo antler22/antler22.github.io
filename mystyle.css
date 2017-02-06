@@ -40,6 +40,8 @@
 		border-collapse: collapse;
 		border-width: 0.1em;
     empty-cells: show;
+    margin-left: auto;
+    margin-right: auto;
 		}
     fieldset {
       border:1px solid;
@@ -67,13 +69,6 @@
   label.fieldset1 {
     display: inline-block;
     width: 4em;
-    margin-right:0.2em;
-    text-align:right;
-    white-space: nowrap;
-  }
-  label.fieldset2 {
-    display: inline-block;
-    width: 8em;
     margin-right:0.2em;
     text-align:right;
     white-space: nowrap;
