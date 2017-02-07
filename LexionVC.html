@@ -135,8 +135,8 @@
 							<option value="other">Other</option>
 						</select>
 								<td align='left'><input type="text" id="newcropname" style="width:80px; display:none" placeholder="Crop name">
-								<td align='right'><label class="fieldset2" for="testweight111">Test Weight:</label><td align='left'><input type="number" id="testweight111" style="width:50px;" onchange='dothemath();' readonly>
-								<td align='right'><label class="fieldset2" for="seedsperbu111">Seeds/lb:</label><td align='left'><input type="number" id="seedsperbu111" style="width:50px;" onchange='dothemath();' readonly>
+								<td align='right'><label class="fieldset2" for="testweight111">Test Weight:</label><td align='left'><input type="number" id="testweight111" style="width:50px;" onchange='dothemath();' readonly>lb/bu
+								<td align='right'><label class="fieldset2" for="seedsperbu111" id='test1234' style='display:none'>Seeds/lb:</label><td align='left'><input type="number" id="seedsperbu111" style="width:50px; display:none;" onchange='dothemath();' readonly>
 								</td>
 							</tr>
 		<tr>
@@ -215,10 +215,14 @@
 							document.getElementById("testweight111").readOnly = false;
 							document.getElementById("seedsperbu111").readOnly = false;
 							document.getElementById("newcropname").style.display = "inline-block";
+							document.getElementById("seedsperbu111").style.display = "inline-block";
+							document.getElementById("test1234").style.display = "inline-block";  //hide label & input both
 						} else {
 							document.getElementById("testweight111").readOnly = true;
 							document.getElementById("seedsperbu111").readOnly = true;
 							document.getElementById("newcropname").style.display = "none";
+							document.getElementById("seedsperbu111").style.display = "none";
+							document.getElementById("test1234").style.display = "none";  //hide label as well as input
 						}
 
 			}
@@ -235,9 +239,9 @@
 				<col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%">
 			</colgroup>
 				<tr>
-					<td></td>
-						<td float="center">
-							<select name="LEXION" size="1" id="lexiontype" style="width:120px; text-float:center;" onchange="changecombine1(this);dothemath();" required>
+					<td>
+						<td colspan='2'>
+							<select name="LEXION" size="1" id="lexiontype" style="width:150px; text-align:center;" onchange="changecombine1(this);dothemath();" required>
 								<option value="" disabled selected>Select</option>
 								<option value="67">LEXION 780TT</option>
 								<option value="67">LEXION 780</option>
@@ -274,7 +278,7 @@
 								<option value="56">LEXION 460</option>
 								<option value="56">LEXION 450</option>
 								</select>
-								</td>
+
 <script>
 	function changecombine1 (sel) {
 		document.getElementById("td0").innerHTML = sel.options[sel.selectedIndex].text;
@@ -285,8 +289,8 @@
 </script>
 
 
-				<td colspan = '2' float="center"> VS </td>
-				<td float="center"> <select name="meal" id="meal" style="width:100px;" onChange="changebrand(this.value);dothemath();" required>
+				 <td> VS <td colspan='2'>
+				 <select name="meal" id="meal" style="width:100px;" onChange="changebrand(this.value);dothemath();" required>
 								<option value="" disabled selected>Select</option>
 								<option value="Deere">John Deere</option>
 								<option value="CaseIH">Case IH</option>
@@ -296,7 +300,7 @@
 								<option value="Challenger">Challenger</option>
 								<option value="Versatile">Versatile</option>
 							</select>
-							<td><select name="category" id="modelnumber" style="width:100px;" onChange="changecombine2(this);dothemath();">
+							<select name="category" id="modelnumber" style="width:110px;" onChange="changecombine2(this);dothemath();">
 								<option value="" disabled selected>Select</option>
 							</select>
 
