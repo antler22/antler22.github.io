@@ -21,8 +21,7 @@
 		<img src="logo-2x.png" height="64" width="368" float="left">
 		<b><h1>Value Calculator  |  LEXION</b></h1>
 
-
-<a href="index.html"><button>Go Back</button></a>
+<a href="index.html" class="no-print"><button>Go Back</button></a>
 </head>
 
 
@@ -36,7 +35,7 @@
 
 
 	<!--farm info-->
-	<br><fieldset class="part1">
+	<fieldset class="part1">
 		<legend><b>1. Farm Information</b></legend>
 			<label for="farmname" class="fieldset1">Name:</label><input type="text" id="farmname" placeholder="First, Last" autofocus required></input>
 			<label for="farmlocation" class="fieldset1">Location:</label><input type="text" id="farmlocation"  onchange="calculate()" placeholder="City, State/Province" required></input>
@@ -627,16 +626,16 @@
 						<td colspan="3" id="td21" float="center"></td>
 					</tr>
 				</tfoot>
-				</table><br>
-		</fieldset><br>
+				</table>
+		</fieldset>
 
-		<textarea rows="4" cols="50" placeholder="Insert comments here"></textarea> <label style="width:50px;" style="vertical-align: text-top;">Email:</label><input type="email">
-		&nbsp &nbsp <input type="button" value="Send" style="width:170px; height:70px; font-weight:bold; vertical-align: top;"">
+		<textarea rows="2" cols="50" placeholder="Insert comments here"></textarea> <label style="width:50px;" style="vertical-align: text-top;">Email:</label><input type="email">
+		&nbsp &nbsp <input type="button" value="Send" style="width:100px; height:30px; font-weight:bold; vertical-align: bottom;">
 
 
 </form>
 
-<p id="demo"></p>
+<p id="demo" class="no-print"></p>
 
 <script>
 document.getElementById("demo").innerHTML = new Date();

@@ -68,8 +68,8 @@
 		}
   label.fieldset1 {
     display: inline-block;
-    width: 4em;
-    margin-right:0.2em;
+    width: 3.8em;
+    margin-right:0.1em;
     text-align:right;
     white-space: nowrap;
   }
@@ -101,3 +101,16 @@
     max-width: 800px;
     margin: auto;
   }
+  @media print {
+    html { width:8.5in; }
+    body { font: 9pt/1.5 helvetica, sans-serif; }
+    .no-print, .no-print *
+   {
+       display: none !important;
+   }
+  }
+  @media screen and (max-width:8.5in) { /* resize your window until the event is triggered */
+    html { width:8.5in; }
+    body { font: 9pt/1.5 helvetica, sans-serif; } /* Roughly 12px font */
+ ...
+}
