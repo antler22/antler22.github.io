@@ -153,13 +153,13 @@
 							<col width="25%"><col width="25%"><col width="25%"><col width="25%">
 						</colgroup>
 						<tr>
-							<td  align='right'><label for="croptype">Choose Crop:</label><td align='left'><select id="croptype" size="1" style="width:180px">
+							<td  align='right'><label for="croptype">Choose Crop:</label><td align='left'><select id="croptype" size="1" style="width:180px" onclick='dothemath();'>
 								<option value="" disabled selected>Select</option>
 								<option value="grass">Grass Hay</option>
 								<option value="alfalfa">Alfalfa Hay</option>
 								<option value="straw">Straw</option>
 								<option value="other">Other</option>
-								<td align='left' colspan="2"><input type="text" id="newcropname" style="width:150px; text-align:center; display:none;" placeholder="CROP NAME">
+								<td align='left' colspan="2"><input type="text" id="newcropname" style="width:150px; text-align:center; display:none;" onchange='dothemath();' placeholder="CROP NAME">
 						</tr>
 
 						<script>
@@ -174,20 +174,20 @@
 					</script>
 
 						<tr>
-							<td align='right'><label for="balelength">Bale length:</label><td align='left'><input type="number" id="balelength" min="0" max="20" style="width:50px; text-float:right;" value="8" required > ft
-							<td align='right'><label for="laborprice">Labor Rate:</label><td align='left'><input type="number" span="any" id="laborprice" min="1" max="50" style="width:50px; text-float:right;" value="15" required>$/hr
+							<td align='right'><label for="balelength">Bale length:</label><td align='left'><input type="number" id="balelength" min="0" max="20" style="width:50px; text-float:right;" onchange='dothemath();' value="8" required > ft
+							<td align='right'><label for="laborprice">Labor Rate:</label><td align='left'><input type="number" span="any" id="laborprice" min="1" max="50" style="width:50px; text-float:right;" onchange='dothemath();' value="15" required>$/hr
 						</tr>
 						<tr>
-							<td align='right'><label for="tonsyr">Annual Tonnage:</label><td align='left'><input type="number" id="totaltons" min="0" max="20" style="width:50px; text-float:right;" value="7500" required > tons
-							<td align='right'><label for="twineprice">Twine Price:</label><td align='left'><input type="number" id="twineprice" min="0" max="10" span="any" style="width:50px; text-float:right;" value="32" required>$/ball
+							<td align='right'><label for="tonsyr">Annual Tonnage:</label><td align='left'><input type="number" id="totaltons" min="0" max="20" style="width:50px; text-float:right;" onchange='dothemath();' value="7500" required > tons
+							<td align='right'><label for="twineprice">Twine Price:</label><td align='left'><input type="number" id="twineprice" min="0" max="10" span="any" style="width:50px; text-float:right;" onchange='dothemath();' value="32" required>$/ball
 						</tr>
 						<tr>
-							<td align='right'><label for="efficiency">Efficiency:</label><td align='left'><input type="number" id="efficiency" min="0" max="100"  style="width:50px; text-float:right;" value="85" required > %
-							<td align='right'><label for="twinperball">Twine/Ball:</label><td align='left'><input type="number" step="any" id="twineperball" min="0" max="10" style="width:50px; text-float:right;" value="3700" required>ft/ball
+							<td align='right'><label for="efficiency">Efficiency:</label><td align='left'><input type="number" id="efficiency" min="0" max="100"  style="width:50px; text-float:right;" onchange='dothemath();' value="85" required > %
+							<td align='right'><label for="twinperball">Twine/Ball:</label><td align='left'><input type="number" step="any" id="twineperball" min="0" max="10" style="width:50px; text-float:right;" onchange='dothemath();' value="3700" required>ft/ball
 						</tr>
 						<tr>
-							<td align='right'><label for="tractorcost">Tractor costs:</label><td align='left'><input type="number" id="tractorcost" style="width:50px; text-float:right;" value="50">$/hr
-							<td align='right'><label for="operatingcost">Operating Cost:</label><td align='left'><input type="number" id="operatingcost" min="0" max="20" style="width:50px; text-float:right;" value="1" required >$/bale
+							<td align='right'><label for="tractorcost">Tractor costs:</label><td align='left'><input type="number" id="tractorcost" style="width:50px; text-float:right;" onchange='dothemath();' value="50">$/hr
+							<td align='right'><label for="operatingcost">Operating Cost:</label><td align='left'><input type="number" id="operatingcost" min="0" max="20" style="width:50px; text-float:right;" onchange='dothemath();' value="1" required >$/bale
 						</tr>
 						</table>
 		</fieldset><br>
@@ -202,7 +202,7 @@
 					<tr>
 						<td>
 						<td>
-						<td><select name="tractorpick" size="1" id="tractorpick1" style="width:200px; text-float:center;" onChange="tractorpicker1(this);" required>
+						<td><select name="tractorpick" size="1" id="tractorpick1" style="width:200px; text-float:center;" onclick='dothemath();' onChange="tractorpicker1(this);" required>
 									<option value="" disabled selected>Select</option>
 									<option value="34">QUADRANT 3300</option>
 									<option value="34">QUADRANT 3300 RC</option>
@@ -230,7 +230,7 @@
 							}
 						</script>
 
-						<td><select name="meal" style="width:200px;" id="tractorpick2" onchange="tractorpicker2(this);" required>
+						<td><select name="meal" style="width:200px;" id="tractorpick2" onclick='dothemath()' onchange="tractorpicker2(this);" required>
 										<option value="" disabled selected>Select</option>
 										<option value="34">Case LB434</option>
 										<option value="34">Case LB434 RC</option>
@@ -256,13 +256,13 @@
 
 									<tr>
 										<td><td><label for="groundspeed1">Bale time</label>
-										<td colspan=2><input type="number" id="sperbale1" style="width:50px;" value="45">s/bale &nbsp &nbsp
-										<td><input type="number" id="sperbale2" style="width:50px;" value="90">s/bale &nbsp &nbsp
+										<td colspan=2><input type="number" id="sperbale1" style="width:50px;" onchange='dothemath();' value="45">s/bale &nbsp &nbsp
+										<td><input type="number" id="sperbale2" style="width:50px;" onchange='dothemath();' value="90">s/bale &nbsp &nbsp
 									</tr>
 									<tr>
 										<td><td><label for="baledensity">Bale Density:</label>
-										<td colspan=2><input type="number" id="baledensity1" style="width:50px;" value="1440">lbs/bale
-										<td><input type="number" id="baledensity2" style="width:50px;" value="1300">lbs/bale
+										<td colspan=2><input type="number" id="baledensity1" style="width:50px;" onchange='dothemath();' value="1440">lbs/bale
+										<td><input type="number" id="baledensity2" style="width:50px;" onchange='dothemath();' value="1300">lbs/bale
 									</tr>
 								</table>
 							</fieldset><br>
@@ -318,9 +318,6 @@
 
 
 							</script>
-
-<div align="center"><input type="button" style="width:500px; font-size:24px; background-color:#999999; border-color: #b3c618;" value="View Results" onclick="dothemath();"></div><br>
-
 
 							<fieldset class="part4">
 								<legend><b>4. Results</b></legend>
