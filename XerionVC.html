@@ -22,6 +22,20 @@
 		  <li><a href="index.html">Value Calculator</a></li>
 		  <li>XERION</li>
 		</ul>
+		<script>
+				function addCommas(nStr)
+						{
+						nStr += '';
+						var x = nStr.split('.');
+						var x1 = x[0];
+						var x2 = x.length > 1 ? '.' + x[1] : '';
+						var rgx = /(\d+)(\d{3})/;
+						while (rgx.test(x1)) {
+							x1 = x1.replace(rgx, '$1' + ',' + '$2');
+						}
+						return x1 + x2;
+						}
+		</script>
 </head>
 
 <body>
@@ -87,7 +101,7 @@
 
 	<fieldset class="part3">
 			<legend><b>3. Performance Comparison</b></legend>
-			<table padding="5" width="800" id="myTable">
+			<table border='1'>
 				<colgroup>
 					<col width="20%"><col width="20%"><col width="20%"><col width="20%"><col width="20%">
 				</colgroup>
@@ -188,50 +202,50 @@
 
 
 				<div id="tr1" style="display:none;">
-					<table width="800" border="0" style="text-align:left;">
+					<table style="text-align:left;">
 						<colgroup>
 							<col width="25%"><col width="25%"><col width="25%"><col width="25%">
 						</colgroup>
 						<tr>
-								<td><td><td><input type="number" id="stacres" style="width:70px; text-float:right;" onchange='dothemath();' value="2000" required> acres
-								<td>Implement Width <input type="number" id="stwidth" style="width:50px; text-float:right;" onchange='dothemath();' value="30" required> ft
+								<td align='right'>Acres:<td><input type="number" id="stacres" style="width:70px; text-float:right;" onchange='dothemath();' value="2000" required>
+								<td align='right'>Implement Width:<td><input type="number" id="stwidth" style="width:50px; text-float:right;" onchange='dothemath();' value="30" required> ft
 						</tr>
 						<tr>
-								<td><td><td><input type="number" id="stspeed1" style="width:70px; text-float:right;" onchange='dothemath();' value="3" required> mph
-								<td><input type="number" id="stspeed2" style="width:70px; text-float:right;" onchange='dothemath();' value="2.8" required> mph
+								<td><td><input type="number" id="stspeed1" style="width:70px; text-float:right;" onchange='dothemath();' value="3" required> mph
+								<td><td><input type="number" id="stspeed2" style="width:70px; text-float:right;" onchange='dothemath();' value="2.8" required> mph
 					</tr>
 					<tr>
-					<td><td><td><input type="number" id="stfuel1" style="width:70px; text-float:right;" onchange='dothemath();' value="1" required> gal/hr
-					<td><input type="number" id="stfuel2" style="width:70px; text-float:right;" onchange='dothemath();' value="2" required> gal/hr
+						<td><td><input type="number" id="stfuel1" style="width:70px; text-float:right;" onchange='dothemath();' value="1" required> gal/hr
+						<td><td><input type="number" id="stfuel2" style="width:70px; text-float:right;" onchange='dothemath();' value="2" required> gal/hr
 					</tr>
 					<tr>
-					<td><td><td><input type="number" id="stdef1" style="width:70px; text-float:right;" onchange='dothemath();' value="0.5"required> gal/hr
-					<td><input type="number" id="stdef2" style="width:70px; text-float:right;" onchange='dothemath();' value="0.7" required> gal/hr
+						<td><td><input type="number" id="stdef1" style="width:70px; text-float:right;" onchange='dothemath();' value="0.5"required> gal/hr
+						<td><td><input type="number" id="stdef2" style="width:70px; text-float:right;" onchange='dothemath();' value="0.7" required> gal/hr
 				</tr>
 			</table>
 				</div>
 
 				<br><input type="checkbox" id="ftcheck" onclick="showhide()">Fall Tillage<br>
 				<div id="tr2" style="display:none;">
-				<table width="800" border="0" style="text-align:left;">
+				<table border='1' style="text-align:left;">
 					<colgroup>
 						<col width="25%"><col width="25%"><col width="25%"><col width="25%">
 					</colgroup>
 					<tr>
-							<td><td><td><input type="number" id="ftacres" style="width:70px; text-float:right;" onchange='dothemath();' value="1000" required> acres
-							<td>Implement Width <input type="number" id="ftwidth" style="width:50px; text-float:right;" onchange='dothemath();' value="32" required> ft
+							<td align='right'>Acres:<td><input type="number" id="ftacres" style="width:70px; text-float:right;" onchange='dothemath();' value="1000" required>
+							<td align='right'>Implement Width<td><input type="number" id="ftwidth" style="width:50px; text-float:right;" onchange='dothemath();' value="32" required> ft
 					</tr>
 					<tr>
-						<td><td><td><input type="number" id="ftspeed1" style="width:70px; text-float:right;" onchange='dothemath();' value="1.3" required> mph
-							<td><input type="number" id="ftspeed2" style="width:70px; text-float:right;" onchange='dothemath();' value="1.0" required> mph
+							<td><td><input type="number" id="ftspeed1" style="width:70px; text-float:right;" onchange='dothemath();' value="1.3" required> mph
+							<td><td><input type="number" id="ftspeed2" style="width:70px; text-float:right;" onchange='dothemath();' value="1.0" required> mph
 					</tr>
 				<tr>
-					<td><td><td><input type="number" id="ftfuel1" style="width:70px; text-float:right;" onchange='dothemath();' value="1" required> gal/hr
-						<td><input type="number" id="ftfuel2" style="width:70px; text-float:right;" onchange='dothemath();' value="1.1" required> gal/hr
+						<td><td><input type="number" id="ftfuel1" style="width:70px; text-float:right;" onchange='dothemath();' value="1" required> gal/hr
+						<td><td><input type="number" id="ftfuel2" style="width:70px; text-float:right;" onchange='dothemath();' value="1.1" required> gal/hr
 				</tr>
 				<tr>
-					<td><td><td><input type="number" id="ftdef1" style="width:70px; text-float:right;" onchange='dothemath();' value="0.5" required> gal/hr
-						<td><input type="number" id="ftdef2" style="width:70px; text-float:right;" onchange='dothemath();' value="0.7" required> gal/hr
+					<td><td><input type="number" id="ftdef1" style="width:70px; text-float:right;" onchange='dothemath();' value="0.5" required> gal/hr
+						<td><td><input type="number" id="ftdef2" style="width:70px; text-float:right;" onchange='dothemath();' value="0.7" required> gal/hr
 				</tr>
 			</table>
 			</div>

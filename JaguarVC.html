@@ -5,7 +5,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Home | CLAAS | Value Calculator</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script src="jquerycodearea.js"></script>
 		<link rel="stylesheet" type="text/css" href="mystyle.css">
 		<link href="https://www.fontify.me/wf/18e2a1337607f8734ef443d978cb015f" rel="stylesheet" type="text/css">
 
@@ -21,7 +20,23 @@
 		  <li><a href="index.html">Value Calculator</a></li>
 		  <li>JAGUAR</li>
 		</ul>
+<script>
+		function addCommas(nStr)
+				{
+				nStr += '';
+				var x = nStr.split('.');
+				var x1 = x[0];
+				var x2 = x.length > 1 ? '.' + x[1] : '';
+				var rgx = /(\d+)(\d{3})/;
+				while (rgx.test(x1)) {
+					x1 = x1.replace(rgx, '$1' + ',' + '$2');
+				}
+				return x1 + x2;
+				}
+</script>
 </head>
+
+
 
 <body>
 	<hr size="3" noshade>
@@ -501,11 +516,14 @@ function dothemath() {
 	document.getElementById("td15").innerHTML = badstarch2.toFixed(1) + "%";
 	document.getElementById("td16").innerHTML = (badstarch2 - badstarch1).toFixed(1) + "%";
 
-	var unproc1	=	(+totbushels * +document.getElementById("fixedwholec1").value / (+document.getElementById("fixedsample1").value * (+document.getElementById("starchval").value / 100)) *.9) + (+totbushels * +document.getElementById("fixedhalfc1").value / (+document.getElementById("fixedsample1").value * (+document.getElementById("starchval").value / 100)) *.08);
-	var unproc2	=	(+totbushels * +document.getElementById("fixedwholec2").value / (+document.getElementById("fixedsample2").value * (+document.getElementById("starchval").value / 100)) *.9) + (+totbushels * +document.getElementById("fixedhalfc2").value / (+document.getElementById("fixedsample2").value * (+document.getElementById("starchval").value / 100)) *.08);
-	document.getElementById("td17").innerHTML = unproc1.toFixed(1) + " bushels";
-	document.getElementById("td18").innerHTML = unproc2.toFixed(1) + " bushels";
-	document.getElementById("td19").innerHTML = (unproc2 - unproc1).toFixed(1) + " bushels";
+	var unproc1	=	((totbushels * document.getElementById("fixedwholec1").value / (document.getElementById("fixedsample1").value * (document.getElementById("starchval").value / 100)) *.9) + (totbushels * document.getElementById("fixedhalfc1").value / (document.getElementById("fixedsample1").value * (document.getElementById("starchval").value / 100)) *.08)).toFixed(1);
+	var unproc2	=	((+totbushels * +document.getElementById("fixedwholec2").value / (+document.getElementById("fixedsample2").value * (+document.getElementById("starchval").value / 100)) *.9) + (+totbushels * +document.getElementById("fixedhalfc2").value / (+document.getElementById("fixedsample2").value * (+document.getElementById("starchval").value / 100)) *.08)).toFixed(1);
+	var unproc12 = (unproc2-unproc1).toFixed(1);
+	document.getElementById("td17").innerHTML = addCommas(unproc1) + " bushels";
+	document.getElementById("td18").innerHTML = addCommas(unproc2) + " bushels";
+	document.getElementById("td19").innerHTML = addCommas(unproc12) + " bushels";
+
+
 
 	} else if (document.getElementById("scalehere").checked) {
 			var load1 = ((+document.getElementById("load1full1").value - +document.getElementById("load1empty1").value)/2000) / (+document.getElementById("load1time1").value / 3600);
@@ -537,18 +555,20 @@ function dothemath() {
 			document.getElementById("td15").innerHTML = badstarch2.toFixed(1) + "%";
 			document.getElementById("td16").innerHTML = (badstarch2 - badstarch1).toFixed(1) + "%";
 
-			var unproc1	=	(+totbushels * +wholec1 / (+samp1 * (+document.getElementById("starchval").value / 100)) *.9) + (+totbushels * +halfc1 / (+samp1 * (+document.getElementById("starchval").value / 100)) *.08);
-			var unproc2	=	(+totbushels * +wholec2 / (+samp2 * (+document.getElementById("starchval").value / 100)) *.9) + (+totbushels * +halfc2 / (+samp2 * (+document.getElementById("starchval").value / 100)) *.08);
-			document.getElementById("td17").innerHTML = unproc1.toFixed(1) + " bushels";
-			document.getElementById("td18").innerHTML = unproc2.toFixed(1) + " bushels";
-			document.getElementById("td19").innerHTML = (unproc2 - unproc1).toFixed(1) + " bushels";
+			var unproc1	=	((+totbushels * +wholec1 / (+samp1 * (+document.getElementById("starchval").value / 100)) *.9) + (+totbushels * +halfc1 / (+samp1 * (+document.getElementById("starchval").value / 100)) *.08)).toFixed(1);
+			var unproc2	=	((+totbushels * +wholec2 / (+samp2 * (+document.getElementById("starchval").value / 100)) *.9) + (+totbushels * +halfc2 / (+samp2 * (+document.getElementById("starchval").value / 100)) *.08)).toFixed(1);
+			var unproc12 = (unproc2-unproc1).toFixed(1);
+			document.getElementById("td17").innerHTML = addCommas(unproc1) + " bushels";
+			document.getElementById("td18").innerHTML = addCommas(unproc2) + " bushels";
+			document.getElementById("td19").innerHTML = addCommas(unproc12) + " bushels";
 		}
 
-		var loss1 = (unproc1 * document.getElementById("cropprice").value);
-		var loss2 = (unproc2 * document.getElementById("cropprice").value);
-		document.getElementById("td22").innerHTML = "$" + loss1.toFixed(2);
-		document.getElementById("td23").innerHTML = "$" + loss2.toFixed(2);
-		document.getElementById("td24").innerHTML = "$" + (loss2-loss1).toFixed(2);
+		var loss1 = (unproc1 * document.getElementById("cropprice").value).toFixed(2);
+		var loss2 = (unproc2 * document.getElementById("cropprice").value).toFixed(2);
+		var loss12 = (loss2-loss1).toFixed(2);
+		document.getElementById("td22").innerHTML = "$" + addCommas(loss1);
+		document.getElementById("td23").innerHTML = "$" + addCommas(loss2);
+		document.getElementById("td24").innerHTML = "$" + addCommas(loss12);
 
 	<!--hours needed-->
 	var tothrs1 = document.getElementById("totalacres").value * document.getElementById("bpaaverage").value / (prod1 * +efficiency1);
@@ -558,22 +578,26 @@ function dothemath() {
 	document.getElementById("td7").innerHTML = (tothrs2-tothrs1).toFixed(2) + " hrs";
 
 	<!--operating cost-->
-	var opcost1 = ( +document.getElementById("maintcost").value) * tothrs1;
-	var opcost2 = (+document.getElementById("maintcost").value) * tothrs2;
-	document.getElementById("td8").innerHTML = "$" + opcost1.toFixed(2);
-	document.getElementById("td9").innerHTML = "$" + opcost2.toFixed(2);
-	document.getElementById("td10").innerHTML = "$" + (opcost2-opcost1).toFixed(2);
+	var opcost1 = (( +document.getElementById("maintcost").value) * tothrs1).toFixed(2);
+	var opcost2 = ((+document.getElementById("maintcost").value) * tothrs2).toFixed(2);
+	var opcost12 = (opcost2-opcost1).toFixed(2);
+	document.getElementById("td8").innerHTML = "$" + addCommas(opcost1);
+	document.getElementById("td9").innerHTML = "$" + addCommas(opcost2);
+	document.getElementById("td10").innerHTML = "$" + addCommas(opcost12);
 
 	<!--Fuel + def-->
-	var fuelcost1 = ((document.getElementById("fuelprice").value * fuel1) + (document.getElementById("defprice").value * def1)) * tothrs1;
-	var fuelcost2 = ((document.getElementById("fuelprice").value * fuel2) + (document.getElementById("defprice").value * def2)) * tothrs2;
-	document.getElementById("td11").innerHTML = "$" + fuelcost1.toFixed(2);
-	document.getElementById("td12").innerHTML = "$" + fuelcost2.toFixed(2);
-	document.getElementById("td13").innerHTML = "$" + (fuelcost2-fuelcost1).toFixed(2);
+	var fuelcost1 = (((document.getElementById("fuelprice").value * fuel1)+(document.getElementById("defprice").value * def1)) * tothrs1).toFixed(2);
+	var fuelcost2 = (((document.getElementById("fuelprice").value * fuel2)+(document.getElementById("defprice").value * def2)) * tothrs2).toFixed(2);
+	var fuelcost12 = (fuelcost2-fuelcost1).toFixed(2);
+	document.getElementById("td11").innerHTML = "$" + addCommas(fuelcost1);
+	document.getElementById("td12").innerHTML = "$" + addCommas(fuelcost2);
+	document.getElementById("td13").innerHTML = "$" + addCommas(fuelcost12);
 
 	<!--Total Savings-->
-	document.getElementById("td20").innerHTML = "$" + (fuelcost2-fuelcost1 + opcost2-opcost1 + loss2-loss1).toFixed(2);
-	document.getElementById("td21").innerHTML = "$" + ((fuelcost2-fuelcost1 + opcost2-opcost1 + loss2-loss1)/document.getElementById("totalacres").value).toFixed(2) + " /ac";
+	var totalsavings = (+fuelcost12 + +opcost12 + +loss2 - +loss1).toFixed(2);
+	var savingsperacre = (totalsavings/document.getElementById("totalacres").value).toFixed(2);
+	document.getElementById("td20").innerHTML = "$" + addCommas(totalsavings);
+	document.getElementById("td21").innerHTML = "$" + addCommas(savingsperacre) + " /ac";
 }
 
 </script>
@@ -657,8 +681,8 @@ function dothemath() {
 				</fieldset><br>
 
 
-				<textarea rows="4" cols="50" placeholder="Insert comments here"></textarea> <label style="width:50px;" style="vertical-align: text-top;">Email:</label><input type="email">
-				&nbsp &nbsp <input type="button" value="Generate PDF & Send" style="width:170px; height:70px; font-weight:bold; vertical-align: top;" onclick="generatePDF()">
+				<textarea rows="2" cols="50" placeholder="Insert comments here"></textarea> <label style="width:50px;" style="vertical-align: text-top;">Email:</label><input type="email">
+				&nbsp &nbsp <input type="button" value="Send" style="width:100px; height:30px; font-weight:bold; vertical-align: bottom;">
 </form>
 
 				<p id="demo"></p>

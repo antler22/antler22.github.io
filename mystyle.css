@@ -38,8 +38,7 @@
 		border-collapse: collapse;
 		border-width: 0.1em;
     empty-cells: show;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
 		}
     select {
       font-family: font72227;
