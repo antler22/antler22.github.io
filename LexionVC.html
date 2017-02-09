@@ -10,6 +10,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="lexjquery.js"></script>
 		<link rel="stylesheet" type="text/css" href="mystyle.css">
+		<link href="https://www.fontify.me/wf/18e2a1337607f8734ef443d978cb015f" rel="stylesheet" type="text/css">
 
 		<!--warning if browser does not work-->
 		<noscript>
@@ -18,10 +19,11 @@
 		<!--end to warning-->
 
 		<!--insert CLAAS logo, and heading text-->
-		<img src="logo-2x.png" height="64" width="368" float="left">
-		<b><h1>Value Calculator  |  LEXION</b></h1>
-
-<a href="index.html" class="no-print"><button>Go Back</button></a>
+		<img src="logo-2x.png" height="64" width="368" float="left"><br>
+		<ul class="breadcrumb">
+		  <li><a href="index.html">Value Calculator</a></li>
+		  <li>LEXION</li>
+		</ul>
 </head>
 
 
@@ -35,13 +37,12 @@
 
 
 	<!--farm info-->
-	<fieldset class="part1">
+	<br><fieldset class="part1">
 		<legend><b>1. Farm Information</b></legend>
 			<label for="farmname" class="fieldset1">Name:</label><input type="text" id="farmname" placeholder="First, Last" autofocus required></input>
 			<label for="farmlocation" class="fieldset1">Location:</label><input type="text" id="farmlocation"  onchange="calculate()" placeholder="City, State/Province" required></input>
-			<label for="serialno" class="fieldset1">Serial:</label><input type="text" id="serial" required></input>
-			<br><br>
-			<label for="farmname" class="fieldset1">Dealer:</label><select name="dealername" id="dealername" required>
+			<label for="serialno" class="fieldset1">Serial:</label><input type="text" id="serial" style='width:80px;' required></input>
+			<label for="farmname" class="fieldset1">Dealer:</label><select name="dealername" id="dealername" style='width:190px;' required>
 							<option disabled selected>Select</option>
 							<option>Ag Authority</option>
 							<option>AgWest</option>
@@ -627,7 +628,7 @@
 					</tr>
 				</tfoot>
 				</table>
-		</fieldset>
+		</fieldset><br>
 
 		<textarea rows="2" cols="50" placeholder="Insert comments here"></textarea> <label style="width:50px;" style="vertical-align: text-top;">Email:</label><input type="email">
 		&nbsp &nbsp <input type="button" value="Send" style="width:100px; height:30px; font-weight:bold; vertical-align: bottom;">

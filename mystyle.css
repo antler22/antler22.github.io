@@ -4,22 +4,22 @@
   img:hover.homepage {
   opacity: 1.0;
   }
-  a:link.homepage {
-  color: #B3C618;
+  a:link {
+  color: black;
   background-color: transparent;
   text-decoration: none;
   }
-  a:visited.homepage {
-  color: #B3C618;
+  a:visited {
+  color: black;
   background-color: transparent;
   text-decoration: none;
   }
-  a:hover.homepage {
+  a:hover {
   opacity: 1.0;
-  color: #FE0001;
+  color: #B3c618;
   background-color: transparent;
   }
-  a:active.homepage {
+  a:active {
   color: blue;
   background-color: transparent;
   }
@@ -27,10 +27,10 @@
     font-size: 1.6em;
   }
   body {
-		font-family: "Helvetica Neue";
-		font-size: 1em;
-    max-width: 800px;
+		font-size: 14px;
+    max-width: 8.5in;
     margin: auto;
+    font-family: font72227;
 	}
   thead, tfoot {
     font-weight: bold;
@@ -43,6 +43,9 @@
     margin-left: auto;
     margin-right: auto;
 		}
+    select {
+      font-family: font72227;
+    }
     fieldset {
       border:1px solid;
       background-color: #d8d7d7;
@@ -68,8 +71,8 @@
 		}
   label.fieldset1 {
     display: inline-block;
-    width: 3.8em;
-    margin-right:0.1em;
+    width: 4em;
+    margin-right:0.2em;
     text-align:right;
     white-space: nowrap;
   }
@@ -85,6 +88,7 @@
       border-width: 1px;
 			text-align: center;
 			margin: auto;
+      font-family: font72227;
 		}
     input[type=number] {
       border-radius: 0.25em;
@@ -93,9 +97,7 @@
       border-width: 1px;
       text-align: right;
       margin: auto;
-    }
-    select {
-      border-radius: 0.25em;
+      font-family: font72227;
     }
   form.content {
     max-width: 800px;
@@ -103,7 +105,7 @@
   }
   @media print {
     html { width:8.5in; }
-    body { font: 9pt/1.5 helvetica, sans-serif; }
+    body { font: 9pt/1.5 font72227;, sans-serif; }
     .no-print, .no-print *
    {
        display: none !important;
@@ -111,6 +113,20 @@
   }
   @media screen and (max-width:8.5in) { /* resize your window until the event is triggered */
     html { width:8.5in; }
-    body { font: 9pt/1.5 helvetica, sans-serif; } /* Roughly 12px font */
- ...
+    body { font: 9pt/1.5 font72227, sans-serif; } /* Roughly 12px font */
+}
+
+ul.breadcrumb {
+    font-size: 14px;
+}
+ul.breadcrumb li {
+    display: inline;
+}
+ul.breadcrumb li+li:before {
+    color: black;
+    padding: 8px;
+    content: ">\00a0";
+}
+ul.breadcrumb li a:hover {
+    color: #b3c618;
 }
