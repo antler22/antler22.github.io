@@ -7,7 +7,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="jquerycodearea.js"></script>
 		<link rel="stylesheet" type="text/css" href="mystyle.css">
-
+		<link href="https://www.fontify.me/wf/18e2a1337607f8734ef443d978cb015f" rel="stylesheet" type="text/css">
 
 		<!--warning if browser does not work-->
 		<noscript>
@@ -16,11 +16,11 @@
 		<!--end to warning-->
 
 		<!--insert CLAAS logo, and heading text-->
-		<img src="logo-2x.png" height="64" width="368" float="left">
-		<b><h1>Value Calculator | Jaguar</b></h1>
-
-<a href="index.html"><button>Go Back</button></a>
-
+		<img src="logo-2x.png" height="48" width="276" float="left">
+		<ul class="breadcrumb">
+		  <li><a href="index.html">Value Calculator</a></li>
+		  <li>JAGUAR</li>
+		</ul>
 </head>
 
 <body>
@@ -30,11 +30,10 @@
 	<!--farm info-->
 	<br><fieldset class="part1">
 		<legend><b>1. Farm Information</b></legend>
-			<label for="farmname" class="fieldset1">Name:</label><input type="text" id="farmname" placeholder="First, Last" autofocus required></input>
-			<label for="farmlocation" class="fieldset1">Location:</label><input type="text" id="farmlocation"  onchange="calculate()" placeholder="City, State/Province" required></input>
-			<label for="serialno" class="fieldset1">Serial:</label><input type="text" id="serial" required></input>
-			<br><br>
-			<label for="farmname" class="fieldset1">Dealer:</label><select name="dealername" id="dealername" required>
+		<label for="farmname" class="fieldset1">Name:</label><input type="text" id="farmname" placeholder="First, Last" autofocus required></input>
+		<label for="farmlocation" class="fieldset1">Location:</label><input type="text" id="farmlocation"  onchange="calculate()" placeholder="City, State/Province" required></input>
+		<label for="serialno" class="fieldset1">Serial:</label><input type="text" id="serial" style='width:80px;' required></input>
+		<label for="farmname" class="fieldset1">Dealer:</label><select name="dealername" id="dealername" style='width:180px;' required>
 				<option value="" disabled selected>Select</option>
 				<option>Advanced Ag Tractor Sales and Service</option>
 				<option>Ag Authority, Inc.</option>
@@ -209,7 +208,7 @@
 						<tr>
 							<td colspan=2></td>
 								<td float="center" colspan=2>
-									<select size="1" id="tractorpick1" style="width:150px; text-float:center;" onchange='dothemath();' onChange="tractorpicker1(this);" required>
+									<select size="1" id="tractorpick1" style="width:150px; text-float:center;" onclick='dothemath();' onChange="tractorpicker1(this);" required>
 										<option value="" disabled selected>Select</option>
 										<option value="357">JAGUAR 830 (492)</option>
 										<option value="428">JAGUAR 850 (492)</option>
