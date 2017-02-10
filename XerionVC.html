@@ -101,7 +101,7 @@
 
 	<fieldset class="part3">
 			<legend><b>3. Performance Comparison</b></legend>
-			<table border='1'>
+			<table>
 				<colgroup>
 					<col width="20%"><col width="20%"><col width="20%"><col width="20%"><col width="20%">
 				</colgroup>
@@ -182,11 +182,6 @@
 									<option value="550">Versatile 550DT</option>
 									<option value="0">Other Manufacturer</option>
 								</select>
-
-
-
-
-
 				</tr>
 				<tr>
 						<td>Ownership Cost<td float="center"><input type="number" id="ownercost1" style="width:70px; text-float:right;" onchange='dothemath();' value="88"> $/hr
@@ -204,115 +199,129 @@
 				<div id="tr1" style="display:none;">
 					<table style="text-align:left;">
 						<colgroup>
-							<col width="25%"><col width="25%"><col width="25%"><col width="25%">
+							<col width="20%"><col width="20%"><col width="20%"><col width="20%"><col width="20%">
 						</colgroup>
 						<tr>
-								<td align='right'>Acres:<td><input type="number" id="stacres" style="width:70px; text-float:right;" onchange='dothemath();' value="2000" required>
-								<td align='right'>Implement Width:<td><input type="number" id="stwidth" style="width:50px; text-float:right;" onchange='dothemath();' value="30" required> ft
+								<td align='right' colspan='2'>Acres: <input type="number" id="stacres" style="width:70px; text-float:right;" onchange='dothemath();' value="2000" required>
+								<td align='right' colspan='2'>Implement Width: <input type="number" id="stwidth" style="width:50px; text-float:right;" onchange='dothemath();' value="30" required> ft
+								<td>
 						</tr>
 						<tr>
 								<td><td><input type="number" id="stspeed1" style="width:70px; text-float:right;" onchange='dothemath();' value="3" required> mph
 								<td><td><input type="number" id="stspeed2" style="width:70px; text-float:right;" onchange='dothemath();' value="2.8" required> mph
+								<td>
 					</tr>
 					<tr>
 						<td><td><input type="number" id="stfuel1" style="width:70px; text-float:right;" onchange='dothemath();' value="1" required> gal/hr
 						<td><td><input type="number" id="stfuel2" style="width:70px; text-float:right;" onchange='dothemath();' value="2" required> gal/hr
+						<td>
 					</tr>
 					<tr>
 						<td><td><input type="number" id="stdef1" style="width:70px; text-float:right;" onchange='dothemath();' value="0.5"required> gal/hr
 						<td><td><input type="number" id="stdef2" style="width:70px; text-float:right;" onchange='dothemath();' value="0.7" required> gal/hr
+						<td>
 				</tr>
 			</table>
 				</div>
 
 				<br><input type="checkbox" id="ftcheck" onclick="showhide()">Fall Tillage<br>
 				<div id="tr2" style="display:none;">
-				<table border='1' style="text-align:left;">
+				<table style="text-align:left;">
 					<colgroup>
-						<col width="25%"><col width="25%"><col width="25%"><col width="25%">
+						<col width="20%"><col width="20%"><col width="20%"><col width="20%"><col width="20%">
 					</colgroup>
 					<tr>
-							<td align='right'>Acres:<td><input type="number" id="ftacres" style="width:70px; text-float:right;" onchange='dothemath();' value="1000" required>
-							<td align='right'>Implement Width<td><input type="number" id="ftwidth" style="width:50px; text-float:right;" onchange='dothemath();' value="32" required> ft
+							<td align='right' colspan='2'>Acres: <input type="number" id="ftacres" style="width:70px; text-float:right;" onchange='dothemath();' value="1000" required>
+							<td align='right' colspan='2'>Implement Width: <input type="number" id="ftwidth" style="width:50px; text-float:right;" onchange='dothemath();' value="32" required> ft
+							<td>
 					</tr>
 					<tr>
 							<td><td><input type="number" id="ftspeed1" style="width:70px; text-float:right;" onchange='dothemath();' value="1.3" required> mph
 							<td><td><input type="number" id="ftspeed2" style="width:70px; text-float:right;" onchange='dothemath();' value="1.0" required> mph
+							<td>
 					</tr>
 				<tr>
 						<td><td><input type="number" id="ftfuel1" style="width:70px; text-float:right;" onchange='dothemath();' value="1" required> gal/hr
 						<td><td><input type="number" id="ftfuel2" style="width:70px; text-float:right;" onchange='dothemath();' value="1.1" required> gal/hr
+						<td>
 				</tr>
 				<tr>
 					<td><td><input type="number" id="ftdef1" style="width:70px; text-float:right;" onchange='dothemath();' value="0.5" required> gal/hr
 						<td><td><input type="number" id="ftdef2" style="width:70px; text-float:right;" onchange='dothemath();' value="0.7" required> gal/hr
+						<td>
 				</tr>
 			</table>
 			</div>
 
 				<br><input type="checkbox" id="ppcheck" onclick="showhide()">Pit Packing<br>
 					<div id="tr3" style="display:none;" float="left">
-						<table width="800" border="0" style="text-align:left;">
+						<table style="text-align:left;">
 							<colgroup>
-								<col width="25%"><col width="25%"><col width="25%"><col width="25%">
+								<col width="20%"><col width="20%"><col width="20%"><col width="20%"><col width="20%">
 							</colgroup>
 							<tr>
-								<td><td><td>Operational Hours <input type="number" id="pphrs1" style="width:70px; text-float:right;" onchange='dothemath();' value="200" required>
-								<td>Operational Hours <input type="number" id="pphrs2" style="width:70px; text-float:right;" onchange='dothemath();' value="200" required>
+								<td colspan='2'>Operational Hours <input type="number" id="pphrs1" style="width:70px; text-float:right;" onchange='dothemath();' value="200" required>
+								<td><td colspan='2'>Operational Hours <input type="number" id="pphrs2" style="width:70px; text-float:right;" onchange='dothemath();' value="200" required>
 						</tr>
 						<tr>
-								<td><td><td><input type="number" id="ppfuel1" style="width:70px; text-float:right;" onchange='dothemath();' value="1.0" required> gal/hr
-									<td><input type="number" id="ppfuel2" style="width:70px; text-float:right;" onchange='dothemath();' value="1.1" required> gal/hr
+									<td><td><input type="number" id="ppfuel1" style="width:70px; text-float:right;" onchange='dothemath();' value="1.0" required> gal/hr
+									<td><td><input type="number" id="ppfuel2" style="width:70px; text-float:right;" onchange='dothemath();' value="1.1" required> gal/hr
+									<td>
 						</tr>
 						<tr>
-							<td><td><td><input type="number" id="ppdef1" style="width:70px; text-float:right;" onchange='dothemath();' value="1.00" required> gal/hr
-								<td><input type="number" id="ppdef2" style="width:70px; text-float:right;" onchange='dothemath();' value="1.1" required> gal/hr
+								<td><td><input type="number" id="ppdef1" style="width:70px; text-float:right;" onchange='dothemath();' value="1.00" required> gal/hr
+								<td><td><input type="number" id="ppdef2" style="width:70px; text-float:right;" onchange='dothemath();' value="1.1" required> gal/hr
+								<td>
 						</tr>
 					</table>
 			</div>
 
 				<br><input type="checkbox" id="mhcheck" onclick="showhide()">Manure Hauling<br>
 				<div id="tr4" style="display:none;">
-					<table width="800" border="0" style="text-align:left;">
+					<table style="text-align:left;">
 						<colgroup>
-							<col width="25%"><col width="25%"><col width="25%"><col width="25%">
+							<col width="20%"><col width="20%"><col width="20%"><col width="20%"><col width="20%">
 						</colgroup>
 						<tr>
-								<td><td><td>Operational Hours <input type="number" id="mhhrs1" style="width:70px; text-float:right;" onchange='dothemath();' value="50" required>
-									<td>Operational Hours <input type="number" id="mhhrs2" style="width:70px; text-float:right;" onchange='dothemath();' value="50" required>
+								<td colspan='2'>Operational Hours <input type="number" id="mhhrs1" style="width:70px; text-float:right;" onchange='dothemath();' value="50" required>
+								<td><td colspan='2'>Operational Hours <input type="number" id="mhhrs2" style="width:70px; text-float:right;" onchange='dothemath();' value="50" required>
 						</tr>
 						<tr>
-							<td><td><td><input type="number" id="mhfuel1" style="width:70px; text-float:right;" value="1.0" onchange='dothemath();' required> gal/hr
-								<td><input type="number" id="mhfuel2" style="width:70px; text-float:right;" value="1.1" onchange='dothemath();' required> gal/hr
+								<td><td><input type="number" id="mhfuel1" style="width:70px; text-float:right;" value="1.0" onchange='dothemath();' required> gal/hr
+								<td><td><input type="number" id="mhfuel2" style="width:70px; text-float:right;" value="1.1" onchange='dothemath();' required> gal/hr
 						</tr>
 						<tr>
-							<td><td><td><input type="number" id="mhdef1" style="width:70px; text-float:right;" onchange='dothemath();' value="1" required> gal/hr
-								<td><input type="number" id="mhdef2" style="width:70px; text-float:right;" onchange='dothemath();' value="1.1" required> gal/hr
+								<td><td><input type="number" id="mhdef1" style="width:70px; text-float:right;" onchange='dothemath();' value="1" required> gal/hr
+								<td><td><input type="number" id="mhdef2" style="width:70px; text-float:right;" onchange='dothemath();' value="1.1" required> gal/hr
 					</tr>
 				</table>
 				</div>
 
 				<br><input type="checkbox" id="spcheck" onclick="showhide()">Seeding / Planting<br>
 					<div id="tr5" style="display:none;">
-						<table width="800" border="0" style="text-align:left;">
+						<table style="text-align:left;">
 							<colgroup>
-								<col width="25%"><col width="25%"><col width="25%"><col width="25%">
+								<col width="20%"><col width="20%"><col width="20%"><col width="20%"><col width="20%">
 							</colgroup>
 							<tr>
-								<td><td><td><input type="number" id="spacres" style="width:70px; text-float:right;" onchange='dothemath();' value="2000" required> acres
-									<td>Implement Width <input type="number" id="spwidth" style="width:50px; text-float:right;" onchange='dothemath();' value="40" required> ft
+								<td colspan='2'>Acres: <input type="number" id="spacres" style="width:70px; text-float:right;" onchange='dothemath();' value="2000" required>
+								<td colspan='2'>Implement Width: <input type="number" id="spwidth" style="width:50px; text-float:right;" onchange='dothemath();' value="40" required> ft
+								<td>
 							</tr>
 							<tr>
-								<td><td><td><input type="number" id="spspeed1" style="width:70px; text-float:right;" onchange='dothemath();' value="5" required> mph
-									<td><input type="number" id="spspeed2" style="width:70px; text-float:right;" onchange='dothemath();' value="4.5" required> mph
+									<td><td><input type="number" id="spspeed1" style="width:70px; text-float:right;" onchange='dothemath();' value="5" required> mph
+									<td><td><input type="number" id="spspeed2" style="width:70px; text-float:right;" onchange='dothemath();' value="4.5" required> mph
+									<td>
 						</tr>
 						<tr>
-								<td><td><td><input type="number" id="spfuel1" style="width:70px; text-float:right;" onchange='dothemath();' value="1" required> gal/hr
-									<td><input type="number" id="spfuel2" style="width:70px; text-float:right;" onchange='dothemath();' value="1.1" required> gal/hr
+									<td><td><input type="number" id="spfuel1" style="width:70px; text-float:right;" onchange='dothemath();' value="1" required> gal/hr
+									<td><td><input type="number" id="spfuel2" style="width:70px; text-float:right;" onchange='dothemath();' value="1.1" required> gal/hr
+									<td>
 						</tr>
 						<tr>
-							<td><td><td><input type="number" id="spdef1" style="width:70px; text-float:right;" onchange='dothemath();' value="1" required> gal/hr
-								<td><input type="number" id="spdef2" style="width:70px; text-float:right;" onchange='dothemath();' value="1.1" required> gal/hr
+								<td><td><input type="number" id="spdef1" style="width:70px; text-float:right;" onchange='dothemath();' value="1" required> gal/hr
+								<td><td><input type="number" id="spdef2" style="width:70px; text-float:right;" onchange='dothemath();' value="1.1" required> gal/hr
+								<td>
 					</tr>
 				</table>
 				</div>

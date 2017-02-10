@@ -207,13 +207,12 @@
 
 		<fieldset class="part3">
 				<legend><b>3. Performance Comparison</b></legend>
-				<table padding="5" width="800" id="myTable">
+				<table>
 					<colgroup>
 						<col width="20%"><col width="20%"><col width="20%"><col width="20%"><col width="20%">
 					</colgroup>
 
 					<tr>
-						<td>
 						<td>
 						<td><select name="tractorpick" size="1" id="tractorpick1" style="width:200px; text-float:center;" onclick='dothemath();' onChange="tractorpicker1(this);" required>
 									<option value="" disabled selected>Select</option>
@@ -264,18 +263,21 @@
 										<option value="34">New Holland BigBaler 340</option>
 										<option value="34">New Holland BigBaler 340 RC</option>
 									</select>
-
+									<td>
+								</tr>
 
 
 									<tr>
-										<td><td><label for="groundspeed1">Bale time</label>
-										<td colspan=2><input type="number" id="sperbale1" style="width:50px;" onchange='dothemath();' value="45">s/bale &nbsp &nbsp
-										<td><input type="number" id="sperbale2" style="width:50px;" onchange='dothemath();' value="90">s/bale &nbsp &nbsp
+										<td><label for="groundspeed1">Bale time</label>
+										<td><input type="number" id="sperbale1" style="width:50px;" onchange='dothemath();' value="45">s/bale &nbsp &nbsp
+										<td><td><input type="number" id="sperbale2" style="width:50px;" onchange='dothemath();' value="90">s/bale &nbsp &nbsp
+										<td>
 									</tr>
 									<tr>
-										<td><td><label for="baledensity">Bale Density:</label>
-										<td colspan=2><input type="number" id="baledensity1" style="width:50px;" onchange='dothemath();' value="1440">lbs/bale
-										<td><input type="number" id="baledensity2" style="width:50px;" onchange='dothemath();' value="1300">lbs/bale
+										<td><label for="baledensity">Bale Density:</label>
+										<td><input type="number" id="baledensity1" style="width:50px;" onchange='dothemath();' value="1440">lbs/bale
+										<td><td><input type="number" id="baledensity2" style="width:50px;" onchange='dothemath();' value="1300">lbs/bale
+										<td>
 									</tr>
 								</table>
 							</fieldset><br>
