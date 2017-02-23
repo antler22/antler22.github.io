@@ -559,10 +559,10 @@
 					<!--grain loss savings-->
 						savin1 = (lexloss * document.getElementById("cropprice").value * document.getElementById("totalacres").value).toFixed(2);
 						savin2 = (comloss * document.getElementById("cropprice").value * document.getElementById("totalacres").value).toFixed(2);
-						totalsavin = savin2 - savin1;
+						totalsavin = (savin2 - savin1).toFixed(2);
 						document.getElementById("td17").innerHTML = "$" + addCommas(savin1);
 						document.getElementById("td18").innerHTML = "$" + addCommas(savin2);
-						document.getElementById("td19").innerHTML = "$" + (savin2 - savin1).toFixed(2);
+						document.getElementById("td19").innerHTML = "$" + addCommas(totalsavin);
 
 
 						<!--totals-->
