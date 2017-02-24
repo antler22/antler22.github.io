@@ -46,15 +46,15 @@
 <body>
 
 	<hr size="3" noshade>
-	<form name="content" method="post" id="form1">
+	<form name="content" method="post" id="form1" action='https://script.google.com/macros/s/AKfycbyPBUPkxBonVw5JDxlxSELqSyCoYg6IT2kIfBVg7N6tva40Lxk/exec'>
 
 	<!--farm info-->
 	<br><fieldset class="part1">
 		<legend><b>1. Farm Information</b></legend>
-			<label for="farmname" class="fieldset1">Name:</label><input type="text" id="farmname" placeholder="First, Last" autofocus required></input>
-			<label for="farmlocation" class="fieldset1">Location:</label><input type="text" id="farmlocation"  onchange="calculate()" placeholder="City, State/Province" required></input>
-			<label for="serialno" class="fieldset1">Serial:</label><input type="text" id="serial" style='width:80px;' required></input>
-			<label for="farmname" class="fieldset1">Dealer:</label><select name="dealername" id="dealername" style='width:180px;' required>
+			<label for="farmname" class="fieldset1">Name:</label><input name='Farm Name' type="text" id="farmname" placeholder="First, Last" autofocus required></input>
+			<label for="farmlocation" class="fieldset1">Location:</label><input name='Location' type="text" id="farmlocation"  onchange="calculate()" placeholder="City, State/Province" required></input>
+			<label for="serialno" class="fieldset1">Serial:</label><input name='Serial' type="text" id="serial" style='width:80px;' required></input>
+			<label for="farmname" class="fieldset1">Dealer:</label><select name="Dealer" id="dealername" style='width:180px;' required>
 							<option disabled selected>Select</option>
 							<option>Ag Authority</option>
 							<option>AgWest</option>
@@ -102,7 +102,7 @@
 				<col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%">
 			</colgroup>
 					<tr>
-						<td align='right'><label class="fieldset2" for="croptype">Select Crop:</label><td colspan='2'><select name="croptype" id="croptype" size="1" style="width:180px;" onclick='dothemath();' onchange="changecrop(this);" required>
+						<td align='right'><label class="fieldset2" for="croptype">Select Crop:</label><td colspan='2'><select name="Crop" id="croptype" size="1" style="width:180px;" onclick='dothemath();' onchange="changecrop(this);" required>
 							<option value="noSelection" disabled selected></option>
 							<option value="alfalfa">Alfalfa</option>
 							<option value="alsike">Alsike clover</option>
@@ -152,20 +152,20 @@
 								</td>
 							</tr>
 		<tr>
-			<td colspan='2' align='right'><label class="fieldset2" for="totalacres">Area Harvested:</label><td align='left'><input type="number" id="totalacres" min="1" max="50000" style="width:80px; text-float:right;" onchange='dothemath();' value="1000" required><td align='left'>ac
-			<td colspan='2' align='right'><label class="fieldset2" for="laborprice">Labor Rate:</label><td align='left'><input type="number" span="any" id="laborprice" min="1" max="50" style="width:80px; text-float:right;" onchange='dothemath();' value="15" required><td align='left'>$/hr
+			<td colspan='2' align='right'><label class="fieldset2" for="totalacres">Area Harvested:</label><td align='left'><input name='Total Acres' type="number" id="totalacres" min="1" max="50000" style="width:80px; text-float:right;" onchange='dothemath();' value="1000" required><td align='left'>ac
+			<td colspan='2' align='right'><label class="fieldset2" for="laborprice">Labor Rate:</label><td align='left'><input name='Labor Rate' type="number" span="any" id="laborprice" min="1" max="50" style="width:80px; text-float:right;" onchange='dothemath();' value="15" required><td align='left'>$/hr
 		</tr>
 		<tr>
-			<td colspan='2' align='right'><label class="fieldset2" for="bpaaverage">Yield:</label><td align='left'><input type="number" id="bpaaverage" min="0" max="500" style="width:80px; text-float:right;" onchange='dothemath();' value="250" required><td align='left'>bu/ac
-			<td colspan='2' align='right'><label class="fieldset2" for="fuelprice">Fuel Cost:</label><td align='left'><input type="number" id="fuelprice" min="0" max="10" span="any" style="width:80px; text-float:right;" onchange='dothemath();' value="3" required><td align='left'>$/gal
+			<td colspan='2' align='right'><label class="fieldset2" for="bpaaverage">Yield:</label><td align='left'><input name='Average Yield' type="number" id="bpaaverage" min="0" max="500" style="width:80px; text-float:right;" onchange='dothemath();' value="250" required><td align='left'>bu/ac
+			<td colspan='2' align='right'><label class="fieldset2" for="fuelprice">Fuel Cost:</label><td align='left'><input name='fuelprice' type="number" id="fuelprice" min="0" max="10" span="any" style="width:80px; text-float:right;" onchange='dothemath();' value="3" required><td align='left'>$/gal
 		</tr>
 		<tr>
-			<td colspan='2' align='right'><label class="fieldset2" for="croprice">Crop Price:</label><td align='left'><input type="number" step="any" id="cropprice" min="0" max="20" style="width:80px; text-float:right;" onchange='dothemath();' value="4" required><td align='left'>$/bu
-			<td colspan='2' align='right'><label class="fieldset2" for="defprice">DEF Fluid Cost:</label><td align='left'><input type="number" step="any" id="defprice" min="0" max="10" style="width:80px; text-float:right;" onchange='dothemath();' value="3" required><td align='left'>$/gal
+			<td colspan='2' align='right'><label class="fieldset2" for="croprice">Crop Price:</label><td align='left'><input name='Crop Price' type="number" step="any" id="cropprice" min="0" max="20" style="width:80px; text-float:right;" onchange='dothemath();' value="4" required><td align='left'>$/bu
+			<td colspan='2' align='right'><label class="fieldset2" for="defprice">DEF Fluid Cost:</label><td align='left'><input name='DEF Cost' type="number" step="any" id="defprice" min="0" max="10" style="width:80px; text-float:right;" onchange='dothemath();' value="3" required><td align='left'>$/gal
 		</tr>
 		<tr>
-			<td colspan='2' align='right'><label class="fieldset2" for="efficiency">Efficiency:</label><td align='left'><input type="number" id="efficiency" min="0" max="100" style="width:80px; text-float:right;" onchange='dothemath();' value="82.5"required ><td align='left'>%
-			<td colspan='2' align='right'><label class="fieldset2" for="maintcost">Maintenance Costs:</label><td align='left'><input type="number" id="maintcost" min="0" max="1000" style="width:80px; text-float:right;" onchange='dothemath();' value="200" required ><td align='left'>$/hr
+			<td colspan='2' align='right'><label class="fieldset2" for="efficiency">Efficiency:</label><td align='left'><input name='Efficiency' type="number" id="efficiency" min="0" max="100" span='0.1' style="width:80px; text-float:right;" onchange='dothemath();' value="85"required ><td align='left'>%
+			<td colspan='2' align='right'><label class="fieldset2" for="maintcost">Maintenance Costs:</label><td align='left'><input name='Maintenance Costs' type="number" id="maintcost" min="0" max="1000" style="width:80px; text-float:right;" onchange='dothemath();' value="200" required ><td align='left'>$/hr
 		</tr>
 	</table>
 	</fieldset><br>
@@ -302,7 +302,7 @@
 
 
 				 <td> VS <td colspan='2'>
-				 <select name="meal" id="meal" style="width:100px;" onChange="changebrand(this.value);dothemath();" required>
+				 <select name="Competitor" id="meal" style="width:100px;" onChange="changebrand(this.value);dothemath();" required>
 								<option value="" disabled selected>Select</option>
 								<option value="Deere">John Deere</option>
 								<option value="CaseIH">Case IH</option>
@@ -312,7 +312,7 @@
 								<option value="Challenger">Challenger</option>
 								<option value="Versatile">Versatile</option>
 							</select>
-							<select name="category" id="modelnumber" style="width:110px;" onChange="changecombine2(this);dothemath();">
+							<select name="Model" id="modelnumber" style="width:110px;" onChange="changecombine2(this);dothemath();">
 								<option value="" disabled selected>Select</option>
 							</select>
 
@@ -368,56 +368,56 @@
 
 		<tr>
 			<td float="left" >Header width
-			<td align='right'><input type="number"  onchange='dothemath();' id="headerwidth1" min="20" max="45" style="width:70px; text-float:right;" placeholder="20 - 45" value='40' required></input>
+			<td align='right'><input name='LEXION header width' type="number"  onchange='dothemath();' id="headerwidth1" min="20" max="45" style="width:70px; text-float:right;" placeholder="20 - 45" value='40' required></input>
 			<td align='left'>ft
 			<td>
-			<td align='right'><input type="number" onchange='dothemath();' min="20" max="45" id="headerwidth2" style="width:70px; text-float:right;" placeholder="20 - 45" value='40' required>
+			<td align='right'><input name='Competitor header width' type="number" onchange='dothemath();' min="20" max="45" id="headerwidth2" style="width:70px; text-float:right;" placeholder="20 - 45" value='40' required>
 			<td align='left'>ft
 		</tr>
 		<tr></tr>
 		<tr>
 			<td float="left" >Ground speed
-			<td align='right'><input type="number" onchange='dothemath();' span="0.1" id="groundspeed1" min="0" max="10" style="width:70px; text-float:right;" placeholder="0.0" value='6' required>
+			<td align='right'><input name='LEXION ground speed' type="number" onchange='dothemath();' span="0.1" id="groundspeed1" min="0" max="10" style="width:70px; text-float:right;" placeholder="0.0" value='6' required>
 			<td align='left'>mph
 			<td>
-			<td align='right'><input type="number" onchange='dothemath();' span="0.1" id="groundspeed2" min="0" max="10" style="width:70px; text-float:right;" placeholder="0.0" value='4' required>
+			<td align='right'><input name='Competitor ground speed' type="number" onchange='dothemath();' span="0.1" id="groundspeed2" min="0" max="10" style="width:70px; text-float:right;" placeholder="0.0" value='4' required>
 			<td align='left'>mph
 		</tr>
 		<tr>
 			<td float="left" >Fuel Economy
-			<td align='right'><input type="number" onchange='dothemath();' span="any" id="fuelburn1" min="0" max="10" style="width:70px; text-float:right;" placeholder="1.0" value='1.0' required>
+			<td align='right'><input name='LEXION fuel economy' type="number" onchange='dothemath();' span="any" id="fuelburn1" min="0" max="10" style="width:70px; text-float:right;" placeholder="1.0" value='1.0' required>
 			<td align='left'>gal/ac
 			<td>
-			<td align='right'><input type="number" onchange='dothemath();' span="any" id="fuelburn2" min="0" max="10" style="width:70px; text-float:right;" placeholder="1.5" value='1.3' required>
+			<td align='right'><input name='Competitor fuel economy' type="number" onchange='dothemath();' span="any" id="fuelburn2" min="0" max="10" style="width:70px; text-float:right;" placeholder="1.5" value='2' required>
 			<td align='left'>gal/ac
 		</tr>
 		<tr>
 			<td float="left" >DEF Economy
-			<td align='right'><input type="number" onchange='dothemath();' span="0.01" id="defburn1" min="0" max="10" style="width:70px; text-float:right;" value="0.06" required>
+			<td align='right'><input type="number" onchange='dothemath();' span="0.01" id="defburn1" min="0" max="10" style="width:70px; text-float:right;" value="2" required>
 			<td align='left'>gal/ac
 			<td>
-			<td align='right'><input type="number" onchange='dothemath();' span="0.01" id="defburn2" min="0" max="10" style="width:70px; text-float:right;" value="0.1" required>
+			<td align='right'><input type="number" onchange='dothemath();' span="0.01" id="defburn2" min="0" max="10" style="width:70px; text-float:right;" value="1" required>
 			<td align='left'>gal/ac
 		</tr>
 		<tr>
 			<td float="left"  rowspan='2'>Residue
-			<td colspan='5'><input type="radio" name="residue" onchange='dothemath();' value="spreading" id="spread1" checked>Spread
+			<td colspan='5'><input type="radio" name="Residue" onchange='dothemath();' value="Spreading" id="spread1" checked>Spread
 		</tr>
 		<tr>
-				<td colspan='5'><input type="radio" name="residue" onchange='dothemath();' value="windrowing" id="windrow1">Windrow
+				<td colspan='5'><input type="radio" name="Residue" onchange='dothemath();' value="Windrowing" id="windrow1">Windrow
 		</tr>
 		<tr>
 			<td  rowspan='5'>Grain Loss
-			<td colspan='5' float="center">Catch Pan Size &nbsp &nbsp <input type="number" span="any" id="panlength" style="width:30px" min="1" placeholder="48" value="12">in x <input type="number" span="any" id="panwidth" style="width:30px" min="1" placeholder="48" value="12">in
+			<td colspan='5' float="center">Catch Pan Size &nbsp &nbsp <input name='LEXION Grain Loss' type="number" span="any" id="panlength" style="width:30px" min="1" placeholder="48" value="12">in x <input name='Competitor Grain Loss' type="number" span="any" id="panwidth" style="width:30px" min="1" placeholder="48" value="12">in
 		</tr>
 		<tr>
-			<td float="center" colspan='5'><input type="radio" name="collect" value="kernel" id="seedcount1" onchange='dothemath();' checked> Seed Count
+			<td float="center" colspan='5'><input type="radio" name="Collection Method" value="kernel" id="seedcount1" onchange='dothemath();' checked> Seed Count
 		</tr>
 		<tr>
-			<td float="center" colspan='5'><input type="radio" name="collect" value="volume" id="volume1" onchange='dothemath();'> Volume
+			<td float="center" colspan='5'><input type="radio" name="Collection Method" value="volume" id="volume1" onchange='dothemath();'> Volume
 		</tr>
 		<tr>
-			<td float="center" colspan='5'><input type="radio" name="collect" value="weight" id="weight1"onchange='dothemath();' > Weight
+			<td float="center" colspan='5'><input type="radio" name="Collection Method" value="weight" id="weight1"onchange='dothemath();' > Weight
 		</tr>
 		<tr>
 			<td align='right'><input type="number" id="loss1" style="width:50px; text-float:center;" min="0" span="any" onchange='dothemath();' value='2' required>
@@ -637,7 +637,7 @@
 					<tfoot>
 					<tr>
 						<td>Total Savings
-						<td colspan="3" id="td20" float="center"></td>
+						<td colspan="3" id="td20" float="center" name='Total Savings'></td>
 					</tr>
 					<tr>
 						<td>
@@ -647,8 +647,8 @@
 				</table>
 		</fieldset><br>
 
-		<textarea rows="2" cols="50" placeholder="Insert comments here"></textarea> <label style="width:50px;" style="vertical-align: text-top;">Email:</label><input type="email">
-		&nbsp &nbsp <input type="button" value="Send" style="width:100px; height:30px; font-weight:bold; vertical-align: bottom;">
+		<textarea rows="2" cols="50" placeholder="Insert comments here"></textarea> <label style="width:50px;" style="vertical-align: text-top;">Email:</label><input type="email" name="email">
+		&nbsp &nbsp <input type="submit" value="Send" style="width:100px; height:30px; font-weight:bold; vertical-align: bottom;">
 
 
 </form>
@@ -658,6 +658,9 @@
 <script>
 document.getElementById("demo").innerHTML = new Date();
 </script>
+
+<div class="watermark"> EXPERIMENTAL </div>
+
 
 </body>
 </html>
