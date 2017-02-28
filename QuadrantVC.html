@@ -39,7 +39,7 @@
 </head>
 
 <body>
-	
+
 	<div id="grad1"></div>
 	<form name="content" method="post" id="form1">
 
@@ -247,22 +247,35 @@
 										<option value="" disabled selected>Select</option>
 										<option value="34">Case LB434</option>
 										<option value="34">Case LB434 RC</option>
+										<option value="33">Case LB334</option>
+										<option value="33">Case LB334 RC</option>
 										<option value="34">Challenger LB 34B</option>
 										<option value="44">Challenger LB 44B</option>
 										<option value="34">Freeman 1592</option>
 										<option value="34">Hesston MF 2170</option>
 										<option value="34">Hesston MF 2170 XD</option>
+										<option value="33">Hesston MF LB2250</option>
+										<option value="33">Hesston MF LB2250 PC</option>
 										<option value="44">Hesston 2290</option>
 										<option value="34">John Deere L340</option>
 										<option value="34">John Deere L340 Pre-Cutter</option>
-										<option value="34">Krone Big Pack 1290</option>
-										<option value="34">Krone Big Pack 1290 XC</option>
-										<option value="44">Krone Big Pack 4x4</option>
-										<option value="44">Krone Big Pack 4x4 XC</option>
+										<option value="33">John Deere L330</option>
+										<option value="34">Krone BiG Pack 1290</option>
+										<option value="34">Krone BiG Pack 1290 XC</option>
+										<option value="44">Krone BiG Pack 4x4</option>
+										<option value="44">Krone BiG Pack 4x4 XC</option>
+										<option value="33">Krone BiG Pack High Speed 890</option>
+										<option value="33">Krone BiG Pack High Speed 890 XC</option>
 										<option value="34">Kuhn 1290D</option>
 										<option value="34">Kuhn 1290D RC </option>
+										<option value="33">Kuhn LSB 890 D</option>
 										<option value="34">New Holland BigBaler 340</option>
 										<option value="34">New Holland BigBaler 340 RC</option>
+										<option value="33">New Holland BigBaler 330</option>
+										<option value="33">New Holland BigBaler 330 RC</option>
+										<option value="33">Other 3x3 baler</option>
+										<option value="34">Other 3x4 baler</option>
+										<option value="44">Other 4x4 baler</option>
 									</select>
 									<td>
 								</tr>
@@ -283,57 +296,58 @@
 								</table>
 							</fieldset><br>
 
-							<script>
-														 function dothemath() {
+				<script>
+	 function dothemath() {
 
-															<!--show twine needed per bale-->
-															var balelength = document.getElementById("balelength").value;
-															var baleheight1 = document.getElementById("tractorpick1").value[0];
-															var balewidth1 = document.getElementById("tractorpick1").value[1];
-															var twine1 = ((2 * baleheight1) + (2 * balelength)) * ((balewidth1 * 2) - 2);
-															var balelength = document.getElementById("balelength").value;
-															var baleheight2 = document.getElementById("tractorpick2").value[0];
-															var balewidth2 = document.getElementById("tractorpick2").value[1];
-															var twine2 = ((2 * baleheight2) + (2 * balelength)) * ((balewidth2 * 2) - 2);
+		<!--show twine needed per bale-->
+		var balelength = document.getElementById("balelength").value;
+		var baleheight1 = document.getElementById("tractorpick1").value[0];
+		var balewidth1 = document.getElementById("tractorpick1").value[1];
+		var twine1 = ((2 * baleheight1) + (2 * balelength)) * ((balewidth1 * 2) - 2);
+		var balelength = document.getElementById("balelength").value;
+		var baleheight2 = document.getElementById("tractorpick2").value[0];
+		var balewidth2 = document.getElementById("tractorpick2").value[1];
+		var twine2 = ((2 * baleheight2) + (2 * balelength)) * ((balewidth2 * 2) - 2);
 
-															<!--productivity-->
-															var prod1 = (3600/document.getElementById("sperbale1").value) * document.getElementById("efficiency").value / 100;
-															var prod2 = (3600/document.getElementById("sperbale2").value) * document.getElementById("efficiency").value / 100;
-															document.getElementById("td5").innerHTML = prod1.toFixed(0) + " bales/hr";
-															document.getElementById("td6").innerHTML = prod2.toFixed(0) + " bales/hr";
-															document.getElementById("td7").innerHTML = (prod1 - prod2).toFixed(0) + " bales/hr";
+		<!--productivity-->
+		var prod1 = ((3600/document.getElementById("sperbale1").value) * document.getElementById("efficiency").value / 100).toFixed(0);
+		var prod2 = ((3600/document.getElementById("sperbale2").value) * document.getElementById("efficiency").value / 100).toFixed(0);
+		document.getElementById("td5").innerHTML = addCommas(prod1) + " bales/hr";
+		document.getElementById("td6").innerHTML = addCommas(prod2) + " bales/hr";
+		document.getElementById("td7").innerHTML = (prod1 - prod2).toFixed(0) + " bales/hr";
 
-															<!--Hours per year-->
-															var tothrs1 = 1 / (+prod1 * +document.getElementById("baledensity1").value / 2000 / +document.getElementById("totaltons").value);
-															var tothrs2 = 1 / (+prod2 * +document.getElementById("baledensity2").value / 2000 / +document.getElementById("totaltons").value);
-															document.getElementById("td8").innerHTML = tothrs1.toFixed(0) +  " hrs";
-															document.getElementById("td9").innerHTML = tothrs2.toFixed(0) +  " hrs";
-															document.getElementById("td10").innerHTML = (tothrs2-tothrs1).toFixed(0) +  " hrs";
+		<!--Hours per year-->
+		var tothrs1 = 1 / (+prod1 * +document.getElementById("baledensity1").value / 2000 / +document.getElementById("totaltons").value);
+		var tothrs2 = 1 / (+prod2 * +document.getElementById("baledensity2").value / 2000 / +document.getElementById("totaltons").value);
+		document.getElementById("td8").innerHTML = tothrs1.toFixed(0) +  " hrs";
+		document.getElementById("td9").innerHTML = tothrs2.toFixed(0) +  " hrs";
+		document.getElementById("td10").innerHTML = (tothrs2-tothrs1).toFixed(0) +  " hrs";
 
-															<!--bales per year-->
-															var totbales1 = document.getElementById("totaltons").value * 2000 / document.getElementById("baledensity1").value;
-															var totbales2 = document.getElementById("totaltons").value * 2000 / document.getElementById("baledensity2").value;
-															document.getElementById("td11").innerHTML = totbales1.toFixed(0) + " bales";
-															document.getElementById("td12").innerHTML = totbales2.toFixed(0) + " bales";
-															document.getElementById("td13").innerHTML = (totbales2-totbales1).toFixed(0) + " bales";
+		<!--bales per year-->
+		var totbales1 = (document.getElementById("totaltons").value * 2000 / document.getElementById("baledensity1").value).toFixed(0);
+		var totbales2 = (document.getElementById("totaltons").value * 2000 / document.getElementById("baledensity2").value).toFixed(0);
+		var totbales12 = (totbales2 - totbales1).toFixed(0);
+		document.getElementById("td11").innerHTML = addCommas(totbales1) + " bales";
+		document.getElementById("td12").innerHTML = addCommas(totbales2) + " bales";
+		document.getElementById("td13").innerHTML = addCommas(totbales12) + " bales";
 
-															<!--operating cost-->
-															var opcost1 = (document.getElementById("laborprice").value * tothrs1) + (document.getElementById("operatingcost").value * totbales1) + (+totbales1 * twine1 * +document.getElementById('twineprice').value / document.getElementById("twineperball").value);
-															var opcost2 = (document.getElementById("laborprice").value * tothrs2) + (document.getElementById("operatingcost").value * totbales2) + (+totbales2 * twine2 * +document.getElementById('twineprice').value / document.getElementById("twineperball").value);
-															document.getElementById("td14").innerHTML = "$" + opcost1.toFixed(0);
-															document.getElementById("td15").innerHTML = "$" + opcost2.toFixed(0);
-															document.getElementById("td16").innerHTML = "$" + (opcost2-opcost1).toFixed(0);
+		<!--operating cost-->
+		var opcost1 = ((document.getElementById("laborprice").value * tothrs1) + (document.getElementById("operatingcost").value * totbales1) + (+totbales1 * twine1 * +document.getElementById('twineprice').value / document.getElementById("twineperball").value)).toFixed(2);
+		var opcost2 = ((document.getElementById("laborprice").value * tothrs2) + (document.getElementById("operatingcost").value * totbales2) + (+totbales2 * twine2 * +document.getElementById('twineprice').value / document.getElementById("twineperball").value)).toFixed(2);
+		var opcost12 = (opcost2-opcost1).toFixed(2);
+		document.getElementById("td14").innerHTML = "$" + addCommas(opcost1);
+		document.getElementById("td15").innerHTML = "$" + addCommas(opcost2);
+		document.getElementById("td16").innerHTML = "$" + addCommas(opcost12);
 
-															<!--totals-->
-															var grandtot1 = opcost2 - opcost1;
-															var grandtot2 = totbales2 - totbales1;
-															document.getElementById('td17').innerHTML = "$" + grandtot1.toFixed(0) + " per year";
-															document.getElementById('td18').innerHTML = grandtot2.toFixed(0) + " fewer bales";
-															document.getElementById('td19').innerHTML = "$" + (grandtot1 / document.getElementById("totaltons").value).toFixed(2) + " /ton";
-															}
+		<!--totals-->
+		var grandtot1 = (opcost2 - opcost1).toFixed(0);
+		var grandtot2 = (totbales2 - totbales1).toFixed(0);
+		document.getElementById('td17').innerHTML = "$" + addCommas(grandtot1) + " per year";
+		document.getElementById('td18').innerHTML = addCommas(grandtot2) + " fewer bales";
+		document.getElementById('td19').innerHTML = "$" + (grandtot1 / document.getElementById("totaltons").value).toFixed(2) + " /ton";
+		}
 
-
-							</script>
+	</script>
 
 							<fieldset class="part4">
 								<legend><b>4. Results</b></legend>

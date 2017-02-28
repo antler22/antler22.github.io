@@ -349,9 +349,10 @@
 			var stdef2 = document.getElementById("stdef2").value * defprice;
 			var stpro1 = (document.getElementById("stwidth").value * document.getElementById("stspeed1").value * 0.1212 * efficiency / 100);
 			var stpro2 = (document.getElementById("stwidth").value * document.getElementById("stspeed2").value * 0.1212 * efficiency / 100);
+			var stpro12 = (stpro1-stpro2).toFixed(2);
 			document.getElementById("td2").innerHTML = stpro1.toFixed(2) + "ac/hr";
 			document.getElementById("td3").innerHTML = stpro2.toFixed(2) + "ac/hr";
-			document.getElementById("td4").innerHTML = (stpro1-stpro2).toFixed(2) + "ac/hr";
+			document.getElementById("td4").innerHTML = addCommas(stpro12) + "ac/hr";
 
 			var sttothrs1 = (document.getElementById("stacres").value / stpro1);
 			var sttothrs2 = (document.getElementById("stacres").value / stpro2);
@@ -365,11 +366,12 @@
 			document.getElementById("td9").innerHTML = stopcost2.toFixed(2) + " $/hr";
 			document.getElementById("td10").innerHTML = (stopcost1 - stopcost2).toFixed(2) +"$/hr";
 
-			var stopcost3 = stopcost1 * sttothrs1;
-			var stopcost4 = stopcost2 * sttothrs2;
-			document.getElementById("td11").innerHTML = "$" + stopcost3.toFixed(2);
-			document.getElementById("td12").innerHTML = "$" + stopcost4.toFixed(2);
-			document.getElementById("td13").innerHTML = "$" + (stopcost4 - stopcost3).toFixed(2);
+			var stopcost3 = (stopcost1 * sttothrs1).toFixed(2);
+			var stopcost4 = (stopcost2 * sttothrs2).toFixed(2);
+			var stopcost34 = (stopcost4 - stopcost3).toFixed(2);
+			document.getElementById("td11").innerHTML = "$" + addCommas(stopcost3);
+			document.getElementById("td12").innerHTML = "$" + addCommas(stopcost4);
+			document.getElementById("td13").innerHTML = "$" + addCommas(stopcost34);
 
 
 			<!--Fall Tillage-->
@@ -395,11 +397,12 @@
 			document.getElementById("td21").innerHTML = ftopcost2.toFixed(2) + " $/hr";
 			document.getElementById("td22").innerHTML = (ftopcost1 - ftopcost2).toFixed(2) +"$/hr";
 
-			var ftopcost3 = ftopcost1 * fttothrs1;
-			var ftopcost4 = ftopcost2 * fttothrs2;
-			document.getElementById("td23").innerHTML = "$" + ftopcost3.toFixed(2);
-			document.getElementById("td24").innerHTML = "$" + ftopcost4.toFixed(2);
-			document.getElementById("td25").innerHTML = "$" + (ftopcost4 - ftopcost3).toFixed(2);
+			var ftopcost3 = (ftopcost1 * fttothrs1).toFixed(2);
+			var ftopcost4 = (ftopcost2 * fttothrs2).toFixed(2);
+			var ftopcost34 = (ftopcost4 - ftopcost3).toFixed(2);
+			document.getElementById("td23").innerHTML = "$" + addCommas(ftopcost3);
+			document.getElementById("td24").innerHTML = "$" + addCommas(ftopcost4);
+			document.getElementById("td25").innerHTML = "$" + addCommas(ftopcost34);
 
 
 			<!--Pit Packing-->
@@ -420,11 +423,12 @@
 			document.getElementById("td30").innerHTML = ppopcost2.toFixed(2) + " $/hr";
 			document.getElementById("td31").innerHTML = (ppopcost1 - ppopcost2).toFixed(2) +"$/hr";
 
-			var ppopcost3 = ppopcost1 * pptothrs1;
-			var ppopcost4 = ppopcost2 * pptothrs2;
-			document.getElementById("td32").innerHTML = "$" + ppopcost3.toFixed(2);
-			document.getElementById("td33").innerHTML = "$" + ppopcost4.toFixed(2);
-			document.getElementById("td34").innerHTML = "$" + (ppopcost4 - ppopcost3).toFixed(2);
+			var ppopcost3 = (ppopcost1 * pptothrs1).toFixed(2);
+			var ppopcost4 = (ppopcost2 * pptothrs2).toFixed(2);
+			var ppopcost34 = (ppopcost4 - ppopcost3).toFixed(2)
+			document.getElementById("td32").innerHTML = "$" + addCommas(ppopcost3);
+			document.getElementById("td33").innerHTML = "$" + addCommas(ppopcost4);
+			document.getElementById("td34").innerHTML = "$" + addCommas(ppopcost34);
 
 
 
@@ -446,11 +450,12 @@
 			document.getElementById("td39").innerHTML = mhopcost2.toFixed(2) + " $/hr";
 			document.getElementById("td40").innerHTML = (mhopcost1 - mhopcost2).toFixed(2) +"$/hr";
 
-			var mhopcost3 = mhopcost1 * mhtothrs1;
-			var mhopcost4 = mhopcost2 * mhtothrs2;
-			document.getElementById("td41").innerHTML = "$" + mhopcost3.toFixed(2);
-			document.getElementById("td42").innerHTML = "$" + mhopcost4.toFixed(2);
-			document.getElementById("td43").innerHTML = "$" + (mhopcost4 - mhopcost3).toFixed(2);
+			var mhopcost3 = (mhopcost1 * mhtothrs1).toFixed(2);
+			var mhopcost4 = (mhopcost2 * mhtothrs2).toFixed(2);
+			var mhopcost34 = (mhopcost4 - mhopcost3).toFixed(2)
+			document.getElementById("td41").innerHTML = "$" + addCommas(mhopcost3);
+			document.getElementById("td42").innerHTML = "$" + addCommas(mhopcost4);
+			document.getElementById("td43").innerHTML = "$" + addCommas(mhopcost34);
 
 
 
@@ -477,18 +482,18 @@
 			document.getElementById("td51").innerHTML = spopcost2.toFixed(2) + " $/hr";
 			document.getElementById("td52").innerHTML = (spopcost1 - spopcost2).toFixed(2) +"$/hr";
 
-			var spopcost3 = spopcost1 * sptothrs1;
-			var spopcost4 = spopcost2 * sptothrs2;
-			document.getElementById("td53").innerHTML = "$" + spopcost3.toFixed(2);
-			document.getElementById("td54").innerHTML = "$" + spopcost4.toFixed(2);
-			document.getElementById("td55").innerHTML = "$" + (spopcost4 - spopcost3).toFixed(2);
-
+			var spopcost3 = (spopcost1 * sptothrs1).toFixed(2);
+			var spopcost4 = (spopcost2 * sptothrs2).toFixed(2);
+			var spopcost34 = (spopcost4 - spopcost3).toFixed(1);
+			document.getElementById("td53").innerHTML = "$" + addCommas(spopcost3);
+			document.getElementById("td54").innerHTML = "$" + addCommas(spopcost4);
+			document.getElementById("td55").innerHTML = "$" + addCommas(spopcost34);
 
 
 			<!--Totals-->
-			var grandtotal1 = (stopcost4 - stopcost3 + ftopcost4 - ftopcost3 + ppopcost4 - ppopcost3 + mhopcost4 - mhopcost3 + spopcost4 - spopcost3).toFixed(2);
+			var grandtotal1 = (+stopcost34 + +ftopcost34 + +ppopcost34 + +mhopcost34 + +spopcost34).toFixed(2);
 			var grandtotal2 = (+sttothrs2 - +sttothrs1 + +fttothrs2 - +fttothrs1 + +pptothrs2 - +pptothrs1 + +mhtothrs2 - +mhtothrs1 + +sptothrs2 - +sptothrs1).toFixed(2);
-			document.getElementById("td56").innerHTML = "$" + grandtotal1 + " per year " + " &nbsp &nbsp &nbsp " + grandtotal2 + " hours per year";
+			document.getElementById("td56").innerHTML = "$" + addCommas(grandtotal1) + " per year " + " &nbsp &nbsp &nbsp " + addCommas(grandtotal2) + " hours per year";
 
 	}
 
