@@ -207,11 +207,11 @@
 
 
 
-		<div id="watermarkREMOVEME">
-		<p id="watermarktextREMOVEME">Work in Progress</p>
-		</div>
+		<!-- <div id="watermark">
+		<p id="watermarktext">Work in Progress</p>
+		</div> -->
 
-		
+
 
 		<fieldset class="part3">
 				<legend><b>3. Performance Comparison</b></legend>
@@ -339,8 +339,8 @@
 		document.getElementById("td13").innerHTML = addCommas(totbales12) + " bales";
 
 		<!--operating cost-->
-		var opcost1 = ((document.getElementById("laborprice").value * tothrs1) + (document.getElementById("operatingcost").value * totbales1) + (+totbales1 * twine1 * +document.getElementById('twineprice').value / document.getElementById("twineperball").value)).toFixed(2);
-		var opcost2 = ((document.getElementById("laborprice").value * tothrs2) + (document.getElementById("operatingcost").value * totbales2) + (+totbales2 * twine2 * +document.getElementById('twineprice').value / document.getElementById("twineperball").value)).toFixed(2);
+		var opcost1 = ((+document.getElementById("laborprice").value * tothrs1) + (+document.getElementById("operatingcost").value * totbales1) + (+totbales1 * twine1 * +document.getElementById('twineprice').value / document.getElementById("twineperball").value) + (+document.getElementById('tractorcost').value * tothrs1)).toFixed(2);
+		var opcost2 = ((+document.getElementById("laborprice").value * tothrs2) + (+document.getElementById("operatingcost").value * totbales2) + (+totbales2 * twine2 * +document.getElementById('twineprice').value / document.getElementById("twineperball").value) + (+document.getElementById('tractorcost').value * tothrs2)).toFixed(2);
 		var opcost12 = (opcost2-opcost1).toFixed(2);
 		document.getElementById("td14").innerHTML = "$" + addCommas(opcost1);
 		document.getElementById("td15").innerHTML = "$" + addCommas(opcost2);
