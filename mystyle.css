@@ -150,3 +150,15 @@ div.watermark {
     background: -moz-linear-gradient(#999999, white); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#999999, white); /* Standard syntax (must be last) */
 }
+#watermark {
+  position:absolute;
+  display:block;
+  min-height:50%;
+  min-width:30%;
+}
+#watermarktext {
+  color:#999999;
+  font-size:100px;
+  transform:rotate(300deg);
+  -webkit-transform:rotate(300deg);
+}

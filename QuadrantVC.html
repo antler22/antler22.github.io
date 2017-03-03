@@ -159,7 +159,6 @@
 						</select>
 	</fieldset><br>
 
-
 	<fieldset class="part2">
 			<legend><b>2. Basic Information</b></legend>
 					<table>
@@ -205,6 +204,14 @@
 						</tr>
 						</table>
 		</fieldset><br>
+
+
+
+		<div id="watermarkREMOVEME">
+		<p id="watermarktextREMOVEME">Work in Progress</p>
+		</div>
+
+		
 
 		<fieldset class="part3">
 				<legend><b>3. Performance Comparison</b></legend>
@@ -410,14 +417,13 @@
 							</fieldset><br>
 
 
-							<textarea rows="4" cols="50" placeholder="Insert comments here"></textarea> <label style="width:50px;" style="vertical-align: text-top;">Email:</label><input type="email">
-							&nbsp &nbsp <input type="button" value="Generate PDF & Send" style="width:170px; height:70px; font-weight:bold; vertical-align: top;" onclick="generatePDF()">
+	<textarea rows="2" cols="50" placeholder="Insert comments here"></textarea> <label style="width:50px;" style="vertical-align: text-top;">Email:</label><input type="email" name="email">
+	&nbsp &nbsp <input type="submit" value="Send" style="width:100px; height:30px; font-weight:bold; vertical-align: bottom;">
 
+	<p id="demo" class="no-print"></p>
 
-							<p id="demo"></p>
-
-							<script>
-							document.getElementById("demo").innerHTML = new Date();
-							</script>
+	<script>
+	document.getElementById("demo").innerHTML = new Date();
+	</script>
 </body>
 </html>

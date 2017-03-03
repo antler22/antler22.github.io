@@ -84,6 +84,9 @@
 
 <br>
 
+
+
+
 <fieldset class="part2">
 		<legend><b>2. Basic Information</b></legend>
 		<table>
@@ -97,6 +100,11 @@
 						<td align='right'><label for="efficiency">Efficiency:</label><td align='left'><input type="number" id="efficiency" min="0" max="100" style="width:50px; text-float:right;" onchange='dothemath();' value="85" required > %
 					</table>
 	</fieldset><br>
+
+
+	<div id="watermarkREMOVEME">
+	<p id="watermarktextREMOVEME">Work in Progress</p>
+	</div>
 
 
 	<fieldset class="part3">
@@ -193,7 +201,7 @@
 				</tr>
 			</table>
 
-					<input type="checkbox" id="stcheck" onclick="showhide()" >Spring Tillage<br>
+					<input type="checkbox" id="stcheck" onclick="dothemath()" >Spring Tillage<br>
 
 
 				<div id="tr1" style="display:none;">
@@ -224,7 +232,7 @@
 			</table>
 				</div>
 
-				<br><input type="checkbox" id="ftcheck" onclick="showhide()">Fall Tillage<br>
+				<br><input type="checkbox" id="ftcheck" onclick="dothemath()">Fall Tillage<br>
 				<div id="tr2" style="display:none;">
 				<table style="text-align:left;">
 					<colgroup>
@@ -253,7 +261,7 @@
 			</table>
 			</div>
 
-				<br><input type="checkbox" id="ppcheck" onclick="showhide()">Pit Packing<br>
+				<br><input type="checkbox" id="ppcheck" onclick="dothemath()">Pit Packing<br>
 					<div id="tr3" style="display:none;" float="left">
 						<table style="text-align:left;">
 							<colgroup>
@@ -276,7 +284,7 @@
 					</table>
 			</div>
 
-				<br><input type="checkbox" id="mhcheck" onclick="showhide()">Manure Hauling<br>
+				<br><input type="checkbox" id="mhcheck" onclick="dothemath()">Manure Hauling<br>
 				<div id="tr4" style="display:none;">
 					<table style="text-align:left;">
 						<colgroup>
@@ -297,7 +305,7 @@
 				</table>
 				</div>
 
-				<br><input type="checkbox" id="spcheck" onclick="showhide()">Seeding / Planting<br>
+				<br><input type="checkbox" id="spcheck" onclick="dothemath()">Seeding / Planting<br>
 					<div id="tr5" style="display:none;">
 						<table style="text-align:left;">
 							<colgroup>
@@ -333,6 +341,53 @@
 
 //written by Nick Jacobsen
 	function dothemath() {
+
+		if (document.getElementById("stcheck").checked) {
+			document.getElementById("tr1").style.display = "inline";
+			document.getElementById("tr6").style.display = "inline";
+
+		} else {
+			document.getElementById("tr1").style.display = "none";
+			document.getElementById("tr6").style.display = "none";
+			// document.getElementById('stacres').value = 0;
+			// document.getElementById('stwidth').value = 0;
+			// document.getElementById('stspeed1').value = 0;
+			// document.getElementById('stspeed2').value = 0;
+			// document.getElementById('stfuel1').value = 0;
+			// document.getElementById('stfuel2').value = 0;
+			// document.getElementById('stdef1').value = 0;
+			// document.getElementById('stdef2').value = 0;
+		}
+		if (document.getElementById("ftcheck").checked) {
+			document.getElementById("tr2").style.display = "inline";
+			document.getElementById("tr7").style.display = "inline";
+
+		} else {
+			document.getElementById("tr2").style.display = "none";
+			document.getElementById("tr7").style.display = "none";
+		}
+		if (document.getElementById("ppcheck").checked) {
+		document.getElementById("tr3").style.display = "inline";
+		document.getElementById("tr8").style.display = "inline";
+		} else {
+		document.getElementById("tr3").style.display = "none";
+		document.getElementById("tr8").style.display = "none";
+		}
+		if (document.getElementById("mhcheck").checked) {
+		document.getElementById("tr4").style.display = "inline";
+		document.getElementById("tr9").style.display = "inline";
+		} else {
+		document.getElementById("tr4").style.display = "none";
+		document.getElementById("tr9").style.display = "none";
+		}
+		if (document.getElementById("spcheck").checked) {
+		document.getElementById("tr5").style.display = "inline";
+		document.getElementById("tr10").style.display = "inline";
+		} else {
+		document.getElementById("tr5").style.display = "none";
+		document.getElementById("tr10").style.display = "none";
+		}
+
 		var laborprice = document.getElementById("laborprice").value;
 		var fuelprice = document.getElementById("fuelprice").value;
 		var defprice = document.getElementById("defprice").value;
@@ -430,8 +485,6 @@
 			document.getElementById("td33").innerHTML = "$" + addCommas(ppopcost4);
 			document.getElementById("td34").innerHTML = "$" + addCommas(ppopcost34);
 
-
-
 			<!--Manure Hauling-->
 			var mhfuel1 = document.getElementById("mhfuel1").value * fuelprice;
 			var mhfuel2 = document.getElementById("mhfuel2").value * fuelprice;
@@ -456,8 +509,6 @@
 			document.getElementById("td41").innerHTML = "$" + addCommas(mhopcost3);
 			document.getElementById("td42").innerHTML = "$" + addCommas(mhopcost4);
 			document.getElementById("td43").innerHTML = "$" + addCommas(mhopcost34);
-
-
 
 			<!--Planting / Seeding-->
 			var spfuel1 = document.getElementById("spfuel1").value * fuelprice;
@@ -497,47 +548,6 @@
 
 	}
 
-
-	function showhide () {
-
-			if (document.getElementById("stcheck").checked) {
-				document.getElementById("tr1").style.display = "inline";
-				document.getElementById("tr6").style.display = "inline";
-
-			} else {
-				document.getElementById("tr1").style.display = "none";
-				document.getElementById("tr6").style.display = "none";
-			}
-			if (document.getElementById("ftcheck").checked) {
-				document.getElementById("tr2").style.display = "inline";
-				document.getElementById("tr7").style.display = "inline";
-
-			} else {
-				document.getElementById("tr2").style.display = "none";
-				document.getElementById("tr7").style.display = "none";
-	}
-		if (document.getElementById("ppcheck").checked) {
-			document.getElementById("tr3").style.display = "inline";
-			document.getElementById("tr8").style.display = "inline";
-		} else {
-			document.getElementById("tr3").style.display = "none";
-			document.getElementById("tr8").style.display = "none";
-	}
-		if (document.getElementById("mhcheck").checked) {
-			document.getElementById("tr4").style.display = "inline";
-			document.getElementById("tr9").style.display = "inline";
-		} else {
-			document.getElementById("tr4").style.display = "none";
-			document.getElementById("tr9").style.display = "none";
-	}
-		if (document.getElementById("spcheck").checked) {
-			document.getElementById("tr5").style.display = "inline";
-			document.getElementById("tr10").style.display = "inline";
-		} else {
-			document.getElementById("tr5").style.display = "none";
-			document.getElementById("tr10").style.display = "none";
-	}
-	}
 </script>
 
 
@@ -740,12 +750,11 @@
 </fieldset><br>
 
 
-<textarea rows="4" cols="50" placeholder="Insert comments here"></textarea> <label style="width:50px;" style="vertical-align: text-top;">Email:</label><input type="email">
-&nbsp &nbsp <input type="button" value="Generate PDF & Send" style="width:170px; height:70px; font-weight:bold; vertical-align: top;" onclick="generatePDF()">
-
+<textarea rows="2" cols="50" placeholder="Insert comments here"></textarea> <label style="width:50px;" style="vertical-align: text-top;">Email:</label><input type="email" name="email">
+&nbsp &nbsp <input type="submit" value="Send" style="width:100px; height:30px; font-weight:bold; vertical-align: bottom;">
 </form>
 
-<p id="demo"></p>
+<p id="demo" class="no-print"></p>
 
 <script>
 document.getElementById("demo").innerHTML = new Date();

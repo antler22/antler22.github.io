@@ -213,6 +213,12 @@
 				</table>
 		</fieldset><br>
 
+		<div id="watermarkREMOVEME">
+		<p id="watermarktextREMOVEME">Work in Progress</p>
+		</div>
+
+
+
 		<fieldset class="part3">
 			<legend float="left"><b>3. Performance Comparison</b></legend>
 				<table cellpadding="5" width="800" id="myTable">
@@ -681,15 +687,15 @@ function dothemath() {
 				</fieldset><br>
 
 
-				<textarea rows="2" cols="50" placeholder="Insert comments here"></textarea> <label style="width:50px;" style="vertical-align: text-top;">Email:</label><input type="email" name='email'>
-				&nbsp &nbsp <input type="button" value="Send" style="width:100px; height:30px; font-weight:bold; vertical-align: bottom;">
+				<textarea rows="2" cols="50" placeholder="Insert comments here"></textarea> <label style="width:50px;" style="vertical-align: text-top;">Email:</label><input type="email" name="email">
+				&nbsp &nbsp <input type="submit" value="Send" style="width:100px; height:30px; font-weight:bold; vertical-align: bottom;">
 </form>
 
-				<p id="demo"></p>
+<p id="demo" class="no-print"></p>
 
-				<script>
-				document.getElementById("demo").innerHTML = new Date();
-				</script>
+<script>
+document.getElementById("demo").innerHTML = new Date();
+</script>
 
 </body>
 </html>
