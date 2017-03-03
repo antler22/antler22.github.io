@@ -46,7 +46,7 @@
 	<br><fieldset class="part1">
 		<legend><b>1. Farm Information</b></legend>
 		<label for="farmname" class="fieldset1">Name:</label><input type="text" id="farmname" placeholder="First, Last" autofocus required></input>
-		<label for="farmlocation" class="fieldset1">Location:</label><input type="text" id="farmlocation"  onchange="calculate()" placeholder="City, State/Province" required></input>
+		<label for="farmlocation" class="fieldset1">Location:</label><input type="text" id="farmlocation"  placeholder="City, State/Province" required></input>
 		<label for="serialno" class="fieldset1">Serial:</label><input type="text" id="serial" style='width:80px;' required></input>
 		<label for="farmname" class="fieldset1">Dealer:</label><select name="dealername" id="dealername" style='width:180px;' required>
 				<option value="" disabled selected>Select</option>
@@ -174,7 +174,7 @@
 							<option value="uwm">University of Wisconsin - Madison</option>
 							<option value="isu">Iowa State Universtiy</option>
 							<option value="knownbpa">Known Bushels/Acre</option>
-							<input type="number" id="newcropname" style="width:80px; display:none;" placeholder="bu/ac" value = "185">
+							<input type="number" id="newcropname" style="width:80px; display:none;" placeholder="bu/ac" value = "185" onchange='dothemath();'>
 					</tr>
 
 
@@ -212,6 +212,7 @@
 					</tr>
 				</table>
 		</fieldset><br>
+
 
 		<div id="watermarkREMOVEME">
 		<p id="watermarktextREMOVEME">Work in Progress</p>
@@ -584,8 +585,8 @@ function dothemath() {
 	document.getElementById("td7").innerHTML = (tothrs2-tothrs1).toFixed(2) + " hrs";
 
 	<!--operating cost-->
-	var opcost1 = (( +document.getElementById("maintcost").value) * tothrs1).toFixed(2);
-	var opcost2 = ((+document.getElementById("maintcost").value) * tothrs2).toFixed(2);
+	var opcost1 = ((+document.getElementById("maintcost").value + +document.getElementById('laborprice').value) * tothrs1).toFixed(2);
+	var opcost2 = ((+document.getElementById("maintcost").value + +document.getElementById('laborprice').value)* tothrs2 ).toFixed(2);
 	var opcost12 = (opcost2-opcost1).toFixed(2);
 	document.getElementById("td8").innerHTML = "$" + addCommas(opcost1);
 	document.getElementById("td9").innerHTML = "$" + addCommas(opcost2);
