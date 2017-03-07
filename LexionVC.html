@@ -8,7 +8,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Home | CLAAS | Value Calculator</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script src="lexjquery.js"></script>
 		<link rel="stylesheet" type="text/css" href="mystyle.css">
 		<link href="https://www.fontify.me/wf/18e2a1337607f8734ef443d978cb015f" rel="stylesheet" type="text/css">
 
@@ -40,8 +39,8 @@
 </head>
 
 
-<!-- Divide header and body-->
 
+<!-- Divide header and body-->
 
 <body>
 
@@ -153,7 +152,7 @@
 								</td>
 							</tr>
 		<tr>
-			<td colspan='2' align='right'><label class="fieldset2" for="totalacres">Area Harvested:</label><td align='left'><input name='Total Acres' type="number" id="totalacres" min="1" max="50000" style="width:80px; text-float:right;" onchange='dothemath();' value="1000" required><td align='left'>ac
+			<td colspan='2' align='right'><label class="fieldset2" for="totalacres">Area Harvested:</label><td align='left'><input name='Total Acres' type="number" id="totalacres" min="1" max="50000" style="width:80px; text-float:right;" onchange='dothemath();' value="2000" required><td align='left'>ac
 			<td colspan='2' align='right'><label class="fieldset2" for="laborprice">Labor Rate:</label><td align='left'><input name='Labor Rate' type="number" span="any" id="laborprice" min="1" max="50" style="width:80px; text-float:right;" onchange='dothemath();' value="15" required><td align='left'>$/hr
 		</tr>
 		<tr>
@@ -382,10 +381,10 @@
 		<tr></tr>
 		<tr>
 			<td float="left" >Ground speed
-			<td align='right'><input name='LEXION ground speed' type="number" onchange='dothemath();' span="0.1" id="groundspeed1" min="0" max="10" style="width:70px; text-float:right;" placeholder="0.0" value='6' required>
+			<td align='right'><input name='LEXION ground speed' type="number" onchange='dothemath();' span="0.1" id="groundspeed1" min="0" max="10" style="width:70px; text-float:right;" placeholder="0.0" value='5' required>
 			<td align='left'>mph
 			<td>
-			<td align='right'><input name='Competitor ground speed' type="number" onchange='dothemath();' span="0.1" id="groundspeed2" min="0" max="10" style="width:70px; text-float:right;" placeholder="0.0" value='4' required>
+			<td align='right'><input name='Competitor ground speed' type="number" onchange='dothemath();' span="0.1" id="groundspeed2" min="0" max="10" style="width:70px; text-float:right;" placeholder="0.0" value='3' required>
 			<td align='left'>mph
 		</tr>
 		<tr>
@@ -393,23 +392,23 @@
 			<td align='right'><input name='LEXION fuel economy' type="number" onchange='dothemath();' span="any" id="fuelburn1" min="0" max="10" style="width:70px; text-float:right;" placeholder="1.0" value='1.0' required>
 			<td align='left'>gal/ac
 			<td>
-			<td align='right'><input name='Competitor fuel economy' type="number" onchange='dothemath();' span="any" id="fuelburn2" min="0" max="10" style="width:70px; text-float:right;" placeholder="1.5" value='2' required>
+			<td align='right'><input name='Competitor fuel economy' type="number" onchange='dothemath();' span="any" id="fuelburn2" min="0" max="10" style="width:70px; text-float:right;" placeholder="1.5" value='1.5' required>
 			<td align='left'>gal/ac
 		</tr>
 		<tr>
 			<td float="left" >DEF Economy
-			<td align='right'><input type="number" onchange='dothemath();' span="0.01" id="defburn1" min="0" max="10" style="width:70px; text-float:right;" value="2" required>
+			<td align='right'><input type="number" onchange='dothemath();' span="0.01" id="defburn1" min="0" max="10" style="width:70px; text-float:right;" value="0.06" required>
 			<td align='left'>gal/ac
 			<td>
-			<td align='right'><input type="number" onchange='dothemath();' span="0.01" id="defburn2" min="0" max="10" style="width:70px; text-float:right;" value="1" required>
+			<td align='right'><input type="number" onchange='dothemath();' span="0.01" id="defburn2" min="0" max="10" style="width:70px; text-float:right;" value="0.1" required>
 			<td align='left'>gal/ac
 		</tr>
 		<tr>
 			<td float="left"  rowspan='2'>Residue
-			<td colspan='5'><input type="radio" name="Residue" onchange='dothemath();' value="Spreading" id="spread1" checked>Spread
+			<td colspan='5'><input type="radio" name="Residue" onchange='dothemath();' value="Spreading" id="spread1">Spread
 		</tr>
 		<tr>
-				<td colspan='5'><input type="radio" name="Residue" onchange='dothemath();' value="Windrowing" id="windrow1">Windrow
+				<td colspan='5'><input type="radio" name="Residue" onchange='dothemath();' value="Windrowing" id="windrow1" checked>Windrow
 		</tr>
 		<tr>
 			<td  rowspan='5'>Grain Loss
@@ -657,6 +656,7 @@
 
 
 </form>
+
 
 <p id="demo" class="no-print"></p>
 
