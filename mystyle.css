@@ -24,6 +24,9 @@
   table.homepage {
     font-size: 1.2em;
   }
+  body.homepage {
+    font-family: font92192;
+  }
   body {
 		font-size: 14px;
     max-width: 8.5in;
@@ -102,11 +105,10 @@
   }
   @media print {
     html { width:8.5in; }
-    body { font: 9pt/1.5 font72227;, sans-serif; }
+    ul.breadcrumb {display:none;}
+    div.grad1 {display:none;}
+    body {display:none;}
     .no-print, .no-print *
-   {
-       display: none !important;
-   }
   }
   @media screen and (max-width:8.5in) { /* resize your window until the event is triggered */
     html { width:8.5in; }
@@ -114,7 +116,8 @@
 }
 
 ul.breadcrumb {
-    font-size: 14px;
+    font-size: 16px;
+    font-family: font72227;
 }
 ul.breadcrumb li {
     display: inline;
