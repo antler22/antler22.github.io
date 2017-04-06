@@ -136,7 +136,7 @@ ul.breadcrumb li a:hover {
  }
 div.watermark {
     opacity: 0.5;
-    color: BLACK;
+    color: black;
     position: fixed;
     top: auto;
     left: 80%;
