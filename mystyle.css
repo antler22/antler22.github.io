@@ -107,7 +107,7 @@
     html { width:8.5in; }
     ul.breadcrumb {display:none;}
     div.grad1 {display:none;}
-    body {display:none;}
+    .watermark {display:block;}
     .no-print, .no-print *
   }
   @media screen and (max-width:8.5in) { /* resize your window until the event is triggered */
@@ -137,14 +137,6 @@ ul.breadcrumb li a:hover {
    background: #999999;
    background: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(white), color-stop(50%, #666666));
  }
-div.watermark {
-    opacity: 0.5;
-    color: black;
-    position: fixed;
-    top: auto;
-    left: 80%;
-}
-
 #grad1 {
     height: 10px;
     background: #999999; /* For browsers that do not support gradients */
@@ -153,15 +145,12 @@ div.watermark {
     background: -moz-linear-gradient(#999999, white); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#999999, white); /* Standard syntax (must be last) */
 }
-#watermark {
+.watermark {
+  display:none;
   position:absolute;
-  display:block;
   min-height:50%;
-  min-width:30%;
-}
-#watermarktext {
-  color:#999999;
+  min-width:50%;
+  color:red;
   font-size:100px;
-  transform:rotate(300deg);
-  -webkit-transform:rotate(300deg);
+  transform:rotate(45deg);
 }
