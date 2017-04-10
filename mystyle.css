@@ -107,6 +107,7 @@
     html { width:8.5in; }
     ul.breadcrumb {display:none;}
     div.grad1 {display:none;}
+    body {display:none;}
     .watermark {display:block;}
     .no-print {display:none;}
   }
