@@ -108,7 +108,7 @@
     ul.breadcrumb {display:none;}
     div.grad1 {display:none;}
     .watermark {display:block;}
-    .no-print, .no-print *
+    .no-print {display:none;}
   }
   @media screen and (max-width:8.5in) { /* resize your window until the event is triggered */
     html { width:8.5in; }

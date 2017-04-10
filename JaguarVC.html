@@ -198,11 +198,11 @@
 					</tr>
 					<tr>
 						<td colspan='2' align='right'><label class="fieldset2" for="totalacres">Area Harvested:</label><td align='left'><input type="number" id="totalacres" min="1" max="50000" style="width:80px; text-float:right;" onchange='dothemath();' value="1800" required><td align='left'>ac
-						<td colspan='2' align='right'><label class="fieldset2" for="laborprice">Labor Rate:</label><td align='left'><input type="number" span="any" id="laborprice" min="1" max="50" style="width:80px; text-float:right;" onchange='dothemath();' value="15" required><td align='left'>$/hr
+						<td colspan='2' align='right'><label class="fieldset2" for="laborprice">Labor Rate:</label><td align='left'><input type="number" step="any" id="laborprice" min="1" max="50" style="width:80px; text-float:right;" onchange='dothemath();' value="15" required><td align='left'>$/hr
 					</tr>
 					<tr>
 						<td colspan='2' align='right'><label class="fieldset2" for="bpaaverage">Yield:</label><td align='left'><input type="number" id="bpaaverage" min="0" max="500" style="width:80px; text-float:right;" onchange='dothemath();' value="25" required><td align='left'>t/ac
-						<td colspan='2' align='right'><label class="fieldset2" for="fuelprice">Fuel Cost:</label><td align='left'><input type="number" id="fuelprice" min="0" max="10" span="any" style="width:80px; text-float:right;" onchange='dothemath();' value="3" required><td align='left'>$/gal
+						<td colspan='2' align='right'><label class="fieldset2" for="fuelprice">Fuel Cost:</label><td align='left'><input type="number" id="fuelprice" min="0" max="10" step="any" style="width:80px; text-float:right;" onchange='dothemath();' value="3" required><td align='left'>$/gal
 					</tr>
 					<tr>
 						<td colspan='2' align='right'><label class="fieldset2" for="croprice">Crop Price:</label><td align='left'><input type="number" step="any" id="cropprice" min="0" max="20" style="width:80px; text-float:right;" onchange='dothemath();' value="4" required><td align='left'>$/bu
@@ -349,27 +349,27 @@
 				<tr></tr>
 				<tr>
 					<td colspan=2 float="center">Ground speed
-					<td colspan=2><input type="number" span="0.1" id="groundspeed1" min="0" max="10" style="width:70px; text-float:right;" placeholder="0.0" onchange='dothemath();' value="4.8" required>mph &nbsp
+					<td colspan=2><input type="number" step="0.1" id="groundspeed1" min="0" max="10" style="width:70px; text-float:right;" placeholder="0.0" onchange='dothemath();' value="4.8" required>mph &nbsp
 					<td colspan=2>-
-					<td colspan=2><input type="number" span="0.1" id="groundspeed2" min="0" max="10" style="width:70px; text-float:right;" placeholder="0.0" onchange='dothemath();' value="3.7" required>mph &nbsp
+					<td colspan=2><input type="number" step="0.1" id="groundspeed2" min="0" max="10" style="width:70px; text-float:right;" placeholder="0.0" onchange='dothemath();' value="3.7" required>mph &nbsp
 				</tr>
 				<tr>
 					<td colspan=2 float="center">Sample weight
-					<td colspan=2><input type="number" span="0.1" id="fixedsample1" min="0" max="999" style="width:70px; text-float:right;" placeholder="0.0" onchange='dothemath();' value="300" required>g &nbsp &nbsp &nbsp&nbsp
+					<td colspan=2><input type="number" step="0.1" id="fixedsample1" min="0" max="999" style="width:70px; text-float:right;" placeholder="0.0" onchange='dothemath();' value="300" required>g &nbsp &nbsp &nbsp&nbsp
 					<td colspan=2>-
-					<td colspan=2><input type="number" span="0.1" id="fixedsample2" min="0" max="999" style="width:70px; text-float:right;" placeholder="0.0" onchange='dothemath();' value="300" required>g &nbsp &nbsp &nbsp&nbsp
+					<td colspan=2><input type="number" step="0.1" id="fixedsample2" min="0" max="999" style="width:70px; text-float:right;" placeholder="0.0" onchange='dothemath();' value="300" required>g &nbsp &nbsp &nbsp&nbsp
 				</tr>
 				<tr>
 					<td colspan=2 float="center">Whole kernels
-					<td colspan=2><input type="number" span="0.1" id="fixedwholec1" min="0" max="999" style="width:70px; text-float:right;" placeholder="0.0" onchange='dothemath();' value="0" required>g &nbsp &nbsp &nbsp&nbsp
+					<td colspan=2><input type="number" step="0.1" id="fixedwholec1" min="0" max="999" style="width:70px; text-float:right;" placeholder="0.0" onchange='dothemath();' value="0" required>g &nbsp &nbsp &nbsp&nbsp
 					<td colspan=2>-
-					<td colspan=2><input type="number" span="0.1" id="fixedwholec2" min="0" max="999" style="width:70px; text-float:right;" placeholder="0.0" onchange='dothemath();' value="0.5" required>g &nbsp &nbsp &nbsp&nbsp
+					<td colspan=2><input type="number" step="0.1" id="fixedwholec2" min="0" max="999" style="width:70px; text-float:right;" placeholder="0.0" onchange='dothemath();' value="0.5" required>g &nbsp &nbsp &nbsp&nbsp
 				</tr>
 				<tr>
 					<td colspan=2 float="center">"Nicked" kernels
-					<td colspan=2><input type="number" span="0.1" id="fixedhalfc1" min="0" max="999" style="width:70px; text-float:right;" placeholder="0.0" onchange='dothemath();' value="3" required>g &nbsp &nbsp &nbsp&nbsp
+					<td colspan=2><input type="number" step="0.1" id="fixedhalfc1" min="0" max="999" style="width:70px; text-float:right;" placeholder="0.0" onchange='dothemath();' value="3" required>g &nbsp &nbsp &nbsp&nbsp
 					<td colspan=2>-
-					<td colspan=2><input type="number" span="0.1" id="fixedhalfc2" min="0" max="999" style="width:70px; text-float:right;" placeholder="0.0" onchange='dothemath();' value="22" required>g &nbsp &nbsp &nbsp&nbsp
+					<td colspan=2><input type="number" step="0.1" id="fixedhalfc2" min="0" max="999" style="width:70px; text-float:right;" placeholder="0.0" onchange='dothemath();' value="22" required>g &nbsp &nbsp &nbsp&nbsp
 				</tr>
 			</table>
 		</div>
@@ -457,15 +457,15 @@
 			</colgroup>
 				<tr>
 					<td float="center" colspan=2>Fuel Economy
-					<td colspan=2><input type="number" span="any" id="fuelburn1" min="0" max="10" style="width:70px; text-float:right;" onchange='dothemath();' value="22.2" required>gal/hr
+					<td colspan=2><input type="number" step="any" id="fuelburn1" min="0" max="10" style="width:70px; text-float:right;" onchange='dothemath();' value="22.2" required>gal/hr
 					<td colspan=2>-
-					<td colspan=2><input type="number" span="any" id="fuelburn2" min="0" max="10" style="width:70px; text-float:right;" onchange='dothemath();' value="24.6" required>gal/hr
+					<td colspan=2><input type="number" step="any" id="fuelburn2" min="0" max="10" style="width:70px; text-float:right;" onchange='dothemath();' value="24.6" required>gal/hr
 				</tr>
 				<tr>
 					<td float="center" colspan=2>DEF Economy
-					<td colspan=2><input type="number" span="0.01" id="defburn1" min="0" max="10" style="width:70px; text-float:right;" onchange='dothemath();' value="1.2" required>gal/hr
+					<td colspan=2><input type="number" step="0.01" id="defburn1" min="0" max="10" style="width:70px; text-float:right;" onchange='dothemath();' value="1.2" required>gal/hr
 					<td colspan=2>-
-					<td colspan=2><input type="number" span="0.01" id="defburn2" min="0" max="10" style="width:70px; text-float:right;" onchange='dothemath();' value="1.2" required>gal/hr
+					<td colspan=2><input type="number" step="0.01" id="defburn2" min="0" max="10" style="width:70px; text-float:right;" onchange='dothemath();' value="1.2" required>gal/hr
 				</tr>
 			</table>
 		</fieldset><br>

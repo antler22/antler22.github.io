@@ -46,7 +46,7 @@
 
 	<div id="grad1" class='grad1'></div>
 	<!-- <form name="content" method="post" id="form1" action='https://script.google.com/macros/s/AKfycbyPBUPkxBonVw5JDxlxSELqSyCoYg6IT2kIfBVg7N6tva40Lxk/exec'> -->
-	<form action="mailto:nick.jacobsen@claas.com" method="post" enctype="text/plain" >
+	<form action="demo.php" method="post">
 	<!--farm info-->
 	<br><fieldset class="part1">
 		<legend><b>1. Farm Information</b></legend>
@@ -153,18 +153,18 @@
 							</tr>
 		<tr>
 			<td colspan='2' align='right'><label class="fieldset2" for="totalacres">Area Harvested:</label><td align='left'><input name='Total Acres' type="number" id="totalacres" min="1" max="50000" style="width:80px; text-float:right;" onchange='dothemath();' value="2000" required><td align='left'>ac
-			<td colspan='2' align='right'><label class="fieldset2" for="laborprice">Labor Rate:</label><td align='left'><input name='Labor Rate' type="number" span="any" id="laborprice" min="1" max="50" style="width:80px; text-float:right;" onchange='dothemath();' value="15" required><td align='left'>$/hr
+			<td colspan='2' align='right'><label class="fieldset2" for="laborprice">Labor Rate:</label><td align='left'><input name='Labor Rate' type="number" step="0.1" id="laborprice" min="1" max="50" style="width:80px; text-float:right;" onchange='dothemath();' value="15" required><td align='left'>$/hr
 		</tr>
 		<tr>
 			<td colspan='2' align='right'><label class="fieldset2" for="bpaaverage">Yield:</label><td align='left'><input name='Average Yield' type="number" id="bpaaverage" min="0" max="500" style="width:80px; text-float:right;" onchange='dothemath();' value="250" required><td align='left'>bu/ac
-			<td colspan='2' align='right'><label class="fieldset2" for="fuelprice">Fuel Cost:</label><td align='left'><input name='fuelprice' type="number" id="fuelprice" min="0" max="10" span="any" style="width:80px; text-float:right;" onchange='dothemath();' value="3" required><td align='left'>$/gal
+			<td colspan='2' align='right'><label class="fieldset2" for="fuelprice">Fuel Cost:</label><td align='left'><input name='fuelprice' type="number" id="fuelprice" min="0" max="10" step="0.01" style="width:80px; text-float:right;" onchange='dothemath();' value="3" required><td align='left'>$/gal
 		</tr>
 		<tr>
 			<td colspan='2' align='right'><label class="fieldset2" for="croprice">Crop Price:</label><td align='left'><input name='Crop Price' type="number" step="any" id="cropprice" min="0" max="20" style="width:80px; text-float:right;" onchange='dothemath();' value="4" required><td align='left'>$/bu
 			<td colspan='2' align='right'><label class="fieldset2" for="defprice">DEF Fluid Cost:</label><td align='left'><input name='DEF Cost' type="number" step="any" id="defprice" min="0" max="10" style="width:80px; text-float:right;" onchange='dothemath();' value="3" required><td align='left'>$/gal
 		</tr>
 		<tr>
-			<td colspan='2' align='right'><label class="fieldset2" for="efficiency">Efficiency:</label><td align='left'><input name='Efficiency' type="number" id="efficiency" min="0" max="100" span='0.1' style="width:80px; text-float:right;" onchange='dothemath();' value="85"required ><td align='left'>%
+			<td colspan='2' align='right'><label class="fieldset2" for="efficiency">Efficiency:</label><td align='left'><input name='Efficiency' type="number" id="efficiency" min="0" max="100" step='0.1' style="width:80px; text-float:right;" onchange='dothemath();' value="82.5"required ><td align='left'>%
 			<td colspan='2' align='right'><label class="fieldset2" for="maintcost">Maintenance Costs:</label><td align='left'><input name='Maintenance Costs' type="number" id="maintcost" min="0" max="1000" style="width:80px; text-float:right;" onchange='dothemath();' value="200" required ><td align='left'>$/hr
 		</tr>
 	</table>
@@ -381,26 +381,26 @@
 		<tr></tr>
 		<tr>
 			<td float="left" >Ground speed
-			<td align='right'><input name='LEXION ground speed' type="number" onchange='dothemath();' span="0.1" id="groundspeed1" min="0" max="10" style="width:70px; text-float:right;" placeholder="0.0" value='5' required>
+			<td align='right'><input name='LEXION ground speed' type="number" onchange='dothemath();' step="0.1" id="groundspeed1" min="0" max="10" style="width:70px; text-float:right;" placeholder="0.0" value='5' required>
 			<td align='left'>mph
 			<td>
-			<td align='right'><input name='Competitor ground speed' type="number" onchange='dothemath();' span="0.1" id="groundspeed2" min="0" max="10" style="width:70px; text-float:right;" placeholder="0.0" value='3' required>
+			<td align='right'><input name='Competitor ground speed' type="number" onchange='dothemath();' step="0.1" id="groundspeed2" min="0" max="10" style="width:70px; text-float:right;" placeholder="0.0" value='3' required>
 			<td align='left'>mph
 		</tr>
 		<tr>
 			<td float="left" >Fuel Economy
-			<td align='right'><input name='LEXION fuel economy' type="number" onchange='dothemath();' span="any" id="fuelburn1" min="0" max="10" style="width:70px; text-float:right;" placeholder="1.0" value='1.0' required>
+			<td align='right'><input name='LEXION fuel economy' type="number" onchange='dothemath();' step="0.1" id="fuelburn1" min="0" max="10" style="width:70px; text-float:right;" placeholder="1.0" value='1.0' required>
 			<td align='left'>gal/ac
 			<td>
-			<td align='right'><input name='Competitor fuel economy' type="number" onchange='dothemath();' span="any" id="fuelburn2" min="0" max="10" style="width:70px; text-float:right;" placeholder="1.5" value='1.5' required>
+			<td align='right'><input name='Competitor fuel economy' type="number" onchange='dothemath();' step="0.1" id="fuelburn2" min="0" max="10" style="width:70px; text-float:right;" placeholder="1.5" value='1.5' required>
 			<td align='left'>gal/ac
 		</tr>
 		<tr>
 			<td float="left" >DEF Economy
-			<td align='right'><input type="number" onchange='dothemath();' span="0.01" id="defburn1" min="0" max="10" style="width:70px; text-float:right;" value="0.06" required>
+			<td align='right'><input type="number" onchange='dothemath();' step="0.01" id="defburn1" min="0" max="10" style="width:70px; text-float:right;" value="0.06" required>
 			<td align='left'>gal/ac
 			<td>
-			<td align='right'><input type="number" onchange='dothemath();' span="0.01" id="defburn2" min="0" max="10" style="width:70px; text-float:right;" value="0.1" required>
+			<td align='right'><input type="number" onchange='dothemath();' step="0.01" id="defburn2" min="0" max="10" style="width:70px; text-float:right;" value="0.1" required>
 			<td align='left'>gal/ac
 		</tr>
 		<tr>
@@ -412,7 +412,7 @@
 		</tr>
 		<tr>
 			<td  rowspan='5'>Grain Loss
-			<td colspan='5' float="center">Catch Pan Size &nbsp &nbsp <input name='LEXION Grain Loss' type="number" span="any" id="panlength" style="width:30px" min="1" placeholder="48" value="12">in x <input name='Competitor Grain Loss' type="number" span="any" id="panwidth" style="width:30px" min="1" placeholder="48" value="12">in
+			<td colspan='5' float="center">Catch Pan Size &nbsp &nbsp <input name='LEXION Grain Loss' type="number" step="1" id="panlength" style="width:30px" min="1" placeholder="48" value="12">in x <input name='Competitor Grain Loss' type="number" step="any" id="panwidth" style="width:30px" min="1" placeholder="48" value="12">in
 		</tr>
 		<tr>
 			<td float="center" colspan='5'><input type="radio" name="Collection Method" value="kernel" id="seedcount1" onchange='dothemath();' checked> Seed Count
@@ -424,10 +424,10 @@
 			<td float="center" colspan='5'><input type="radio" name="Collection Method" value="weight" id="weight1"onchange='dothemath();' > Weight
 		</tr>
 		<tr>
-			<td align='right'><input type="number" id="loss1" style="width:50px; text-float:center;" min="0" span="any" onchange='dothemath();' value='2' required>
+			<td align='right'><input type="number" id="loss1" style="width:50px; text-float:center;" min="0" step="any" onchange='dothemath();' value='2' required>
 			<td align='left'>
 			<td>
-			<td align='right'><input type="number" id="loss2" style="width:50px; text-float:center;" min="0" span="any" onchange='dothemath();' value='4' required>
+			<td align='right'><input type="number" id="loss2" style="width:50px; text-float:center;" min="0" step="any" onchange='dothemath();' value='4' required>
 			<td align='left'>
 		</tr>
 		<tr>
@@ -658,10 +658,31 @@
 </form>
 
 
-<p id="demo" class="no-print"></p>
+<p id="demo1" class="no-print"></p>
 
 <script>
-document.getElementById("demo").innerHTML = new Date();
+document.getElementById("demo1").innerHTML = new Date();
+</script>
+
+
+
+<button onclick="getLocation()" class="no-print">Show location</button>
+<p id="demo" class="no-print"></p>
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude;
+}
 </script>
 
 </body>
