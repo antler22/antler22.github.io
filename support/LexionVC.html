@@ -1,44 +1,209 @@
 <!DOCTYPE HTML>
-<!--CREATED BY NICK JACOBSEN-->
-
-<html lang="us">
 
 <head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Home | CLAAS | Value Calculator</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!--enables JQuery-->
-		<link rel="stylesheet" type="text/css" href="mystyle.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home | CLAAS | Value Calculator</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!--enables JQuery-->
+	<link rel="stylesheet" type="text/css" href="mystyle.css"> <!--CSS-->
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"> <!--image on tab-->
 
 
-		<!--Proper fonts for CLAAS-->
-		<link href="https://www.fontify.me/wf/30b7c05ed3c5a32d452ca39bba8147d6" rel="stylesheet" type="text/css">  	<!--Titles/Headings reference with 92192  CLAAS neue helvetica 35thin-->
-	 	<link href="https://www.fontify.me/wf/18e2a1337607f8734ef443d978cb015f" rel="stylesheet" type="text/css"> 	<!--subheadlines reference with 72227 CLAAS Neue Helvetica 45 light-->
-		<link href="https://www.fontify.me/wf/800d997c339c0d0926c020a1edd1c9a0" rel="stylesheet" type="text/css"> 	<!--body reference with 71949 CLAAS Neue Helvetica 65 medium-->
-		<link href="https://www.fontify.me/wf/8d07f32883c790caccd89636d1eb5b47" rel="stylesheet" type="text/css"> 	<!--footnote reference with 115649 CLAAS Neue Helvetica 47 light condensed-->
-		<link href="https://www.fontify.me/wf/aff34d9b118b88af2245aba72ed961fd" rel="stylesheet" type="text/css"> 	<!--body condensed reference with 109817 CLAAS Neue helvetica 67 medium condensed-->
+	<!--Proper fonts for CLAAS-->
+	<link href="https://www.fontify.me/wf/30b7c05ed3c5a32d452ca39bba8147d6" rel="stylesheet" type="text/css">  	<!--Titles/Headings reference with 92192  CLAAS neue helvetica 35thin-->
+ 	<link href="https://www.fontify.me/wf/18e2a1337607f8734ef443d978cb015f" rel="stylesheet" type="text/css"> 	<!--subheadlines reference with 72227 CLAAS Neue Helvetica 45 light-->
+	<link href="https://www.fontify.me/wf/800d997c339c0d0926c020a1edd1c9a0" rel="stylesheet" type="text/css"> 	<!--body reference with 71949 CLAAS Neue Helvetica 65 medium-->
+	<link href="https://www.fontify.me/wf/8d07f32883c790caccd89636d1eb5b47" rel="stylesheet" type="text/css"> 	<!--footnote reference with 115649 CLAAS Neue Helvetica 47 light condensed-->
+	<link href="https://www.fontify.me/wf/aff34d9b118b88af2245aba72ed961fd" rel="stylesheet" type="text/css"> 	<!--body condensed reference with 109817 CLAAS Neue helvetica 67 medium condensed-->
 
-		<!--warning if browser does not work-->
-		<noscript>
-		<p>Sorry, your browser does not support JavaScript.  Value Calculator will not function properly.</p>
-		</noscript>
-		<!--end to warning-->
+	<!--warning if browser does not work-->
+	<noscript>
+	<p>Sorry, your browser does not support JavaScript.  Value Calculator will not function properly.</p>
+	</noscript>
+	<!--end to warning-->
 
-		<img src="logo-2x.png" float="left" style='width:40%; padding-top:2em; padding-bottom:1em;'>
+	<img src="pictures/logo-2x.png" float="left" style='width:40%; padding-top:2em; padding-bottom:1em;'>
 
-		<script>
-				function addCommas(nStr)
-						{
-						nStr += '';
-						var x = nStr.split('.');
-						var x1 = x[0];
-						var x2 = x.length > 1 ? '.' + x[1] : '';
-						var rgx = /(\d+)(\d{3})/;
-						while (rgx.test(x1)) {
-							x1 = x1.replace(rgx, '$1' + ',' + '$2');
+
+	<script>
+		//Adds date and location to top of page
+		function getinfo() {
+			var d = new Date();
+
+			var x = document.getElementById("date1");
+				if (navigator.geolocation) {
+					navigator.geolocation.getCurrentPosition(showPosition);
+				} else { x.innerHTML = "Location error"; }
+			function showPosition(position) {
+					x.innerHTML = "Date: " + d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " &nbsp " + position.coords.latitude.toFixed(3) +
+					", " + position.coords.longitude.toFixed(3);
+					}
+				}
+
+		//Adds Commas into all outputs
+		function addCommas(nStr)
+			{
+			nStr += '';
+			var x = nStr.split('.');
+			var x1 = x[0];
+			var x2 = x.length > 1 ? '.' + x[1] : '';
+			var rgx = /(\d+)(\d{3})/;
+			while (rgx.test(x1)) {
+				x1 = x1.replace(rgx, '$1' + ',' + '$2');
+			}
+			return x1 + x2;
+			}
+
+		//Puts the combine name at the top of "results" table
+		function changecombine1 (sel) {
+			document.getElementById("td0").innerHTML = sel.options[sel.selectedIndex].text;
+			}
+		function changecombine2 (sel) {
+			document.getElementById("td1").innerHTML = sel.options[sel.selectedIndex].text.substr(0,17);
+			}
+
+
+		//Huge function that runs all calculations and outputs to results fieldset
+		function dothemath() {
+
+			<!--Show the acres/hour-->
+			var achr1 = document.getElementById("headerwidth1").value;  //header width lexion
+			var achr2 = document.getElementById("headerwidth2").value;  //header with comnpetition
+			var achr3 = document.getElementById("groundspeed1").value;
+			var achr4 = document.getElementById("groundspeed2").value;
+			var achr5 = document.getElementById("efficiency").value;
+			var achr6 = achr1 * achr3 * 5280/43560 * achr5/100;
+			var achr7 = achr2 * achr4 * 5280/43560 * achr5/100;
+			document.getElementById("td2").innerHTML = achr6.toFixed(1) + " ac/hr";
+			document.getElementById("td3").innerHTML = achr7.toFixed(1) + " ac/hr";
+			document.getElementById("td4").innerHTML = (achr6 - achr7).toFixed(1) + " ac/hr";
+
+			<!--Show average capacity-->
+			var cap1 = (achr6 * document.getElementById("bpaaverage").value).toFixed(1);
+			var cap2 = (achr7 * document.getElementById("bpaaverage").value).toFixed(1);
+			document.getElementById("td22").innerHTML=  addCommas(cap1) + " bu/hr";
+			document.getElementById("td23").innerHTML=  addCommas(cap2) + " bu/hr";
+			document.getElementById("td24").innerHTML = addCommas(cap1 - cap2) + " bu/hr";
+
+			<!--Show the hours needed per season-->
+			var ac1 = document.getElementById("totalacres").value;
+			var ac2 = (1 / achr6 * ac1).toFixed(2);
+			var ac3 = (1 / achr7 * ac1).toFixed(2);
+			document.getElementById("td5").innerHTML = ac2 + " hours";
+			document.getElementById("td6").innerHTML = ac3 + " hours";
+			document.getElementById("td7").innerHTML = (ac3 - ac2).toFixed(2) + " hours";
+
+			<!--Operating costs-->
+			var labor1 = document.getElementById("laborprice").value;
+			var mainmoney = document.getElementById("maintcost").value;
+			var totalmaint = +mainmoney + +labor1;
+			var opercost1 = (totalmaint * ac2).toFixed(2);
+			var opercost2 = (totalmaint * ac3).toFixed(2);
+			document.getElementById("td8").innerHTML= "$" + addCommas(opercost1);
+			document.getElementById("td9").innerHTML="$" + addCommas(opercost2);
+			var opercost12 = (opercost2 - opercost1).toFixed(2);
+			document.getElementById("td10").innerHTML= "$" + addCommas(opercost12);
+
+			<!--Fuel Savings-->
+			var fuel1 = document.getElementById("fuelburn1").value;
+			var fuel2 = document.getElementById("fuelburn2").value;
+			var fuel3 = document.getElementById("fuelprice").value;
+			var fuel4 = document.getElementById("defburn1").value;
+			var fuel5 = document.getElementById("defburn2").value;
+			var fuel6 = document.getElementById("defprice").value;
+			var fueltot1 = fuel1 * fuel3 * achr6 * ac2;
+			var deftot1 = fuel4 * fuel6 * achr6 * ac2;
+			var fueltot2 = fuel2 * fuel3 * achr7 * ac3;
+			var deftot2 = fuel5 * fuel6 * achr7 * ac3;
+			var totfluid1 = (fueltot1 + deftot1).toFixed(2);
+			var totfluid2 = (fueltot2 + deftot2).toFixed(2);
+
+			document.getElementById("td11").innerHTML = "$" + addCommas(totfluid1);
+			document.getElementById("td12").innerHTML = "$" + addCommas(totfluid2);
+			var totfluid12 = (totfluid2 - totfluid1).toFixed(2);
+			document.getElementById("td13").innerHTML = "$" + addCommas(totfluid12);
+
+
+			<!--Grain Loss results-->
+			//initial calculations
+			var x1 = document.getElementById("panlength").value / 12;
+			var x2 = document.getElementById("panwidth").value / 12;
+			var samplesize = (x1 * x2) / 43560; 													//acres of collected grain loss
+			var loser1 = document.getElementById("loss1").value;
+			var loser2 = document.getElementById("loss2").value;
+			var testweight = document.getElementById("testweight111").value;
+			var seedsperbu = document.getElementById("seedsperbu111").value;
+			var head1 = document.getElementById("headerwidth1").value;  //header width lexion
+			var head2 = document.getElementById("headerwidth2").value;  //header with comnpetition
+			var lexsievewid = document.getElementById("lexiontype").value;
+			var comsievewid = document.getElementById("modelnumber").value[20] + document.getElementById("modelnumber").value[21];
+											//document.getElementById("td20").innerHTML=comsievewid;     //only used for testing
+			var lexionsieveratio = lexsievewid / 12 / head1;
+			var compsieveratio = comsievewid / 12 / head2;
+			var lexloss;
+			var comloss;
+
+			if (document.getElementById("spread1").checked) {  //forumla for spreading calculation
+						if (document.getElementById("seedcount1").checked) {
+								lexloss = (loser1 / seedsperbu / 60 / samplesize).toFixed(2);
+								comloss = (loser2 / seedsperbu / 60 / samplesize).toFixed(2);
+						} else if (document.getElementById("volume1").checked) {
+								var convfact = 35239.1;
+								lexloss = (loser1 / convfact / samplesize).toFixed(2);
+								comloss = (loser2 / convfact / samplesize).toFixed(2);
+						} else if (document.getElementById("weight1").checked) {
+								lexloss = (loser1 / 453.592 / testweight / samplesize).toFixed(2);
+								comloss = (loser2 / 453.592 / testweight / samplesize).toFixed(2);
 						}
-						return x1 + x2;
+							document.getElementById("td14").innerHTML = lexloss + " bu/ac";
+							document.getElementById("td15").innerHTML = comloss + " bu/ac";
+							document.getElementById("td16").innerHTML = ((comloss - lexloss).toFixed(2)) + " bu/ac";
+
+
+						} else if (document.getElementById("windrow1").checked) {  //formula for windrowed calculation
+								loser1 = loser1 * lexionsieveratio;
+								loser2 = loser2 * compsieveratio;
+									if (document.getElementById("seedcount1").checked) {
+											lexloss = (loser1 / seedsperbu / 60 / samplesize).toFixed(2);
+											comloss = (loser2 / seedsperbu / 60 / samplesize).toFixed(2);
+									} else if (document.getElementById("volume1").checked) {
+											var convfact = 35239.1;
+											lexloss = (loser1 / convfact / samplesize).toFixed(2);
+											comloss = (loser2 / convfact / samplesize).toFixed(2);
+									} else if (document.getElementById("weight1").checked) {
+											lexloss = (loser1 / 453.592 / testweight / samplesize).toFixed(2);
+											comloss = (loser2 / 453.592 / testweight / samplesize).toFixed(2);
+									}
+
+							document.getElementById("td14").innerHTML = lexloss + " bu/ac";
+							document.getElementById("td15").innerHTML = comloss + " bu/ac";
+							document.getElementById("td16").innerHTML = ((comloss - lexloss).toFixed(2)) + " bu/ac";
 						}
+
+			<!--grain loss savings-->
+			savin1 = (lexloss * document.getElementById("cropprice").value * document.getElementById("totalacres").value).toFixed(2);
+			savin2 = (comloss * document.getElementById("cropprice").value * document.getElementById("totalacres").value).toFixed(2);
+			totalsavin = (savin2 - savin1).toFixed(2);
+			document.getElementById("td17").innerHTML = "$" + addCommas(savin1);
+			document.getElementById("td18").innerHTML = "$" + addCommas(savin2);
+			document.getElementById("td19").innerHTML = "$" + addCommas(totalsavin);
+
+
+			<!--totals-->
+			var totalsavings = (+opercost12 + +totfluid12 + +totalsavin).toFixed(2);
+			document.getElementById("td20").innerHTML = '$' + addCommas(totalsavings);
+
+			var savsperacre = ((+opercost12 + +totfluid12 + +totalsavin) / document.getElementById('totalacres').value).toFixed(2);
+			var savsperbush = ((+opercost12 + +totfluid12 + +totalsavin)/(document.getElementById("totalacres").value * document.getElementById("bpaaverage").value)).toFixed(2);
+			document.getElementById("td21").innerHTML = "$" + addCommas(savsperbush) + "/bu &nbsp " + '$' + addCommas(savsperacre) + '/acre';
+			}
+
+			$(document).ready(function(){
+			    $("#hide").click(function(){
+			        $("#watermark").toggle(1000);
+			    });
+			});
+
 		</script>
 </head>
 
@@ -47,13 +212,13 @@
 <body>
 
 	<ul class="breadcrumb">
-		<li><a href="index.html">Value Calculator</a></li>
-		<li>LEXION</li>
+		<li><a href="../index.html">Value Calculator</a></li>
+		<li>LEXION</li><div id='date1'></div>
 	</ul>
 
 	<div id="grad1" class='grad1'></div>
-	<form name="content" method="post" id="form1" action='https://script.google.com/macros/s/AKfycbyPBUPkxBonVw5JDxlxSELqSyCoYg6IT2kIfBVg7N6tva40Lxk/exec'>
-	<form action="action.php" method="post">
+	<form name="content" id='form1'>
+	<!-- <form action="action.php" method="post"> -->
 	<!--farm info-->
 	<br><fieldset class="part1">
 		<legend><b>1. Farm Information</b></legend>
@@ -179,7 +344,7 @@
 
 
 			<script>
-			 		cropvalues = {
+			 		 cropvalues = {
 						noSelection: "",
 						alfalfa: ["60", "200000", "no"],
 						alsike: ["60", "700000", "no"],
@@ -236,19 +401,18 @@
 							document.getElementById("newcropname").style.display = "inline-block";
 							document.getElementById("seedsperbu111").style.display = "inline-block";
 							document.getElementById("test1234").style.display = "inline-block";  //hide label & input both
-						} else {
+							} else {
 							document.getElementById("testweight111").readOnly = true;
 							document.getElementById("seedsperbu111").readOnly = true;
 							document.getElementById("newcropname").style.display = "none";
 							document.getElementById("seedsperbu111").style.display = "none";
 							document.getElementById("test1234").style.display = "none";  //hide label as well as input
-						}
-
-			}
+							}
+							}
 			</script>
 
-			<div class="watermark">
-			Work in Progress
+			<div class="watermark" id='watermark'>
+			Incomplete
 			</div>
 
 
@@ -301,15 +465,6 @@
 								<option value="56">LEXION 460</option>
 								<option value="56">LEXION 450</option>
 								</select>
-
-<script>
-	function changecombine1 (sel) {
-		document.getElementById("td0").innerHTML = sel.options[sel.selectedIndex].text;
-	}
-	function changecombine2 (sel) {
-		document.getElementById("td1").innerHTML = sel.options[sel.selectedIndex].text.substr(0,17);
-	}
-</script>
 
 
 				 <td> VS <td colspan='2'>
@@ -439,153 +594,13 @@
 		</tr>
 		<tr>
 				<td>
-				<td colspan='2'>(kernels, fl. oz, or oz)
+				<td colspan='2'>(kernels, mL, or g)
 				<td>
-				<td colspan='2'>(kernels, fl. oz, or oz)
+				<td colspan='2'>(kernels, mL, or g)
 		</tr>
 	</table>
 </fieldset><br>
 
-
-
-	<script type="text/javascript">
-		function dothemath() {
-
-			//author Nick Jacobsen
-
-		<!--Show the acres/hour-->
-			var achr1 = document.getElementById("headerwidth1").value;  //header width lexion
-			var achr2 = document.getElementById("headerwidth2").value;  //header with comnpetition
-			var achr3 = document.getElementById("groundspeed1").value;
-			var achr4 = document.getElementById("groundspeed2").value;
-			var achr5 = document.getElementById("efficiency").value;
-			var achr6 = achr1 * achr3 * 5280/43560 * achr5/100;
-			var achr7 = achr2 * achr4 * 5280/43560 * achr5/100;
-			document.getElementById("td2").innerHTML = achr6.toFixed(1) + " ac/hr";
-			document.getElementById("td3").innerHTML = achr7.toFixed(1) + " ac/hr";
-			document.getElementById("td4").innerHTML = (achr6 - achr7).toFixed(1) + " ac/hr";
-
-			<!--Show average capacity-->
-			var cap1 = (achr6 * document.getElementById("bpaaverage").value).toFixed(0);
-			var cap2 = (achr7 * document.getElementById("bpaaverage").value).toFixed(0);
-			document.getElementById("td22").innerHTML=  addCommas(cap1) + " bu/hr";
-			document.getElementById("td23").innerHTML=  addCommas(cap2) + " bu/hr";
-			document.getElementById("td24").innerHTML = addCommas(cap1 - cap2) + " bu/hr";
-
-		<!--Show the hours needed per season-->
-			var ac1 = document.getElementById("totalacres").value;
-			var ac2 = (1 / achr6 * ac1).toFixed(2);
-			var ac3 = (1 / achr7 * ac1).toFixed(2);
-			document.getElementById("td5").innerHTML = ac2 + " hours";
-			document.getElementById("td6").innerHTML = ac3 + " hours";
-			document.getElementById("td7").innerHTML = (ac3 - ac2).toFixed(2) + " hours";
-
-		<!--Operating costs-->
-			var labor1 = document.getElementById("laborprice").value;
-			var mainmoney = document.getElementById("maintcost").value;
-			var totalmaint = +mainmoney + +labor1;
-			var opercost1 = (totalmaint * ac2).toFixed(2);
-			var opercost2 = (totalmaint * ac3).toFixed(2);
-			document.getElementById("td8").innerHTML= "$" + addCommas(opercost1);
-			document.getElementById("td9").innerHTML="$" + addCommas(opercost2);
-			var opercost12 = (opercost2 - opercost1).toFixed(2);
-			document.getElementById("td10").innerHTML= "$" + addCommas(opercost12);
-
-		<!--Fuel Savings-->
-			var fuel1 = document.getElementById("fuelburn1").value;
-			var fuel2 = document.getElementById("fuelburn2").value;
-			var fuel3 = document.getElementById("fuelprice").value;
-			var fuel4 = document.getElementById("defburn1").value;
-			var fuel5 = document.getElementById("defburn2").value;
-			var fuel6 = document.getElementById("defprice").value;
-			var fueltot1 = fuel1 * fuel3 * achr6 * ac2;
-			var deftot1 = fuel4 * fuel6 * achr6 * ac2;
-			var fueltot2 = fuel2 * fuel3 * achr7 * ac3;
-			var deftot2 = fuel5 * fuel6 * achr7 * ac3;
-			var totfluid1 = (fueltot1 + deftot1).toFixed(2);
-			var totfluid2 = (fueltot2 + deftot2).toFixed(2);
-
-			document.getElementById("td11").innerHTML = "$" + addCommas(totfluid1);
-			document.getElementById("td12").innerHTML = "$" + addCommas(totfluid2);
-			var totfluid12 = (totfluid2 - totfluid1).toFixed(2);
-			document.getElementById("td13").innerHTML = "$" + addCommas(totfluid12);
-
-
-			<!--Grain Loss results-->
-				//initial calculations
-					var x1 = document.getElementById("panlength").value / 12;
-					var x2 = document.getElementById("panwidth").value / 12;
-					var samplesize = (x1 * x2) / 43560; 													//acres of collected grain loss
-					var loser1 = document.getElementById("loss1").value;
-					var loser2 = document.getElementById("loss2").value;
-					var testweight = document.getElementById("testweight111").value;
-					var seedsperbu = document.getElementById("seedsperbu111").value;
-					var head1 = document.getElementById("headerwidth1").value;  //header width lexion
-					var head2 = document.getElementById("headerwidth2").value;  //header with comnpetition
-					var lexsievewid = document.getElementById("lexiontype").value;
-					var comsievewid = document.getElementById("modelnumber").value[20] + document.getElementById("modelnumber").value[21];
-													//document.getElementById("td20").innerHTML=comsievewid;     //only used for testing
-					var lexionsieveratio = lexsievewid / 12 / head1;
-					var compsieveratio = comsievewid / 12 / head2;
-					var lexloss;
-					var comloss;
-
-					if (document.getElementById("spread1").checked) {  //forumla for spreading calculation
-								if (document.getElementById("seedcount1").checked) {
-										lexloss = (loser1 / seedsperbu / 60 / samplesize).toFixed(2);
-										comloss = (loser2 / seedsperbu / 60 / samplesize).toFixed(2);
-								} else if (document.getElementById("volume1").checked) {
-										var convfact = 1191.57;
-										lexloss = (loser1 / convfact / samplesize).toFixed(2);
-										comloss = (loser2 / convfact / samplesize).toFixed(2);
-								} else if (document.getElementById("weight1").checked) {
-										lexloss = (loser1 / 16 / testweight / samplesize).toFixed(2);
-										comloss = (loser2 / 16 / testweight / samplesize).toFixed(2);
-								}
-									document.getElementById("td14").innerHTML = lexloss + " bu/ac";
-									document.getElementById("td15").innerHTML = comloss + " bu/ac";
-									document.getElementById("td16").innerHTML = ((comloss - lexloss).toFixed(2)) + " bu/ac";
-
-
-					} else if (document.getElementById("windrow1").checked) {  //formula for windrowed calculation
-							loser1 = loser1 * lexionsieveratio;
-							loser2 = loser2 * compsieveratio;
-								if (document.getElementById("seedcount1").checked) {
-										lexloss = (loser1 / seedsperbu / 60 / samplesize).toFixed(2);
-										comloss = (loser2 / seedsperbu / 60 / samplesize).toFixed(2);
-								} else if (document.getElementById("volume1").checked) {
-										var convfact = 1191.57;
-										lexloss = (loser1 / convfact / samplesize).toFixed(2);
-										comloss = (loser2 / convfact / samplesize).toFixed(2);
-								} else if (document.getElementById("weight1").checked) {
-										lexloss = (loser1 / 16 / testweight / samplesize).toFixed(2);
-										comloss = (loser2 / 16 / testweight / samplesize).toFixed(2);
-								}
-
-						document.getElementById("td14").innerHTML = lexloss + " bu/ac";
-						document.getElementById("td15").innerHTML = comloss + " bu/ac";
-						document.getElementById("td16").innerHTML = ((comloss - lexloss).toFixed(2)) + " bu/ac";
-					}
-
-					<!--grain loss savings-->
-						savin1 = (lexloss * document.getElementById("cropprice").value * document.getElementById("totalacres").value).toFixed(2);
-						savin2 = (comloss * document.getElementById("cropprice").value * document.getElementById("totalacres").value).toFixed(2);
-						totalsavin = (savin2 - savin1).toFixed(2);
-						document.getElementById("td17").innerHTML = "$" + addCommas(savin1);
-						document.getElementById("td18").innerHTML = "$" + addCommas(savin2);
-						document.getElementById("td19").innerHTML = "$" + addCommas(totalsavin);
-
-
-						<!--totals-->
-						var totalsavings = (+opercost12 + +totfluid12 + +totalsavin).toFixed(2);
-						document.getElementById("td20").innerHTML = '$' + addCommas(totalsavings);
-
-						var savsperacre = ((+opercost12 + +totfluid12 + +totalsavin) / document.getElementById('totalacres').value).toFixed(2);
-						var savsperbush = ((+opercost12 + +totfluid12 + +totalsavin)/(document.getElementById("totalacres").value * document.getElementById("bpaaverage").value)).toFixed(2);
-						document.getElementById("td21").innerHTML = "$" + addCommas(savsperbush) + "/bu &nbsp " + '$' + addCommas(savsperacre) + '/acre';
-					}
-
-	</script>
 
 		<fieldset class="part4">
 			<legend><b>4. Results</b></legend>
@@ -658,39 +673,30 @@
 				</table>
 		</fieldset><br>
 
-		<textarea rows="2" cols="50" placeholder="Insert comments here"></textarea> <label style="width:50px;" style="vertical-align: text-top;">Email:</label><input type="email" name="email">
-		&nbsp &nbsp <input type="submit" value="Send" style="width:100px; height:30px; font-weight:bold; vertical-align: bottom;">
+
 
 
 </form>
 
-
-<p id="demo1" class="no-print"></p>
-
 <script>
-document.getElementById("demo1").innerHTML = new Date();
+$(document).ready(function(){
+$('form').on('submit', function (e) {
+
+          e.preventDefault(); //prevent to reload the page
+
+          $.ajax({
+            type: 'POST', //hide url
+            url: 'https://script.google.com/macros/s/AKfycbyPBUPkxBonVw5JDxlxSELqSyCoYg6IT2kIfBVg7N6tva40Lxk/exec', //your form validation url
+            data: $('form1').serialize(),
+            success: function () {
+              alert('The form was submitted successfully'); //display an alert whether the form is submitted okay
+            }
+          });
+        });
+		})
 </script>
 
-
-
-<button onclick="getLocation()" class="no-print">Show location</button>
-<p id="demo" class="no-print"></p>
-<script>
-var x = document.getElementById("demo");
-
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
-
-function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude +
-    "<br>Longitude: " + position.coords.longitude;
-}
-</script>
-
+<button id="hide">Show/Hide</button>
+<input type="submit" value="Submit">
 </body>
 </html>

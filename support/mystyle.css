@@ -147,11 +147,12 @@ ul.breadcrumb li a:hover {
     background: linear-gradient(#999999, white); /* Standard syntax (must be last) */
 }
 .watermark {
-  display:none;
   position:absolute;
   min-height:50%;
   min-width:50%;
+  margin-left: 150px;
   color:red;
-  font-size:100px;
-  transform:rotate(45deg);
+  font-size:180px;
+  transform:rotate(-45deg);
+  pointer-events: none;
 }
