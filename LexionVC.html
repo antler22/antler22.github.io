@@ -7,9 +7,8 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Home | CLAAS | Value Calculator</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!--enables JQuery-->
 		<link rel="stylesheet" type="text/css" href="mystyle.css">
-
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!--enables JQuery-->
 
 		<!--Proper fonts for CLAAS-->
 		<link href="https://www.fontify.me/wf/30b7c05ed3c5a32d452ca39bba8147d6" rel="stylesheet" type="text/css">  	<!--Titles/Headings reference with 92192  CLAAS neue helvetica 35thin-->
@@ -24,9 +23,11 @@
 		</noscript>
 		<!--end to warning-->
 
-		<img src="logo-2x.png" float="left" style='width:40%; padding-top:2em; padding-bottom:1em;'>
+		<img src="logo-2x.png" float="left" style='width:40%; padding-top:2em; padding-bottom:0.5em;'>
+		<img src="" name='image-swap' align="right" style='height:50px; padding-top:40px; padding-right:10px;'>
 
 		<script>
+				//add commas to all outputs, for cleaner look
 				function addCommas(nStr)
 						{
 						nStr += '';
@@ -39,6 +40,13 @@
 						}
 						return x1 + x2;
 						}
+
+				//add dealer logo to page top
+				$(document).ready(function(){
+		   			$("#dealername").change(function(){
+		     		$("img[name=image-swap]").attr("src",'miscellaneous/dealerpics/' + $(this).val());
+		   			});
+				});
 		</script>
 </head>
 
@@ -61,41 +69,124 @@
 			<label for="farmlocation" class="fieldset1">Location:</label><input name='Location' type="text" id="farmlocation"  onchange="calculate()" placeholder="City, State/Province" required></input>
 			<label for="serialno" class="fieldset1">Serial:</label><input name='Serial' type="text" id="serial" style='width:80px;' required></input>
 			<label for="farmname" class="fieldset1">Dealer:</label><select name="Dealer" id="dealername" style='width:180px;' required>
-							<option disabled selected>Select</option>
-							<option>Ag Authority</option>
-							<option>AgWest</option>
-							<option>AIMSOUTH</option>
-							<option>Alberta AG Centre</option>
-							<option>Allan Equipment</option>
-							<option>ALTORFER Inc.</option>
-							<option>Bosse & Frere, Inc.</option>
-							<option>Burnips Equipment Co.</option>
-							<option>Butler Machinery</option>
-							<option>Canada West Harvest Centre Inc.</option>
-							<option>Empire CAT</option>
-							<option>Foster's Agri World</option>
-							<option>Glade & Grove Supply Co.</option>
-							<option>Gegory Poole Equipment</option>
-							<option>Haney Equipment</option>
-							<option>HJV Equipment</option>
-							<option>Holt of California</option>
-							<option>MacAllister</option>
-							<option>MirTech Harvest Center Inc.</option>
-							<option>MM Weaver</option>
-							<option>Monroe Tractor</option>
-							<option>Mountain View Equipment Company</option>
-							<option>Nebraska Harvest Center</option>
-							<option>Nieboer Farm Supplies</option>
-							<option>Ohio CAT</option>
-							<option>Peterson CAT</option>
-							<option>Smith's Equipment Sales</option>
-							<option>Taylor Implement Co, Inc.</option>
-							<option>Thompson Machinery</option>
-							<option>Tingley Implements</option>
-							<option>Tractor & Equipment Co.</option>
-							<option>Whayne Supply</option>
-							<option>Ziegler Inc.</option>
-						</select>
+				<option disabled selected>Select</option>
+				<option value='advancedag.png'>Advanced Ag Tractor Sales and Service</option>
+				<option value='AgAuthority.png'>Ag Authority</option>
+				<option value='AgWest.jpg'>AgWest</option>
+				<option value='agricenter.png'>Agricenter</option>
+				<option value='agricterra.png'>Agriterra Equipment</option>
+				<option value='agritex.png'>AGRITEX CENTRE QUEBEC INC.</option>
+				<option value='agritibi.jpg'>Agritibi</option>
+				<option value ='Aimsouth.png'>AIMSOUTH</option>
+				<option value='AlbertaAgCentre.jpg'>Alberta AG Centre</option>
+				<option value='allanequipment.png'>Allan Equipment</option>
+				<option value='altonleblanc.jpg'>Alton LeBlanc & Sons LLC</option>
+				<option value='altorfer.png'>ALTORFER Inc.</option>
+				<option value='aesjcb.png'>AMERICAN EQUIPMENT SERVICE, INC.</option>
+				<option value="applefarm.png">Apple Farm Service Inc.</option>
+				<option value='arnolds.png'>Arnold's of Kimball, Inc.</option>
+				<option value='audilet.png'>AUDILET TRACTOR SALES, Inc.</option>
+				<option value='bequip.png'>B EQUIPMENT Inc.</option>
+				<option value='bosse.png'>Bosse & Frere, Inc.</option>
+				<option value='briggs.png'>Briggs Equipment, Inc.</option>
+				<option>Brown's Farm Implement, LLC.</option>
+				<option value='burnips.png'>Burnips Equipment Co.</option>
+				<option value='butler.png'>Butler Machinery</option>
+				<option value='cain.png'>Cain Equipment</option>
+				<option value='caliber.png'>Caliber Equipment</option>
+				<option value='cawhc.png'>Canada West Harvest Centre Inc.</option>
+				<option value='chinn.png'>Chinn Equipment Company, Inc.</option>
+				<option value='claude.png'>CLAUDE JOYAL INC.</option>
+				<option value='cny.png'>CNY FARM SUPPLIES LLC</option>
+				<option value='deboer.png'>De Boer's Farm Equipment Ltd.</option>
+				<option value='dae.jpg'>Don Allison Equipment, Inc.</option>
+				<option>EATON & SON REPAIR</option>
+				<option value='elliot.png'>ELLIOT FARM EQUIPMENT LTD</option>
+				<option value='empire.png'>Empire CAT</option>
+				<option value='fosters.jpg'>Foster's Agri World</option>
+				<option>Frymire Equipment Inc.</option>
+				<option>Garage Champoux</option>
+				<option>GARAGE OSCAR BROCHU, Inc.</option>
+				<option value='genag.png'>genAG Inc.</option>
+				<option>GENE HOLLIDAY DBA</option>
+				<option value='gjs.png'>GJ's FARM EQUIPMENT</option>
+				<option value='gladegrove.png'>Glade & Grove Supply Co.</option>
+				<option value='glacock.png'>Glascock Equipment & Sales</option>
+				<option value='glenwood.jpg'>Glenwood Equipment Co., Inc.</option>
+				<option>GRANDVIEW FARM SUPPLY</option>
+				<option value='gregorypoole.png'>Gegory Poole Equipment</option>
+				<option>Haller Motor Worx LLC</option>
+				<option value='haney.jpg'>Haney Equipment</option>
+				<option value='hawke.jpg'>Hawke & Co AG Systems, Inc.</option>
+				<option value='hepson.gif'>Hepson Equipment Inc.</option>
+				<option value=hetrick.png>HETRICK FARM SUPPLY, INC.</option>
+				<option value='hjv.png'>HJV Equipment</option>
+				<option value='holt.png'>Holt of California</option>
+				<option value='huddleston.jpg'>Huddleston Equipment Sales and Service</option>
+				<option>HUPF's REPAIR CENTER</option>
+				<option value='ironcity.png'>Iron City Equipment</option>
+				<option>Jansen Farm Equipment Inc.</option>
+				<option value='vanostrum.png'>JG Van Oostrum Farm Equipment LTD</option>
+				<option value='kandl.png'>K & L Tractor Sales, Inc.</option>
+				<option value='kalvesta.gif'>Kalvesta Implement Co. Inc.</option>
+				<option value='brownlee.png'>Ken Brownlee & Sons Equipment Corp.</option>
+				<option value='koletzky.png'>KOLETZKY IMPLEMENT, INC.</option>
+				<option>L'Excellence Agridustrie de L'Estrie, Inc.</option>
+				<option value='lamb.png'>Lamb & Webster, Inc.</option>
+				<option>Lazy Diamond Farm Supply</option>
+				<option>LES ENTERPRISES R. RAYMOND, INC.</option>
+				<option>LES EQUIPEMENTS YVON RIVARD INC.</option>
+				<option value='linder.png'>Linder Equipment Co.</option>
+				<option value='Lindstrom.png'>Lindstrom Equipment, Inc.</option>
+				<option>LONGENECKER'S, INC.</option>
+				<option value='macallister.jpg'>MacAllister</option>
+				<option>MACHINERIE JNG THERIAULT, INC.</option>
+				<option>Maltais & Ouellet, Inc.</option>
+				<option value='mirtech.jpg'>MirTech Harvest Center Inc.</option>
+				<option value='weaver.jpg'>MM Weaver</option>
+				<option value='monroe.png'>Monroe Tractor</option>
+				<option value='mountainview.jpg'>Mountain View Equipment Company</option>
+				<option value='mullins.png'>MULLINS FARM SERVICE</option>
+				<option value="nands.png">N & S Tractor Co (Inc)</option>
+				<option value='nebharvestcenter.jpg'>Nebraska Harvest Center</option>
+				<option>Niemeyet Tractor & Farm Supplies</option>
+				<option value='nieboer.png'>Nieboer Farm Supplies</option>
+				<option value='nortex.png'>NorTex Tractor</option>
+				<option value='ohiocat.jpg'>Ohio CAT</option>
+				<option value='oversons.jpg'>Overson's Farm Center</option>
+				<option value='parmer.png'>Parmer County Implement Co, Inc.</option>
+				<option value='pentagon.png'>Pentagon Farm Centre</option>
+				<option value='pickens.png'>PICKEN'S FARM EQUIPMENT, INC.</option>
+				<option value='peterson.png'>Peterson CAT</option>
+				<option>R & M Tractor & Supply, Inc.</option>
+				<option value='randall.png'>RANDALL IMPLEMENTS CO, INC.</option>
+				<option value='reberland.jpg'>Reberland Equipment, Inc.</option>
+				<option value='reis.png'>Reis Equipment Center Ltd.</option>
+				<option>REXROAD EQUIPMENT</option>
+				<option value='ritchie.png'>Ritchie Implement, Inc.</option>
+				<option value='rocky.png'>Rocky Mountain Equipment</option>
+				<option>Rutledge Repair</option>
+				<option value='shaeperkoetter.jpg'>Schaeperkoetter Sales & Service</option>
+				<option value='scholtens.png'>Scholten's Equipment, Inc.</option>
+				<option value='sam.jpg'>SERVICE AGROMECANIQUE, INC.</option>
+				<option value='service.png'>Service Motor Company, Inc.</option>
+				<option value='shakers.png'>Shaker Equipment</option>
+				<option value='sherwood.png'>Sherwood Equipment</option>
+				<option value='smiths.png'>Smith's Equipment Sales</option>
+				<option value='smiths2.png'>Smith's Farm Equipment, LLC</option>
+				<option value='smiths3.jpg'>Smith Tractor Co., Inc.</option>
+				<option value='stigler.png'>STIGLER MILLING CO. LLC</option>
+				<option value='sunova.png'>Sunova Implement Ltd.</option>
+				<option value='taylor.jpg'>Taylor Implement Co, Inc.</option>
+				<option value='thompson.png'>Thompson Machinery</option>
+				<option value='tingley.png'>Tingley Implements</option>
+				<option value='T&E.jpg'>Tractor & Equipment Co.</option>
+				<option>Trenary Implement Co.</option>
+				<option value='vanderloop.png'>Vanderloop Equipment, Inc.</option>
+				<option value='weaver2.png'>Weaver AG & Lawn Equipment</option>
+				<option value='whayne.png'>Whayne Supply</option>
+				<option value='ziegler.jpg'>Ziegler Inc.</option>
+			</select>
 	</fieldset>
 
 
@@ -439,9 +530,9 @@
 		</tr>
 		<tr>
 				<td>
-				<td colspan='2'>(kernels, fl. oz, or oz)
+				<td colspan='2'>(kernels, mL, or g)
 				<td>
-				<td colspan='2'>(kernels, fl. oz, or oz)
+				<td colspan='2'>(kernels, mL, or g)
 		</tr>
 	</table>
 </fieldset><br>
@@ -535,12 +626,12 @@
 										lexloss = (loser1 / seedsperbu / 60 / samplesize).toFixed(2);
 										comloss = (loser2 / seedsperbu / 60 / samplesize).toFixed(2);
 								} else if (document.getElementById("volume1").checked) {
-										var convfact = 1191.57;
+										var convfact = 35239.1;
 										lexloss = (loser1 / convfact / samplesize).toFixed(2);
 										comloss = (loser2 / convfact / samplesize).toFixed(2);
 								} else if (document.getElementById("weight1").checked) {
-										lexloss = (loser1 / 16 / testweight / samplesize).toFixed(2);
-										comloss = (loser2 / 16 / testweight / samplesize).toFixed(2);
+										lexloss = (loser1 / 453.592 / testweight / samplesize).toFixed(2);
+										comloss = (loser2 / 453.592 / testweight / samplesize).toFixed(2);
 								}
 									document.getElementById("td14").innerHTML = lexloss + " bu/ac";
 									document.getElementById("td15").innerHTML = comloss + " bu/ac";
@@ -554,12 +645,12 @@
 										lexloss = (loser1 / seedsperbu / 60 / samplesize).toFixed(2);
 										comloss = (loser2 / seedsperbu / 60 / samplesize).toFixed(2);
 								} else if (document.getElementById("volume1").checked) {
-										var convfact = 1191.57;
+										var convfact = 35239.1;
 										lexloss = (loser1 / convfact / samplesize).toFixed(2);
 										comloss = (loser2 / convfact / samplesize).toFixed(2);
 								} else if (document.getElementById("weight1").checked) {
-										lexloss = (loser1 / 16 / testweight / samplesize).toFixed(2);
-										comloss = (loser2 / 16 / testweight / samplesize).toFixed(2);
+										lexloss = (loser1 / 453.592 / testweight / samplesize).toFixed(2);
+										comloss = (loser2 / 453.592 / testweight / samplesize).toFixed(2);
 								}
 
 						document.getElementById("td14").innerHTML = lexloss + " bu/ac";
@@ -596,7 +687,7 @@
 					<thead>
 					<tr>
 						<td>
-						<td id="td0">CLAAS</td>
+						<td id="td0"><img src='claasred.png' style='width:100px;'></td>
 						<td id="td1">Competitor</td>
 						<td id='tdtest'> CLAAS Advantage
 					</tr>
