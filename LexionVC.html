@@ -23,8 +23,8 @@
 		</noscript>
 		<!--end to warning-->
 
-		<img src="logo-2x.png" float="left" style='width:40%; padding-top:2em; padding-bottom:0.5em;'>
-		<img src="" name='image-swap' align="right" style='height:50px; padding-top:40px; padding-right:10px;'>
+		<img src="miscellaneous/logos/logo-2x.png" float="left" style='width:40%; padding-top:2em; padding-bottom:0.5em;'>
+		<img src="" name='dealerlogo' align="right" style='height:50px; padding-top:40px; padding-right:10px;'>
 
 		<script>
 				//add commas to all outputs, for cleaner look
@@ -44,9 +44,30 @@
 				//add dealer logo to page top
 				$(document).ready(function(){
 		   			$("#dealername").change(function(){
-		     		$("img[name=image-swap]").attr("src",'miscellaneous/dealerpics/' + $(this).val());
+		     		$("img[name=dealerlogo]").attr("src",'miscellaneous/dealerpics/' + $(this).val());
 		   			});
 				});
+
+				//activate print button
+				function printer() {
+					    window.print();
+						}
+
+				//Show competitor logo, and place model number in results page
+				$(document).ready(function(){
+					$("#select1").change(function(){
+					$("img[name=brandlogo]").attr("src",'miscellaneous/logos/' + $('#select1 :selected').parent().attr('label') + ".png");
+					$('#td1').text($("#select1 option:selected").text());
+					$('#td0').text($('#lexiontype option:selected').text());
+					});
+				});
+
+				//auto expand text area
+				function increaseHeight(e){
+				   e.style.height = 'auto';
+				   var newHeight = (e.scrollHeight > 32 ? e.scrollHeight : 32);
+				   e.style.height = newHeight.toString() + 'px';
+					};
 		</script>
 </head>
 
@@ -59,9 +80,9 @@
 		<li>LEXION</li>
 	</ul>
 
+	<form>
 	<div id="grad1" class='grad1'></div>
-	<form name="content" method="post" id="form1" action='https://script.google.com/macros/s/AKfycbyPBUPkxBonVw5JDxlxSELqSyCoYg6IT2kIfBVg7N6tva40Lxk/exec'>
-	<form action="action.php" method="post">
+
 	<!--farm info-->
 	<br><fieldset class="part1">
 		<legend><b>1. Farm Information</b></legend>
@@ -338,9 +359,9 @@
 			}
 			</script>
 
-			<div class="watermark">
+			<!-- <div class="watermark">
 			Work in Progress
-			</div>
+			</div> -->
 
 
 <!--Combine compare select combine-->
@@ -355,7 +376,7 @@
 				<tr>
 					<td>
 						<td colspan='2'>
-							<select name="LEXION" size="1" id="lexiontype" style="width:150px; text-align:center;" onchange="changecombine1(this);dothemath();" required>
+							<select name="LEXION" size="1" id="lexiontype" style="width:150px; text-align:center;" onchange="dothemath();" required>
 								<option value="" disabled selected>Select</option>
 								<option value="67">LEXION 780TT</option>
 								<option value="67">LEXION 780</option>
@@ -367,6 +388,7 @@
 								<option value="56">LEXION 750</option>
 								<option value="56">LEXION 740TT</option>
 								<option value="56">LEXION 740</option>
+								<option value="56">LEXION 730P</option>
 								<option value="56">LEXION 730</option>
 								<option value="67">LEXION 670TT</option>
 								<option value="67">LEXION 670</option>
@@ -393,78 +415,134 @@
 								<option value="56">LEXION 450</option>
 								</select>
 
-<script>
-	function changecombine1 (sel) {
-		document.getElementById("td0").innerHTML = sel.options[sel.selectedIndex].text;
-	}
-	function changecombine2 (sel) {
-		document.getElementById("td1").innerHTML = sel.options[sel.selectedIndex].text.substr(0,17);
-	}
-</script>
-
 
 				 <td> VS <td colspan='2'>
-				 <select name="Competitor" id="meal" style="width:100px;" onChange="changebrand(this.value);dothemath();" required>
-								<option value="" disabled selected>Select</option>
-								<option value="Deere">John Deere</option>
-								<option value="CaseIH">Case IH</option>
-								<option value="NH">New Holland</option>
-								<option value="Gleaner">Gleaner</option>
-								<option value="Massey">Massey Ferguson</option>
-								<option value="Challenger">Challenger</option>
-								<option value="Versatile">Versatile</option>
-							</select>
-							<select name="Model" id="modelnumber" style="width:110px;" onChange="changecombine2(this);dothemath();">
-								<option value="" disabled selected>Select</option>
-							</select>
+					 <select name="select1" id="select1" onchange='dothemath();'>
+						<option disabled selected>Select</option>
+						<optgroup label='John Deere' id='jdlogo'>
+							<option  value='55'>S790</option>
+	 					   <option  value='55'>S780</option>
+	 					   <option  value='55'>S770</option>
+	 					   <option  value='55'>S690</option>
+	 					   <option  value='55'>S680</option>
+	 					   <option  value='55'>S670</option>
+	 					   <option  value='55'>S660</option>
+	 					   <option  value='44'>S650</option>
+	 					   <option  value='65'>T670</option>
+	 					   <option  value='55'>9870STS</option>
+	 					   <option  value='55'>9770STS</option>
+	 					   <option  value='55'>9670STS</option>
+	 					   <option  value='44'>9570STS</option>
+	 					   <option  value='55'>9860STS</option>
+	 					   <option  value='55'>9760STS</option>
+	 					   <option  value='55'>9660STS</option>
+	 					   <option  value='55'>9660CTS</option>
+	 					   <option  value='55'>9750STS</option>
+	 					   <option  value='55'>9650STS</option>
+	 					   <option  value='65'>9650</option>
+					   </optgroup>
+					   <optgroup label='Case IH' id='caselogo'>
+					   		<option value='62'>9240</option>
+							<option value='62'>8240</option>
+							<option value='62'>7240</option>
+							<option value='53'>7140</option>
+							<option value='53'>6140</option>
+							<option value='53'>5140</option>
+							<option value='62'>9230</option>
+							<option value='62'>8230</option>
+							<option value='62'>7230</option>
+							<option value='53'>7130</option>
+							<option value='53'>6130</option>
+							<option value='53'>5130</option>
+							<option value='62'>9120</option>
+							<option value='62'>8120</option>
+							<option value='52'>7120</option>
+							<option value='53'>7088</option>
+							<option value='53'>6088</option>
+							<option value='53'>5088</option>
+							<option value='62'>8010</option>
+							<option value='53'>7010</option>
+							<option value='53'>2788</option>
+							<option value='53'>2588</option>
+							<option value='53'>2388</option>
+							<option value='53'>2188</option>
+				   		</optgroup>
+						<optgroup label='New Holland' id='newhollandlogo'>
+					   <option value="62">CR10.90 Elevation</option>
+					   <option value="62">CR10.90</option>
+					   <option value="62">CR9.90 Elevation</option>
+					   <option value="62">CR9.90</option>
+					   <option value="62">CR9.80</option>
+					   <option value="62">CR8.90</option>
+					   <option value="52">CR8.80</option>
+					   <option value="52">CR7.90</option>
+					   <option value="62">CX8090 Elevation</option>
+					   <option value="62">CX8080 Elevation</option>
+					   <option value="62">CR9090</option>
+					   <option value="62">CR8090</option>
+					   <option value="52">CR8080</option>
+					   <option value="52">CR7090</option>
+					   <option value="52">CR6090</option>
+					   <option value="62">CR9080</option>
+					   <option value="62">CR9070</option>
+					   <option value="52">CR9065</option>
+					   <option value="52">CR9060</option>
+					   <option value="52">CR9040</option>
+					   <option value="62">CX8080</option>
+					   <option value="62">CX8070</option>
+					   <option value="62">CR980</option>
+					   <option value="62">CR970</option>
+					   <option value="52">CR960</option>
+					   <option value="52">CR940</option>
+					   <option value="62">CX880</option>
+					   <option value="62">CX870</option>
+				   		</optgroup>
+				   <optgroup label="Gleaner" id='gleanerlogo'>
+					   <option value='55'>S98</option>
+					   <option value='55'>S97</option>
+					   <option value='55'>S96</option>
+					   <option value='55'>S88</option>
+					   <option value='55'>S78</option>
+					   <option value='55'>S68</option>
+					   <option value='55'>S77</option>
+					   <option value='55'>S67</option>
+					   <option value='55'>A86</option>
+					   <option value='55'>A76</option>
+					   <option value='44'>A66</option>
+					   <option value='55'>A85</option>
+					   <option value='55'>A75</option>
+					   <option value='44'>A65</option>
+					   <option value='55'>R76</option>
+					   <option value='55'>R66</option>
+					   <option value='55'>R75</option>
+					   <option value='55'>R65</option>
+					   <option value='55'>R55</option>
+					   <option value='55'>R72</option>
+					   <option value='55'>R62</option>
+					   <option value='44'>R52</option>
+				   </optgroup>
+				   <optgroup label='Massey Ferguson' id='masseylogo'>
+					    <option value='55'>9565</option>
+						<option value='55'>9545</option>
+						<option value='55'>9560</option>
+						<option value='55'>9540</option>
+						<option value='44'>9520</option>
+						<option value='55'>9895</option>
+						<option value='55'>9780</option>
+						<option value='44'>9695</option>
+					</optgroup>
+					<optgroup label='Challenger' id='challengerlogo'>
+					   <option value='55'>560E</option>
+					   <option value='55'>540E</option>
+					   <option value='55'>680B</option>
+					   <option value='55'>670B</option>
+					   <option value='55'>660B</option>
+				   </optgroup>
+				   <optgroup label='Versatile' id='versatilelogo'>
+					   <option value='55'>RT490</option>
+				   </optgroup>
+					 </select>
 
-									<script>
-									var choosebrand = {
-									    Deere: ["  ","S690 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55", "S680 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55", "S670 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55",
-															"S660 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","S650 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 44","T670 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 65",
-															"S550 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 44","9870STS &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","9770STS  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55",
-															"9670STS &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","9570STS &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 44","9860STS &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","9760STS &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55",
-															"9660STS &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","9660CTS &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","9750STS &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55",
-															"9650STS &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","9650 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 65"],
-									    CaseIH: ["  ","9240 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 62", "8240 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 62", "7240 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 62",
-															"7140 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 53","6140 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 53","5140 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 53",
-															"9230 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 62","8230 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 62","7230 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 62",
-															"7130 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 53","6130 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 53","5130 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 53",
-															"9120 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 62","8120 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 62","7120 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 52",
-															"7088 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 53","6088 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 53","5088 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 53",
-															"8010 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 62","7010 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 53","2788 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 53",
-															"2588 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 53","2388 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 53","2188 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 53"],
-									    NH: ["  ","CR10.90 Elevation &nbsp 62", "CR10.90 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 62", "CR9.90 Elevation &nbsp&nbsp 62", "CR9.90 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 62", "CR9.80 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 62",
-														"CR8.90 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 62","CR8.80 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 52","CR7.90 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 52","CX 8090 Elevation &nbsp 62","CX 8080 Elevation &nbsp 62",
-														"CR9090 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 62","CR8090 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 62","CR8080 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 52","CR7090 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 52",
-														"CR6090 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 52","CR8090 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 62","CR8080 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 62","CR8070 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 62",
-														"CR9090 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 62","CR9080 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 62","CR9070 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 62","CR9065 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 52",
-														"CR9060 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 52","CR9040 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 52","CX8080 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 62","CX8070 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 62",
-														"CR980 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 62","CR970 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 62","CR960 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 52","CR940 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 52",
-														"CX880 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 62","CX870 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 62"],
-											Gleaner: ["  ","S98 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","S97 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","S96 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","S88 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","S78 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55",
-																"S68 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","S77 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","S67 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","A86 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","A76 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55",
-																"A66 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 44","A85 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","A75 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","A65 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 44","R76 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55",
-																"R66 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","R75 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","R65 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","R55 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","R72 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55",
-																"R62 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","R52 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 44"],
-											Massey: ["  ","9565 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","9545 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","9560 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","9540 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","9520 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 44",
-																"9895 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","9780 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","9695 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 44"],
-											Challenger: ["  ","560E &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","540E &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","680B &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","670B &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55","660B &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55"],
-											Versatile: ["  ","RT490 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 55"]
-											}
-
-									    function changebrand(value) {
-									        if (value.length == 0) document.getElementById("modelnumber").innerHTML = "<option></option>";
-									        else {
-									            var modelno = "";
-									            for (categoryId in choosebrand[value]) {
-									                modelno += "<option>" + choosebrand[value][categoryId] + "</option>";
-									            }
-									        	}
-														document.getElementById("modelnumber").innerHTML = modelno;
-									    }
-
-									</script>
 
 
 
@@ -510,7 +588,7 @@
 		</tr>
 		<tr>
 			<td  rowspan='5'>Grain Loss
-			<td colspan='5' float="center">Catch Pan Size &nbsp &nbsp <input name='LEXION Grain Loss' type="number" step="1" id="panlength" style="width:30px" min="1" placeholder="48" value="12">in x <input name='Competitor Grain Loss' type="number" step="any" id="panwidth" style="width:30px" min="1" placeholder="48" value="12">in
+			<td colspan='5' float="center">Catch Pan Size &nbsp &nbsp <input name='LEXION Grain Loss' type="number" step="1" id="panlength" style="width:30px" min="1" placeholder="48" value="12" onchange='dothemath();'>in x <input name='Competitor Grain Loss' type="number" step="any" id="panwidth" style="width:30px" min="1" placeholder="48" value="12" onchange='dothemath();'>in
 		</tr>
 		<tr>
 			<td float="center" colspan='5'><input type="radio" name="Collection Method" value="kernel" id="seedcount1" onchange='dothemath();' checked> Seed Count
@@ -614,7 +692,8 @@
 					var head1 = document.getElementById("headerwidth1").value;  //header width lexion
 					var head2 = document.getElementById("headerwidth2").value;  //header with comnpetition
 					var lexsievewid = document.getElementById("lexiontype").value;
-					var comsievewid = document.getElementById("modelnumber").value[20] + document.getElementById("modelnumber").value[21];
+					var comsievewid = document.getElementById("select1").value;
+
 													//document.getElementById("td20").innerHTML=comsievewid;     //only used for testing
 					var lexionsieveratio = lexsievewid / 12 / head1;
 					var compsieveratio = comsievewid / 12 / head2;
@@ -678,21 +757,27 @@
 
 	</script>
 
-		<fieldset class="part4">
-			<legend><b>4. Results</b></legend>
-				<table border="0" cellpadding="5" width="700">
+
+
+				<table border="0" cellpadding="3" width="700" class='part4' style='text-align:center;'>
 					<colgroup>
 						<col width="25%"><col width="25%"><col width="25%"><col width="25%">
 					</colgroup>
 					<thead>
 					<tr>
 						<td>
-						<td id="td0"><img src='claasred.png' style='width:100px;'></td>
-						<td id="td1">Competitor</td>
-						<td id='tdtest'> CLAAS Advantage
+						<td><img src='miscellaneous/logos/claasred.png' style='width:100px;'><br></td>
+						<td><img src="" name='brandlogo' style='width:100px;'><br></td>
+						<td id='tdtest'>CLAAS Advantage
 					</tr>
 				</thead>
 				<tbody>
+					<tr>
+						<td>
+						<td id='td0'>
+						<td id='td1'>
+						<td>
+					</tr>
 					<tr>
 						<td>Productivity
 						<td id="td2"></td>
@@ -747,41 +832,17 @@
 					</tr>
 				</tfoot>
 				</table>
-		</fieldset><br>
+		<br>
 
-		<textarea rows="2" cols="50" placeholder="Insert comments here"></textarea> <label style="width:50px;" style="vertical-align: text-top;">Email:</label><input type="email" name="email">
-		&nbsp &nbsp <input type="submit" value="Send" style="width:100px; height:30px; font-weight:bold; vertical-align: bottom;">
+		<textarea id='styled' placeholder="Additional comments" onkeyup="increaseHeight(this);"></textarea>
+		<br><button onclick='printer()' style="width:100px; height:30px; font-weight:bold; vertical-align: bottom;" class='no-print'>Print</button>
 
 
 </form>
 
 
-<p id="demo1" class="no-print"></p>
-
-<script>
-document.getElementById("demo1").innerHTML = new Date();
-</script>
 
 
-
-<button onclick="getLocation()" class="no-print">Show location</button>
-<p id="demo" class="no-print"></p>
-<script>
-var x = document.getElementById("demo");
-
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
-
-function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude +
-    "<br>Longitude: " + position.coords.longitude;
-}
-</script>
 
 </body>
 </html>
