@@ -1,12 +1,14 @@
 <!DOCTYPE HTML>
 <!--CREATED BY NICK JACOBSEN-->
 
+<html lang="us">
+
 <head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Home | CLAAS | Value Calculator</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<title>XERION Value Calculator</title>
 		<link rel="stylesheet" type="text/css" href="mystyle.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!--enables JQuery-->
 
 
 		<!--Proper fonts for CLAAS-->
@@ -23,7 +25,8 @@
 		<!--end to warning-->
 
 		<!--insert CLAAS logo, and heading text-->
-		<img src="logo-2x.png" float="left" style='width:40%; padding-top:2em; padding-bottom:1em;'>
+		<img src="miscellaneous/logos/logo-2x.png" float="left" style='width:40%; padding-top:2em; padding-bottom:0.5em;'>
+		<img src="" name='dealerlogo' align="right" style='height:50px; padding-top:40px; padding-right:10px;'>
 
 		<script>
 				function addCommas(nStr)
@@ -38,10 +41,35 @@
 						}
 						return x1 + x2;
 						}
+
+			//add dealer logo to page top
+			$(document).ready(function(){
+				$("#dealername").change(function(){
+				$("img[name=dealerlogo]").attr("src",'miscellaneous/dealerpics/' + $(this).val());
+				});
+			});
+
+			//Show competitor logo, and place model number in results page
+			$(document).ready(function(){
+				$("#tractorpick1").change(function(){
+					$('#td0').text($('#tractorpick1 option:selected').text() + " (" + $('#tractorpick1 option:selected').val() + "hp)");
+					});
+
+				$("#tractorpick2").change(function(){
+				$("img[name=brandlogo]").attr("src",'miscellaneous/logos/' + $('#tractorpick2 :selected').parent().attr('label') + ".png");
+				$('#td1').text($("#tractorpick2 option:selected").text() + " (" + $('#tractorpick2 option:selected').val() + "hp)");
+				});
+			});
+
+			//activate print button
+			function printer() {
+					window.print();
+					}
 		</script>
 </head>
 
 <body>
+	<div align='center'><h2>XERION Value Calculator</h2></div>
 	<ul class="breadcrumb">
 		<li><a href="index.html">Value Calculator</a></li>
 		<li>XERION</li>
@@ -57,35 +85,124 @@
 			<label for="farmlocation" class="fieldset1">Location:</label><input type="text" id="farmlocation"  onchange="calculate()" placeholder="City, State/Province" required></input>
 			<label for="serialno" class="fieldset1">Serial:</label><input type="text" id="serial" style='width:80px;' required></input>
 				<label for="farmname" class="fieldset1">Dealer:</label><select name="dealername" id="dealername" style='width:180px;' required>
-								<option value="" disabled selected>Select</option>
-								<option>Ag Authority Inc.</option>
-								<option>AIMSOUTH</option>
-								<option>Alberta Ag Centre</option>
-								<option>Allan Equipment</option>
-								<option>Arnold's of Kimball, Inc.</option>
-								<option>Bosse & Frere, Inc.</option>
-								<option>Burnips Equipment Co.</option>
-								<option>Caliber Equipment</option>
-								<option>Canada West Harvest Center</option>
-								<option>Foster's Agri World</option>
-								<option>genAG Inc.</option>
-								<option>Glad & Grove Supply Co.</option>
-								<option>Gregory Poole Equipment</option>
-								<option>Hepson Equipment Inc.</option>
-								<option>K & L Tractor Sales, Inc.</option>
-								<option>Lindstrom Equipment, Inc.</option>
-								<option>MirTech Harvest Center Inc.</option>
-								<option>Monroe Tractor</option>
-								<option>Mountain View Equipment Company</option>
-								<option>Nebraska Harvest Center</option>
-								<option>Parmer County Implement, Inc.</option>
-								<option>Reberland Equipment, Inc.</option>
-								<option>Smith's Equipment Sales</option>
-								<option>Sunova Implement Ltd.</option>
-								<option>Taylor Implement</option>
-								<option>Tingley Implements, Inc.</option>
-								<option>Vanderloop Equipment, Inc.</option>
-							</select>
+					<option disabled selected>Select</option>
+					<option value='advancedag.png'>Advanced Ag Tractor Sales and Service</option>
+					<option value='AgAuthority.png'>Ag Authority</option>
+					<option value='AgWest.jpg'>AgWest</option>
+					<option value='agricenter.png'>Agricenter</option>
+					<option value='agricterra.png'>Agriterra Equipment</option>
+					<option value='agritex.png'>AGRITEX CENTRE QUEBEC INC.</option>
+					<option value='agritibi.jpg'>Agritibi</option>
+					<option value ='Aimsouth.png'>AIMSOUTH</option>
+					<option value='AlbertaAgCentre.jpg'>Alberta AG Centre</option>
+					<option value='allanequipment.png'>Allan Equipment</option>
+					<option value='altonleblanc.jpg'>Alton LeBlanc & Sons LLC</option>
+					<option value='altorfer.png'>ALTORFER Inc.</option>
+					<option value='aesjcb.png'>AMERICAN EQUIPMENT SERVICE, INC.</option>
+					<option value="applefarm.png">Apple Farm Service Inc.</option>
+					<option value='arnolds.png'>Arnold's of Kimball, Inc.</option>
+					<option value='audilet.png'>AUDILET TRACTOR SALES, Inc.</option>
+					<option value='bequip.png'>B EQUIPMENT Inc.</option>
+					<option value='bosse.png'>Bosse & Frere, Inc.</option>
+					<option value='briggs.png'>Briggs Equipment, Inc.</option>
+					<option>Brown's Farm Implement, LLC.</option>
+					<option value='burnips.png'>Burnips Equipment Co.</option>
+					<option value='butler.png'>Butler Machinery</option>
+					<option value='cain.png'>Cain Equipment</option>
+					<option value='caliber.png'>Caliber Equipment</option>
+					<option value='cawhc.png'>Canada West Harvest Centre Inc.</option>
+					<option value='chinn.png'>Chinn Equipment Company, Inc.</option>
+					<option value='claude.png'>CLAUDE JOYAL INC.</option>
+					<option value='cny.png'>CNY FARM SUPPLIES LLC</option>
+					<option value='deboer.png'>De Boer's Farm Equipment Ltd.</option>
+					<option value='dae.jpg'>Don Allison Equipment, Inc.</option>
+					<option>EATON & SON REPAIR</option>
+					<option value='elliot.png'>ELLIOT FARM EQUIPMENT LTD</option>
+					<option value='empire.png'>Empire CAT</option>
+					<option value='fosters.jpg'>Foster's Agri World</option>
+					<option>Frymire Equipment Inc.</option>
+					<option>Garage Champoux</option>
+					<option>GARAGE OSCAR BROCHU, Inc.</option>
+					<option value='genag.png'>genAG Inc.</option>
+					<option>GENE HOLLIDAY DBA</option>
+					<option value='gjs.png'>GJ's FARM EQUIPMENT</option>
+					<option value='gladegrove.png'>Glade & Grove Supply Co.</option>
+					<option value='glacock.png'>Glascock Equipment & Sales</option>
+					<option value='glenwood.jpg'>Glenwood Equipment Co., Inc.</option>
+					<option>GRANDVIEW FARM SUPPLY</option>
+					<option value='gregorypoole.png'>Gegory Poole Equipment</option>
+					<option>Haller Motor Worx LLC</option>
+					<option value='haney.jpg'>Haney Equipment</option>
+					<option value='hawke.jpg'>Hawke & Co AG Systems, Inc.</option>
+					<option value='hepson.gif'>Hepson Equipment Inc.</option>
+					<option value=hetrick.png>HETRICK FARM SUPPLY, INC.</option>
+					<option value='hjv.png'>HJV Equipment</option>
+					<option value='holt.png'>Holt of California</option>
+					<option value='huddleston.jpg'>Huddleston Equipment Sales and Service</option>
+					<option>HUPF's REPAIR CENTER</option>
+					<option value='ironcity.png'>Iron City Equipment</option>
+					<option>Jansen Farm Equipment Inc.</option>
+					<option value='vanostrum.png'>JG Van Oostrum Farm Equipment LTD</option>
+					<option value='kandl.png'>K & L Tractor Sales, Inc.</option>
+					<option value='kalvesta.gif'>Kalvesta Implement Co. Inc.</option>
+					<option value='brownlee.png'>Ken Brownlee & Sons Equipment Corp.</option>
+					<option value='koletzky.png'>KOLETZKY IMPLEMENT, INC.</option>
+					<option>L'Excellence Agridustrie de L'Estrie, Inc.</option>
+					<option value='lamb.png'>Lamb & Webster, Inc.</option>
+					<option>Lazy Diamond Farm Supply</option>
+					<option>LES ENTERPRISES R. RAYMOND, INC.</option>
+					<option>LES EQUIPEMENTS YVON RIVARD INC.</option>
+					<option value='linder.png'>Linder Equipment Co.</option>
+					<option value='Lindstrom.png'>Lindstrom Equipment, Inc.</option>
+					<option>LONGENECKER'S, INC.</option>
+					<option value='macallister.jpg'>MacAllister</option>
+					<option>MACHINERIE JNG THERIAULT, INC.</option>
+					<option>Maltais & Ouellet, Inc.</option>
+					<option value='mirtech.jpg'>MirTech Harvest Center Inc.</option>
+					<option value='weaver.jpg'>MM Weaver</option>
+					<option value='monroe.png'>Monroe Tractor</option>
+					<option value='mountainview.jpg'>Mountain View Equipment Company</option>
+					<option value='mullins.png'>MULLINS FARM SERVICE</option>
+					<option value="nands.png">N & S Tractor Co (Inc)</option>
+					<option value='nebharvestcenter.jpg'>Nebraska Harvest Center</option>
+					<option>Niemeyet Tractor & Farm Supplies</option>
+					<option value='nieboer.png'>Nieboer Farm Supplies</option>
+					<option value='nortex.png'>NorTex Tractor</option>
+					<option value='ohiocat.jpg'>Ohio CAT</option>
+					<option value='oversons.jpg'>Overson's Farm Center</option>
+					<option value='parmer.png'>Parmer County Implement Co, Inc.</option>
+					<option value='pentagon.png'>Pentagon Farm Centre</option>
+					<option value='pickens.png'>PICKEN'S FARM EQUIPMENT, INC.</option>
+					<option value='peterson.png'>Peterson CAT</option>
+					<option>R & M Tractor & Supply, Inc.</option>
+					<option value='randall.png'>RANDALL IMPLEMENTS CO, INC.</option>
+					<option value='reberland.jpg'>Reberland Equipment, Inc.</option>
+					<option value='reis.png'>Reis Equipment Center Ltd.</option>
+					<option>REXROAD EQUIPMENT</option>
+					<option value='ritchie.png'>Ritchie Implement, Inc.</option>
+					<option value='rocky.png'>Rocky Mountain Equipment</option>
+					<option>Rutledge Repair</option>
+					<option value='shaeperkoetter.jpg'>Schaeperkoetter Sales & Service</option>
+					<option value='scholtens.png'>Scholten's Equipment, Inc.</option>
+					<option value='sam.jpg'>SERVICE AGROMECANIQUE, INC.</option>
+					<option value='service.png'>Service Motor Company, Inc.</option>
+					<option value='shakers.png'>Shaker Equipment</option>
+					<option value='sherwood.png'>Sherwood Equipment</option>
+					<option value='smiths.png'>Smith's Equipment Sales</option>
+					<option value='smiths2.png'>Smith's Farm Equipment, LLC</option>
+					<option value='smiths3.jpg'>Smith Tractor Co., Inc.</option>
+					<option value='stigler.png'>STIGLER MILLING CO. LLC</option>
+					<option value='sunova.png'>Sunova Implement Ltd.</option>
+					<option value='taylor.jpg'>Taylor Implement Co, Inc.</option>
+					<option value='thompson.png'>Thompson Machinery</option>
+					<option value='tingley.png'>Tingley Implements</option>
+					<option value='T&E.jpg'>Tractor & Equipment Co.</option>
+					<option>Trenary Implement Co.</option>
+					<option value='vanderloop.png'>Vanderloop Equipment, Inc.</option>
+					<option value='weaver2.png'>Weaver AG & Lawn Equipment</option>
+					<option value='whayne.png'>Whayne Supply</option>
+					<option value='ziegler.jpg'>Ziegler Inc.</option>
+				</select>
 		</fieldset>
 
 <br>
@@ -146,55 +263,65 @@
 
 					<td><select name="meal" style="width:200px;" id="tractorpick2" onclick='dothemath()' onChange="tractorpicker2(this);" required>
 									<option value="" disabled selected>Select</option>
-									<option value="400">Case IH Steiger 400 T4i</option>
-									<option value="450">Case IH Steiger 450 T4i</option>
-									<option value="500">Case IH Steiger 500 T4i</option>
-									<option value="550">Case IH Steiger 550 T4i</option>
-									<option value="600">Case IH Steiger 600 T4i</option>
-									<option value="370">Case Steiger 370</option>
-									<option value="420">Case Steiger 420</option>
-									<option value="470">Case Steiger 470</option>
-									<option value="500">Case Steiger 500</option>
-									<option value="540">Case Steiger 540</option>
-									<option value="580">Case Steiger 580</option>
-									<option value="620">Case Steiger 620</option>
-									<option value="380">Challenger MT765E</option>
-									<option value="405">Challenger MT775E</option>
-									<option value="410">Challenger MT835C</option>
-									<option value="440">Challenger MT845C</option>
-									<option value="460">Challenger MT845E</option>
-									<option value="475">Challenger MT855C</option>
-									<option value="500">Challenger MT855E</option>
-									<option value="525">Challenger MT865C</option>
-									<option value="550">Challenger MT865E</option>
-									<option value="585">Challenger MT875C</option>
-									<option value="600">Challenger MT875E</option>
-									<option value="380">Challenger MT765E</option>
-									<option value="410">John Deere 9370R</option>
-									<option value="420">John Deere 9410R T4i</option>
-									<option value="420">John Deere 9420R</option>
-									<option value="460">John Deere 9460R T4i</option>
-									<option value="470">John Deere 9470RT</option>
-									<option value="470">John Deere 9470RX</option>
-									<option value="510">John Deere 9510R T4i</option>
-									<option value="520">John Deere 9520R</option>
-									<option value="520">John Deere 9520RT</option>
-									<option value="520">John Deere 9520RX</option>
-									<option value="560">John Deere 9560R T4i</option>
-									<option value="570">John Deere 9570R</option>
-									<option value="570">John Deere 9570RT</option>
-									<option value="570">John Deere 9570RX</option>
-									<option value="620">John Deere 9620R</option>
-									<option value="620">John Deere 9620RX</option>
-									<option value="570">John Deere 9570R</option>
-									<option value="400">Versatile 400</option>
-									<option value="450">Versatile 450</option>
-									<option value="450">Versatile 450DT</option>
-									<option value="500">Versatile 500</option>
-									<option value="500">Versatile 500DT</option>
-									<option value="550">Versatile 550</option>
-									<option value="550">Versatile 550DT</option>
-									<option value="0">Other Manufacturer</option>
+									<optgroup label='Case IH'>
+									<option value="400"> Steiger 400 T4i</option>
+									<option value="450"> Steiger 450 T4i</option>
+									<option value="500"> Steiger 500 T4i</option>
+									<option value="550"> Steiger 550 T4i</option>
+									<option value="600"> Steiger 600 T4i</option>
+									<option value="370"> Steiger 370</option>
+									<option value="420"> Steiger 420</option>
+									<option value="470"> Steiger 470</option>
+									<option value="500"> Steiger 500</option>
+									<option value="540"> Steiger 540</option>
+									<option value="580"> Steiger 580</option>
+									<option value="620"> Steiger 620</option>
+								</optgroup>
+								<optgroup label='Challenger'>
+									<option value="380"> MT765E</option>
+									<option value="405"> MT775E</option>
+									<option value="410"> MT835C</option>
+									<option value="440"> MT845C</option>
+									<option value="460"> MT845E</option>
+									<option value="475"> MT855C</option>
+									<option value="500"> MT855E</option>
+									<option value="525"> MT865C</option>
+									<option value="550"> MT865E</option>
+									<option value="585"> MT875C</option>
+									<option value="600"> MT875E</option>
+									<option value="380"> MT765E</option>
+								</optgroup>
+								<optgroup label='John Deere'>
+									<option value="410"> 9370R</option>
+									<option value="420"> 9410R T4i</option>
+									<option value="420"> 9420R</option>
+									<option value="460"> 9460R T4i</option>
+									<option value="470"> 9470RT</option>
+									<option value="470"> 9470RX</option>
+									<option value="510"> 9510R T4i</option>
+									<option value="520"> 9520R</option>
+									<option value="520"> 9520RT</option>
+									<option value="520"> 9520RX</option>
+									<option value="560"> 9560R T4i</option>
+									<option value="570"> 9570R</option>
+									<option value="570"> 9570RT</option>
+									<option value="570"> 9570RX</option>
+									<option value="620"> 9620R</option>
+									<option value="620"> 9620RX</option>
+									<option value="570"> 9570R</option>
+								</optgroup>
+								<optgroup label='Versatile'>
+									<option value="400"> 400</option>
+									<option value="450"> 450</option>
+									<option value="450"> 450DT</option>
+									<option value="500"> 500</option>
+									<option value="500"> 500DT</option>
+									<option value="550"> 550</option>
+									<option value="550"> 550DT</option>
+								</optgroup>
+								<optgroup label='Other manufacturer'>
+									<option value="0">Other</option>
+								</optgroup>
 								</select>
 				</tr>
 				<tr>
@@ -557,24 +684,23 @@
 </script>
 
 
-<fieldset class="part4">
-	<legend><b>4. Results</b></legend>
-		<table name="myTableb" width="800">
+
+		<table name="myTableb" width="750" style='text-align:center;'>
 			<colgroup>
 				<col width="25%"><col width="25%"><col width="25%"><col width="25%">
 			</colgroup>
 			<thead>
 			<tr>
 				<td>
-				<td id="td0">CLAAS</td>
-				<td id="td1">Competitor</td>
-				<td> CLAAS Advantage
+				<td><img src='miscellaneous/logos/claasred.png' style='width:100px;'><br></td>
+				<td><img src="" name='brandlogo' style='width:100px;'><br></td>
+				<td>CLAAS Advantage
 			</tr>
 		</thead>
 			<tr>
-				<td>Rated Engine HP
-				<td id="pick1" float="center">
-				<td id="pick2" float="center">
+				<td>Machine
+				<td id="td0" float="center">
+				<td id="td1" float="center">
 				<td>
 			</tr>
 		</table><br>
@@ -743,7 +869,7 @@
 		</table>
 	</div>
 
-	<table width="800">
+	<table width="750">
 		<colgroup>
 			<col width="25%"><col width="25%"><col width="25%"><col width="25%">
 		</colgroup>
@@ -752,19 +878,14 @@
 				<td id="td56" float="center" colspan="3"></td>
 			</tr>
 		</table>
-		<br>
-</fieldset><br>
+		<br><br>
 
 
-<textarea rows="2" cols="50" placeholder="Insert comments here"></textarea> <label style="width:50px;" style="vertical-align: text-top;">Email:</label><input type="email" name="email">
-&nbsp &nbsp <input type="submit" value="Send" style="width:100px; height:30px; font-weight:bold; vertical-align: bottom;">
+<textarea id='styled' placeholder="Additional comments" onkeyup="increaseHeight(this);"></textarea>
+<br><button onclick='printer()' style="width:100px; height:30px; font-weight:bold; vertical-align: bottom;" class='no-print'>Print</button>
+
 </form>
 
-<p id="demo" class="no-print"></p>
-
-<script>
-document.getElementById("demo").innerHTML = new Date();
-</script>
 
 
 </body>
