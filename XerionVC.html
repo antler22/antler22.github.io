@@ -239,7 +239,7 @@
 
 				<tr>
 					<td>
-					<td><select name="tractorpick" size="1" id="tractorpick1" style="width:200px; text-float:center;" onclick='dothemath()' onChange="tractorpicker1(this);" required>
+					<td><select name="tractorpick" size="1" id="tractorpick1" style="width:200px; text-float:center;" onclick='dothemath()' required>
 								<option value="" disabled selected>Select</option>
 								<option value="422">XERION 4000 VC Trac</option>
 								<option value="476">XERION 4500 VC Trac</option>
@@ -249,19 +249,7 @@
 								</select>
 					<td float="center"> VS </td>
 
-					<script>
-						function tractorpicker1(sel)
-							{
-							document.getElementById("td0").innerHTML = sel.options[sel.selectedIndex].text;
-							document.getElementById("pick1").innerHTML = document.getElementById("tractorpick1").value;
-							}
-						function tractorpicker2(sel) {
-							document.getElementById("td1").innerHTML = sel.options[sel.selectedIndex].text;
-							document.getElementById("pick2").innerHTML = document.getElementById("tractorpick2").value;
-						}
-					</script>
-
-					<td><select name="meal" style="width:200px;" id="tractorpick2" onclick='dothemath()' onChange="tractorpicker2(this);" required>
+					<td><select name="meal" style="width:200px;" id="tractorpick2" onclick='dothemath()' required>
 									<option value="" disabled selected>Select</option>
 									<optgroup label='Case IH'>
 									<option value="400"> Steiger 400 T4i</option>
@@ -482,14 +470,14 @@
 		} else {
 			document.getElementById("tr1").style.display = "none";
 			document.getElementById("tr6").style.display = "none";
-			// document.getElementById('stacres').value = 0;
-			// document.getElementById('stwidth').value = 0;
-			// document.getElementById('stspeed1').value = 0;
-			// document.getElementById('stspeed2').value = 0;
-			// document.getElementById('stfuel1').value = 0;
-			// document.getElementById('stfuel2').value = 0;
-			// document.getElementById('stdef1').value = 0;
-			// document.getElementById('stdef2').value = 0;
+			document.getElementById('stacres').value = 0;
+			document.getElementById('stwidth').value = 0;
+			document.getElementById('stspeed1').value = 0;
+			document.getElementById('stspeed2').value = 0;
+			document.getElementById('stfuel1').value = 0;
+			document.getElementById('stfuel2').value = 0;
+			document.getElementById('stdef1').value = 0;
+			document.getElementById('stdef2').value = 0;
 		}
 		if (document.getElementById("ftcheck").checked) {
 			document.getElementById("tr2").style.display = "inline";
@@ -498,6 +486,14 @@
 		} else {
 			document.getElementById("tr2").style.display = "none";
 			document.getElementById("tr7").style.display = "none";
+			document.getElementById('ftacres').value = 0;
+			document.getElementById('ftwidth').value = 0;
+			document.getElementById('ftspeed1').value = 0;
+			document.getElementById('ftspeed2').value = 0;
+			document.getElementById('ftfuel1').value = 0;
+			document.getElementById('ftfuel2').value = 0;
+			document.getElementById('ftdef1').value = 0;
+			document.getElementById('ftdef2').value = 0;
 		}
 		if (document.getElementById("ppcheck").checked) {
 		document.getElementById("tr3").style.display = "inline";
@@ -505,6 +501,12 @@
 		} else {
 		document.getElementById("tr3").style.display = "none";
 		document.getElementById("tr8").style.display = "none";
+		document.getElementById('pphrs1').value = 0;
+		document.getElementById('pphrs2').value = 0;
+		document.getElementById('ppfuel1').value = 0;
+		document.getElementById('ppfuel2').value = 0;
+		document.getElementById('ppdef1').value = 0;
+		document.getElementById('ppdef2').value = 0;
 		}
 		if (document.getElementById("mhcheck").checked) {
 		document.getElementById("tr4").style.display = "inline";
@@ -512,6 +514,12 @@
 		} else {
 		document.getElementById("tr4").style.display = "none";
 		document.getElementById("tr9").style.display = "none";
+		document.getElementById('mhhrs1').value = 0;
+		document.getElementById('mhhrs2').value = 0;
+		document.getElementById('mhfuel1').value = 0;
+		document.getElementById('mhfuel2').value = 0;
+		document.getElementById('mhdef1').value = 0;
+		document.getElementById('mhdef2').value = 0;
 		}
 		if (document.getElementById("spcheck").checked) {
 		document.getElementById("tr5").style.display = "inline";
@@ -519,6 +527,14 @@
 		} else {
 		document.getElementById("tr5").style.display = "none";
 		document.getElementById("tr10").style.display = "none";
+		document.getElementById('spacres').value = 0;
+		document.getElementById('spwidth').value = 0;
+		document.getElementById('spspeed1').value = 0;
+		document.getElementById('spspeed2').value = 0;
+		document.getElementById('spfuel1').value = 0;
+		document.getElementById('spfuel2').value = 0;
+		document.getElementById('spdef1').value = 0;
+		document.getElementById('spdef2').value = 0;
 		}
 
 		var laborprice = document.getElementById("laborprice").value;
@@ -580,7 +596,7 @@
 			document.getElementById("td19").innerHTML = (fttothrs2-fttothrs1).toFixed(2);
 
 			var ftopcost1 = ftfuel1 + ftdef1 + +ownercost1 + +maincost1 + +laborprice;
-			var ftopcost2 = ftfuel1 + ftdef1 + +ownercost1 + +maincost1 + +laborprice;
+			var ftopcost2 = ftfuel2 + ftdef2 + +ownercost2 + +maincost2 + +laborprice;
 			document.getElementById("td20").innerHTML = ftopcost1.toFixed(2) + " $/hr";
 			document.getElementById("td21").innerHTML = ftopcost2.toFixed(2) + " $/hr";
 			document.getElementById("td22").innerHTML = (ftopcost1 - ftopcost2).toFixed(2) +"$/hr";
@@ -675,8 +691,26 @@
 
 
 			<!--Totals-->
-			var grandtotal1 = (+stopcost34 + +ftopcost34 + +ppopcost34 + +mhopcost34 + +spopcost34).toFixed(2);
-			var grandtotal2 = (+sttothrs2 - +sttothrs1 + +fttothrs2 - +fttothrs1 + +pptothrs2 - +pptothrs1 + +mhtothrs2 - +mhtothrs1 + +sptothrs2 - +sptothrs1).toFixed(2);
+			// var grandtotal1 = (+stopcost34 + +ftopcost34 + +ppopcost34 + +mhopcost34 + +spopcost34).toFixed(2);
+			// var grandtotal2 = (+sttothrs2 - +sttothrs1 + +fttothrs2 - +fttothrs1 + +pptothrs2 - +pptothrs1 + +mhtothrs2 - +mhtothrs1 + +sptothrs2 - +sptothrs1).toFixed(2);
+			var grandtotal1 = 0;
+			var grandtotal2 = 0;
+
+			if( $('#stcheck').is(':checked')) {grandtotal1 = Number(grandtotal1) + Number(stopcost34);}
+			if( $('#ftcheck').is(':checked')) {grandtotal1 = Number(grandtotal1) + Number(ftopcost34);}
+			if( $('#mhcheck').is(':checked')) {grandtotal1 = Number(grandtotal1) + Number(mhopcost34);}
+			if( $('#ppcheck').is(':checked')) {grandtotal1 = Number(grandtotal1) + Number(ppopcost34);}
+			if( $('#spcheck').is(':checked')) {grandtotal1 = Number(grandtotal1) + Number(spopcost34);}
+
+			if( $('#stcheck').is(':checked')) {grandtotal2 = Number(grandtotal2) + Number(sttothrs2) - Number(sttothrs1);}
+			if( $('#ftcheck').is(':checked')) {grandtotal2 = Number(grandtotal2) + Number(fttothrs2) - Number(fttothrs1);}
+			if( $('#mhcheck').is(':checked')) {grandtotal2 = Number(grandtotal2) + Number(mhtothrs2) - Number(mhtothrs1);}
+			if( $('#ppcheck ').is(':checked')) {grandtotal2 = Number(grandtotal2) + Number(pptothrs2) - Number(pptothrs1);}
+			if( $('#spcheck').is(':checked')) {grandtotal2 = Number(grandtotal2) + Number(sptothrs2) - Number(sptothrs1);}
+
+			grandtotal1 = grandtotal1.toFixed(2);
+			grandtotal2 = grandtotal2.toFixed(2);
+
 			document.getElementById("td56").innerHTML = "$" + addCommas(grandtotal1) + " per year " + " &nbsp &nbsp &nbsp " + addCommas(grandtotal2) + " hours per year";
 
 	}
@@ -866,17 +900,19 @@
 				<td id="td54"></td>
 				<td id="td55"></td>
 			</tr>
-		</table>
+		</table><br>
 	</div>
 
 	<table width="750">
 		<colgroup>
 			<col width="25%"><col width="25%"><col width="25%"><col width="25%">
 		</colgroup>
+		<tfoot>
 			<tr>
 				<td><b>Total Savings
 				<td id="td56" float="center" colspan="3"></td>
 			</tr>
+		</tfoot>
 		</table>
 		<br><br>
 
