@@ -33,9 +33,12 @@
     margin: auto;
     font-family: font72227;
 	}
-  thead, tfoot {
+  thead {
     font-weight: bold;
-    font-size: 1.4em;
+  }
+  tfoot {
+      font-weight: bold;
+      background-color: #b3c618;
   }
 	table {
 		border-collapse: collapse;

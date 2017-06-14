@@ -418,15 +418,14 @@
 		<!--totals-->
 		var grandtot1 = (opcost2 - opcost1).toFixed(0);
 		var grandtot2 = (totbales2 - totbales1).toFixed(0);
-		document.getElementById('td17').innerHTML = "$" + addCommas(grandtot1) + " per year";
-		document.getElementById('td18').innerHTML = addCommas(grandtot2) + " fewer bales";
+		document.getElementById('td17').innerHTML = "$" + addCommas(grandtot1) + " per year " + " and " + addCommas(grandtot2) + " fewer bales";
 		document.getElementById('td19').innerHTML = "$" + (grandtot1 / document.getElementById("totaltons").value).toFixed(2) + " /ton";
 		}
 
 	</script>
 
 
-									<table border="0" cellpadding="5" width="700" style='text-align:center;'>
+									<table border="0" cellpadding="3" width="700" style='text-align:center;'>
 										<colgroup>
 											<col width="25%"><col width="25%"><col width="25%"><col width="25%">
 										</colgroup>
@@ -479,11 +478,10 @@
 										<tfoot>
 										<tr>
 											<td>Total Savings
-											<td id="td17" float="center"></td>
-											<td id='td18' float="center"></td>
+											<td id="td17" float="center" colspan='3' style='font-size:1.4em;'></td>
 										</tr>
 										<tr>
-											<td>Savings per Ton
+											<td>
 											<td colspan="3" id="td19" float="center"></td>
 										</tr>
 									</tfoot>

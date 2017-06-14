@@ -751,7 +751,7 @@
 
 						<!--totals-->
 						var totalsavings = (+opercost12 + +totfluid12 + +totalsavin).toFixed(2);
-						document.getElementById("td20").innerHTML = '$' + addCommas(totalsavings);
+						document.getElementById("td20").innerHTML = '$' + addCommas(totalsavings) + " per year";
 
 						var savsperacre = ((+opercost12 + +totfluid12 + +totalsavin) / document.getElementById('totalacres').value).toFixed(2);
 						var savsperbush = ((+opercost12 + +totfluid12 + +totalsavin)/(document.getElementById("totalacres").value * document.getElementById("bpaaverage").value)).toFixed(2);
@@ -824,14 +824,14 @@
 						<td id="td19"></td>
 					</tr>
 					</tbody>
-					<tfoot style='background-color:#b3c618;'>
+					<tfoot>
 					<tr>
 						<td>Total Savings
-						<td colspan="3" id="td20" float="center" name='Total Savings'></td>
+						<td colspan="3" id="td20" float="center" name='Total Savings' style='font-size:1.4em;'></td>
 					</tr>
 					<tr>
 						<td>
-						<td colspan="3" id="td21" float="center"></td>
+						<td colspan="3" id="td21" float="center" style='font-size:1em;'></td>
 					</tr>
 				</tfoot>
 				</table>
