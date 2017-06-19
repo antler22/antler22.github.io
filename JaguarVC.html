@@ -603,16 +603,15 @@ function dothemath() {
 
 	<!--Chop Quality-->
 	var yieldmethod = document.getElementById("yieldest").value;
-	if (yieldmethod == "fsa") {
-		var totbushels = (document.getElementById("totalacres").value * document.getElementById("bpaaverage").value) * ((1 - (document.getElementById("cropmoisture").value / 100)) / 0.35) * 7.94;
-	} else if (yieldmethod == "uwm") {
-		var totbushels = (document.getElementById("totalacres").value * document.getElementById("bpaaverage").value) * 2000 * (1 - (document.getElementById("cropmoisture").value)/100) * ((document.getElementById("starchval").value)/100) / .72 / .845 / 56;
-	} else if (yieldmethod == "isu") {
-		var totbushels = (document.getElementById("totalacres").value * document.getElementById("bpaaverage").value) * 2000 * (1 - (document.getElementById("cropmoisture").value)/100) * 0.5 / 0.845 / 56;
-	} else if (yieldmethod == "knownbpa") {
-		var totbushels = document.getElementById("newcropname").value * document.getElementById("totalacres").value;
-	}
-
+			if (yieldmethod == "fsa") {
+				var totbushels = (document.getElementById("totalacres").value * document.getElementById("bpaaverage").value) * ((1 - (document.getElementById("cropmoisture").value / 100)) / 0.35) * 7.94;
+			} else if (yieldmethod == "uwm") {
+				var totbushels = (document.getElementById("totalacres").value * document.getElementById("bpaaverage").value) * 2000 * (1 - (document.getElementById("cropmoisture").value)/100) * ((document.getElementById("starchval").value)/100) / .72 / .845 / 56;
+			} else if (yieldmethod == "isu") {
+				var totbushels = (document.getElementById("totalacres").value * document.getElementById("bpaaverage").value) * 2000 * (1 - (document.getElementById("cropmoisture").value)/100) * 0.5 / 0.845 / 56;
+			} else if (yieldmethod == "knownbpa") {
+				var totbushels = document.getElementById("newcropname").value * document.getElementById("totalacres").value;
+			} else {totbushels='1'}
 
 	<!--productivity w/o load measurements-->
 	if (document.getElementById("noscale").checked) {
