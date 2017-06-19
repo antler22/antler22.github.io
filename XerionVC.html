@@ -58,6 +58,7 @@
 				$("#tractorpick2").change(function(){
 				$("img[name=brandlogo]").attr("src",'miscellaneous/logos/' + $('#tractorpick2 :selected').parent().attr('label') + ".png");
 				$('#td1').text($("#tractorpick2 option:selected").text() + " (" + $('#tractorpick2 option:selected').val() + "hp)");
+				$('#groupname').text($('#tractorpick2 :selected').parent().attr('label'));
 				});
 			});
 
@@ -228,14 +229,14 @@
 
 	<fieldset class="part3">
 			<legend><b>3. Performance Comparison</b></legend>
-			<table>
+			<table border='1'>
 				<colgroup>
-					<col width="20%"><col width="20%"><col width="20%"><col width="20%"><col width="20%">
+					<col width="20%"><col width="30%"><col width="10%"><col width="30%">
 				</colgroup>
 
 				<tr>
 					<td>
-					<td><select name="tractorpick" size="1" id="tractorpick1" style="width:200px; text-float:center;" onclick='dothemath()' required>
+					<td><select name="tractorpick" size="1" id="tractorpick1" style="width:150px; text-float:center;" onclick='dothemath()' required>
 								<option value="" disabled selected>Select</option>
 								<option value="422">XERION 4000 VC Trac</option>
 								<option value="476">XERION 4500 VC Trac</option>
@@ -245,7 +246,8 @@
 								</select>
 					<td float="center"> VS </td>
 
-					<td><select name="meal" style="width:200px;" id="tractorpick2" onclick='dothemath()' required>
+					<td style='text-wrap:nowrap;'><label for='meal' id='groupname' ></label>
+						<select name="meal" style="width:150px;" id="tractorpick2" onclick='dothemath()' required>
 									<option value="" disabled selected>Select</option>
 									<optgroup label='Case IH'>
 									<option value="400"> Steiger 400 T4i</option>

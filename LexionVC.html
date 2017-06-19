@@ -62,6 +62,7 @@
 					$("#select1").change(function(){
 					$("img[name=brandlogo]").attr("src",'miscellaneous/logos/' + $('#select1 :selected').parent().attr('label') + ".png");
 					$('#td1').text($("#select1 option:selected").text());
+					$('#groupname').text($('#select1 :selected').parent().attr('label'));
 					});
 				});
 
@@ -415,7 +416,9 @@
 								</select>
 
 
-				 <td> VS <td colspan='2'>
+				 <td> VS</td>
+					  <td align='left' colspan='2'>
+						 <label for='select1' id='groupname'></label>
 					 <select name="select1" id="select1" onchange='dothemath();'>
 						<option disabled selected>Select</option>
 						<optgroup label='John Deere' id='jdlogo'>

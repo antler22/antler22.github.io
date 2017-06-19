@@ -48,6 +48,7 @@
 		}
     select {
       font-family: font72227;
+      text-align: center;
     }
     fieldset {
       border:1px solid;

@@ -61,6 +61,7 @@
 				$("#tractorpick2").change(function(){
 				$("img[name=brandlogo]").attr("src",'miscellaneous/logos/' + $('#tractorpick2 :selected').parent().attr('label') + ".png");
 				$('#td1').text($("#tractorpick2 option:selected").text());
+				$('#groupname').text($('#tractorpick2 :selected').parent().attr('label') + " ");
 				});
 			});
 
@@ -297,7 +298,7 @@
 							}
 						</script>
 
-						<td><select name="meal" style="width:200px;" id="tractorpick2" onclick='dothemath()' onchange="tractorpicker2(this);" required>
+						<td colspan='2' align='left'><label for='meal' id='groupname'></label><select name="meal" style="width:200px;" id="tractorpick2" onclick='dothemath()' onchange="tractorpicker2(this);" required>
 										<option value="" disabled selected>Select</option>
 										<optgroup label='Case IH'>
 										<option value="34">LB434</option>
@@ -349,7 +350,6 @@
 										<option value="44">4x4 baler</option>
 									</optgroup>
 									</select>
-									<td>
 								</tr>
 
 
