@@ -216,12 +216,22 @@
 						<col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%">
 					</colgroup>
 					<tr>
-						<td colspan="4" align='right'><label for="yieldest" class="fieldset2">Yield Calc Method:</label><td colspan='4' align='left'><select id="yieldest" size="1" style="width:180px" onclick='dothemath();'>
+						<td colspan='2' align='right'><label for='croptype' class='fieldset2'>Crop:</label><td align='left'><select id='croptype' size='1' style='width:100px;' onclick='dothemath();'>
+							<option value="" disabled selected>Select</option>
+							<option value='corn'>Corn Silage</option>
+							<option value='alfalfa'>Alfalfa</option>
+							<option value='grass'>Grass</option>
+							<option value='wheat'>Wheat/small grains</option>
+							<option value='biomass'>Biomass</option>
+							<option value='earlage'>Earlage</option>
+							<option value='sorghum'>Sorghum</option></select>
+							<td>
+						<td colspan="2" align='right'><label for="yieldest" class="fieldset2">Yield Calc Method:</label><td colspan='2' align='left'><select id="yieldest" size="1" style="width:180px" onclick='dothemath();'>
 							<option value="" disabled selected>Select</option>
 							<option value="fsa">FSA Yield Calculation</option>
 							<option value="uwm">University of Wisconsin - Madison</option>
 							<option value="isu">Iowa State Universtiy</option>
-							<option value="knownbpa">Known Bushels/Acre</option>
+							<option value="knownbpa">Known Bushels/Acre</option></select>
 							<input type="number" id="newcropname" style="width:80px; display:none;" placeholder="bu/ac" value = "185" onchange='dothemath();'>
 					</tr>
 
@@ -280,6 +290,12 @@
 								<td float="center" colspan=2>
 									<select size="1" id="tractorpick1" style="width:150px; text-float:center;" onclick='dothemath();' onChange="tractorpicker1(this);" required>
 										<option value="" disabled selected>Select</option>
+										<option value="884">JAGUAR 980 (498)</option>
+										<option value="800">JAGUAR 970 (498)</option>
+										<option value="626">JAGUAR 960 (498)</option>
+										<option value="585">JAGUAR 950 (498)</option>
+										<option value="516">JAGUAR 940 (498)</option>
+										<option value="462">JAGUAR 930 (498)</option>
 										<option value="357">JAGUAR 830 (492)</option>
 										<option value="428">JAGUAR 850 (492)</option>
 										<option value="476">JAGUAR 870 (492)</option>
@@ -301,10 +317,16 @@
 										<option value="516">JAGUAR 940 (497)</option>
 										<option value="585">JAGUAR 950 (497)</option>
 										<option value="625">JAGUAR 960 (497)</option>
-										<option value="408">JAGUAR 940 (496)</option>
-										<option value="462">JAGUAR 970 MAN</option>
-										<option value="516">JAGUAR 970 MAN</option>
-										<option value="625">JAGUAR 970 MAN</option>
+										<option value="408">JAGUAR 840 (496)</option>
+										<option value="462">JAGUAR 850 (496)</option>
+										<option value="516">JAGUAR 860 (496)</option>
+										<option value="626">JAGUAR 880 (496)</option>
+										<option value="462">JAGUAR 930 (498)</option>
+										<option value="516">JAGUAR 940 (498)</option>
+										<option value="585">JAGUAR 950 (498)</option>
+										<option value="626">JAGUAR 960 (498)</option>
+										<option value="800">JAGUAR 970 (498)</option>
+										<option value="884">JAGUAR 980 (498)</option>
 									</select>
 										</td>
 
