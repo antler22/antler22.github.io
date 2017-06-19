@@ -48,8 +48,25 @@
 				$("#dealername").change(function(){
 				$("img[name=image-swap]").attr("src",'miscellaneous/dealerpics/' + $(this).val());
 				});
-			});
 
+
+			//Hide/show corn kernel info if corn selected/not
+			$("#croptype").change(function(){
+
+				if( $('#croptype option:selected').val() == "corn") {
+					$('.nocorn').show();
+					$('#scalehere').attr('disabled', false);}
+					else {
+					$('.nocorn').hide();
+				 $("#noscale").prop('checked', true);
+				$('#scalehere').attr('disabled', true);
+				$('#fixedsample2').val($('#fixedsample1').val());
+				$('#fixedwholec2').val($('#fixedwholec1').val());
+				$('#fixedhalfc2').val($('#fixedhalfc1').val());
+				$('#div1').show();
+				$('#div2').hide();}
+				});
+			});
 
 			//Show competitor logo, and place model number in results page
 			$(document).ready(function(){
@@ -216,7 +233,7 @@
 						<col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%">
 					</colgroup>
 					<tr>
-						<td colspan='2' align='right'><label for='croptype' class='fieldset2'>Crop:</label><td align='left'><select id='croptype' size='1' style='width:100px;' onclick='dothemath();'>
+						<td colspan='2' align='right'><label for='croptype' class='fieldset2'>Crop:</label><td align='left' colspan='2'><select id='croptype' size='1' style='width:100px;' onclick='dothemath();'>
 							<option value="" disabled selected>Select</option>
 							<option value='corn'>Corn Silage</option>
 							<option value='alfalfa'>Alfalfa</option>
@@ -225,7 +242,6 @@
 							<option value='biomass'>Biomass</option>
 							<option value='earlage'>Earlage</option>
 							<option value='sorghum'>Sorghum</option></select>
-							<td>
 						<td colspan="2" align='right'><label for="yieldest" class="fieldset2">Yield Calc Method:</label><td colspan='2' align='left'><select id="yieldest" size="1" style="width:180px" onclick='dothemath();'>
 							<option value="" disabled selected>Select</option>
 							<option value="fsa">FSA Yield Calculation</option>
@@ -248,9 +264,10 @@
 				</script>
 
 
-					<tr>
-							<td colspan='2' align='right'><label class="fieldset2" for="starchlevel">Starch:</label><td align='left'><input type="number" id="starchval" style="width:50px;" onchange='dothemath();' value="38">%<td align='left'>
-							<td colspan='2' align='right'><label class="fieldset2" for="cropmoisture">Crop Moisture:</label><td align='left'><input type="number" id="cropmoisture" style="width:50px;" onchange='dothemath();' value="68">%<td align='left'>
+					<tr class='nocorn'>
+							<td colspan='2' align='right'><label class="fieldset2" for="starchlevel">Starch:</label><td align='left'><input type="number" id="starchval" style="width:80px;" onchange='dothemath();' value="38"><td align='left'>%
+							<td colspan='2' align='right'><label class="fieldset2" for="croprice">Crop Price:</label><td align='left'><input type="number" step="any" id="cropprice" min="0" max="20" style="width:80px; text-float:right;" onchange='dothemath();' value="4" required><td align='left'>$/bu
+
 					</tr>
 					<tr>
 						<td colspan='2' align='right'><label class="fieldset2" for="totalacres">Area Harvested:</label><td align='left'><input type="number" id="totalacres" min="1" max="50000" style="width:80px; text-float:right;" onchange='dothemath();' value="1800" required><td align='left'>ac
@@ -261,7 +278,7 @@
 						<td colspan='2' align='right'><label class="fieldset2" for="fuelprice">Fuel Cost:</label><td align='left'><input type="number" id="fuelprice" min="0" max="10" step="any" style="width:80px; text-float:right;" onchange='dothemath();' value="3" required><td align='left'>$/gal
 					</tr>
 					<tr>
-						<td colspan='2' align='right'><label class="fieldset2" for="croprice">Crop Price:</label><td align='left'><input type="number" step="any" id="cropprice" min="0" max="20" style="width:80px; text-float:right;" onchange='dothemath();' value="4" required><td align='left'>$/bu
+						<td colspan='2' align='right'><label class="fieldset2" for="cropmoisture">Crop Moisture:</label><td align='left'><input type="number" id="cropmoisture" style="width:80px;" onchange='dothemath();' value="68"><td align='left'>%
 						<td colspan='2' align='right'><label class="fieldset2" for="defprice">DEF Fluid Cost:</label><td align='left'><input type="number" step="any" id="defprice" min="0" max="10" style="width:80px; text-float:right;" onchange='dothemath();' value="3" required><td align='left'>$/gal
 					</tr>
 					<tr>
@@ -397,7 +414,7 @@
 
 
 			<div id="div1">
-			<table border="0" cellpadding="3" width="750">
+			<table cellpadding="3" width="750">
 				<colgroup>
 					<col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%">
 					<col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%">
@@ -415,19 +432,19 @@
 					<td colspan=2>-
 					<td colspan=2><input type="number" step="0.1" id="groundspeed2" min="0" max="10" style="width:70px; text-float:right;" placeholder="0.0" onchange='dothemath();' value="3.7" required>mph &nbsp
 				</tr>
-				<tr>
+				<tr class='nocorn'>
 					<td colspan=2 float="center">Sample weight
 					<td colspan=2><input type="number" step="0.1" id="fixedsample1" min="0" max="999" style="width:70px; text-float:right;" placeholder="0.0" onchange='dothemath();' value="300" required>g &nbsp &nbsp &nbsp&nbsp
 					<td colspan=2>-
 					<td colspan=2><input type="number" step="0.1" id="fixedsample2" min="0" max="999" style="width:70px; text-float:right;" placeholder="0.0" onchange='dothemath();' value="300" required>g &nbsp &nbsp &nbsp&nbsp
 				</tr>
-				<tr>
+				<tr class='nocorn'>
 					<td colspan=2 float="center">Whole kernels
 					<td colspan=2><input type="number" step="0.1" id="fixedwholec1" min="0" max="999" style="width:70px; text-float:right;" placeholder="0.0" onchange='dothemath();' value="0" required>g &nbsp &nbsp &nbsp&nbsp
 					<td colspan=2>-
 					<td colspan=2><input type="number" step="0.1" id="fixedwholec2" min="0" max="999" style="width:70px; text-float:right;" placeholder="0.0" onchange='dothemath();' value="0.5" required>g &nbsp &nbsp &nbsp&nbsp
 				</tr>
-				<tr>
+				<tr class='nocorn'>
 					<td colspan=2 float="center">"Nicked" kernels
 					<td colspan=2><input type="number" step="0.1" id="fixedhalfc1" min="0" max="999" style="width:70px; text-float:right;" placeholder="0.0" onchange='dothemath();' value="3" required>g &nbsp &nbsp &nbsp&nbsp
 					<td colspan=2>-
@@ -716,19 +733,19 @@ function dothemath() {
 								<td id="td12"></td>
 								<td id="td13"></td>
 							</tr>
-							<tr>
+							<tr class='nocorn'>
 								<td>Bad starch
 								<td id="td14"></td>
 								<td id="td15"></td>
 								<td id="td16"></td>
 							</tr>
-							<tr>
+							<tr  class='nocorn'>
 								<td>Unprocessed Kernels
 								<td id="td17"></td>
 								<td id="td18"></td>
 								<td id="td19"></td>
 							</tr>
-							<tr>
+							<tr  class='nocorn'>
 								<td>Chop Quality
 								<td id="td22"></td>
 								<td id="td23"></td>
