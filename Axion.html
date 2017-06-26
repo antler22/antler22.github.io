@@ -6,7 +6,7 @@
 <head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>XERION Value Calculator</title>
+		<title>AXION Value Calculator</title>
 		<link rel="stylesheet" type="text/css" href="mystyle.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!--enables JQuery-->
 		<script src="commonjs.js"></script>
@@ -31,7 +31,7 @@
 </head>
 
 <body>
-	<div align='center'><h2>XERION Value Calculator</h2></div>
+	<div align='center'><h2>AXION Value Calculator</h2></div>
 	<div id="grad1" class='grad1'></div>
 	<form name="content" method="post" id="form1" style="border:5px">
 
@@ -199,11 +199,13 @@
 					<td>
 					<td><select name="tractorpick" size="1" id="claastype" style="width:150px; text-float:center;" onclick='dothemath()' required>
 								<option value="" disabled selected>Select</option>
-								<option value="422">XERION 4000 VC Trac</option>
-								<option value="476">XERION 4500 VC Trac</option>
-								<option value="517">XERION 5000 VC Trac</option>
-								<option value="476">XERION 4500 Trac</option>
-								<option value="517">XERION 5000 Trac</option>
+								<option value="200">AXION 810</option>
+								<option value="215">AXION 820</option>
+								<option value="215">AXION 830</option>
+								<option value="230">AXION 840</option>
+								<option value="245">AXION 850</option>
+								<option value="250">AXION 860</option>
+								<option value="265">AXION 880</option>
 								</select>
 					<td float="center"> VS </td>
 
@@ -281,7 +283,7 @@
 				</tr>
 			</table>
 
-					<input type="checkbox" id="stcheck" onclick="dothemath()" >Spring Tillage<br>
+					<input type="checkbox" id="stcheck" onclick="dothemath()" >Tillage<br>
 
 
 				<div id="tr1" style="display:none;">
@@ -312,7 +314,7 @@
 			</table>
 				</div>
 
-				<br><input type="checkbox" id="ftcheck" onclick="dothemath()">Fall Tillage<br>
+				<br><input type="checkbox" id="ftcheck" onclick="dothemath()">Mowing<br>
 				<div id="tr2" style="display:none;">
 				<table style="text-align:left;">
 					<colgroup>
@@ -505,7 +507,7 @@
 		var maincost1 = document.getElementById("maincost1").value;
 		var maincost2 = document.getElementById("maincost2").value;
 
-			<!--Spring Tillage-->
+			<!--Tillage-->
 			var stfuel1 = document.getElementById("stfuel1").value * fuelprice;
 			var stfuel2 = document.getElementById("stfuel2").value * fuelprice;
 			var stdef1 = document.getElementById("stdef1").value * defprice;
@@ -537,7 +539,7 @@
 			document.getElementById("td13").innerHTML = "$" + addCommas(stopcost34);
 
 
-			<!--Fall Tillage-->
+			<!--Mowing-->
 			var ftfuel1 = document.getElementById("ftfuel1").value * fuelprice;
 			var ftfuel2 = document.getElementById("ftfuel2").value * fuelprice;
 			var ftdef1 = document.getElementById("ftdef1").value * defprice;
@@ -705,7 +707,7 @@
 			</colgroup>
 
 			<tr>
-				<td><b>Spring Tillage<td><td><td>
+				<td><b>Tillage<td><td><td>
 			</tr>
 			<tr>
 					<td float="right">Productivity
@@ -740,7 +742,7 @@
 				<col width="25%"><col width="25%"><col width="25%"><col width="25%">
 			</colgroup>
 			<tr>
-				<td><b>Fall Tillage<td colspan="3">
+				<td><b>Mowing<td colspan="3">
 			</tr>
 			<tr>
 					<td float="right">Productivity

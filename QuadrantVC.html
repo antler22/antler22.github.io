@@ -1,13 +1,15 @@
 <!DOCTYPE HTML>
 <!--CREATED BY NICK JACOBSEN-->
 
+<html lang="us">
+
 <head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Home | CLAAS | Value Calculator</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!--enables JQuery-->
+		<title>QUADRANT Value Calculator</title>
 		<link rel="stylesheet" type="text/css" href="mystyle.css">
-
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!--enables JQuery-->
+		<script src="commonjs.js"></script>
 
 		<!--Proper fonts for CLAAS-->
 		<link href="https://www.fontify.me/wf/30b7c05ed3c5a32d452ca39bba8147d6" rel="stylesheet" type="text/css">  	<!--Titles/Headings reference with 92192  CLAAS neue helvetica 35thin-->
@@ -26,52 +28,6 @@
 		<a href="index.html"><img src="miscellaneous/logos/logo-2x.png" float="left" style='width:40%; padding-top:2em; padding-bottom:0.5em;'></a>
 		<img src="" name='dealerlogo' align="right" style='height:50px; padding-top:40px; padding-right:10px;'>
 
-		<script>
-				function addCommas(nStr)
-						{
-						nStr += '';
-						var x = nStr.split('.');
-						var x1 = x[0];
-						var x2 = x.length > 1 ? '.' + x[1] : '';
-						var rgx = /(\d+)(\d{3})/;
-						while (rgx.test(x1)) {
-							x1 = x1.replace(rgx, '$1' + ',' + '$2');
-						}
-						return x1 + x2;
-						}
-
-			//add dealer logo to page top
-			$(document).ready(function(){
-				$("#dealername").change(function(){
-				$("img[name=dealerlogo]").attr("src",'miscellaneous/dealerpics/' + $(this).val());
-				});
-			});
-
-			//activate print button
-			function printer() {
-					window.print();
-					}
-
-			//Show competitor logo, and place model number in results page
-			$(document).ready(function(){
-				$("#tractorpick1").change(function(){
-					$('#td0').text($('#tractorpick1 option:selected').text());
-					});
-
-				$("#tractorpick2").change(function(){
-				$("img[name=brandlogo]").attr("src",'miscellaneous/logos/' + $('#tractorpick2 :selected').parent().attr('label') + ".png");
-				$('#td1').text($("#tractorpick2 option:selected").text());
-				$('#groupname').text($('#tractorpick2 :selected').parent().attr('label') + " ");
-				});
-			});
-
-			//auto expand text area
-			function increaseHeight(e){
-			   e.style.height = 'auto';
-			   var newHeight = (e.scrollHeight > 32 ? e.scrollHeight : 32);
-			   e.style.height = newHeight.toString() + 'px';
-				};
-		</script>
 </head>
 
 <body>
@@ -270,7 +226,7 @@
 
 					<tr>
 						<td>
-						<td><select name="tractorpick" size="1" id="tractorpick1" style="width:200px; text-float:center;" onclick='dothemath();' onChange="tractorpicker1(this);" required>
+						<td><select name="tractorpick" size="1" id="claastype" style="width:200px; text-float:center;" onclick='dothemath();' onChange="tractorpicker1(this);" required>
 									<option value="" disabled selected>Select</option>
 									<option value="34">QUADRANT 3300</option>
 									<option value="34">QUADRANT 3300 RC</option>
@@ -282,8 +238,8 @@
 							function tractorpicker1(sel) {
 								document.getElementById("td0").innerHTML = sel.options[sel.selectedIndex].text;
 								var balelength = document.getElementById("balelength").value;
-								var baleheight1 = document.getElementById("tractorpick1").value[0];
-								var balewidth1 = document.getElementById("tractorpick1").value[1];
+								var baleheight1 = document.getElementById("claastype").value[0];
+								var balewidth1 = document.getElementById("claastype").value[1];
 								var twine1 = ((2 * baleheight1) + (2 * balelength)) * ((balewidth1 * 2) - 2);
 								document.getElementById("td2").innerHTML = twine1 + " ft/bale";
 								}
@@ -373,8 +329,8 @@
 
 		<!--show twine needed per bale-->
 		var balelength = document.getElementById("balelength").value;
-		var baleheight1 = document.getElementById("tractorpick1").value[0];
-		var balewidth1 = document.getElementById("tractorpick1").value[1];
+		var baleheight1 = document.getElementById("claastype").value[0];
+		var balewidth1 = document.getElementById("claastype").value[1];
 		var twine1 = ((2 * baleheight1) + (2 * balelength)) * ((balewidth1 * 2) - 2);
 		var balelength = document.getElementById("balelength").value;
 		var baleheight2 = document.getElementById("tractorpick2").value[0];

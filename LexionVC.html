@@ -9,6 +9,7 @@
 		<title>LEXION Value Calculator</title>
 		<link rel="stylesheet" type="text/css" href="mystyle.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!--enables JQuery-->
+		<script src="commonjs.js"></script>
 
 		<!--Proper fonts for CLAAS-->
 		<link href="https://www.fontify.me/wf/30b7c05ed3c5a32d452ca39bba8147d6" rel="stylesheet" type="text/css">  	<!--Titles/Headings reference with 92192  CLAAS neue helvetica 35thin-->
@@ -23,56 +24,10 @@
 		</noscript>
 		<!--end to warning-->
 
+		<!--insert CLAAS logo, and heading text-->
 		<a href="index.html"><img src="miscellaneous/logos/logo-2x.png" float="left" style='width:40%; padding-top:2em; padding-bottom:0.5em;'></a>
 		<img src="" name='dealerlogo' align="right" style='height:50px; padding-top:40px; padding-right:10px;'>
 
-		<script>
-				//add commas to all outputs, for cleaner look
-				function addCommas(nStr)
-						{
-						nStr += '';
-						var x = nStr.split('.');
-						var x1 = x[0];
-						var x2 = x.length > 1 ? '.' + x[1] : '';
-						var rgx = /(\d+)(\d{3})/;
-						while (rgx.test(x1)) {
-							x1 = x1.replace(rgx, '$1' + ',' + '$2');
-						}
-						return x1 + x2;
-						}
-
-				//add dealer logo to page top
-				$(document).ready(function(){
-		   			$("#dealername").change(function(){
-		     		$("img[name=dealerlogo]").attr("src",'miscellaneous/dealerpics/' + $(this).val());
-		   			});
-				});
-
-				//activate print button
-				function printer() {
-					    window.print();
-						}
-
-				//Show competitor logo, and place model number in results page
-				$(document).ready(function(){
-					$("#lexiontype").change(function(){
-						$('#td0').text($('#lexiontype option:selected').text());
-						});
-
-					$("#select1").change(function(){
-					$("img[name=brandlogo]").attr("src",'miscellaneous/logos/' + $('#select1 :selected').parent().attr('label') + ".png");
-					$('#td1').text($("#select1 option:selected").text());
-					$('#groupname').text($('#select1 :selected').parent().attr('label'));
-					});
-				});
-
-				//auto expand text area
-				function increaseHeight(e){
-				   e.style.height = 'auto';
-				   var newHeight = (e.scrollHeight > 32 ? e.scrollHeight : 32);
-				   e.style.height = newHeight.toString() + 'px';
-					};
-		</script>
 </head>
 
 <!-- Divide header and body-->
@@ -376,7 +331,7 @@
 				<tr>
 					<td>
 						<td colspan='2'>
-							<select name="LEXION" size="1" id="lexiontype" style="width:150px; text-align:center;" onchange="dothemath();" required>
+							<select name="LEXION" size="1" id="claastype" style="width:150px; text-align:center;" onchange="dothemath();" required>
 								<option value="" disabled selected>Select</option>
 								<option value="67">LEXION 780TT</option>
 								<option value="67">LEXION 780</option>
@@ -418,8 +373,8 @@
 
 				 <td> VS</td>
 					  <td align='left' colspan='2'>
-						 <label for='select1' id='groupname'></label>
-					 <select name="select1" id="select1" onchange='dothemath();'>
+						 <label for='tractorpick2' id='groupname'></label>
+					 <select name="tractorpick2" id="tractorpick2" onchange='dothemath();'>
 						<option disabled selected>Select</option>
 						<optgroup label='John Deere' id='jdlogo'>
 							<option  value='55'>S790</option>
@@ -693,8 +648,8 @@
 					var seedsperbu = document.getElementById("seedsperbu111").value;
 					var head1 = document.getElementById("headerwidth1").value;  //header width lexion
 					var head2 = document.getElementById("headerwidth2").value;  //header with comnpetition
-					var lexsievewid = document.getElementById("lexiontype").value;
-					var comsievewid = document.getElementById("select1").value;
+					var lexsievewid = document.getElementById("claastype").value;
+					var comsievewid = document.getElementById("tractorpick2").value;
 
 													//document.getElementById("td20").innerHTML=comsievewid;     //only used for testing
 					var lexionsieveratio = lexsievewid / 12 / head1;
