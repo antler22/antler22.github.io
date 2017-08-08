@@ -1,6 +1,5 @@
-//Javascript common to all products
+//Master JS and JQuery library for Value Calculator project
 //Nick.jacobsen@claas.com
-
 
 //add commas to all outputs, for cleaner look
 function addCommas(nStr)
@@ -45,5 +44,9 @@ $(document).ready(function(){
     $("img[name=brandlogo]").attr("src",'miscellaneous/logos/' + $('#tractorpick2 :selected').parent().attr('label') + ".png");
     $('#td1').text($("#tractorpick2 option:selected").text());
     $('#groupname').text($('#tractorpick2 :selected').parent().attr('label'));
+    $('.complabel').text($('#tractorpick2 :selected').parent().attr('label'));
     });
+
+
+
 });
