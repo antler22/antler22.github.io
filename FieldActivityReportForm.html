@@ -1,0 +1,552 @@
+<!DOCTYPE HTML>
+
+<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Field Activity Report</title>
+		<link rel="stylesheet" type="text/css" href="miscellaneous/mystyle1.css">   <!--link to local stylesheet-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!--enables JQuery-->
+
+		<!--Proper fonts for CLAAS-->
+		<link href="https://www.fontify.me/wf/30b7c05ed3c5a32d452ca39bba8147d6" rel="stylesheet" type="text/css">  	<!--Titles/Headings reference with 92192  CLAAS neue helvetica 35thin-->
+	 	<link href="https://www.fontify.me/wf/18e2a1337607f8734ef443d978cb015f" rel="stylesheet" type="text/css"> 	<!--subheadlines reference with 72227 CLAAS Neue Helvetica 45 light-->
+		<link href="https://www.fontify.me/wf/800d997c339c0d0926c020a1edd1c9a0" rel="stylesheet" type="text/css"> 	<!--body reference with 71949 CLAAS Neue Helvetica 65 medium-->
+		<link href="https://www.fontify.me/wf/8d07f32883c790caccd89636d1eb5b47" rel="stylesheet" type="text/css"> 	<!--footnote reference with 115649 CLAAS Neue Helvetica 47 light condensed-->
+		<link href="https://www.fontify.me/wf/aff34d9b118b88af2245aba72ed961fd" rel="stylesheet" type="text/css"> 	<!--body condensed reference with 109817 CLAAS Neue helvetica 67 medium condensed-->
+
+		<!--warning if browser does not work-->
+		<noscript>
+		<p>Sorry, your browser does not support JavaScript</p>
+		</noscript>
+
+		<!--insert CLAAS logo, and heading text-->
+		<a href="index.html"><img src="miscellaneous/logos/logo-2x.png" float="left" style='width:40%; padding-top:2em; padding-bottom:0.5em;'></a>
+		<img src="" name='dealerlogo' align="right" style='height:50px; padding-top:40px; padding-right:10px;'>
+
+<script>
+
+//add dealer logo to page top
+$(document).ready(function(){
+	$("#dealername").change(function(){
+	$("img[name=dealerlogo]").attr("src",'miscellaneous/dealerpics/' + $(this).val());
+	});
+});
+
+	//Get location and date from browser
+	function getinfo() {
+		var d = new Date();
+
+		var x = document.getElementById("date1");
+		    if (navigator.geolocation) {
+		        navigator.geolocation.getCurrentPosition(showPosition);
+		    } else { x.innerHTML = "Location error"; }
+		function showPosition(position) {
+				x.innerHTML = position.coords.latitude.toFixed(3) +
+				", " + position.coords.longitude.toFixed(3);
+			}
+		}
+
+	// adding/removing contact info
+		currentg1 = 1; // This is input files added by default.
+		maxg1 = 5;  //Max lines allowed
+		ming1 = 1;  //min lines allowed
+		function g1_app_child(){  //addperson button
+				if(currentg1<maxg1) {
+						var div = document.createElement("div");
+						div.id = 'divfiles'+currentg1;
+						div.innerHTML = '<a onclick="return change(this);">CLAAS</a>'
+														+ ' <input type="text" name="files['+currentg1+']" id="file'+currentg1+'" value="" style="width:150px;" placeholder="Name"/>'
+														+ ' <input type="text" name="files['+currentg1+']" id="file'+currentg1+'" value="" style="width:150px;" placeholder="Title"/>';
+						document.getElementById('outer_div').appendChild(div);
+						currentg1++;
+						return false;
+						}
+				else { return false; }
+				}
+		function g1_delchild()  {//removechild button
+				if(currentg1>ming1) {
+						cnt = currentg1-1;
+						element = document.getElementById('divfiles'+cnt);
+						element.parentNode.removeChild(element);
+						currentg1--;
+						return false;
+						}
+				else {alert('Must have at least one contact'); return false;}
+				}
+
+		//button to switch "CLAAS" to "Dealer" when defining additional people
+		function change( el ) {
+				if ( el.innerHTML === "CLAAS" )
+						el.innerHTML = " Dealer";
+				else {el.innerHTML = "CLAAS";}
+				}
+
+		//Show/hide show two things.  1) competitior box when activity is "demo"  2) show machine info when activity is field
+		$(document).ready( function() {
+			$('#activity1').bind('change', function (e) {
+				if( $('#activity1').val() == 'startup' || $('#activity1').val() == 'demo' || $('#activity1').val() == 'infield' || $('#activity1').val() == 'otheract') {
+					$('#decider').show();
+						if ($('#activity1').val() == 'demo') {
+							$('.comptable').show();
+							} else {$('.comptable').hide();}
+				}
+				else {
+					$('#decider').hide();
+				}
+			}).trigger('change');
+		});
+
+		//Show/hide combine settings, tractor ballasting when each is selected
+		$(document).ready( function() {
+			$('#activity2').bind('change', function (e) {
+				if( $('#activity2').val() == 'LEXION') {
+						$('.csettings').show();
+						$('.xerionballast').hide();
+						}
+					else if( $('#activity2').val() == 'XERION') {$('.xerionballast').show(); $('.csettings').hide();}
+				else {
+					$('.csettings').hide();
+					$('.xerionballast').hide();
+					}
+			}).trigger('change');
+		});
+
+	//image "preview"
+	$(document).ready(function() {
+			        $("#fileUpload").on('change', function() {
+			          //Get count of selected files
+			          var countFiles = $(this)[0].files.length;
+			          var imgPath = $(this)[0].value;
+			          var extn = imgPath.substring(imgPath.lastIndexOf('.') + 1).toLowerCase();
+			          var image_holder = $("#image-holder");
+			          image_holder.empty();
+			          if (extn == "gif" || extn == "png" || extn == "jpg" || extn == "jpeg") {
+			            if (typeof(FileReader) != "undefined") {
+			              //loop for each file selected for uploaded.
+			              for (var i = 0; i < countFiles; i++)
+			              {
+			                var reader = new FileReader();
+			                reader.onload = function(e) {
+			                  $("<img />", {
+			                    "src": e.target.result,
+			                    "class": "thumb-image"
+			                  }).appendTo(image_holder);
+			                }
+			                image_holder.show();
+			                reader.readAsDataURL($(this)[0].files[i]);
+			              }
+			            } else {
+			              alert("This browser does not support FileReader.");
+			            }
+			          } else {
+			            alert("Please select .jpg, .jpeg, .png, or .gif only");
+			          }
+			        });
+			      });
+
+		//Print when finished with form
+		function printer() {
+		    window.print();
+			}
+
+
+		//Auto expand text area
+		function increaseHeight(e){
+		   e.style.height = 'auto';
+		   var newHeight = (e.scrollHeight > 32 ? e.scrollHeight : 32);
+		   e.style.height = newHeight.toString() + 'px';
+	   		};
+
+
+		//XERION ballasting script
+			$('document').ready(function() {
+				$('#tester').click(function(){
+					var totweight;
+
+					if( $('#modelno option:selected').val() == "435") {totweight = 29315;}   //base machine weight
+					if( $('#modelno option:selected').val() == "490") {totweight = 30197;}
+					if( $('#modelno option:selected').val() == "530") {totweight = 30197;}
+
+					if($('#vccab').is(':checked')) {totweight = totweight + 1940;}  //vc cab option contributes to base weight
+
+					if($('#tyres option:selected').val() == '71070') {totweight = totweight + 11194;}  //Tire options contribute to base weight
+					if($('#tyres option:selected').val() == '71075') {totweight = totweight + 12058;}
+					if($('#tyres option:selected').val() == '65085') {totweight = totweight + 12315;}
+					if($('#tyres option:selected').val() == '80070') {totweight = totweight + 4800;}
+					if($('#tyres option:selected').val() == '80075') {totweight = totweight + 4800;}
+					if($('#tyres option:selected').val() == '90060') {totweight = totweight + 5303;}
+					if($('#tyres option:selected').val() == '90065') {totweight = totweight + 6809;}
+
+					if($('#r3').is(':checked')) {totweight = totweight + 551;}
+
+				if($('#f3').is(':checked')) {
+						totweight = totweight + 362;
+
+						var frweight = totweight * 0.55;   //splitting weight into front/rear
+						var rweight = totweight * 0.45;
+
+
+						} else {
+							totweight = totweight + 551;
+							var frweight = totweight * 0.55;   //splitting weight into front/rear
+							var rweight = totweight * 0.45;
+						}
+
+
+				$('#fraxle').val(frweight.toFixed() + " lbs");
+				$('#raxle').val(rweight.toFixed() + " lbs");
+				$('#fraxlepercent').val((frweight / totweight * 100) + "%");
+				$('#raxlepercent').val((rweight / totweight * 100) + "%");
+				$('#totweight').val(totweight);
+				$('#weighthp').val(totweight / ($('#modelno option:selected').val()));
+			});
+		});
+</script>
+
+</head>
+
+
+<body>
+
+
+	<br>
+		<div align='center'><h1>Field Activity Report</h1></div>
+		<div id="grad1" class="container-fluid"></div>
+		<form class='formatback' method='post'>
+		<table cellpadding='5'>
+				<tr>
+					<td align='center'><label for='name1' class="fieldset1">Name: </label><input name='name1' id='name1' type='text' required></input>
+					<td align='center'><label class="fieldset1">Dealer: </label><select name="Dealer" id="dealername" style='width:250px; text-align-last:center;' required>
+								<option disabled selected>Select</option>
+								<option value='advancedag.png'>Advanced Ag Tractor Sales and Service</option>
+								<option value='AgAuthority.png'>Ag Authority</option>
+								<option value='AgWest.jpg'>AgWest</option>
+								<option value='agricenter.png'>Agricenter</option>
+								<option value='agricterra.png'>Agriterra Equipment</option>
+								<option value='agritex.png'>AGRITEX CENTRE QUEBEC INC.</option>
+								<option value='agritibi.jpg'>Agritibi</option>
+								<option value ='Aimsouth.png'>AIMSOUTH</option>
+								<option value='AlbertaAgCentre.jpg'>Alberta AG Centre</option>
+								<option value='allanequipment.png'>Allan Equipment</option>
+								<option value='altonleblanc.jpg'>Alton LeBlanc & Sons LLC</option>
+								<option value='altorfer.png'>ALTORFER Inc.</option>
+								<option value='aesjcb.png'>AMERICAN EQUIPMENT SERVICE, INC.</option>
+								<option value="applefarm.png">Apple Farm Service Inc.</option>
+								<option value='arnolds.png'>Arnold's of Kimball, Inc.</option>
+								<option value='audilet.png'>AUDILET TRACTOR SALES, Inc.</option>
+								<option value='bequip.png'>B EQUIPMENT Inc.</option>
+								<option value='bosse.png'>Bosse & Frere, Inc.</option>
+								<option value='briggs.png'>Briggs Equipment, Inc.</option>
+								<option>Brown's Farm Implement, LLC.</option>
+								<option value='burnips.png'>Burnips Equipment Co.</option>
+								<option value='butler.png'>Butler Machinery</option>
+								<option value='cain.png'>Cain Equipment</option>
+								<option value='caliber.png'>Caliber Equipment</option>
+								<option value='cawhc.png'>Canada West Harvest Centre Inc.</option>
+								<option value='chinn.png'>Chinn Equipment Company, Inc.</option>
+								<option value='claude.png'>CLAUDE JOYAL INC.</option>
+								<option value='cny.png'>CNY FARM SUPPLIES LLC</option>
+								<option value='deboer.png'>De Boer's Farm Equipment Ltd.</option>
+								<option value='dae.jpg'>Don Allison Equipment, Inc.</option>
+								<option>EATON & SON REPAIR</option>
+								<option value='elliot.png'>ELLIOT FARM EQUIPMENT LTD</option>
+								<option value='empire.png'>Empire CAT</option>
+								<option value='fosters.jpg'>Foster's Agri World</option>
+								<option>Frymire Equipment Inc.</option>
+								<option>Garage Champoux</option>
+								<option>GARAGE OSCAR BROCHU, Inc.</option>
+								<option value='genag.png'>genAG Inc.</option>
+								<option>GENE HOLLIDAY DBA</option>
+								<option value='gjs.png'>GJ's FARM EQUIPMENT</option>
+								<option value='gladegrove.png'>Glade & Grove Supply Co.</option>
+								<option value='glacock.png'>Glascock Equipment & Sales</option>
+								<option value='glenwood.jpg'>Glenwood Equipment Co., Inc.</option>
+								<option>GRANDVIEW FARM SUPPLY</option>
+								<option value='gregorypoole.png'>Gegory Poole Equipment</option>
+								<option>Haller Motor Worx LLC</option>
+								<option value='haney.jpg'>Haney Equipment</option>
+								<option value='hawke.jpg'>Hawke & Co AG Systems, Inc.</option>
+								<option value='hepson.gif'>Hepson Equipment Inc.</option>
+								<option value=hetrick.png>HETRICK FARM SUPPLY, INC.</option>
+								<option value='hjv.png'>HJV Equipment</option>
+								<option value='holt.png'>Holt of California</option>
+								<option value='huddleston.jpg'>Huddleston Equipment Sales and Service</option>
+								<option>HUPF's REPAIR CENTER</option>
+								<option value='ironcity.png'>Iron City Equipment</option>
+								<option>Jansen Farm Equipment Inc.</option>
+								<option value='vanostrum.png'>JG Van Oostrum Farm Equipment LTD</option>
+								<option value='kandl.png'>K & L Tractor Sales, Inc.</option>
+								<option value='kalvesta.gif'>Kalvesta Implement Co. Inc.</option>
+								<option value='brownlee.png'>Ken Brownlee & Sons Equipment Corp.</option>
+								<option value='koletzky.png'>KOLETZKY IMPLEMENT, INC.</option>
+								<option>L'Excellence Agridustrie de L'Estrie, Inc.</option>
+								<option value='lamb.png'>Lamb & Webster, Inc.</option>
+								<option>Lazy Diamond Farm Supply</option>
+								<option>LES ENTERPRISES R. RAYMOND, INC.</option>
+								<option>LES EQUIPEMENTS YVON RIVARD INC.</option>
+								<option value='linder.png'>Linder Equipment Co.</option>
+								<option value='Lindstrom.png'>Lindstrom Equipment, Inc.</option>
+								<option>LONGENECKER'S, INC.</option>
+								<option value='macallister.jpg'>MacAllister</option>
+								<option>MACHINERIE JNG THERIAULT, INC.</option>
+								<option>Maltais & Ouellet, Inc.</option>
+								<option value='mirtech.jpg'>MirTech Harvest Center Inc.</option>
+								<option value='weaver.jpg'>MM Weaver</option>
+								<option value='monroe.png'>Monroe Tractor</option>
+								<option value='mountainview.jpg'>Mountain View Equipment Company</option>
+								<option value='mullins.png'>MULLINS FARM SERVICE</option>
+								<option value="nands.png">N & S Tractor Co (Inc)</option>
+								<option value='nebharvestcenter.jpg'>Nebraska Harvest Center</option>
+								<option>Niemeyet Tractor & Farm Supplies</option>
+								<option value='nieboer.png'>Nieboer Farm Supplies</option>
+								<option value='nortex.png'>NorTex Tractor</option>
+								<option value='ohiocat.jpg'>Ohio CAT</option>
+								<option value='oversons.jpg'>Overson's Farm Center</option>
+								<option value='parmer.png'>Parmer County Implement Co, Inc.</option>
+								<option value='pentagon.png'>Pentagon Farm Centre</option>
+								<option value='pickens.png'>PICKEN'S FARM EQUIPMENT, INC.</option>
+								<option value='peterson.png'>Peterson CAT</option>
+								<option>R & M Tractor & Supply, Inc.</option>
+								<option value='randall.png'>RANDALL IMPLEMENTS CO, INC.</option>
+								<option value='reberland.jpg'>Reberland Equipment, Inc.</option>
+								<option value='reis.png'>Reis Equipment Center Ltd.</option>
+								<option>REXROAD EQUIPMENT</option>
+								<option value='ritchie.png'>Ritchie Implement, Inc.</option>
+								<option value='rocky.png'>Rocky Mountain Equipment</option>
+								<option>Rutledge Repair</option>
+								<option value='shaeperkoetter.jpg'>Schaeperkoetter Sales & Service</option>
+								<option value='scholtens.png'>Scholten's Equipment, Inc.</option>
+								<option value='sam.jpg'>SERVICE AGROMECANIQUE, INC.</option>
+								<option value='service.png'>Service Motor Company, Inc.</option>
+								<option value='shakers.png'>Shaker Equipment</option>
+								<option value='sherwood.png'>Sherwood Equipment</option>
+								<option value='smiths.png'>Smith's Equipment Sales</option>
+								<option value='smiths2.png'>Smith's Farm Equipment, LLC</option>
+								<option value='smiths3.jpg'>Smith Tractor Co., Inc.</option>
+								<option value='stigler.png'>STIGLER MILLING CO. LLC</option>
+								<option value='sunova.png'>Sunova Implement Ltd.</option>
+								<option value='taylor.jpg'>Taylor Implement Co, Inc.</option>
+								<option value='thompson.png'>Thompson Machinery</option>
+								<option value='tingley.png'>Tingley Implements</option>
+								<option value='T&E.jpg'>Tractor & Equipment Co.</option>
+								<option>Trenary Implement Co.</option>
+								<option value='vanderloop.png'>Vanderloop Equipment, Inc.</option>
+								<option value='weaver2.png'>Weaver AG & Lawn Equipment</option>
+								<option value='whayne.png'>Whayne Supply</option>
+								<option value='ziegler.jpg'>Ziegler Inc.</option>
+							</select>
+						<br>Location: <input type='text' style='width:200px;'></input></td>
+							<td align='center'><label for='date1' class='fieldset1' style='text-align:center; width:200px;'>Date: </label><input type='date' required></input>
+							<br><div id='date1' align='center' style='padding-top:10px;'></div>
+						<td></td>
+				</tr>
+				</table>
+				<table cellpadding='5' width='700'>
+					<tr>
+						<td>
+								<br><select style='width:150px; text-align-last:center;' id='activity1'>
+									<option disabled selected>Choose activity</option>
+									<option value='startup'>Startup</option>
+									<option value='demo'>Demo</option>
+									<option value='clinic'>Clinic / Training</option>
+									<option value='infield'>In-field support</option>
+									<option value='outfield'>Out-of-field support</option>
+									<option value='otheract'>Other (explain)</option></select>
+
+									<select style='width:150px; text-align-last:center;' id='activity2'>
+											<option disabled selected>Choose product</option>
+											<option value="LEXION">LEXION</option>
+											<option value='JAGUAR'>JAGUAR</option>
+											<option value='XERION'>XERION</option>
+											<option value="AXION">AXION</option>
+											<option value='BHT'>Baler / Hay tool</option></select><br>
+									<input type='checkbox'>Product
+									<input type='checkbox'>Sales
+									<input type="checkbox">Service
+									<input type="checkbox">Parts
+						<td align='center'>Additional personnel<br>
+
+								<div id="outer_div">
+										<div id="divfiles0"><a onclick="return change(this);">CLAAS</a>
+								    <input type="text" name="files[0]" id="file0" value="" style="width:150px;" placeholder='Name'/>
+										<input type="text" name="files[1]" id="file1" value="" style="width:150px;"placeholder='Title'/></div>
+								</div>
+
+								<input class='no-print' type='button' value='Add person' onclick="g1_app_child()"></input>
+								<input class='no-print' type='button' value='Remove' onclick="g1_delchild()"></input><br>
+				</tr>
+				</table>
+
+
+		<span id="decider"><br><table border='1' cellpadding='5' id='stable'>
+			<thead><tr>
+					<td colspan='5' align='center' style='background-color:#b3c618;'>CLAAS Machine Information
+					<td class='comptable' colspan='2' padding-right="5px" align='center' style='background-color:#d8d7d7'>Competitor Information
+			</tr></thead>
+			<tr>
+					<td>Model
+					<td>Serial No.
+					<td>Engine hours
+					<td>Implement/Head
+					<td>Serial No.
+					<td class='comptable'>Model
+					<td class='comptable'>Implement/Head
+			</tr>
+			<tr>
+				<td><input class='serials' type='text'></input>
+				<td><input class='serials' type='text' ></input>
+				<td><input class='serials' type='text'></input>
+				<td><input class='serials' type='text' style='width:120px;'></input>
+				<td><input class='serials' type='text'></input>
+				<td class='comptable'><input class='serials' type='text'></input>
+				<td class='comptable'><input class='serials' type='text'></input>
+			</tr>
+		</table>
+
+		<br><table class='csettings' style='display:none;'>
+				<thead style='background-color:#d8d7d7'>
+					<tr><td>Feederhouse
+					<td>APS
+					<td>Concave
+					<td>Cylinder
+					<td>Rotors
+					<td>Cleaning
+					<td>Chopper
+					</tr>
+				</thead>
+				<tbody class='csettings'><tr>
+					<td>
+							<input type='number' class='csettings' name='fhspeed' placeholder='Speed'/> rpm
+							<br><input type='radio' name='fhupdown'><label for='fhupdown' >Up</label>
+							<br><input type='radio' name='fhupdown'><label for='fhupdown' >Down</label>
+					<td><select class='hidearrow' align='center' style='text-align-last:center;'><option selected disabled style='color:#FE0001'>Grate</option>
+																					<option>6.5mm smooth</option>
+																					<option>6.5mm keystock</option>
+																					<option>10mm wired</option>
+																					<option>12mm keystock</option>
+																					<option>19mm slotted</option>
+																					<option>Round bar</option></select>
+							<br><input type='radio' name='disawnings' /><label for='disawnings'>Open</label>
+							<br><input type='radio' name='disawnings' /><label for='disawnings'>Closed</label>
+					<td><select class="hidearrow" style='width:80px; text-align-last:center;'><option disabled selected>Select</option>
+												<option>RB</option>
+												<option>N18</option>
+												<option>N7/18</option></select>
+							<br><input name='concavegap' type='number' class='csettings' placeholder='Gap'/> mm
+							<br><input type='checkbox'>Cover plate
+							<br><input type='checkbox'>ITS segments
+							<br><input type='checkbox'>Filler strips<input type='number' style='width:25px;' />
+							<br><input type='checkbox'>Clover bars<input type='number' style='width:25px;' />
+					<td><input name='cylinderspeed' type='number' class='csettings' placeholder='Speed'> rpm
+							<br><input type='radio' name='cylinderhighlow'/><label for='cylinderhighlow'>High</label>
+									<input type='radio' name='cylinderhighlow'/><label for='cylinderhighlow'>Low</label>
+							<br><input type='checkbox'>V-plates
+							<br><input type='checkbox'>Serrated wear strips
+					<td><input type='number' class='csettings' placeholder='Speed'/> rpm
+							<br><input type='number' style='width:25px;'/> Rotor Covers
+							<br><input type='checkbox'>CEMOS Separation
+					<td>Upper <select class="hidearrow"><option selected disabled>Select</option>
+													<option>Deep tooth</option>
+													<option>Short tooth</option>
+													<option>TM6</option>
+													<option>Fixed-hole</option></select>
+							<input type='number' class='hidearrow' style='width:25px;'> mm
+							<br>Lower <select class="hidearrow"><option selected disabled>Select</option>
+															<option>Deep tooth</option>
+															<option>Short tooth</option>
+															<option>TM6</option>
+															<option>Fixed-hole</option></select>
+							<input type='number' class='hidearrow' style='width:25px;'> mm
+							<br><input type='number' class='csettings' placeholder='Fan'/> rpm
+							<br><input type='checkbox'>CEMOS Cleaning
+					<td> &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Knives
+							<br><input type='radio' name='knivepos'/>No <input type='radio' name='knivepos'/>Half<input type='radio' name='knivepos'/>Full
+							<br><input type='checkbox' />Friction floor
+							<br><input type='checkbox' />Shear bar
+				</tr></tbody>
+		</table>
+
+	<table class='xerionballast' border='1'>
+			<thead style='background-color:#b3c618'>
+				<tr><td colspan='6'>Ballasting calculator <button type='button' id='tester'>Run</button>
+				</tr>
+			</thead>
+			<tbody>
+				<tr><td>Model <select class='hidearrow' align='center' style='text-align-last:center;' id='modelno'>
+									<option selected disabled style='color:#FE0001'></option>
+									<option value='435'>&nbsp 4000 &nbsp</option>
+									<option value='490'>&nbsp 4500 &nbsp</option>
+									<option value='530'>&nbsp 5000 &nbsp</option></select>
+								<br>VC <input type='checkbox' id='vccab'></input>
+								<br>Tires <select class='hidearrow' align='center' style='text-align-last:center;' id='tyres'>
+											<option selected disabled style='color:#FE0001'></option>
+											<option value='71070'>710/70 R42 duals</option>
+											<option value='71075'>710/65 R42 duals</option>
+											<option value='65085'>650/85 R38 duals</option>
+											<option value='80070'>800/70 R38 singles</option>
+											<option value='80075'>800/70 R38 IF singles</option>
+											<option value='90060'>900/60 R38 singles</option>
+											<option value='90065'>900/60 R42 singles</option></select>
+						<td>
+								<!-- Max speed <select class='hidearrow' align='center' style='text-align-last:center;'>
+											<option selected disabled style='color:#FE0001'></option>
+											<option>31 mph</option>
+											<option>26 mph</option></select><br> -->
+										Rear 3-pont <input type='checkbox' id='r3'></input>
+								<br>Front 3-point<input type='checkbox' id='f3'></input>
+								<br>PTO <input type='checkbox'></input>
+						<td>Front weight added
+								<br><select class='hidearrow' align='center' style='text-align-last:center;'>
+											<option selected disabled style='color:#FE0001'></option>
+											<option>Base plate</option>
+											<option>Custom weight</option>
+											<option>1 weight plate</option>
+											<option>2 weight plates</option>
+											<option>3 weight plates</option>
+											<option>4 weight plates</option>
+											<option>5 weight plates</option>
+											<option>6 weight plates</option>
+											<option>7 weight plates</option>
+											<option>8 weight plates</option>
+											<option>9 weight plates</option></select>
+								<br>Rear weight added
+								<br><select class='hidearrow' align='center' style='text-align-last:center;'>
+													<option selected disabled style='color:#FE0001'></option>
+													<option>Base plate</option>
+													<option>Custom weight</option>
+													<option>1 weight plate</option>
+													<option>2 weight plates</option>
+													<option>3 weight plates</option>
+													<option>4 weight plates</option>
+													<option>5 weight plates</option>
+													<option>6 weight plates</option>
+													<option>7 weight plates</option>
+													<option>8 weight plates</option>
+													<option>9 weight plates</option></select>
+						<td><input type='number' id='froutput' readonly></input><br><br><input type='number' id='routput' readonly></input>
+						<td>Front axle:<br><input type='text' readonly style='width:75px;' id='fraxle'><br><input type='text' readonly style='width:75px;' id='fraxlepercent'>
+						<td>Rear axle:<br><input type='text' readonly style='width:75px;' id='raxle'><br><input type='text' readonly style='width:75px;' id='raxlepercent'>
+						<td>Total weight:<br><input type='text' readonly style='width:75px;' id='totweight'>lbs<br><input type='text' readonly style='width:75px;' id='weighthp'>lbs/hp
+				</tr>
+			</tbody>
+		</table></span><br>
+
+
+<textarea id='styled' placeholder="Describe situation" onkeyup="increaseHeight(this);"></textarea>
+
+<br><br>
+<div id="wrapper" style="margin-top: 20px;"><input id="fileUpload" multiple="multiple" type="file"/>
+<div id="image-holder"></div>
+</div>
+
+
+
+</form>
+
+
+<button type='submit' onclick='printer()'>Submit</button>
+
+
+
+</body>
+</html>
