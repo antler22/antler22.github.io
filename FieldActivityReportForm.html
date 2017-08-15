@@ -21,7 +21,7 @@
 
 		<!--insert CLAAS logo, and heading text-->
 		<a href="index.html"><img src="miscellaneous/logos/logo-2x.png" float="left" style='width:40%; padding-top:2em; padding-bottom:0.5em;'></a>
-		<img src="" name='dealerlogo' align="right" style='height:50px; padding-top:40px; padding-right:10px;'>
+		<img src="" name='dealerlogo' align="right" style='height:25px; padding-top:2em;'>
 
 <script>
 
@@ -55,8 +55,8 @@ $(document).ready(function(){
 						var div = document.createElement("div");
 						div.id = 'divfiles'+currentg1;
 						div.innerHTML = '<a onclick="return change(this);">CLAAS</a>'
-														+ ' <input type="text" name="files['+currentg1+']" id="file'+currentg1+'" value="" style="width:150px;" placeholder="Name"/>'
-														+ ' <input type="text" name="files['+currentg1+']" id="file'+currentg1+'" value="" style="width:150px;" placeholder="Title"/>';
+														+ ' <input type="text" name="files['+currentg1+']" id="file'+currentg1+'" value="" placeholder="Name"/>'
+														+ ' <input type="text" name="files['+currentg1+']" id="file'+currentg1+'" value="" placeholder="Title"/>';
 						document.getElementById('outer_div').appendChild(div);
 						currentg1++;
 						return false;
@@ -214,9 +214,11 @@ $(document).ready(function(){
 		<div id="grad1" class="container-fluid"></div>
 		<form class='formatback' method='post'>
 		<table cellpadding='5'>
+			<colgroup><col width='33%'><col width='33%'><col width='33%'>
+			</colgroup>
 				<tr>
-					<td align='center'><label for='name1' class="fieldset1">Name: </label><input name='name1' id='name1' type='text' required></input>
-					<td align='center'><label class="fieldset1">Dealer: </label><select name="Dealer" id="dealername" style='width:250px; text-align-last:center;' required>
+					<td align='center'><label for='name1'>Name: </label><input name='name1' id='name1' type='text' required style='width:100%;'></input>
+					<td align='center'><label class="fieldset1">Dealer: </label><select name="Dealer" id="dealername" style='width:100%; text-align-last:center;' required>
 								<option disabled selected>Select</option>
 								<option value='advancedag.png'>Advanced Ag Tractor Sales and Service</option>
 								<option value='AgAuthority.png'>Ag Authority</option>
@@ -335,16 +337,15 @@ $(document).ready(function(){
 								<option value='whayne.png'>Whayne Supply</option>
 								<option value='ziegler.jpg'>Ziegler Inc.</option>
 							</select>
-						<br>Location: <input type='text' style='width:200px;'></input></td>
-							<td align='center'><label for='date1' class='fieldset1' style='text-align:center; width:200px;'>Date: </label><input type='date' required></input>
+						<br>Location: <input type='text' style='width:100%;'></input></td>
+							<td align='center'><label for='date1' class='fieldset1' style='text-align:center; width:10%;'>Date: </label><input type='date' required style='width:75%;'></input>
 							<br><div id='date1' align='center' style='padding-top:10px;'></div>
-						<td></td>
 				</tr>
 				</table>
-				<table cellpadding='5' width='700'>
+				<table cellpadding='5' width='100%'>
 					<tr>
 						<td>
-								<br><select style='width:150px; text-align-last:center;' id='activity1'>
+								<br><select style='text-align-last:center;' id='activity1'>
 									<option disabled selected>Choose activity</option>
 									<option value='startup'>Startup</option>
 									<option value='demo'>Demo</option>
@@ -353,7 +354,7 @@ $(document).ready(function(){
 									<option value='outfield'>Out-of-field support</option>
 									<option value='otheract'>Other (explain)</option></select>
 
-									<select style='width:150px; text-align-last:center;' id='activity2'>
+									<select style='text-align-last:center;' id='activity2'>
 											<option disabled selected>Choose product</option>
 											<option value="LEXION">LEXION</option>
 											<option value='JAGUAR'>JAGUAR</option>
@@ -368,8 +369,8 @@ $(document).ready(function(){
 
 								<div id="outer_div">
 										<div id="divfiles0"><a onclick="return change(this);">CLAAS</a>
-								    <input type="text" name="files[0]" id="file0" value="" style="width:150px;" placeholder='Name'/>
-										<input type="text" name="files[1]" id="file1" value="" style="width:150px;"placeholder='Title'/></div>
+								    <input type="text" name="files[0]" id="file0" value="" placeholder='Name'/>
+										<input type="text" name="files[1]" id="file1" value="" placeholder='Title'/></div>
 								</div>
 
 								<input class='no-print' type='button' value='Add person' onclick="g1_app_child()"></input>
@@ -378,10 +379,9 @@ $(document).ready(function(){
 				</table>
 
 
-		<span id="decider"><br><table border='1' cellpadding='5' id='stable'>
+		<span id="decider"><br><table border='1' cellpadding='5' id='stable' style="width:100%">
 			<thead><tr>
 					<td colspan='5' align='center' style='background-color:#b3c618;'>CLAAS Machine Information
-					<td class='comptable' colspan='2' padding-right="5px" align='center' style='background-color:#d8d7d7'>Competitor Information
 			</tr></thead>
 			<tr>
 					<td>Model
@@ -389,18 +389,27 @@ $(document).ready(function(){
 					<td>Engine hours
 					<td>Implement/Head
 					<td>Serial No.
-					<td class='comptable'>Model
-					<td class='comptable'>Implement/Head
 			</tr>
 			<tr>
 				<td><input class='serials' type='text'></input>
 				<td><input class='serials' type='text' ></input>
 				<td><input class='serials' type='text'></input>
-				<td><input class='serials' type='text' style='width:120px;'></input>
 				<td><input class='serials' type='text'></input>
-				<td class='comptable'><input class='serials' type='text'></input>
-				<td class='comptable'><input class='serials' type='text'></input>
+				<td><input class='serials' type='text'></input>
 			</tr>
+		</table><br>
+		<table class='comptable' border='1' cellpadding='5' id='stable' style="width:100%">
+			<thead><tr>
+				<td class='comptable' colspan='2' padding-right="5px" align='center' style='background-color:#d8d7d7'>Competitor Information
+				</tr></thead>
+				<tr>
+					<td class='comptable'>Model
+					<td class='comptable'>Implement/Head
+				</tr>
+				<tr>
+					<td class='comptable'><input class='serials' type='text'></input>
+					<td class='comptable'><input class='serials' type='text'></input>
+				</tr>
 		</table>
 
 		<br><table class='csettings' style='display:none;'>
@@ -416,27 +425,25 @@ $(document).ready(function(){
 				</thead>
 				<tbody class='csettings'><tr>
 					<td>
-							<input type='number' class='csettings' name='fhspeed' placeholder='Speed'/> rpm
-							<br><input type='radio' name='fhupdown'><label for='fhupdown' >Up</label>
-							<br><input type='radio' name='fhupdown'><label for='fhupdown' >Down</label>
-					<td><select class='hidearrow' align='center' style='text-align-last:center;'><option selected disabled style='color:#FE0001'>Grate</option>
+							<input type='number' class='csettings' name='fhspeed' pattern="[0-9]*" placeholder='Speed'/> rpm
+							<br><select class="hidearrow" align='center' style="text-align-last:center;"><option selected disabled style="color:#FE0001;"> FH Pos.</option><option>UP</option><option>DOWN</option>
+					<td><select class='hidearrow' align='center' style='text-align-last:center;'><option selected disabled style='color:#FE0001;'>APS grate</option>
 																					<option>6.5mm smooth</option>
 																					<option>6.5mm keystock</option>
 																					<option>10mm wired</option>
 																					<option>12mm keystock</option>
 																					<option>19mm slotted</option>
 																					<option>Round bar</option></select>
-							<br><input type='radio' name='disawnings' /><label for='disawnings'>Open</label>
-							<br><input type='radio' name='disawnings' /><label for='disawnings'>Closed</label>
-					<td><select class="hidearrow" style='width:80px; text-align-last:center;'><option disabled selected>Select</option>
+							<br><select class="hidearrow" align='center' style="text-align-last:center;"><option selected disabled style="color:#FE0001;">Dis-awning plates</option><option>OPEN</option><option>CLOSED</option>
+					<td><select class="hidearrow" style='width:80%; text-align-last:center;'><option disabled selected>Select</option>
 												<option>RB</option>
 												<option>N18</option>
 												<option>N7/18</option></select>
 							<br><input name='concavegap' type='number' class='csettings' placeholder='Gap'/> mm
 							<br><input type='checkbox'>Cover plate
 							<br><input type='checkbox'>ITS segments
-							<br><input type='checkbox'>Filler strips<input type='number' style='width:25px;' />
-							<br><input type='checkbox'>Clover bars<input type='number' style='width:25px;' />
+							<br><input type='checkbox'>Filler strips<input type='number' style='width:25%;' />
+							<br><input type='checkbox'>Clover bars<input type='number' style='width:25%;' />
 					<td><input name='cylinderspeed' type='number' class='csettings' placeholder='Speed'> rpm
 							<br><input type='radio' name='cylinderhighlow'/><label for='cylinderhighlow'>High</label>
 									<input type='radio' name='cylinderhighlow'/><label for='cylinderhighlow'>Low</label>
