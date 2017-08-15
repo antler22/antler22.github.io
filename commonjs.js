@@ -15,12 +15,12 @@ function addCommas(nStr)
         return x1 + x2;
         }
 
-//add dealer logo to page top
-$(document).ready(function(){
-    $("#dealername").change(function(){
-    $("img[name=dealerlogo]").attr("src",'miscellaneous/dealerpics/' + $(this).val());
+    //add dealer logo to page top
+    $(document).ready(function(){
+        $("#dealername").change(function(){
+        $("img[name=dealerlogo]").attr("src",'miscellaneous/dealerpics/' + $(this).val());
+        });
     });
-});
 
 //activate print button
 function printer() {
