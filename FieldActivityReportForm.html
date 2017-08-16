@@ -20,8 +20,8 @@
 		</noscript>
 
 		<!--insert CLAAS logo, and heading text-->
-		<a href="index.html"><img src="miscellaneous/logos/logo-2x.png" float="left" style='width:40%; padding-top:2em; padding-bottom:0.5em;'></a>
-		<img src="" name='dealerlogo' align="right" style='height:25px; padding-top:2em;'>
+		<a href="index.html"><img src="miscellaneous/logos/logo-2x.png" float="left" style='width:20vh; padding-top:2vh; padding-bottom:1vh;'></a>
+		<img src="" name='dealerlogo' align="right" style='height:3vh; padding-top:4vh;'>
 
 <script>
 
@@ -55,8 +55,8 @@ $(document).ready(function(){
 						var div = document.createElement("div");
 						div.id = 'divfiles'+currentg1;
 						div.innerHTML = '<a onclick="return change(this);">CLAAS</a>'
-														+ ' <input type="text" name="files['+currentg1+']" id="file'+currentg1+'" value="" placeholder="Name"/>'
-														+ ' <input type="text" name="files['+currentg1+']" id="file'+currentg1+'" value="" placeholder="Title"/>';
+														+ ' <input type="text" name="files['+currentg1+']" id="file'+currentg1+'" value="" style="width:40%"  placeholder="Name"/>'
+														+ ' <input type="text" name="files['+currentg1+']" id="file'+currentg1+'" value="" style="width:40%"  placeholder="Title"/>';
 						document.getElementById('outer_div').appendChild(div);
 						currentg1++;
 						return false;
@@ -210,7 +210,7 @@ $(document).ready(function(){
 
 
 	<br>
-		<div align='center'><h1>Field Activity Report</h1></div>
+		<div align='center'><h3>Field Activity Report</h3></div>
 		<div id="grad1" class="container-fluid"></div>
 		<form class='formatback' method='post'>
 			<table cellpadding='5'>
@@ -341,7 +341,7 @@ $(document).ready(function(){
 							<br><label for='date1' class='fieldset1' style='text-align:center;'>Date: </label><input type='date' required style='width:75%;'></input>
 				</tr>
 				</table>
-				<table cellpadding='5' width='100%'>
+				<table cellpadding='5' width='95%'>
 					<tr>
 						<td>
 								<select style='text-align-last:center; width:75%' id='activity1'>
@@ -362,14 +362,14 @@ $(document).ready(function(){
 											<option value='BHT'>Baler / Hay tool</option></select><br>
 									<input type='checkbox'>Product
 									<input type='checkbox'>Sales
-									<input type="checkbox">Service
+									<br><input type="checkbox">Service
 									<input type="checkbox">Parts
 						<td align='center'>Additional personnel<br>
 
 								<div id="outer_div">
 										<div id="divfiles0"><a onclick="return change(this);">CLAAS</a>
-								    <input type="text" name="files[0]" id="file0" value="" placeholder='Name'/>
-										<input type="text" name="files[1]" id="file1" value="" placeholder='Title'/></div>
+								    <input type="text" name="files[0]" id="file0" value="" style='width:40%' placeholder='Name'/>
+										<input type="text" name="files[1]" id="file1" value="" style='width:40%' placeholder='Title'/></div>
 								</div>
 
 								<input class='no-print' type='button' value='Add person' onclick="g1_app_child()"></input>
@@ -378,7 +378,7 @@ $(document).ready(function(){
 				</table>
 
 
-		<span id="decider"><br><table border='1' cellpadding='5' id='stable' style="width:100%">
+		<span id="decider"><br><table border='1' cellpadding='5' id='stable' style="width:95%">
 			<thead><tr>
 					<td colspan='5' align='center' style='background-color:#b3c618;'>CLAAS Machine Information
 			</tr></thead>
@@ -397,7 +397,7 @@ $(document).ready(function(){
 				<td><input class='serials' type='text'></input>
 			</tr>
 		</table><br>
-		<table class='comptable' border='1' cellpadding='5' id='stable' style="width:100%">
+		<table class='comptable' border='1' cellpadding='5' id='stable' style="width:95%">
 			<thead><tr>
 				<td class='comptable' colspan='2' padding-right="5px" align='center' style='background-color:#d8d7d7'>Competitor Information
 				</tr></thead>
@@ -411,7 +411,7 @@ $(document).ready(function(){
 				</tr>
 		</table>
 
-		<br><table class='csettings' style='display:none;'>
+		<br><table class='csettings' style='display:none;width:95%;'>
 			<colgroup>
 				<col width='14%'><col width='14%'><col width='14%'><col width='14%'><col width='14%'><col width='14%'>
 			</colgroup>
@@ -528,7 +528,7 @@ $(document).ready(function(){
 				</tr></tbody>
 		</table>
 
-	<table class='xerionballast' border='1'>
+	<table class='xerionballast' border='1' style="width:95%">
 		<colgroup>
 			<col width='16.7%'><col width='16.7%'><col width='16.7%'><col width='16.7%'><col width='16.7%'><col width='16.7%'>
 		</colgroup>

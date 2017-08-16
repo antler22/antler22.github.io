@@ -15,7 +15,7 @@
   }
   body {
     font-size: 10px;
-    max-width: 375px;
+    max-width: 350px;
     margin: auto;
     font-family: font72227;
 	}
@@ -73,15 +73,15 @@ input[type="radio"] {margin-right: 0;}
       font-size: 10px;
     }
   form.content {
-    max-width: 375px;
+    max-width: 350px;
     margin: auto;
   }
   @media print {
-    html {width: 100%;}
+    html {max-width: 8.5in;}
     /*table {page-break-inside: avoid;}*/
   }
-  @media screen and (max-width:375px;) { /* resize your window until the event is triggered */
-    html { width:375px; }
+  @media screen and (max-width:350px;) { /* resize your window until the event is triggered */
+    html { width:350px; }
     body { font: 16px/1.5 font72227, sans-serif; } /* Roughly 12px font */
 }
 #grad1 {
