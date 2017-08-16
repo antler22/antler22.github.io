@@ -3,9 +3,7 @@
   background-color: transparent;
   text-decoration: none;
   }
-  a:visited {
-  color: black;
-  }
+  a:visited {color: black;}
   a:hover {
   opacity: 1.0;
   color: #B3c618;
@@ -16,11 +14,10 @@
   background-color: transparent;
   }
   body {
-		font-size: 10px;
+    font-size: 10px;
     max-width: 375px;
     margin: auto;
     font-family: font72227;
-
 	}
   thead, tfoot {
     font-weight: bold;
@@ -42,13 +39,6 @@
       border:1px solid;
       background-color: #d8d7d7;
     }
-  label.input1 {
-    display: inline-block;
-    width: 2em;
-    margin-right:0.1em;
-    text-align:right;
-    white-space: nowrap;
-  }
   label.radio1 {
       display: inline-block;
       width: 2em;
@@ -87,14 +77,12 @@ input[type="radio"] {margin-right: 0;}
     margin: auto;
   }
   @media print {
-    html { width:375px; }
-    ul.breadcrumb {display:none;}
-    div.grad1 {display:none;}
-    .watermark {display:block;}
+    html {width: 100%;}
+    /*table {page-break-inside: avoid;}*/
   }
   @media screen and (max-width:375px;) { /* resize your window until the event is triggered */
     html { width:375px; }
-    body { font: 10px/1.5 font72227, sans-serif; } /* Roughly 12px font */
+    body { font: 16px/1.5 font72227, sans-serif; } /* Roughly 12px font */
 }
 #grad1 {
     height: 20px;
@@ -102,16 +90,6 @@ input[type="radio"] {margin-right: 0;}
     background: -o-linear-gradient(top, rgba(215,215,215,0), rgba(215,215,215,1)); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(top, rgba(215,215,215,0), rgba(215,215,215,1)); /* For Firefox 3.6 to 15 */
     background: linear-gradient(to top, rgba(215,215,215,0), rgba(215,215,215,1)); /* Standard syntax (must be last) */
-}
-
-.watermark {
-  display:none;
-  position:absolute;
-  min-height:50%;
-  min-width:50%;
-  color:red;
-  font-size:100px;
-  transform:rotate(45deg);
 }
 input.serials {
   width: 100%;
@@ -127,12 +105,9 @@ textarea#styled {
     vertical-align: top;
 }
 
-input.csettings {
-    width:50%;
-}
-
 table.csettings {
     font-family: font115649;
+    font-size: 8px;
     text-align: center;
 }
 
