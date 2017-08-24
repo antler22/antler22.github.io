@@ -39,11 +39,10 @@
 		<!--farm info-->
 		<br><fieldset class="part1">
 			<legend><b>1. Farm Information</b></legend>
-			<label for="farmname" class="fieldset1">Name:</label><input type="text" id="farmname" placeholder="First, Last" autofocus required></input>
-			<label for="farmlocation" class="fieldset1">Location:</label><input type="text" id="farmlocation"  onchange="calculate()" placeholder="City, State/Province" required></input>
-			<label for="serialno" class="fieldset1">Serial:</label><input type="text" id="serial" style='width:80px;' required></input>
-				<label for="farmname" class="fieldset1">Dealer:</label><select name="dealername" id="dealername" style='width:180px;' required>
-					<option disabled selected>Select</option>
+				Name: <input name='Farm Name' type="text" id="farmname"  style='width:15%;'  placeholder="First, Last" autofocus required></input>
+				Location: <input name='Location' type="text" id="farmlocation"  onchange="calculate()"style='width:20%;'  placeholder="City, State/Province" required></input>
+				Serial: <input name='Serial' type="text" id="serial" style='width:10%;' required></input>
+				Dealer: <select name="Dealer" id="dealername" style='width:20%;' required>					<option disabled selected>Select</option>
 					<option value='advancedag.png'>Advanced Ag Tractor Sales and Service</option>
 					<option value='AgAuthority.png'>Ag Authority</option>
 					<option value='AgWest.jpg'>AgWest</option>

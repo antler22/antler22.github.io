@@ -78,12 +78,10 @@
 <form class="content">
 	<!--farm info-->
 	<br><fieldset class="part1">
-		<legend><b>1. Farm Information</b></legend>
-		<label for="farmname" class="fieldset1">Name:</label><input type="text" id="farmname" placeholder="First, Last" autofocus required></input>
-		<label for="farmlocation" class="fieldset1">Location:</label><input type="text" id="farmlocation"  placeholder="City, State/Province" required></input>
-		<label for="serialno" class="fieldset1">Serial:</label><input type="text" id="serial" style='width:80px;' required></input>
-		<label for="farmname" class="fieldset1">Dealer:</label><select name="dealername" id="dealername" style='width:180px;' required>
-			<option disabled selected>Select</option>
+			Name: <input name='Farm Name' type="text" id="farmname"  style='width:15%;'  placeholder="First, Last" autofocus required></input>
+			Location: <input name='Location' type="text" id="farmlocation"  onchange="calculate()"style='width:20%;'  placeholder="City, State/Province" required></input>
+			Serial: <input name='Serial' type="text" id="serial" style='width:10%;' required></input>
+			Dealer: <select name="Dealer" id="dealername" style='width:20%;' required>			<option disabled selected>Select</option>
 			<option value='advancedag.png'>Advanced Ag Tractor Sales and Service</option>
 			<option value='AgAuthority.png'>Ag Authority</option>
 			<option value='AgWest.jpg'>AgWest</option>
@@ -202,12 +200,10 @@
 			<option value='whayne.png'>Whayne Supply</option>
 			<option value='ziegler.jpg'>Ziegler Inc.</option>
 		</select>
-	</fieldset>
+
 
 	<br>
 
-	<fieldset class="part2">
-				<legend float="left"><b>2. Basic Information</b></legend>
 				<table>
 					<colgroup>
 						<col width="12.5%"><col width="12.5%"><col width="12.5%"><col width="12.5%">
@@ -266,8 +262,7 @@
 						<td colspan='2' align='right'><label class="fieldset2" for="efficiency">Efficiency:</label><td align='left'><input type="number" id="efficiency" min="0" max="100" style="width:80px; text-float:right;" onchange='dothemath();' value="82.5"required ><td align='left'>%
 						<td colspan='2' align='right'><label class="fieldset2" for="maintcost">Operating Cost:</label><td align='left'><input type="number" id="maintcost" min="0" max="1000" style="width:80px; text-float:right;" onchange='dothemath();' value="200" required ><td align='left'>$/hr
 					</tr>
-				</table>
-		</fieldset><br>
+				</table><br>
 
 
 		<!-- <div id="watermarkREMOVEME">
@@ -275,9 +270,6 @@
 		</div> -->
 
 
-
-		<fieldset class="part3">
-			<legend float="left"><b>3. Performance Comparison</b></legend>
 				<table cellpadding="1" width='700px;'>
 					<colgroup>
 						<col width="20%"><col width="35%"><col width="10%"><col width="35%">
