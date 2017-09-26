@@ -38,11 +38,13 @@ function increaseHeight(e){
 $(document).ready(function(){
     $("#claastype").change(function(){
         $('#td0').text($('#claastype option:selected').text());
+        $('#hp1').text($('#claastype option:selected').val() + " hp");
         });
 
     $("#tractorpick2").change(function(){
     $("img[name=brandlogo]").attr("src",'miscellaneous/logos/' + $('#tractorpick2 :selected').parent().attr('label') + ".png");
     $('#td1').text($("#tractorpick2 option:selected").text());
+    $('#hp2').text($('#tractorpick2 option:selected').val() + " hp");
     $('#groupname').text($('#tractorpick2 :selected').parent().attr('label'));
     $('.complabel').text($('#tractorpick2 :selected').parent().attr('label'));
     });

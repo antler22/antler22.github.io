@@ -541,8 +541,8 @@
 			document.getElementById("div2").style.display = "none";
 }
 	}
-
-function dothemath() {
+$(document).ready(function(){
+$('*').click(function() {
 	var speed1 = document.getElementById("groundspeed1").value;
 	var speed2 = document.getElementById("groundspeed2").value;
 	var head1 = document.getElementById("headerwidth1").value;
@@ -661,7 +661,14 @@ function dothemath() {
 	var totalsavings = (+fuelcost12 + +opcost12 + +loss2 - +loss1).toFixed(2);
 	var savingsperacre = (totalsavings/document.getElementById("totalacres").value).toFixed(2);
 	document.getElementById("td20").innerHTML = "$" + addCommas(totalsavings) + " per year &nbsp &nbsp or &nbsp &nbsp $" + addCommas(savingsperacre) + " /ac";
-}
+	$('#td21').text((prod1 / $('#claastype option:selected').val()).toLocaleString(undefined, {maximumFractionDigits: 2}) + " t/hp-hr");
+	$('#td21').val(prod1 / $('#claastype option:selected').val());
+	$('#td25').text((prod2 / $('#tractorpick2 option:selected').val()).toLocaleString(undefined, {maximumFractionDigits: 2}) + " t/hp-hr");
+	$('#td25').val(prod1 / $('#tractorpick2 option:selected').val());
+	$('#td26').text(($('#td21').val() - $('#td25').val()).toLocaleString(undefined, {maximumFractionDigits: 2}) + " t/hp-hr");
+	});
+});
+
 
 </script>
 
@@ -681,15 +688,26 @@ function dothemath() {
 							</tr>
 						</thead>
 							<tr>
-									<td>Machine info
+									<td>
 									<td id="td0" float="center">
 									<td id="td1" float="center">
+							</tr>
+							<tr>
+									<td>
+									<td id='hp1'>
+									<td id='hp2'>
 							</tr>
 							<tr>
 								<td>Productivity
 								<td id="td2"></td>
 								<td id="td3"></td>
 								<td id="td4"></td>
+							</tr>
+							<tr>
+								<td>
+								<td id="td21" float="center" style='font-size:1em;'></td>
+								<td id='td25' float='center' style='font-size:1em;'>
+								<td id='td26' float='center' style='font-size:1em;'>
 							</tr>
 							<tr>
 									<td>Total Hours Needed
@@ -729,10 +747,10 @@ function dothemath() {
 							</tr>
 							<tfoot>
 							<tr>
-								<td><b>Total Savings
-								<td colspan="3" id="td20" float="center" style='font-size:1.4em;'></td>
+								<td>Total Savings
+								<td colspan="3" id="td20" float="center" name='Total Savings' style='font-size:1.4em;'></td>
 							</tr>
-						</tfoot>
+							</tfoot>
 						</table><br>
 				<br>
 
