@@ -661,11 +661,11 @@ $('*').click(function() {
 	var totalsavings = (+fuelcost12 + +opcost12 + +loss2 - +loss1).toFixed(2);
 	var savingsperacre = (totalsavings/document.getElementById("totalacres").value).toFixed(2);
 	document.getElementById("td20").innerHTML = "$" + addCommas(totalsavings) + " per year &nbsp &nbsp or &nbsp &nbsp $" + addCommas(savingsperacre) + " /ac";
-	$('#td21').text((prod1 / $('#claastype option:selected').val()).toLocaleString(undefined, {maximumFractionDigits: 2}) + " t/hp-hr");
+	$('#td21').text((prod1 / $('#claastype option:selected').val()).toLocaleString(undefined, {maximumFractionDigits: 4}) + " t/hp-hr");
 	$('#td21').val(prod1 / $('#claastype option:selected').val());
-	$('#td25').text((prod2 / $('#tractorpick2 option:selected').val()).toLocaleString(undefined, {maximumFractionDigits: 2}) + " t/hp-hr");
+	$('#td25').text((prod2 / $('#tractorpick2 option:selected').val()).toLocaleString(undefined, {maximumFractionDigits: 4}) + " t/hp-hr");
 	$('#td25').val(prod1 / $('#tractorpick2 option:selected').val());
-	$('#td26').text(($('#td21').val() - $('#td25').val()).toLocaleString(undefined, {maximumFractionDigits: 2}) + " t/hp-hr");
+	$('#td26').text(($('#td21').val() - $('#td25').val()).toLocaleString(undefined, {maximumFractionDigits: 4}) + " t/hp-hr");
 	});
 });
 
