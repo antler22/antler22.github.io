@@ -22,27 +22,6 @@
 		<p>Sorry, your browser does not support JavaScript.  Value Calculators will not function properly.</p>
 		</noscript>
 
-		<SCRIPT>
-				function passWord() {
-				var testV = 1;
-				var pass1 = prompt('Please Enter Your Password',' ');
-				while (testV < 3) {
-				if (!pass1)
-				history.go(-1);
-				if (pass1.toLowerCase() == "lexion780") {
-				alert('Correct!');
-				window.open('FieldActivityReportForm.html');
-				break;
-				}
-				testV+=1;
-				var pass1 =
-				prompt('Access Denied - Password Incorrect, Please Try Again.','Password');
-				}
-				if (pass1.toLowerCase()!="password" & testV ==3)
-				history.go(-1);
-				return " ";
-				}
-		</SCRIPT>
 
 
 </head>
@@ -74,7 +53,7 @@
 			<td align="center"><a onclick="databasealert()"><img class='homepage' src='miscellaneous/database.png' width="200px" align="center"><br><b>Database</a></b>
 					<div class='homepagewarning' id='homepagewarning' style='display:none; color:red; font-size:15px;'><i>More value calculators needed!</i></div>
 			<td align='center'><a href='http://claasofamerica.com/company-claas-contact/claas-of-america/legal-data'><img class="homepage" src="disclaimer.jpg" width="100px"><br><b>Disclaimer</b>
-			<td align='center'><a onclick='passWord();'><img class="homepage" src="pdf.png" width="100px"><br><b>Field reporting</b></a>
+			<td align='center'><a href='FieldActivityReportForm.html;'><img class="homepage" src="pdf.png" width="100px"><br><b>Field reporting</b></a>
 		</tr>
 </table>
 <br>
