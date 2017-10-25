@@ -192,9 +192,8 @@ $(document).ready(function(){
     $('#td20').val(+$('#td10').val() + +$('#td13').val() + +$('#td19').val());
     $('#td20').text("$ " + (+$('#td10').val() + +$('#td13').val() + +$('#td19').val()).toLocaleString(undefined, {maximumFractionDigits: 2}) + " savings");
 
-    $('#td21').text("$ " + ($('#td20').val() / $('#totalacres').val() * $('#bpaaverage').val()).toLocaleString(undefined, {maximumFractionDigits: 2}) + "/bu savings");
+    $('#td21').text("$ " + ($('#td20').val() / ($('#totalacres').val() * $('#bpaaverage').val())).toLocaleString(undefined, {maximumFractionDigits: 2}) + "/bu savings");
     $('#td25').text("$ " + ($('#td20').val() / $('#totalacres').val()).toLocaleString(undefined, {maximumFractionDigits: 2}) + "/ac savings");
-    $('#td26').text("$ " + ($('#td20').val() / $('#td7').val()).toLocaleString(undefined, {maximumFractionDigits: 2}) + "/sep. hr savings");
 
     });
 });
