@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+
+<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Value Calculator</title>
+		<link rel="stylesheet" type="text/css" href="mystyle.css">   <!--link to local stylesheet-->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  <!--bootstrap framework?  Is this needed?-->
+
+		<!--Proper fonts for CLAAS-->
+		<link href="https://www.fontify.me/wf/30b7c05ed3c5a32d452ca39bba8147d6" rel="stylesheet" type="text/css">  	<!--Titles/Headings reference with 92192  CLAAS neue helvetica 35thin-->
+	 	<link href="https://www.fontify.me/wf/18e2a1337607f8734ef443d978cb015f" rel="stylesheet" type="text/css"> 	<!--subheadlines reference with 72227 CLAAS Neue Helvetica 45 light-->
+		<link href="https://www.fontify.me/wf/800d997c339c0d0926c020a1edd1c9a0" rel="stylesheet" type="text/css"> 	<!--body reference with 71949 CLAAS Neue Helvetica 65 medium-->
+		<link href="https://www.fontify.me/wf/8d07f32883c790caccd89636d1eb5b47" rel="stylesheet" type="text/css"> 	<!--footnote reference with 115649 CLAAS Neue Helvetica 47 light condensed-->
+		<link href="https://www.fontify.me/wf/aff34d9b118b88af2245aba72ed961fd" rel="stylesheet" type="text/css"> 	<!--body condensed reference with 109817 CLAAS Neue helvetica 67 medium condensed-->
+
+
+
+
+		<!--warning if browser does not work-->
+		<noscript>
+		<p>Sorry, your browser does not support JavaScript.  Value Calculators will not function properly.</p>
+		</noscript>
+
+
+
+</head>
+<body>
+
+	<!--insert CLAAS logo, and heading text-->
+
+	<img src="miscellaneous/logos/logo-2x.png" float="left" style='width:40%; padding-top:2em; padding-bottom:0.5em;'>
+
+<div id="grad1" class="container-fluid"></div>
+	<br>
+	<br>
+
+</head>
+
+<table class="homepage" cellpadding="5" width="810px">
+		<tr>
+				<td align="center"><a class="homepage" href="LexionVC.html"><img class="homepage" src="280271.png" width="200px">
+					<br><b>LEXION</a>
+				<td align="center"><a class="homepage" href="JaguarVC.html"><img class="homepage" src="285736.png" width="200px">
+					<br><b>JAGUAR</a>
+				<td align="center"><a class="homepage" href="XerionVC.html"><img class="homepage" src="253442.png" width="200px">
+					<br><b>XERION</a>
+				<td align="center"><a class="homepage" href="QuadrantVC.html"><img class="homepage" src="162888.png" width="200px">
+					<br><b>QUADRANT</a>
+		</tr>
+		<tr>
+			<td align='center'><a href='Axion.html'><img class="homepage" src="axion.png" width="200px"><b>AXION</b></a>
+			<td align="center"><a onclick="databasealert()"><img class='homepage' src='miscellaneous/database.png' width="200px" align="center"><br><b>Database</a></b>
+					<div class='homepagewarning' id='homepagewarning' style='display:none; color:red; font-size:15px;'><i>More value calculators needed!</i></div>
+			<td align='center'><a href='http://claasofamerica.com/company-claas-contact/claas-of-america/legal-data'><img class="homepage" src="disclaimer.jpg" width="100px"><br><b>Disclaimer</b>
+			<td align='center'><a href='FieldActivityReportForm.html;'><img class="homepage" src="pdf.png" width="100px"><br><b>Field reporting</b></a>
+		</tr>
+</table>
+<br>
+<br>
+
+					<script>
+							function databasealert() {
+								document.getElementById('homepagewarning').style.display= 'inline';
+							}
+
+
+					</script>
+			</div>
+
+<p>
+	This is a "front-end" only version of the value calculator.  Once a value calculator is filled out, the "print" button must be used at the bottom of the page.  This will prompt you to save the file.  Save the page as a PDF, and then you may distribute and share the PDF via email or other means.<br><br>
+
+	This value calculator is built and tested around Google Chrome as a web-browser.  Please use this for complete functionality.  Using mobile devices, iPad's, or other browers like Safari, Explorer, Firefox may produce alternate results.
+
+<br><br>
+	Results are based on the accuracy of the data entered.  The default data values are from one condition per crop therefore the data may not represent performance in all crops or conditions.  This calculator contains intellectual property protected by state and/or federal trademark, trade secret and/or copyright laws. User agrees not to use, reproduce, distribute copies, or create derivative works or any portion of this report, or take any other action that may violate CLAAS of America's intellectual property rights.
+</p>
+
+<h4 align='center'>For questions, comments, etc. please contact nick.jacobsen@claas.com</h4>
+
+<br><br>
+		<footer>
+			<img src='miscellaneous/footer.png' align='right'>
+		</footer>
+</body>
+</html>
