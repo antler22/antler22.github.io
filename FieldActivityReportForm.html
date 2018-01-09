@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Field Activity Report</title>
-		<link rel="stylesheet" type="text/css" href="miscellaneous/mystyleFAR.css">   <!--link to local stylesheet-->
+		<link rel="stylesheet" type="text/css" href="mystyleFAR.css">   <!--link to local stylesheet-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!--enables JQuery-->
 
 		<!--Proper fonts for CLAAS-->
@@ -20,8 +20,8 @@
 		</noscript>
 
 		<!--insert CLAAS logo, and heading text-->
-		<a href="index.html"><img src="miscellaneous/logos/logo-2x.png" float="left" style='width:150px; padding-top:15px; padding-bottom:5px;'></a>
-		<img src="" name='dealerlogo' align="right" style='height:20px; padding-top:15px;'>
+		<a href="index.html"><img src="miscellaneous/logos/logo-2x.png" class='headerlogo'></a>
+		<img src="" name='dealerlogo' align="right" style='padding-top:8%; max-width:20%; max-height:60px;'>
 
 <script>
 
@@ -208,18 +208,16 @@ $(document).ready(function(){
 
 <body>
 
-
-	<br>
-		<div align='center'><h3>Field Activity Report</h3></div>
-		<div id="grad1" class="container-fluid"></div>
-		<form class='formatback' method='post'>
+	<br><br><br><br><br><br>
+		<div align='center' style='padding-top:1vw;'><h3>Field Activity Report</h3></div>
+		<form method='post'>
 			<table cellpadding='5'>
 			<colgroup><col width='50%'><col width='50%'>
 			</colgroup>
 				<tr>
-					<td align='center'><label for='name1'>Name: </label><input name='name1' id='name1' type='text' required style='width:75%;'></input>
+					<td align='right'><label for='name1'>Name: </label><input name='name1' id='name1' type='text' required style='width:70%;'></input>
 						<br>Location: <input type='text' style='width:70%;'></input></td>
-					<td align='center'>Dealer: <select name="Dealer" id="dealername" style='width:75%; text-align-last:center;' required>
+					<td align='right'>Dealer: <select name="Dealer" id="dealername" style='width:70%; text-align-last:center;' required>
 								<option disabled selected>Select</option>
 								<option value='advancedag.png'>Advanced Ag Tractor Sales and Service</option>
 								<option value='AgAuthority.png'>Ag Authority</option>
@@ -338,13 +336,13 @@ $(document).ready(function(){
 								<option value='whayne.png'>Whayne Supply</option>
 								<option value='ziegler.jpg'>Ziegler Inc.</option>
 							</select>
-							<br><label for='date1' class='fieldset1' style='text-align:center;'>Date: </label><input type='date' required style='width:75%;'></input>
+							<br><label for='date1' class='fieldset1' style='text-align:center;'>Date: </label><input type='date' required style='width:70%;'></input>
 				</tr>
 				</table>
 				<table cellpadding='5' width='95%'>
 					<tr>
 						<td>
-								<select style='text-align-last:center; width:75%' id='activity1'>
+								<select style='text-align-last:center; width:95%' id='activity1'>
 									<option disabled selected>Choose activity</option>
 									<option value='startup'>Startup</option>
 									<option value='demo'>Demo</option>
@@ -353,7 +351,7 @@ $(document).ready(function(){
 									<option value='outfield'>Out-of-field support</option>
 									<option value='otheract'>Other (explain)</option></select>
 
-									<select style='text-align-last:center; width:75%' id='activity2'>
+									<select style='text-align-last:center; width:95%' id='activity2'>
 											<option disabled selected>Choose product</option>
 											<option value="LEXION">LEXION</option>
 											<option value='JAGUAR'>JAGUAR</option>
@@ -426,7 +424,7 @@ $(document).ready(function(){
 				</thead>
 				<tbody class='csettings'><tr>
 					<td align='center'>
-							<select class="hidearrow" style="text-align-last:center;width:75%;font-size:8px;">
+							<select class="hidearrow" style="text-align-last:center;width:95%;font-size:1vw;">
 									<option selected disabled style="color:#FE0001;">SPEED</option>
 									<option>280rpm</option>
 									<option>290rpm</option>
@@ -443,12 +441,12 @@ $(document).ready(function(){
 									<option>400rpm</option>
 									<option>410rpm</option>
 									<option>420rpm</option></select>
-							<br><select class="hidearrow" align='center' style="text-align-last:center; width:75%; font-size:8px;">
+							<br><select class="hidearrow" align='center' style="text-align-last:center; width:75%; font-size:1vw;">
 								<option selected disabled style="color:#FE0001;">POSITION</option>
 								<option>DRUM UP</option>
 								<option>DRUM DOWN</option></select>
 								<br>
-							<br><select class='hidearrow' align='center' style='text-align-last:center;width:75%; font-size:8px;'>
+							<br><select class='hidearrow' align='center' style='text-align-last:center;width:75%; font-size:1vw;'>
 									<option selected disabled style='color:#FE0001;'>APS GRATE</option>
 																					<option>6.5mm smooth</option>
 																					<option>6.5mm keystock</option>
@@ -456,16 +454,16 @@ $(document).ready(function(){
 																					<option>12mm keystock</option>
 																					<option>19mm slotted</option>
 																					<option>Round bar</option></select>
-							<br><select class="hidearrow" align='center' style="text-align-last:center;width:75%; font-size:8px;">
+							<br><select class="hidearrow" align='center' style="text-align-last:center;width:75%; font-size:1vw;">
 									<option selected disabled style="color:#FE0001;">Dis-awning plates</option>
 									<option>OPEN</option>
 									<option>CLOSED</option></select>
-					<td align='center'><select class="hidearrow" style='width:75%; text-align-last:center; font-size:8px;'><option disabled selected>TYPE</option>
+					<td align='center'><select class="hidearrow" style='width:75%; text-align-last:center; font-size:1vw;'><option disabled selected>TYPE</option>
 												<option>Round bar</option>
 												<option>N18</option>
 												<option>N7/18</option></select>
-							<br><input name='concavegap' type='number' span='1' value='0' class='csettings' style="width:50%; font-size:8px;"/> mm
-							<br><select class="hidearrow" align='center' style="text-align-last:center;width:90%; font-size:8px;">
+							<br><input name='concavegap' type='number' span='1' value='0' class='csettings' style="width:50%; font-size:1vw;"/> mm
+							<br><select class="hidearrow" align='center' style="text-align-last:center;width:90%; font-size:1vw;">
 									<option selected disabled style="color:#FE0001;">FILLER STRIP</option>
 									<option>0 filler plates</option>
 									<option>1 filler plates</option>
@@ -474,7 +472,7 @@ $(document).ready(function(){
 									<option>4 filler plates</option>
 									<option>5 filler plates</option>
 									<option>6 filler plates</option></select>
-							<br><select class="hidearrow" align='center' style="text-align-last:center;width:90%; font-size:8px;">
+							<br><select class="hidearrow" align='center' style="text-align-last:center;width:90%; font-size:1vw;">
 									<option selected disabled style="color:#FE0001;">CLOVER BAR</option>
 									<option>0 clover bars</option>
 									<option>1 clover bars</option>
@@ -485,15 +483,15 @@ $(document).ready(function(){
 									<option>6 clover bars</option></select>
 							<br><input type='checkbox'>Cover plate
 							<br><input type='checkbox'>ITS segments
-					<td align='center'><input name='cylinderspeed' type='number' class='csettings' placeholder='Speed' style='width:50%; font-size:8px;'> rpm
-							<br><select class="hidearrow" align='center' style="text-align-last:center;width:75%; font-size:8px;">
+					<td align='center'><input name='cylinderspeed' type='number' class='csettings' placeholder='Speed' style='width:50%; font-size:1vw;'> rpm
+							<br><select class="hidearrow" align='center' style="text-align-last:center;width:75%; font-size:1vw;">
 									<option selected disabled style="color:#FE0001;">THRESHING</option>
 									<option>HIGH RANGE</option>
 									<option>LOW RANGE</option></select>
 							<br><input type='checkbox'>V-PLATES
 							<br><input type='checkbox'>Serr. wear strip
-					<td align='center'><input type='number' class='csettings' placeholder='Speed' style='width:50%; font-size:8px;'/> rpm
-							<br><select class="hidearrow" align='center' style="text-align-last:center;width:75%; font-size:8px;">
+					<td align='center'><input type='number' class='csettings' placeholder='Speed' style='width:50%; font-size:1vw;'/> rpm
+							<br><select class="hidearrow" align='center' style="text-align-last:center;width:75%; font-size:1vw;">
 									<option selected disabled style="color:#FE0001;">Cover plates</option>
 									<option>All open</option>
 									<option>1 closed</option>
@@ -501,24 +499,24 @@ $(document).ready(function(){
 									<option>3 closed</option>
 									<option>4 closed</option></select>
 							<br><input type='checkbox'>CEMOS Separation
-					<td align='center'><select class="hidearrow" align='center' style="text-align-last:center;width:75%; font-size:8px;">
+					<td align='center'><select class="hidearrow" align='center' style="text-align-last:center;width:75%; font-size:1vw;">
 													<option selected disabled style="color:#FE0001;">Top sieve</option>
 													<option>Deep tooth</option>
 													<option>Short tooth</option>
 													<option>TM6</option>
 													<option>Fixed-hole</option></select>
-							<input type='number' class='hidearrow' style='width:50%;font-size:8px;'> mm
-							<br><select class="hidearrow" align='center' style="text-align-last:center;width:75%; font-size:8px;">
+							<input type='number' class='hidearrow' style='width:50%;font-size:1vw;'> mm
+							<br><select class="hidearrow" align='center' style="text-align-last:center;width:75%; font-size:1vw;">
 															<option selected disabled style="color:#FE0001;">Bottom sieve</option>
 															<option>Deep tooth</option>
 															<option>Short tooth</option>
 															<option>TM6</option>
 															<option>Fixed-hole</option>
 															<option>No bottom sieve</option></select>
-							<input type='number' class='hidearrow' style='width:50%;font-size:8px;'> mm
-							<br><input type='number' class='csettings' placeholder='Fan' style='width:50%;font-size:8px;'/> rpm
+							<input type='number' class='hidearrow' style='width:50%;font-size:1vw;'> mm
+							<br><input type='number' class='csettings' placeholder='Fan' style='width:50%;font-size:1vw;'/> rpm
 							<br><input type='checkbox'>CEMOS Cleaning
-					<td align='center'><select class="hidearrow" align='center' style="text-align-last:center;width:90%; font-size:8px;">
+					<td align='center'><select class="hidearrow" align='center' style="text-align-last:center;width:90%; font-size:1vw;">
 													<option selected disabled style="color:#FE0001;">Knives</option>
 													<option>Dis-engaged</option>
 													<option>Half-engaged</option>
@@ -537,13 +535,13 @@ $(document).ready(function(){
 				</tr>
 			</thead>
 			<tbody>
-				<tr><td><select class='hidearrow' align='center' style='text-align-last:center;width:75%;font-size:8px;' id='modelno'>
+				<tr><td><select class='hidearrow' align='center' style='text-align-last:center;width:75%;font-size:1vw;' id='modelno'>
 									<option selected disabled style='color:#FE0001'>MODEL</option>
 									<option value='435'>&nbsp 4000 &nbsp</option>
 									<option value='490'>&nbsp 4500 &nbsp</option>
 									<option value='530'>&nbsp 5000 &nbsp</option></select>
 								<br>VC <input type='checkbox' id='vccab'></input>
-								<br><select class='hidearrow' align='center' style='text-align-last:center;width:75%;font-size:8px;' id='tyres'>
+								<br><select class='hidearrow' align='center' style='text-align-last:center;width:75%;font-size:1vw;' id='tyres'>
 											<option selected disabled style='color:#FE0001'>TIRES</option>
 											<option value='71070'>710/70 R42 duals</option>
 											<option value='71075'>710/65 R42 duals</option>
@@ -560,7 +558,7 @@ $(document).ready(function(){
 										Rear 3-pont <input type='checkbox' id='r3'></input>
 								<br>Front 3-point<input type='checkbox' id='f3'></input>
 								<br>PTO <input type='checkbox'></input>
-						<td><select class='hidearrow' align='center' style='text-align-last:center;width:90%;font-size:8px;'>
+						<td><select class='hidearrow' align='center' style='text-align-last:center;width:90%;font-size:1vw;'>
 											<option selected disabled style='color:#FE0001'>FRONT WEIGHT</option>
 											<option>Base plate</option>
 											<option>Custom weight</option>
@@ -573,7 +571,7 @@ $(document).ready(function(){
 											<option>7 weight plates</option>
 											<option>8 weight plates</option>
 											<option>9 weight plates</option></select>
-								<br><br><select class='hidearrow' align='center' style='text-align-last:center;width:90%;font-size:8px;'>
+								<br><br><select class='hidearrow' align='center' style='text-align-last:center;width:90%;font-size:1vw;'>
 													<option selected disabled style='color:#FE0001'>REAR WEIGHT</option>
 													<option>Base plate</option>
 													<option>Custom weight</option>

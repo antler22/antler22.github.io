@@ -33,6 +33,7 @@
         empty-cells: show;
         margin: auto;
         text-align: center;
+    float: center;
 		}
     select {
       font-family: font72227;
@@ -123,7 +124,7 @@ input[type="radio"] {margin-right: 0;}
   transform:rotate(45deg);
 }
 input.serials {
-  width: 70px;
+  width: 90%;
 }
 textarea#styled {
   align: center;
@@ -143,6 +144,7 @@ input.csettings {
 table.csettings {
     font-family: font115649;
     text-align: center;
+    align: center;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -173,3 +175,9 @@ tbody.csettings {
 .thumb-image{width:800px;position:relative; display:flex;}
 
 table.xerionballast {text-align:center; padding:5px; font-family: font115649;}
+
+.headerlogo {
+  float: left;
+  width: 60%;
+  padding-top: 5%;
+}
