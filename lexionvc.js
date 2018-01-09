@@ -194,6 +194,5 @@ $(document).ready(function(){
 
     $('#td21').text("$ " + ($('#td20').val() / ($('#totalacres').val() * $('#bpaaverage').val())).toLocaleString(undefined, {maximumFractionDigits: 2}) + "/bu savings");
     $('#td25').text("$ " + ($('#td20').val() / $('#totalacres').val()).toLocaleString(undefined, {maximumFractionDigits: 2}) + "/ac savings");
-
     });
 });

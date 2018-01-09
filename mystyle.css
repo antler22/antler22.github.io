@@ -9,8 +9,12 @@
   src: url("HelveticaNeueLTPro-Lt.ttf");
 }
 
-  img.homepage {opacity: 0.8;}
-  img:hover.homepage {opacity: 1.0;}
+.header {
+  float: left;
+  width: 40%;
+  padding-top: 2em;
+  padding-bottom: 0.5em;
+}
   a:link {
   color: black;
   background-color: transparent;
@@ -26,10 +30,7 @@
   color: blue;
   background-color: transparent;
   }
-  table.homepage {font-size: 1.2em;}
-  body.homepage {
-    font-family: 'classheading', Arial, serif;
-  }
+;}
   body {
 		font-size: 14px;
     max-width: 8.5in;
@@ -159,30 +160,7 @@ textarea#styled {
     vertical-align: top;
 }
 
-.tooltip {
-    position: relative;
-    display: inline-block;
-    width: 25px;
-}
 
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 100%;
-    left: 50%;
-    margin-left: -60px;
-
-    /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
-    opacity: 0;
-    transition: opacity 1s;
-}
 
 .tooltip:hover .tooltiptext {
     visibility: visible;
