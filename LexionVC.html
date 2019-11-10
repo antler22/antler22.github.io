@@ -377,7 +377,7 @@ Step 5: Enter data into the New Holland calculator tool  -->
 				 <td> VS</td>
 					  <td align='left' colspan='2'>
 						 <label for='tractorpick2' id='groupname'></label>
-					 <select name="tractorpick2" id="tractorpick2" onchange='dothemath();'>
+					 <select name="tractorpick2" id="tractorpick2" onchange="dothemath();">
 						<option disabled selected>Select</option>
 						<optgroup label='John Deere' id='jdlogo'>
 							<option  value='55'>S790</option>
@@ -456,6 +456,14 @@ Step 5: Enter data into the New Holland calculator tool  -->
 					   <option value="52">CR940</option>
 					   <option value="62">CX880</option>
 					   <option value="62">CX870</option>
+				   		</optgroup>
+						<optgroup label='Fendt' id='fendtlogo'>
+					   <option value="56">IDEAL 9T</option>
+					   <option value="56">IDEAL 9</option>
+					   <option value="56">IDEAL 8T</option>
+					   <option value="56">IDEAL 8</option>
+					   <option value="56">IDEAL 7T</option>
+					   <option value="56">IDEAL 7</option>
 				   		</optgroup>
 				   <optgroup label="Gleaner" id='gleanerlogo'>
 					   <option value='55'>S98</option>
@@ -662,8 +670,6 @@ Step 5: Enter data into the New Holland calculator tool  -->
 		<br>
 
 		<textarea id='styled' placeholder="Additional comments" onkeyup="increaseHeight(this);"></textarea>
-		<br>
-		<br>
 
 		<!-- <div id="wrapper" style="margin-top: 20px;"><input id="fileUpload" multiple="multiple" type="file"/> -->
 		<!-- <div id="image-holder"></div> -->
