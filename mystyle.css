@@ -55,8 +55,8 @@ thead {font-weight: bold;}
     fieldset {
       border:1px solid;
       background-color: #d8d7d7;
+      text-align: center;
     }
-	fieldset {text-align: center;}
 	legend {
 		position: relative;
 		top: -0.3em;

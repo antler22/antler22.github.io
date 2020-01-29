@@ -1,0 +1,2482 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+<link id=Main-File rel=Main-File href="../ValueCalculatorSummary.htm">
+<link rel=File-List href=filelist.xml>
+<link rel=Stylesheet href=stylesheet.css>
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+@page
+	{margin:.75in .7in .75in .7in;
+	mso-header-margin:.3in;
+	mso-footer-margin:.3in;}
+-->
+</style>
+<![if !supportTabStrip]><script language="JavaScript">
+<!--
+function fnUpdateTabs()
+ {
+  if (parent.window.g_iIEVer>=4) {
+   if (parent.document.readyState=="complete"
+    && parent.frames['frTabs'].document.readyState=="complete")
+   parent.fnSetActiveSheet(1);
+  else
+   window.setTimeout("fnUpdateTabs();",150);
+ }
+}
+
+if (window.name!="frSheet")
+ window.location.replace("../ValueCalculatorSummary.htm");
+else
+ fnUpdateTabs();
+//-->
+</script>
+<![endif]>
+</head>
+
+<body link="#0563C1" vlink="#954F72">
+
+<table border=0 cellpadding=0 cellspacing=0 width=1409 style='border-collapse:
+ collapse;table-layout:fixed;width:1060pt'>
+ <col width=70 style='width:53pt'>
+ <col width=135 style='mso-width-source:userset;mso-width-alt:4326;width:101pt'>
+ <col width=70 span=6 style='width:53pt'>
+ <col width=49 style='mso-width-source:userset;mso-width-alt:1561;width:37pt'>
+ <col width=41 style='mso-width-source:userset;mso-width-alt:1305;width:31pt'>
+ <col width=42 style='mso-width-source:userset;mso-width-alt:1331;width:31pt'>
+ <col width=25 style='mso-width-source:userset;mso-width-alt:793;width:19pt'>
+ <col width=90 style='mso-width-source:userset;mso-width-alt:2867;width:67pt'>
+ <col width=46 style='mso-width-source:userset;mso-width-alt:1459;width:34pt'>
+ <col width=39 style='mso-width-source:userset;mso-width-alt:1254;width:29pt'>
+ <col width=38 style='mso-width-source:userset;mso-width-alt:1203;width:28pt'>
+ <col width=56 style='mso-width-source:userset;mso-width-alt:1792;width:42pt'>
+ <col width=40 style='mso-width-source:userset;mso-width-alt:1280;width:30pt'>
+ <col width=28 style='mso-width-source:userset;mso-width-alt:896;width:21pt'>
+ <col width=45 style='mso-width-source:userset;mso-width-alt:1433;width:34pt'>
+ <col width=56 style='mso-width-source:userset;mso-width-alt:1792;width:42pt'>
+ <col width=70 style='width:53pt'>
+ <col width=49 style='mso-width-source:userset;mso-width-alt:1561;width:37pt'>
+ <col width=70 style='width:53pt'>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 width=70 style='height:13.8pt;width:53pt'></td>
+  <td width=135 style='width:101pt'></td>
+  <td width=70 style='width:53pt'></td>
+  <td width=70 style='width:53pt'></td>
+  <td width=70 style='width:53pt'></td>
+  <td width=70 style='width:53pt'></td>
+  <td width=70 style='width:53pt'></td>
+  <td width=70 style='width:53pt'></td>
+  <td width=49 style='width:37pt'></td>
+  <td width=41 style='width:31pt'></td>
+  <td width=42 style='width:31pt'></td>
+  <td width=25 style='width:19pt'></td>
+  <td width=90 style='width:67pt'></td>
+  <td width=46 style='width:34pt'></td>
+  <td width=39 style='width:29pt'></td>
+  <td width=38 style='width:28pt'></td>
+  <td width=56 style='width:42pt'></td>
+  <td width=40 style='width:30pt'></td>
+  <td width=28 style='width:21pt'></td>
+  <td width=45 style='width:34pt'></td>
+  <td width=56 style='width:42pt'></td>
+  <td width=70 style='width:53pt'></td>
+  <td width=49 style='width:37pt'></td>
+  <td width=70 style='width:53pt'></td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'></td>
+  <td class=xl65>Crop</td>
+  <td class=xl65>Model</td>
+  <td class=xl66>Header</td>
+  <td class=xl65>Average Harvest Speed</td>
+  <td class=xl65>Productivity (acres/hr @ 82.5% eff)</td>
+  <td class=xl69>Cost of harvesting ($/acre)</td>
+  <td class=xl65>Average fuel consumptuion (gal/ac)</td>
+  <td class=xl70>Loss (%)</td>
+  <td class=xl69>Loss cost (bu/ac)</td>
+  <td class=xl69>Total savings / acre</td>
+  <td class=xl69>ref</td>
+  <td colspan=11 style='mso-ignore:colspan'></td>
+  <td class=xl67>Year</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>1</td>
+  <td class=xl67>Barley</td>
+  <td class=xl65>750TT</td>
+  <td class=xl66>40ft MacDon</td>
+  <td class=xl65>1.7</td>
+  <td class=xl65>6.8</td>
+  <td class=xl69>$31.62</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$9.29</td>
+  <td class=xl68>1</td>
+  <td class=xl65>Barley</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S680</td>
+  <td class=xl66>40ft</td>
+  <td class=xl72>1.70</td>
+  <td class=xl72>6.80</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.30</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$8.48</td>
+  <td class=xl71>$9.29</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>2</td>
+  <td class=xl67>Blue Grass</td>
+  <td class=xl65>670TT</td>
+  <td class=xl66>15ft Pick Up</td>
+  <td class=xl65>1.8</td>
+  <td class=xl65>2.7</td>
+  <td class=xl69>$79.63</td>
+  <td class=xl65>1</td>
+  <td class=xl70></td>
+  <td class=xl69></td>
+  <td class=xl71>####</td>
+  <td class=xl68>2</td>
+  <td class=xl65>Blue Grass</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>9600</td>
+  <td class=xl66>15ft pick up</td>
+  <td class=xl72>0.90</td>
+  <td class=xl72>1.40</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.30</td>
+  <td class=xl89></td>
+  <td class=xl71></td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>3</td>
+  <td class=xl67>Blue Grass</td>
+  <td class=xl65>760</td>
+  <td class=xl66>16ft Pick Up</td>
+  <td class=xl65>2.5</td>
+  <td class=xl65>4</td>
+  <td class=xl69>$53.75</td>
+  <td class=xl65>1.1</td>
+  <td class=xl70></td>
+  <td class=xl69></td>
+  <td class=xl71></td>
+  <td class=xl68></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl66></td>
+  <td class=xl72></td>
+  <td class=xl72></td>
+  <td class=xl71></td>
+  <td class=xl72></td>
+  <td class=xl89></td>
+  <td class=xl71></td>
+  <td class=xl71></td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>4</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>760TT</td>
+  <td class=xl66>18-20c</td>
+  <td class=xl65>6.6</td>
+  <td class=xl65>19.8</td>
+  <td class=xl69>$10.86</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$4.72</td>
+  <td class=xl68>4</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>9770 STS</td>
+  <td class=xl66>12-22</td>
+  <td class=xl72>4.50</td>
+  <td class=xl72>9.90</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.30</td>
+  <td class=xl89></td>
+  <td class=xl71></td>
+  <td class=xl71>$4.72</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>5</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>760TT</td>
+  <td class=xl66>16-30</td>
+  <td class=xl65>6.5</td>
+  <td class=xl65>26</td>
+  <td class=xl69>$8.27</td>
+  <td class=xl65>0.9</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$7.38</td>
+  <td class=xl68>5</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>9870 STS</td>
+  <td class=xl66>12-22</td>
+  <td class=xl72>5.50</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.30</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$5.08</td>
+  <td class=xl71>$7.38</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>6</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>740TT</td>
+  <td class=xl66>12-30c</td>
+  <td class=xl65>4.7</td>
+  <td class=xl65>14.1</td>
+  <td class=xl69>$15.25</td>
+  <td class=xl65>1.1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$5.44</td>
+  <td class=xl68>6</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>New Holland</td>
+  <td class=xl65>CR 9.90</td>
+  <td class=xl66>12-30</td>
+  <td class=xl72>3.70</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.40</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$1.72</td>
+  <td class=xl71>$5.44</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>7</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>740TT</td>
+  <td class=xl66>12-22c</td>
+  <td class=xl65>5.5</td>
+  <td class=xl65>12.1</td>
+  <td class=xl69>$17.77</td>
+  <td class=xl65>1</td>
+  <td class=xl70></td>
+  <td class=xl69></td>
+  <td class=xl71>$7.79</td>
+  <td class=xl68>7</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S690</td>
+  <td class=xl66>16-30</td>
+  <td class=xl72>5.00</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.20</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$5.41</td>
+  <td class=xl71>$7.79</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>8</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>740TT</td>
+  <td class=xl66>12-22c</td>
+  <td class=xl65>6.5</td>
+  <td class=xl65>14.3</td>
+  <td class=xl69>$15.03</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>####</td>
+  <td class=xl68>8</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>9870 STS</td>
+  <td class=xl66>18-20</td>
+  <td class=xl72>3.50</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.30</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$2.14</td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>9</td>
+  <td class=xl67>Fescue</td>
+  <td class=xl65>760</td>
+  <td class=xl66>16ft Pick Up</td>
+  <td class=xl65>3.5</td>
+  <td class=xl65>5.6</td>
+  <td class=xl69>$38.39</td>
+  <td class=xl65>1</td>
+  <td class=xl70></td>
+  <td class=xl69></td>
+  <td class=xl71>####</td>
+  <td class=xl68>9</td>
+  <td class=xl65>Fescue</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>9600</td>
+  <td class=xl66>16ft pick up</td>
+  <td class=xl72>1.30</td>
+  <td class=xl72>2.10</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.30</td>
+  <td class=xl89></td>
+  <td class=xl71></td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>10</td>
+  <td class=xl67>Fescue</td>
+  <td class=xl65>760</td>
+  <td class=xl66>16ft Pick Up</td>
+  <td class=xl65>3.2</td>
+  <td class=xl65>5.12</td>
+  <td class=xl69>$41.99</td>
+  <td class=xl65>1</td>
+  <td class=xl70></td>
+  <td class=xl69></td>
+  <td class=xl71>####</td>
+  <td class=xl68>10</td>
+  <td class=xl65>Fescue</td>
+  <td class=xl65>Case</td>
+  <td class=xl65>2188</td>
+  <td class=xl66>16ft pick up</td>
+  <td class=xl72>1.50</td>
+  <td class=xl72>2.40</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.30</td>
+  <td class=xl89></td>
+  <td class=xl71></td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>11</td>
+  <td class=xl67>Malt Barley</td>
+  <td class=xl65>760TT</td>
+  <td class=xl66>45ft MacDon</td>
+  <td class=xl65>3</td>
+  <td class=xl65>13.5</td>
+  <td class=xl69>$15.93</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>####</td>
+  <td class=xl68>11</td>
+  <td class=xl65>Malt Barley</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>9760 STS</td>
+  <td class=xl66>30ft</td>
+  <td class=xl72>1.40</td>
+  <td class=xl72>4.20</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.80</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$7.06</td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>12</td>
+  <td class=xl67>Malt Barley</td>
+  <td class=xl65>760TT</td>
+  <td class=xl66>45ft MacDon</td>
+  <td class=xl65>2.6</td>
+  <td class=xl65>11.7</td>
+  <td class=xl69>$18.38</td>
+  <td class=xl65>1.5</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>####</td>
+  <td class=xl68>12</td>
+  <td class=xl65>Mallt Barley</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S670</td>
+  <td class=xl66>35ft</td>
+  <td class=xl72>2.50</td>
+  <td class=xl72>8.80</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.30</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$7.50</td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>13</td>
+  <td class=xl67>Red Clover<span style='mso-spacerun:yes'> </span></td>
+  <td class=xl65>670TT</td>
+  <td class=xl66>15ft Pick Up</td>
+  <td class=xl65>3</td>
+  <td class=xl65>4.5</td>
+  <td class=xl69>$47.78</td>
+  <td class=xl65>1</td>
+  <td class=xl70></td>
+  <td class=xl69></td>
+  <td class=xl71>####</td>
+  <td class=xl68>13</td>
+  <td class=xl65>Red Clover</td>
+  <td class=xl65>Case</td>
+  <td class=xl65>2188</td>
+  <td class=xl66>15ft pick up</td>
+  <td class=xl72>1.50</td>
+  <td class=xl72>2.30</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.30</td>
+  <td class=xl89></td>
+  <td class=xl71></td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>14</td>
+  <td class=xl67>Soybeans</td>
+  <td class=xl65>760TT</td>
+  <td class=xl66>40ft MacDon</td>
+  <td class=xl65>5</td>
+  <td class=xl65>20</td>
+  <td class=xl69>$10.75</td>
+  <td class=xl65>1.2</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$2.78</td>
+  <td class=xl68>14</td>
+  <td class=xl65>Soybeans</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S680</td>
+  <td class=xl66>40ft</td>
+  <td class=xl72>5.00</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.00</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$4.11</td>
+  <td class=xl71>$2.78</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>15</td>
+  <td class=xl67>Soybeans</td>
+  <td class=xl65>750TT</td>
+  <td class=xl66>45ft MacDon</td>
+  <td class=xl65>3.8</td>
+  <td class=xl65>17.1</td>
+  <td class=xl69>$12.57</td>
+  <td class=xl65>1.4</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$4.57</td>
+  <td class=xl68>15</td>
+  <td class=xl65>Soybeans</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>9870 STS</td>
+  <td class=xl66>35ft</td>
+  <td class=xl72>3.80</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.10</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$1.35</td>
+  <td class=xl71>$4.57</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>16</td>
+  <td class=xl67>Wheat</td>
+  <td class=xl65>760TT</td>
+  <td class=xl66>45ft MacDon</td>
+  <td class=xl65>3</td>
+  <td class=xl65>13.5</td>
+  <td class=xl69>$15.93</td>
+  <td class=xl65>1.3</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$4.18</td>
+  <td class=xl68>16</td>
+  <td class=xl65>Wheat</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>9870 STS</td>
+  <td class=xl66>32ft stripper</td>
+  <td class=xl72>5.20</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.30</td>
+  <td class=xl89></td>
+  <td class=xl71></td>
+  <td class=xl71>$4.18</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>17</td>
+  <td class=xl67>Wheat</td>
+  <td class=xl65>760TT</td>
+  <td class=xl66>35ft MacDon</td>
+  <td class=xl65>6</td>
+  <td class=xl65>21</td>
+  <td class=xl69>$10.24</td>
+  <td class=xl65>0.8</td>
+  <td class=xl70></td>
+  <td class=xl69></td>
+  <td class=xl71>####</td>
+  <td class=xl68>17</td>
+  <td class=xl65>Wheat</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>9770 STS</td>
+  <td class=xl66>30ft</td>
+  <td class=xl72>3.10</td>
+  <td class=xl72>9.30</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.60</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$12.04</td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>18</td>
+  <td class=xl67>Alfalfa Seed</td>
+  <td class=xl65>760</td>
+  <td class=xl66>Maxflex 1050</td>
+  <td class=xl65>3</td>
+  <td class=xl65>10.5</td>
+  <td class=xl69>$20.48</td>
+  <td class=xl65>1</td>
+  <td class=xl70></td>
+  <td class=xl69></td>
+  <td class=xl71>####</td>
+  <td class=xl68>18</td>
+  <td class=xl65>Alfalfa Seed</td>
+  <td class=xl65>Case</td>
+  <td class=xl65>2188</td>
+  <td class=xl66>20ft</td>
+  <td class=xl65>0.9</td>
+  <td class=xl72>1.80</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.80</td>
+  <td class=xl89></td>
+  <td class=xl71></td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>19</td>
+  <td class=xl67>Canola</td>
+  <td class=xl65>760TT</td>
+  <td class=xl66>35ft MacDon</td>
+  <td class=xl65>5.5</td>
+  <td class=xl65>19.25</td>
+  <td class=xl69>$11.17</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>####</td>
+  <td class=xl65>19</td>
+  <td class=xl65>Canola</td>
+  <td class=xl65>Case</td>
+  <td class=xl65>8230</td>
+  <td class=xl66>35ft</td>
+  <td class=xl72>4.00</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.30</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$3.53</td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>20</td>
+  <td class=xl67>Canola</td>
+  <td class=xl65>760TT</td>
+  <td class=xl66>40ft MacDon</td>
+  <td class=xl65>5.7</td>
+  <td class=xl65>22.8</td>
+  <td class=xl69>$9.43</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$6.23</td>
+  <td class=xl65>20</td>
+  <td class=xl65>Canola</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S680</td>
+  <td class=xl66>35ft</td>
+  <td class=xl72>4.50</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.30</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$3.13</td>
+  <td class=xl71>$6.23</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>21</td>
+  <td class=xl67>Canola</td>
+  <td class=xl65>780</td>
+  <td class=xl66>35ft Pick Up</td>
+  <td class=xl65>3.5</td>
+  <td class=xl65>11.55</td>
+  <td class=xl69>$18.61</td>
+  <td class=xl65>1</td>
+  <td class=xl70></td>
+  <td class=xl69></td>
+  <td class=xl71>$7.07</td>
+  <td class=xl65>21</td>
+  <td class=xl65>Canola</td>
+  <td class=xl65>Case</td>
+  <td class=xl65>8230</td>
+  <td class=xl66>25ft</td>
+  <td class=xl65>4</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.80</td>
+  <td class=xl89></td>
+  <td class=xl71></td>
+  <td class=xl71>$7.07</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>22</td>
+  <td class=xl67>Canola</td>
+  <td class=xl65>780</td>
+  <td class=xl66>30ft Pick Up</td>
+  <td class=xl65>4</td>
+  <td class=xl65>12</td>
+  <td class=xl69>$17.92</td>
+  <td class=xl65>1</td>
+  <td class=xl70></td>
+  <td class=xl69></td>
+  <td class=xl71>####</td>
+  <td class=xl65>22</td>
+  <td class=xl65>Canola</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>9860 STS</td>
+  <td class=xl66>30ft</td>
+  <td class=xl65>2.8</td>
+  <td class=xl72>8.40</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.80</td>
+  <td class=xl89></td>
+  <td class=xl71></td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>23</td>
+  <td class=xl67>Canola</td>
+  <td class=xl65>670</td>
+  <td class=xl66>25ft Pick Up</td>
+  <td class=xl65>5</td>
+  <td class=xl65>12.5</td>
+  <td class=xl69>$17.20</td>
+  <td class=xl65>1</td>
+  <td class=xl70></td>
+  <td class=xl69></td>
+  <td class=xl71>####</td>
+  <td class=xl65>23</td>
+  <td class=xl65>Canola</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S680</td>
+  <td class=xl66>33ft pick up</td>
+  <td class=xl65>1.8</td>
+  <td class=xl72>5.90</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.80</td>
+  <td class=xl89></td>
+  <td class=xl71></td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>24</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>750TT</td>
+  <td class=xl66>12-30c</td>
+  <td class=xl65>6</td>
+  <td class=xl65>18</td>
+  <td class=xl69>$11.94</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$9.52</td>
+  <td class=xl68>24</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>9770 STS</td>
+  <td class=xl66>12-30</td>
+  <td class=xl72>4.00</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.30</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$3.36</td>
+  <td class=xl71>$9.52</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>25</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>740TT</td>
+  <td class=xl66>12-30c</td>
+  <td class=xl65>6.1</td>
+  <td class=xl65>18.3</td>
+  <td class=xl69>$11.80</td>
+  <td class=xl65>1.5</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$7.12</td>
+  <td class=xl68>25</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S670</td>
+  <td class=xl66>12-30</td>
+  <td class=xl72>4.80</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl72>2.20</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$1.82</td>
+  <td class=xl71>$7.12</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>26</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>760TT</td>
+  <td class=xl66>12-30c</td>
+  <td class=xl65>6.5</td>
+  <td class=xl65>19.5</td>
+  <td class=xl69>$11.08</td>
+  <td class=xl65>1.2</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$9.52</td>
+  <td class=xl68>26</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S690</td>
+  <td class=xl66>12-30</td>
+  <td class=xl72>5.60</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl72>2.80</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$2.15</td>
+  <td class=xl71>$9.52</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>27</td>
+  <td class=xl67>Perenial Rye Grass</td>
+  <td class=xl65>760</td>
+  <td class=xl66>15ft Pick Up</td>
+  <td class=xl65>4</td>
+  <td class=xl65>6</td>
+  <td class=xl69>$35.83</td>
+  <td class=xl65>1</td>
+  <td class=xl70></td>
+  <td class=xl69></td>
+  <td class=xl71>####</td>
+  <td class=xl68>27</td>
+  <td class=xl65>Perenial Rye</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>9600</td>
+  <td class=xl66>15ft pick up</td>
+  <td class=xl65>2</td>
+  <td class=xl72>3.00</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.80</td>
+  <td class=xl89></td>
+  <td class=xl71></td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>28</td>
+  <td class=xl67>Wheat</td>
+  <td class=xl65>760TT</td>
+  <td class=xl66>40ft MacDon</td>
+  <td class=xl65>2.9</td>
+  <td class=xl65>11.6</td>
+  <td class=xl69>$18.53</td>
+  <td class=xl65>1.1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>####</td>
+  <td class=xl65>28</td>
+  <td class=xl65>Wheat</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S670</td>
+  <td class=xl66>35ft</td>
+  <td class=xl72>2.60</td>
+  <td class=xl72>9.10</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.80</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$35.88</td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>29</td>
+  <td class=xl67>Wheat</td>
+  <td class=xl65>760</td>
+  <td class=xl66>40ft MacDon</td>
+  <td class=xl65>3.3</td>
+  <td class=xl65>13.2</td>
+  <td class=xl69>$16.29</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>####</td>
+  <td class=xl65>29</td>
+  <td class=xl65>Wheat</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S670</td>
+  <td class=xl66>30ft</td>
+  <td class=xl72>2.80</td>
+  <td class=xl72>8.40</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.80</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$9.86</td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>30</td>
+  <td class=xl67>Wheat</td>
+  <td class=xl65>760</td>
+  <td class=xl66>40ft MacDon</td>
+  <td class=xl65>3.4</td>
+  <td class=xl65>13.6</td>
+  <td class=xl69>$15.81</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>####</td>
+  <td class=xl65>30</td>
+  <td class=xl65>Wheat</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>9770 STS</td>
+  <td class=xl66>30ft</td>
+  <td class=xl72>2.80</td>
+  <td class=xl72>8.40</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.80</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$24.42</td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>31</td>
+  <td class=xl67>Wheat</td>
+  <td class=xl65>760</td>
+  <td class=xl66>40ft MacDon</td>
+  <td class=xl65>3.1</td>
+  <td class=xl65>12.4</td>
+  <td class=xl69>$17.34</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>####</td>
+  <td class=xl65>31</td>
+  <td class=xl65>Wheat</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S670</td>
+  <td class=xl66>30ft</td>
+  <td class=xl72>2.50</td>
+  <td class=xl72>7.50</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.80</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$12.86</td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>32</td>
+  <td class=xl67>Wheat</td>
+  <td class=xl65>760</td>
+  <td class=xl66>40ft MacDon</td>
+  <td class=xl65>3</td>
+  <td class=xl65>12</td>
+  <td class=xl69>$17.92</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>####</td>
+  <td class=xl65>32</td>
+  <td class=xl65>Wheat</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S690</td>
+  <td class=xl66>30ft</td>
+  <td class=xl72>1.60</td>
+  <td class=xl72>4.80</td>
+  <td class=xl71>##</td>
+  <td class=xl72>2.30</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$12.98</td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>33</td>
+  <td class=xl67>Wheat</td>
+  <td class=xl65>740</td>
+  <td class=xl66>MaxFlo 1050</td>
+  <td class=xl65>6.5</td>
+  <td class=xl65>22.75</td>
+  <td class=xl69>$9.45</td>
+  <td class=xl65>1</td>
+  <td class=xl70></td>
+  <td class=xl69></td>
+  <td class=xl71>####</td>
+  <td class=xl65>33</td>
+  <td class=xl65>Wheat</td>
+  <td class=xl65>Massey</td>
+  <td class=xl65>9520</td>
+  <td class=xl66>30ft</td>
+  <td class=xl65>3.5</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.30</td>
+  <td class=xl89></td>
+  <td class=xl71></td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>34</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>740</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>6.6</td>
+  <td class=xl65>19.8</td>
+  <td class=xl69>$10.91</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>####</td>
+  <td class=xl68>34</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>9770 STS</td>
+  <td class=xl66>12-30</td>
+  <td class=xl72>4.00</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.80</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$1.38</td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2014</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>35</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>740TT</td>
+  <td class=xl66>12-30c</td>
+  <td class=xl65>6.4</td>
+  <td class=xl65>19.2</td>
+  <td class=xl69>$11.20</td>
+  <td class=xl65>1.5</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>####</td>
+  <td class=xl68>35</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl73>9770 STS</td>
+  <td class=xl66>8-30</td>
+  <td class=xl72>4.60</td>
+  <td class=xl72>9.20</td>
+  <td class=xl71>##</td>
+  <td class=xl72>2.10</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$3.39</td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2014</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>36</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>740TT</td>
+  <td class=xl66>12-30c</td>
+  <td class=xl65>5.4</td>
+  <td class=xl65>16.2</td>
+  <td class=xl69>$13.33</td>
+  <td class=xl65>1.5</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>####</td>
+  <td class=xl68>36</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>9770 STS</td>
+  <td class=xl66>12-30</td>
+  <td class=xl72>4.00</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl72>2.00</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$4.24</td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2014</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>37</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>740TT</td>
+  <td class=xl66>12-30c</td>
+  <td class=xl65>5.2</td>
+  <td class=xl65>15.6</td>
+  <td class=xl69>$13.85</td>
+  <td class=xl65>1.2</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$5.04</td>
+  <td class=xl68>37</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>Case</td>
+  <td class=xl65>8230</td>
+  <td class=xl66>12-30</td>
+  <td class=xl72>5.20</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.80</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$3.61</td>
+  <td class=xl71>$5.04</td>
+  <td class=xl67 align=right>2014</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>38</td>
+  <td class=xl67>Canola</td>
+  <td class=xl65>760TT</td>
+  <td class=xl66>30ft Pick Up</td>
+  <td class=xl65>4.3</td>
+  <td class=xl65>12.9</td>
+  <td class=xl69>$16.67</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>####</td>
+  <td class=xl68>37</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>Case</td>
+  <td class=xl65>8230</td>
+  <td class=xl66>12-30</td>
+  <td class=xl72>4.40</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.80</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$3.35</td>
+  <td class=xl71>$7.31</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>39</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>760TT</td>
+  <td class=xl66>16-30</td>
+  <td class=xl65>3.8</td>
+  <td class=xl65>15.2</td>
+  <td class=xl69>$14.14</td>
+  <td class=xl65>0.9</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>####</td>
+  <td colspan=12 style='mso-ignore:colspan'></td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>40</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>760</td>
+  <td class=xl66>12-30c</td>
+  <td class=xl65>5.2</td>
+  <td class=xl65>15.6</td>
+  <td class=xl69>$13.78</td>
+  <td class=xl65>1.1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>####</td>
+  <td class=xl65>38</td>
+  <td class=xl65>Canola</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>9870 STS</td>
+  <td class=xl66>30ft pick up</td>
+  <td class=xl65>3.8</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.30</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$31.61</td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>41</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>760</td>
+  <td class=xl66>12-30c</td>
+  <td class=xl65>6.5</td>
+  <td class=xl65>19.5</td>
+  <td class=xl69>$11.03</td>
+  <td class=xl65>1.1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$6.57</td>
+  <td class=xl65>39</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S670</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>3</td>
+  <td class=xl72>9.00</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.10</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$1.78</td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>42</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>740TT</td>
+  <td class=xl66>12-30c</td>
+  <td class=xl65>5.5</td>
+  <td class=xl65>16.5</td>
+  <td class=xl69>$13.03</td>
+  <td class=xl65>1.1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$5.45</td>
+  <td class=xl65>40</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>Case</td>
+  <td class=xl65>9120</td>
+  <td class=xl66>12-30 Gerringhoff</td>
+  <td class=xl65>3.5</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.60</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$4.59</td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>43</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>740TT</td>
+  <td class=xl66>8-36</td>
+  <td class=xl65>6.1</td>
+  <td class=xl65>14.64</td>
+  <td class=xl69>$14.69</td>
+  <td class=xl65>1.1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$9.59</td>
+  <td class=xl65>41</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>Case</td>
+  <td class=xl65>8120</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>4.5</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.60</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$1.44</td>
+  <td class=xl71>$6.57</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>44</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>740TT</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>5.4</td>
+  <td class=xl65>16.2</td>
+  <td class=xl69>$13.33</td>
+  <td class=xl65>1</td>
+  <td class=xl70></td>
+  <td class=xl69></td>
+  <td class=xl71>####</td>
+  <td class=xl65>42</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S680</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>4.2</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.60</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$0.76</td>
+  <td class=xl71>$5.45</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>45</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>740</td>
+  <td class=xl66>8-30</td>
+  <td class=xl65>6</td>
+  <td class=xl65>12</td>
+  <td class=xl69>$17.92</td>
+  <td class=xl65>1.1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$8.49</td>
+  <td class=xl65>43</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>Case</td>
+  <td class=xl65>7088</td>
+  <td class=xl66>8-36</td>
+  <td class=xl65>3.9</td>
+  <td class=xl72>9.40</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.50</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$0.92</td>
+  <td class=xl71>$9.59</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>46</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>740TT</td>
+  <td class=xl66>8-30</td>
+  <td class=xl65>7.2</td>
+  <td class=xl65>14.4</td>
+  <td class=xl69>$14.93</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$4.87</td>
+  <td class=xl65>44</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>New Holland</td>
+  <td class=xl65>CR 7090<span style='mso-spacerun:yes'> </span></td>
+  <td class=xl66>8-30</td>
+  <td class=xl65>4.2</td>
+  <td class=xl72>8.40</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.00</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$3.60</td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>47</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>760TT</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>5.5</td>
+  <td class=xl65>16.5</td>
+  <td class=xl69>$13.03</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$7.98</td>
+  <td class=xl65>45</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>Case</td>
+  <td class=xl65>2388</td>
+  <td class=xl66>8-30</td>
+  <td class=xl65>4.7</td>
+  <td class=xl72>9.40</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.50</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$2.94</td>
+  <td class=xl71>$8.49</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>48</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>760TT</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>6.5</td>
+  <td class=xl65>19.5</td>
+  <td class=xl69>$11.03</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$9.23</td>
+  <td class=xl65>46</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S670</td>
+  <td class=xl66>8-30</td>
+  <td class=xl65>6</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.50</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$2.04</td>
+  <td class=xl71>$4.87</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>49</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>740TT</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>4.5</td>
+  <td class=xl65>13.5</td>
+  <td class=xl69>$15.93</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$6.06</td>
+  <td class=xl65>47</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>9870 STS</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>4</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.60</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$3.26</td>
+  <td class=xl71>$7.98</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>50</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>740TT</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>6.1</td>
+  <td class=xl65>18.3</td>
+  <td class=xl69>$11.75</td>
+  <td class=xl65>1.1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$7.21</td>
+  <td class=xl65>48</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>9870 STS</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>4</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.60</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$2.17</td>
+  <td class=xl71>$9.23</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>51</td>
+  <td class=xl67>Soybeans</td>
+  <td class=xl65>740</td>
+  <td class=xl66>35ft MacDon</td>
+  <td class=xl65>4.5</td>
+  <td class=xl65>15.75</td>
+  <td class=xl69>$13.65</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl71>####</td>
+  <td class=xl71>####</td>
+  <td class=xl65>49</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S670</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>3.7</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.60</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$2.55</td>
+  <td class=xl71>$6.06</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>52</td>
+  <td class=xl67>Soybeans</td>
+  <td class=xl65>760TT</td>
+  <td class=xl66>40ft MacDon</td>
+  <td class=xl65>4.5</td>
+  <td class=xl65>18</td>
+  <td class=xl69>$11.94</td>
+  <td class=xl65>0.9</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$5.91</td>
+  <td class=xl65>50</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>Case</td>
+  <td class=xl65>8230</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>4.5</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.50</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$0.86</td>
+  <td class=xl71>$7.21</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>53</td>
+  <td class=xl67>Wheat</td>
+  <td class=xl65>740</td>
+  <td class=xl66>MaxFlo 1050</td>
+  <td class=xl65>3.6</td>
+  <td class=xl65>12.6</td>
+  <td class=xl69>$17.06</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$8.37</td>
+  <td class=xl65>51</td>
+  <td class=xl65>Soybeans</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>9770 STS</td>
+  <td class=xl66>30ft MacDon</td>
+  <td class=xl65>4.2</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.30</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$23.29</td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>54</td>
+  <td class=xl67>Wheat</td>
+  <td class=xl65>740</td>
+  <td class=xl66>MaxFlo 1050</td>
+  <td class=xl65>4.3</td>
+  <td class=xl65>15.5</td>
+  <td class=xl69>$14.29</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$6.82</td>
+  <td class=xl65>52</td>
+  <td class=xl65>Soybeans</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S670</td>
+  <td class=xl66>35ft</td>
+  <td class=xl65>3.5</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.10</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$2.24</td>
+  <td class=xl71>$5.91</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>55</td>
+  <td class=xl67>Wheat</td>
+  <td class=xl65>760</td>
+  <td class=xl66>36ft Honeybee</td>
+  <td class=xl65>4.8</td>
+  <td class=xl65>17.28</td>
+  <td class=xl69>$12.44</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$3.00</td>
+  <td class=xl65>53</td>
+  <td class=xl65>Wheat</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>9870 STS</td>
+  <td class=xl66>35ft MacDon</td>
+  <td class=xl65>3.6</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl72>1.50</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$9.25</td>
+  <td class=xl71>$8.37</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>56</td>
+  <td class=xl67>Wheat</td>
+  <td class=xl65>740TT</td>
+  <td class=xl66>36ft Honeybee</td>
+  <td class=xl65>4.8</td>
+  <td class=xl65>17.28</td>
+  <td class=xl69>$12.44</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$2.00</td>
+  <td class=xl65>54</td>
+  <td class=xl65>Wheat</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>9770 STS</td>
+  <td class=xl66>32ft</td>
+  <td class=xl65>3.6</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl65>1.5</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$1.51</td>
+  <td class=xl71>$6.82</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>57</td>
+  <td class=xl67>Wheat</td>
+  <td class=xl65>740TT</td>
+  <td class=xl66>36ft Honeybee</td>
+  <td class=xl65>5.1</td>
+  <td class=xl65>18.36</td>
+  <td class=xl69>$12.25</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$4.70</td>
+  <td class=xl65>55</td>
+  <td class=xl65>Wheat</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S670</td>
+  <td class=xl66>35ft</td>
+  <td class=xl65>3.9</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl65>1</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$2.26</td>
+  <td class=xl71>$3.00</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>58</td>
+  <td class=xl67>Wheat</td>
+  <td class=xl65>780TT</td>
+  <td class=xl66>40ft MacDon</td>
+  <td class=xl65>3.5</td>
+  <td class=xl65>14</td>
+  <td class=xl69>$16.07</td>
+  <td class=xl65>1.1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$7.24</td>
+  <td class=xl65>56</td>
+  <td class=xl65>Wheat</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>9770 STS</td>
+  <td class=xl66>36ft</td>
+  <td class=xl65>3.9</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl65>1.3</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$1.95</td>
+  <td class=xl71>$2.00</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>59</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>750TT</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>3.8</td>
+  <td class=xl65>11.4</td>
+  <td class=xl69>$18.86</td>
+  <td class=xl65>1.1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$7.59</td>
+  <td class=xl65>57</td>
+  <td class=xl65>Wheat</td>
+  <td class=xl65>Case</td>
+  <td class=xl65>7140</td>
+  <td class=xl66>35ft</td>
+  <td class=xl65>4.1</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl65>1.3</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$0.88</td>
+  <td class=xl71>$4.70</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>60</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>740</td>
+  <td class=xl66>8-30</td>
+  <td class=xl65>6</td>
+  <td class=xl65>12</td>
+  <td class=xl69>$17.92</td>
+  <td class=xl65>1.1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>####</td>
+  <td class=xl65>58</td>
+  <td class=xl65>Wheat</td>
+  <td class=xl65>Case</td>
+  <td class=xl65>9230</td>
+  <td class=xl66>35ft</td>
+  <td class=xl65>3</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl65>1.4</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$3.45</td>
+  <td class=xl71>$7.24</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>61</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>740</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>4.3</td>
+  <td class=xl65>12.9</td>
+  <td class=xl69>$16.67</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$6.38</td>
+  <td class=xl65>59</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S680</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>3.8</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl65>1.5</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$4.48</td>
+  <td class=xl71>$7.59</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>62</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>760</td>
+  <td class=xl66>16-30 Drago</td>
+  <td class=xl65>3</td>
+  <td class=xl65>12</td>
+  <td class=xl69>$17.92</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$4.58</td>
+  <td class=xl65>60</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S660</td>
+  <td class=xl66>8-30</td>
+  <td class=xl65>4</td>
+  <td class=xl72>8.00</td>
+  <td class=xl71>##</td>
+  <td class=xl65>2</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$1.18</td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>63</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>740</td>
+  <td class=xl66>12-30 Drago</td>
+  <td class=xl65>3.7</td>
+  <td class=xl65>11.1</td>
+  <td class=xl69>$19.37</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$5.07</td>
+  <td class=xl65>61</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S680</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>4.1</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl65>1.5</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$2.79</td>
+  <td class=xl71>$6.38</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>64</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>740</td>
+  <td class=xl66>12-30 Drago</td>
+  <td class=xl65>3.5</td>
+  <td class=xl65>10.5</td>
+  <td class=xl69>$20.48</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$4.09</td>
+  <td class=xl65>62</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>9770 STS</td>
+  <td class=xl66>16-30</td>
+  <td class=xl65>2.7</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl65>1.5</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$1.63</td>
+  <td class=xl71>$4.58</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>65</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>740</td>
+  <td class=xl66>12-30 Drago</td>
+  <td class=xl65>4.5</td>
+  <td class=xl65>13.5</td>
+  <td class=xl69>$15.93</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$3.82</td>
+  <td class=xl65>63</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>Case</td>
+  <td class=xl65>7130</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>3.3</td>
+  <td class=xl65>9.9</td>
+  <td class=xl71>##</td>
+  <td class=xl65>1.5</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$2.99</td>
+  <td class=xl71>$5.07</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>66</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>740</td>
+  <td class=xl66>12-30 Drago</td>
+  <td class=xl65>3.1</td>
+  <td class=xl65>9.3</td>
+  <td class=xl69>$23.12</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$5.75</td>
+  <td class=xl65>64</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>9770 STS</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>3.5</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl65>1.6</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$3.10</td>
+  <td class=xl71>$4.09</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>67</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>740</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>4</td>
+  <td class=xl65>12</td>
+  <td class=xl69>$17.92</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>####</td>
+  <td class=xl65>65</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>9770 STS</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>4.2</td>
+  <td class=xl72>####</td>
+  <td class=xl71>##</td>
+  <td class=xl65>1.5</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$2.17</td>
+  <td class=xl71>$3.82</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>68</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>740</td>
+  <td class=xl66>12-30 Drago</td>
+  <td class=xl65>4.5</td>
+  <td class=xl65>13.5</td>
+  <td class=xl69>$15.93</td>
+  <td class=xl65>0.8</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$6.70</td>
+  <td class=xl65>66</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>9760 STS</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>3</td>
+  <td class=xl65>9</td>
+  <td class=xl71>##</td>
+  <td class=xl65>1.5</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$1.55</td>
+  <td class=xl71>$5.75</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>69</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>760</td>
+  <td class=xl66>16-30 Drago</td>
+  <td class=xl65>4.8</td>
+  <td class=xl65>19.2</td>
+  <td class=xl69>$11.20</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$3.57</td>
+  <td class=xl65>67</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S670</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>3.1</td>
+  <td class=xl65>9.3</td>
+  <td class=xl71>##</td>
+  <td class=xl65>1.5</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$3.10</td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>70</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>740</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>3.8</td>
+  <td class=xl65>11.4</td>
+  <td class=xl69>$18.86</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$5.87</td>
+  <td class=xl65>68</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>Case</td>
+  <td class=xl65>2588</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>3.5</td>
+  <td class=xl65>10.5</td>
+  <td class=xl71>##</td>
+  <td class=xl65>1</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$2.69</td>
+  <td class=xl71>$6.70</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>71</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>760</td>
+  <td class=xl66>16-30 Drago</td>
+  <td class=xl65>3.8</td>
+  <td class=xl65>15.2</td>
+  <td class=xl69>$14.14</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$6.20</td>
+  <td class=xl65>69</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S690</td>
+  <td class=xl66>16-30</td>
+  <td class=xl65>4.2</td>
+  <td class=xl65>16.8</td>
+  <td class=xl71>##</td>
+  <td class=xl65>1.2</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$1.63</td>
+  <td class=xl71>$3.57</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl114 style='height:13.8pt'>72</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>740</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>4.1</td>
+  <td class=xl65>12.3</td>
+  <td class=xl69>$17.48</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$6.14</td>
+  <td class=xl65>70</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>9770 STS</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>3.1</td>
+  <td class=xl65>9.3</td>
+  <td class=xl71>##</td>
+  <td class=xl65>1.1</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$1.24</td>
+  <td class=xl71>$5.87</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>73</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>740</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>4</td>
+  <td class=xl65>12</td>
+  <td class=xl69>$17.92</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71></td>
+  <td class=xl65>71</td>
+  <td class=xl73>Corn</td>
+  <td class=xl65>Case</td>
+  <td class=xl65>9120</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>3.8</td>
+  <td class=xl65>11.4</td>
+  <td class=xl71>##</td>
+  <td class=xl65>1.5</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$1.05</td>
+  <td class=xl71>$6.20</td>
+  <td class=xl67 align=right>2015</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>74</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>760TT</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>5.1</td>
+  <td class=xl65>15.3</td>
+  <td class=xl69>$14.05</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$9.51</td>
+  <td class=xl65>72</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S680</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>3.8</td>
+  <td class=xl65>11.4</td>
+  <td class=xl71>##</td>
+  <td class=xl65>1.5</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$1.55</td>
+  <td class=xl71>$6.14</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>75</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>760TT</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>4.9</td>
+  <td class=xl65>14.7</td>
+  <td class=xl69>$14.63</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$8.59</td>
+  <td class=xl65>73</td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl66></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl71></td>
+  <td class=xl65></td>
+  <td class=xl89></td>
+  <td class=xl71></td>
+  <td class=xl71></td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>76</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>760TT</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>4.5</td>
+  <td class=xl65>13.5</td>
+  <td class=xl69>$15.93</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$7.34</td>
+  <td class=xl68></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl66></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl71></td>
+  <td class=xl65></td>
+  <td class=xl89></td>
+  <td class=xl71></td>
+  <td class=xl71></td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>77</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>760TT</td>
+  <td class=xl66>16-30</td>
+  <td class=xl65>4.2</td>
+  <td class=xl65>16.8</td>
+  <td class=xl69>$12.80</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$5.88</td>
+  <td class=xl68></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl66></td>
+  <td class=xl65></td>
+  <td class=xl65></td>
+  <td class=xl71></td>
+  <td class=xl65></td>
+  <td class=xl89></td>
+  <td class=xl71></td>
+  <td class=xl71></td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>78</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>760TT</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>3.1</td>
+  <td class=xl65>9.3</td>
+  <td class=xl69>$23.12</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$0.90</td>
+  <td class=xl65>74</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>Case</td>
+  <td class=xl65>8230</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>3.2</td>
+  <td class=xl65>9.6</td>
+  <td class=xl71>##</td>
+  <td class=xl65>1.2</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$0.91</td>
+  <td class=xl71>$9.51</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>79</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>750TT</td>
+  <td class=xl66>8-38</td>
+  <td class=xl65>5.5</td>
+  <td class=xl65>13.75</td>
+  <td class=xl69>$15.64</td>
+  <td class=xl65>1.1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>####</td>
+  <td class=xl65>75</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>Case</td>
+  <td class=xl65>8230</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>3.2</td>
+  <td class=xl65>9.6</td>
+  <td class=xl71>##</td>
+  <td class=xl65>1.2</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$0.91</td>
+  <td class=xl71>$8.59</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>80</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>740</td>
+  <td class=xl66>8-30</td>
+  <td class=xl65>4</td>
+  <td class=xl65>8</td>
+  <td class=xl69>$26.88</td>
+  <td class=xl65>0.9</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$7.94</td>
+  <td class=xl65>76</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S680</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>4.5</td>
+  <td class=xl65>13.5</td>
+  <td class=xl71>##</td>
+  <td class=xl65>2.5</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$3.45</td>
+  <td class=xl71>$7.34</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>81</td>
+  <td class=xl67>Ciorn</td>
+  <td class=xl65>740</td>
+  <td class=xl66>8-30</td>
+  <td class=xl65>5</td>
+  <td class=xl65>10</td>
+  <td class=xl69>$21.50</td>
+  <td class=xl65>0.9</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>####</td>
+  <td class=xl65>77</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S690</td>
+  <td class=xl66>16-30</td>
+  <td class=xl65>4.2</td>
+  <td class=xl65>16.8</td>
+  <td class=xl71>##</td>
+  <td class=xl65>2</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$4.01</td>
+  <td class=xl71>$5.88</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>82</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>740TT</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>4</td>
+  <td class=xl65>12</td>
+  <td class=xl69>$17.92</td>
+  <td class=xl65>2</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$6.86</td>
+  <td class=xl65>78</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S680</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>3.1</td>
+  <td class=xl65>9.3</td>
+  <td class=xl71>##</td>
+  <td class=xl65>1.3</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$0.08</td>
+  <td class=xl71>$0.90</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>83</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>740TT</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>5.5</td>
+  <td class=xl65>16.5</td>
+  <td class=xl69>$13.03</td>
+  <td class=xl65>0.9</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$5.95</td>
+  <td class=xl65>79</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>9770 STS</td>
+  <td class=xl66>8-38</td>
+  <td class=xl65>4.5</td>
+  <td class=xl65>11.3</td>
+  <td class=xl71>##</td>
+  <td class=xl65>1.5</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$6.06</td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>84</td>
+  <td class=xl67>Corn</td>
+  <td class=xl65>740TT</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>4.2</td>
+  <td class=xl65>12.6</td>
+  <td class=xl69>$17.06</td>
+  <td class=xl65>1.4</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$2.28</td>
+  <td class=xl65>80</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>Case</td>
+  <td class=xl65>7120</td>
+  <td class=xl66>8-30</td>
+  <td class=xl65>4</td>
+  <td class=xl65>8</td>
+  <td class=xl71>##</td>
+  <td class=xl65>1.3</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$7.37</td>
+  <td class=xl71>$7.94</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>85</td>
+  <td class=xl67>Soybeans</td>
+  <td class=xl65>740</td>
+  <td class=xl66>40ft MacDon</td>
+  <td class=xl65>5</td>
+  <td class=xl65>20</td>
+  <td class=xl69>$10.75</td>
+  <td class=xl65>0.9</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$9.54</td>
+  <td class=xl65>81</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>Case</td>
+  <td class=xl65>7120</td>
+  <td class=xl66>8-30</td>
+  <td class=xl65>4</td>
+  <td class=xl65>8</td>
+  <td class=xl71>##</td>
+  <td class=xl65>1.3</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$7.37</td>
+  <td class=xl71>#####</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>86</td>
+  <td class=xl67>Soybeans</td>
+  <td class=xl65>740TT</td>
+  <td class=xl66>35ft MacDon</td>
+  <td class=xl65>5</td>
+  <td class=xl65>17.5</td>
+  <td class=xl69>$12.29</td>
+  <td class=xl65>0.8</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$9.17</td>
+  <td class=xl65>82</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>Case</td>
+  <td class=xl65>7230</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>4</td>
+  <td class=xl65>12</td>
+  <td class=xl71>##</td>
+  <td class=xl65>2</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$5.74</td>
+  <td class=xl71>$6.86</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>87</td>
+  <td class=xl67>Wheat</td>
+  <td class=xl65>740</td>
+  <td class=xl66>35ft MacDon</td>
+  <td class=xl65>3</td>
+  <td class=xl65>10.5</td>
+  <td class=xl69>$20.48</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>####</td>
+  <td class=xl65>83</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S670</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>4.2</td>
+  <td class=xl65>12.6</td>
+  <td class=xl71>##</td>
+  <td class=xl65>1.7</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$1.22</td>
+  <td class=xl71>$5.95</td>
+  <td class=xl67 align=right>2016</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 class=xl65 style='height:13.8pt'>88</td>
+  <td class=xl67>Wheat</td>
+  <td class=xl65>740TT</td>
+  <td class=xl66>Maxflex 1050</td>
+  <td class=xl65>5</td>
+  <td class=xl65>17.5</td>
+  <td class=xl69>$12.29</td>
+  <td class=xl65>1</td>
+  <td class=xl70>#####</td>
+  <td class=xl69>####</td>
+  <td class=xl71>$4.01</td>
+  <td class=xl65>84</td>
+  <td class=xl65>Corn</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S680</td>
+  <td class=xl66>12-30</td>
+  <td class=xl65>4.2</td>
+  <td class=xl65>12.6</td>
+  <td class=xl71>##</td>
+  <td class=xl65>1.6</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$3.27</td>
+  <td class=xl71>$2.28</td>
+  <td class=xl67 align=right>2014</td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 colspan=11 style='height:13.8pt;mso-ignore:colspan'></td>
+  <td class=xl65>85</td>
+  <td class=xl65>Soybeans</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S670</td>
+  <td class=xl66>40ft</td>
+  <td class=xl65>5</td>
+  <td class=xl65>20</td>
+  <td class=xl71>##</td>
+  <td class=xl65>1.4</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$9.80</td>
+  <td class=xl71>$9.54</td>
+  <td></td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 colspan=11 style='height:13.8pt;mso-ignore:colspan'></td>
+  <td class=xl65>86</td>
+  <td class=xl65>Soybeans</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>9760 STS</td>
+  <td class=xl66>35ft</td>
+  <td class=xl65>5</td>
+  <td class=xl65>17.5</td>
+  <td class=xl71>##</td>
+  <td class=xl65>1.2</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$10.73</td>
+  <td class=xl71>$9.17</td>
+  <td></td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 colspan=11 style='height:13.8pt;mso-ignore:colspan'></td>
+  <td class=xl65>87</td>
+  <td class=xl65>Wheat</td>
+  <td class=xl65>John Deere</td>
+  <td class=xl65>S680</td>
+  <td class=xl66>35ft</td>
+  <td class=xl65>3</td>
+  <td class=xl65>10.5</td>
+  <td class=xl71>##</td>
+  <td class=xl65>1.4</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$17.28</td>
+  <td class=xl71>#####</td>
+  <td></td>
+ </tr>
+ <tr height=18 style='height:13.8pt'>
+  <td height=18 colspan=11 style='height:13.8pt;mso-ignore:colspan'></td>
+  <td class=xl68>88</td>
+  <td class=xl65>Wheat</td>
+  <td class=xl65>Case</td>
+  <td class=xl65>8230</td>
+  <td class=xl66>40ft</td>
+  <td class=xl65>4.5</td>
+  <td class=xl65>18</td>
+  <td class=xl71>##</td>
+  <td class=xl65>1.3</td>
+  <td class=xl89>######</td>
+  <td class=xl71>$4.26</td>
+  <td class=xl71>$4.01</td>
+  <td></td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=70 style='width:53pt'></td>
+  <td width=135 style='width:101pt'></td>
+  <td width=70 style='width:53pt'></td>
+  <td width=70 style='width:53pt'></td>
+  <td width=70 style='width:53pt'></td>
+  <td width=70 style='width:53pt'></td>
+  <td width=70 style='width:53pt'></td>
+  <td width=70 style='width:53pt'></td>
+  <td width=49 style='width:37pt'></td>
+  <td width=41 style='width:31pt'></td>
+  <td width=42 style='width:31pt'></td>
+  <td width=25 style='width:19pt'></td>
+  <td width=90 style='width:67pt'></td>
+  <td width=46 style='width:34pt'></td>
+  <td width=39 style='width:29pt'></td>
+  <td width=38 style='width:28pt'></td>
+  <td width=56 style='width:42pt'></td>
+  <td width=40 style='width:30pt'></td>
+  <td width=28 style='width:21pt'></td>
+  <td width=45 style='width:34pt'></td>
+  <td width=56 style='width:42pt'></td>
+  <td width=70 style='width:53pt'></td>
+  <td width=49 style='width:37pt'></td>
+  <td width=70 style='width:53pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</body>
+
+</html>
