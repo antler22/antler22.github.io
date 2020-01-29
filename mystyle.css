@@ -95,7 +95,7 @@ thead {font-weight: bold;}
       font-family: 'claasbody', arial, serif;
     }
   form.content {
-    max-width: 800px;
+    max-width: 8.5in;
     margin: auto;
   }
   @media print {
@@ -104,8 +104,8 @@ thead {font-weight: bold;}
     .watermark {display:block;}
     .no-print {display:none;}
   }
-  @media screen and (max-width:8.5in) { /* resize your window until the event is triggered */
-    html { width:8.5in; }
+  @media screen { /* resize your window until the event is triggered */
+    html { width:8.5in; margin:auto;}
     body { font: 9pt/1.5 'claasbody', serif; } /* Roughly 12px font */
 }
 
@@ -151,7 +151,7 @@ ul.breadcrumb li a:hover {
 
 textarea#styled {
   align: center;
-  width: 800px;
+  width: 8.5in;
 	height: 40px;
 	border: 4px solid #d8d7d7;
 	padding: 5px;
